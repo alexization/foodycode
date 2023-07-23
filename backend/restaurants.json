@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Hot Pot Stew Restaurant",
+    "rate": "4.8"
+  },
+  {
+    "id": 2,
+    "name": "Korean Barbeque Restaurant",
+    "rate": "4.5"
+  }
+]
