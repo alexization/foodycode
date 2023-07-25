@@ -70,6 +70,7 @@
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
 import { RouterLink } from "vue-router";
+import axios from "axios";
 
 export default {
   name: "LogInPage",
@@ -80,6 +81,11 @@ export default {
     return {
       foody_logo: require("@/assets/login/gro-11111-2.png"),
     };
+  },
+  created() {
+    axios.get("/api/login").then((response) => {
+      console.log(response.data);
+    });
   },
 };
 </script>

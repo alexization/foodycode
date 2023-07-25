@@ -1,10 +1,9 @@
-const express = require("express");
-const router = express.Router();
+var express = require("express");
+var router = express.Router();
+var users = require("../data/users.json");
 
-const users = require("../data/users.json");
-
-router.get("/login", function (req, res, next) {
-  res.json({ user: users[0] });
+router.get("/", function (req, res, next) {
+  res.send(users);
 });
 
 module.exports = router;
