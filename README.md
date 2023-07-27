@@ -11,12 +11,11 @@ yarn install
 
 ### (01) PROJECT Description
 
-Foody는 글로벌 메뉴판 필터링 서비스입니다. <br/>
-사용자들은 자신의 알러지 정보에 따라 필터링된 메뉴판을 받아 자신의 식이특성에 맞는 메뉴를 고민할 수 있습니다.
-
+Foody is a global menu filtering service. </br>
+Users can receive a menu board filtered according to their allergy information and think about the menu that suits their dietary characteristics.
 ### (02) PROJECT Purpose
 
-Node.js는 빠른 개발 속도, JavaScript 기반의 일관성 있는 개발 환경, 확장성과 경량화로 인한 비용 절감 등을 제공하여 스타트업에서 선택할 가치가 있습니다.
+Node.js is worth choosing for startups because it provides fast development speed, a consistent development environment based on JavaScript, and cost savings due to scalability and light weight.
 
 ### (03) PROJECT Architecture
 
