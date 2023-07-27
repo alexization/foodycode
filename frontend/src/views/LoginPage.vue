@@ -2,26 +2,26 @@
   <div class="log-in-page">
     <div class="rectangle-262"></div>
 
-    <button type="submit" class="button">LOGIN</button>
+    <button type="button" class="button" @click="onLogin">LOGIN</button>
 
     <div class="login2">LOGIN</div>
 
     <div class="input id">
       <input
+        id="uid"
         type="text"
         name="uid"
         placeholder="User Name"
-        v-model="id"
         maxlength="16"
       />
     </div>
 
     <div class="input password">
       <input
-        name="uid"
-        placeholder="Password"
-        v-model="password"
         type="password"
+        id="pw"
+        name="password"
+        placeholder="Password"
         maxlength="32"
       />
     </div>
@@ -74,13 +74,33 @@ import axios from "axios";
 
 export default {
   name: "LogInPage",
-  components: {},
+  components: {
+    RouterLink,
+  },
   props: {},
   data() {
     // quickfix to have components available to pass as props
     return {
       foody_logo: require("@/assets/login/gro-11111-2.png"),
     };
+  },
+  methods: {
+    onLogin: async function () {
+      const uid = document.getElementById("uid");
+      console.log(uid.value);
+      const password = document.getElementById("pw");
+
+      let res = await axios({
+        method: "POST",
+        url: "api/login",
+        data: {
+          uid: uid.value,
+          password: password.value,
+        },
+      });
+      console.log(res);
+      document.write(JSON.stringify(res));
+    },
   },
   created() {
     axios.get("/api/login").then((response) => {
