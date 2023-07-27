@@ -1,9 +1,9 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
-import router from "./router";
-import store from "./store";
-import axios from "axios";
+import { createApp } from 'vue';
+import App from './App.vue';
+import './registerServiceWorker';
+import router from './router';
+import store from './store';
+import axios from 'axios';
 
 // createApp(App).use(router).mount('#app')
 // [앱 생성 실시]
@@ -14,4 +14,4 @@ app.config.globalProperties.$axios = axios;
 app.use(router);
 app.use(store);
 // [main 아이디 : 렌더링 시작점]
-app.mount("#app");
+app.mount('#app');

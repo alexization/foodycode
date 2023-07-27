@@ -69,11 +69,11 @@
 </template>
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import { RouterLink } from "vue-router";
-import axios from "axios";
+import { RouterLink } from 'vue-router';
+import axios from 'axios';
 
 export default {
-  name: "LogInPage",
+  name: 'LogInPage',
   components: {
     RouterLink,
   },
@@ -81,18 +81,18 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      foody_logo: require("@/assets/login/gro-11111-2.png"),
+      foody_logo: require('@/assets/login/gro-11111-2.png'),
     };
   },
   methods: {
     onLogin: async function () {
-      const uid = document.getElementById("uid");
+      const uid = document.getElementById('uid');
       console.log(uid.value);
-      const password = document.getElementById("pw");
+      const password = document.getElementById('pw');
 
       let res = await axios({
-        method: "POST",
-        url: "api/login",
+        method: 'POST',
+        url: 'api/login',
         data: {
           uid: uid.value,
           password: password.value,
@@ -103,7 +103,7 @@ export default {
     },
   },
   created() {
-    axios.get("/api/login").then((response) => {
+    axios.get('/api/login').then((response) => {
       console.log(response.data);
     });
   },
@@ -141,7 +141,7 @@ export default {
 .login2 {
   color: #143b22;
   text-align: left;
-  font: 800 20px "Roboto", sans-serif;
+  font: 800 20px 'Roboto', sans-serif;
   position: absolute;
   left: calc(50% - 35px);
   top: 479px;
@@ -163,7 +163,7 @@ export default {
   background: none;
   border: none;
   outline: none;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   opacity: 0.7;
   padding-left: 60px;
   padding-top: 11px;
@@ -173,7 +173,7 @@ export default {
 .find-my-id {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 79px;
@@ -182,7 +182,7 @@ export default {
 .find-my-pw {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 166px;
@@ -191,7 +191,7 @@ export default {
 .sign-up {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 262px;
@@ -200,7 +200,7 @@ export default {
 .click-here-if-you-are-manager {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 167px;

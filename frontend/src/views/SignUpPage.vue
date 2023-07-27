@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-up-page-terms-3">
+  <div class="sign-up-page-terms-5">
     <div class="rectangle-291"></div>
 
     <div class="rectangle-290"></div>
@@ -17,12 +17,7 @@
       />
     </svg>
 
-    <div class="foody">
-      <span
-        ><span class="foody-span">FOOD</span
-        ><span class="foody-span2">Y</span></span
-      >
-    </div>
+    <div class="foody">FOODY</div>
 
     <div class="terms-of-service">Terms of Service</div>
 
@@ -75,7 +70,7 @@
 /* Code generated with AutoHTML Plugin for Figma */
 
 export default {
-  name: "SignUpPageTerms3",
+  name: 'SignUpPageTerms5',
   components: {},
   props: {},
   data() {
@@ -85,11 +80,11 @@ export default {
 };
 </script>
 <style scoped>
-.sign-up-page-terms-3,
-.sign-up-page-terms-3 * {
+.sign-up-page-terms-5,
+.sign-up-page-terms-5 * {
   box-sizing: border-box;
 }
-.sign-up-page-terms-3 {
+.sign-up-page-terms-5 {
   background: #ffffff;
   width: 390px;
   height: 844px;
@@ -119,26 +114,19 @@ export default {
   overflow: visible;
 }
 .foody {
+  color: #000000;
   text-align: left;
-  font: 400 30px "Jua", sans-serif;
+  font: 400 34px 'Dangrek', sans-serif;
   position: absolute;
   left: 145px;
-  top: 61px;
-  width: 100px;
+  top: 49px;
+  width: 102px;
   height: 33px;
-}
-.foody-span {
-  color: #2afb73;
-  font: 400 30px "Jua", sans-serif;
-}
-.foody-span2 {
-  color: #0ba23c;
-  font: 400 30px "Jua", sans-serif;
 }
 .terms-of-service {
   color: #000000;
   text-align: left;
-  font: 700 20px "Noto Sans", sans-serif;
+  font: 700 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 156px;
@@ -158,7 +146,7 @@ export default {
 .last-update-march-2023 {
   color: #000000;
   text-align: left;
-  font: 400 10px "Noto Sans", sans-serif;
+  font: 400 10px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 182px;
@@ -172,7 +160,7 @@ export default {
   top: 244px;
 }
 .rectangle-274 {
-  background: #2afb73;
+  background: #fbdc71;
   width: 5px;
   height: 38px;
   position: absolute;
@@ -180,7 +168,7 @@ export default {
   top: 256px;
 }
 .rectangle-275 {
-  background: #0ba23c;
+  background: #1c9181;
   width: 110px;
   height: 35px;
   position: absolute;
@@ -189,18 +177,18 @@ export default {
 }
 .rectangle-276 {
   border-style: solid;
-  border-color: #0ba23c;
+  border-color: #1c9181;
   border-width: 1px;
   width: 110px;
   height: 35px;
   position: absolute;
-  left: 211px;
+  left: 210px;
   top: 782px;
 }
 .decline {
-  color: #0ba23c;
+  color: #1c9181;
   text-align: left;
-  font: 400 15px "Noto Sans", sans-serif;
+  font: 400 15px 'Noto Sans', sans-serif;
   position: absolute;
   left: 236px;
   top: 789px;
@@ -208,7 +196,7 @@ export default {
 .accept {
   color: #ffffff;
   text-align: left;
-  font: 400 15px "Noto Sans", sans-serif;
+  font: 400 15px 'Noto Sans', sans-serif;
   position: absolute;
   left: 93px;
   top: 789px;
