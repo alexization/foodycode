@@ -1,68 +1,45 @@
 <template>
-    <div class="Header">
-        <div class="background-box">
-            <div class="foody-logo">
-                <span>
-                    <span class="food-logo">FOOD</span>
-                    <span class="y-logo">Y</span>
-                </span>
-            </div>
+  <div class="Header">
+    <div class="background-box">
+      <div class="foody-logo">FOODY</div>
 
-            <svg
-            class="navigation-bar"
-            width="24"
-            height="15"
-            viewBox="0 0 24 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            @click="toggleMenu"
-            >
-                <line
-                    x1="1"
-                    y1="6.5"
-                    x2="23"
-                    y2="6.5"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                />
-                <line
-                    x1="1"
-                    y1="14"
-                    x2="23"
-                    y2="14"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                />
-            </svg>
+      <button class="navigation-button">
+        <img :src="navigation_button" width="32" />
+      </button>
 
-            <div class="qr">
-                <div class="qr-rectangle"></div>
+      <button class="qrscanner-button">
+        <img :src="qrscanner_button" width="34" />
+      </button>
 
-                <div class="qr-circle"></div>
-            </div>
-
-            <div>
-                <input class="search-bar" type="text" placeholder="    식당 이름 검색하기">                
-            </div>
-        </div>
+      <div>
+        <input
+          class="search-bar"
+          type="text"
+          placeholder="    식당 이름 검색하기"
+        />
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
 import Vector from '@/assets/Vector.png';
+import navigation_button from '@/assets/icon/navigation_button.png';
+import qrscanner_button from '@/assets/icon/qrscanner_button.png';
 export default {
-    data() {
-        return {
-            Vector
-        };
-    }
-
-}
+  data() {
+    return {
+      Vector,
+      navigation_button,
+      qrscanner_button,
+    };
+  },
+};
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+
 .Header {
   height: 194px;
   position: sticky;
@@ -74,56 +51,46 @@ export default {
   background: #ffffff;
   width: 390px;
   height: 194px;
-  position: absolute;
+  position: sticky;
   left: 0px;
   top: 0px;
 }
 .foody-logo {
+  color: #1c9181;
   text-align: left;
-  font: 400 30px "Jua", sans-serif;
+  font-family: 'Dangrek', cursive;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2.04px;
+  line-height: normal;
   position: absolute;
   left: 145px;
-  top: 61px;
-  width: 100px;
+  top: 49px;
+  width: 102px;
   height: 33px;
 }
-.food-logo {
-  color: #2afb73;
-  font: 400 30px "Jua", sans-serif;
-}
-.y-logo {
-  color: #0ba23c;
-  font: 400 30px "Jua", sans-serif;
-}
-.navigation-bar {
+.navigation-button {
   position: absolute;
   left: 40px;
-  top: 70px;
+  top: 60px;
+  width: 40px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
   overflow: visible;
 }
-.qr {
+
+.qrscanner-button {
+  border: none;
   position: absolute;
-  inset: 0;
-}
-.qr-rectangle {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 2px;
-  width: 34px;
-  height: 34px;
-  position: absolute;
-  left: 316px;
+  left: 305px;
   top: 60px;
+  width: 40px;
+  height: 34px;
+  background-color: transparent;
 }
-.qr-circle {
-  background: #000000;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  left: 326px;
-  top: 70px;
-}
+
 .search-bar {
   border-radius: 23px;
   border-style: solid;
