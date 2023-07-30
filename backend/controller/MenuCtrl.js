@@ -1,5 +1,5 @@
-const UserStorage = require("../../models/UserStorage");
-const AlgStorage = require("../../models/AlgStorage");
+const UserStorage = require("../models/UserStorage");
+const AlgStorage = require("../models/AlgStorage");
 
 
 class MenuCtrl {

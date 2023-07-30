@@ -98,6 +98,18 @@ export default {
           uid: uid.value,
           password: password.value,
         },
+      }).then((res) => {
+
+        console.log(res.data);
+
+        if(res.data.success){
+          alert(res.data.success);
+          location.href="#/";
+        }
+        else{
+          alert(res.data.msg);
+        }
+
       });
       console.log(res);
       document.write(JSON.stringify(res));
