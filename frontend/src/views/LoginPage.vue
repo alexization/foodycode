@@ -110,15 +110,8 @@ export default {
         }
 
       });
-      // console.log(res);
-      // document.write(JSON.stringify(res));
     },
   },
-  // created() {
-  //   axios.get('/api/login').then((response) => {
-  //     console.log(response);
-  //   });
-  // },
 };
 </script>
 <style scoped>
