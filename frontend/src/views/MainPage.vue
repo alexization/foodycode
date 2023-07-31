@@ -21,6 +21,7 @@ import RestaurantName from "../components/RestaurantName.vue";
 import RegisterStepHeader from "../components/RegisterStepHeader.vue";
 
 import Hot_Pot_Stew from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
+
 import Korean_Barbeque from "@/assets/restaurant/Korean Barbeque Restaurant.png";
 
 export default {
@@ -33,6 +34,11 @@ export default {
     RegisterStepHeader,
   },
   props: {},
+  // created() {
+  //    axios.get('/api/login').then((response) => {
+  //      console.log(response);
+  //    });
+  //  },
   data() {
     // quickfix to have components available to pass as props
     return {

@@ -116,7 +116,7 @@ export default {
   },
   // created() {
   //   axios.get('/api/login').then((response) => {
-  //     console.log(response.data);
+  //     console.log(response);
   //   });
   // },
 };
