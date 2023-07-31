@@ -94,8 +94,8 @@ export default {
 .search-bar {
   border-radius: 23px;
   border-style: solid;
-  border-color: #2afb73;
-  border-width: 1px;
+  border-color: #1c9181;
+  border-width: 1.5px;
   width: 304px;
   height: 35px;
   position: absolute;

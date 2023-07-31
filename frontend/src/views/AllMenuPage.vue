@@ -186,6 +186,7 @@ export default {};
   width: 390px;
   height: 844px;
   position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
 }
 .frame-20 {
@@ -207,7 +208,7 @@ export default {};
 }
 .rectangle-267 {
   border-style: solid;
-  border-color: #2afb73;
+  border-color: #138373;
   border-width: 1px;
   width: 390px;
   height: 160px;
@@ -350,7 +351,7 @@ export default {};
   height: 87px;
 }
 .filtered-menu-for {
-  color: #045922;
+  color: #42b2a3;
   text-align: center;
   font: 400 20px "Noto Sans", sans-serif;
   position: absolute;

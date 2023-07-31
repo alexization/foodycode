@@ -175,7 +175,7 @@ export default {};
 }
 .rectangle-267 {
   border-style: solid;
-  border-color: #2afb73;
+  border-color: #138373;
   border-width: 1px;
   width: 390px;
   height: 160px;
@@ -261,15 +261,11 @@ export default {};
   position: relative;
 }
 .korean-7644354-1920 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px;
   width: 128.07px;
   height: 86px;
   position: absolute;
   left: 251.93px;
   top: 191px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .component-11 {
   width: 390px;
@@ -310,7 +306,7 @@ export default {};
   height: 87px;
 }
 .filtered-menu-for {
-  color: #045922;
+  color: #42b2a3;
   text-align: center;
   font: 400 20px "Noto Sans", sans-serif;
   position: absolute;

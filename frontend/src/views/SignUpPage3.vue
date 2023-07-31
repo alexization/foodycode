@@ -266,6 +266,8 @@
 
     <div class="next">Next</div>
 
+    <div class="foody">FOODY</div>
+
     <div class="component-12">
       <div class="rectangle-269"></div>
 
@@ -292,13 +294,6 @@
         />
       </svg>
 
-      <div class="foody">
-        <span
-          ><span class="foody-span">FOOD</span
-          ><span class="foody-span2">Y</span></span
-        >
-      </div>
-
       <div class="group-121">
         <div class="rectangle-278"></div>
 
@@ -324,7 +319,7 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M0 0H30" stroke="#0BA23C" />
+        <path d="M0 0H30" stroke="#1C9181" />
       </svg>
 
       <svg
@@ -334,9 +329,11 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M0 0H30" stroke="#0BA23C" />
+        <path d="M0 0H30" stroke="#1C9181" />
       </svg>
     </div>
+
+    <div class="foody-logo">FOODY</div>
   </div>
 </template>
 
@@ -846,7 +843,7 @@ export default {};
   top: calc(50% - 11px);
 }
 .rectangle-272 {
-  background: #2afb73;
+  background: #1c9181;
   width: 390px;
   height: 45px;
   position: absolute;
@@ -861,6 +858,16 @@ export default {};
   left: 159px;
   top: 1044px;
   width: 71px;
+}
+.foody {
+  color: #000000;
+  text-align: left;
+  font: 400 34px "Dangrek", sans-serif;
+  position: absolute;
+  left: 145px;
+  top: 49px;
+  width: 102px;
+  height: 33px;
 }
 .component-12 {
   width: 390px;
@@ -903,29 +910,12 @@ export default {};
   top: 77px;
   overflow: visible;
 }
-.foody {
-  text-align: left;
-  font: 400 30px "Jua", sans-serif;
-  position: absolute;
-  left: 145px;
-  top: 61px;
-  width: 100px;
-  height: 33px;
-}
-.foody-span {
-  color: #2afb73;
-  font: 400 30px "Jua", sans-serif;
-}
-.foody-span2 {
-  color: #0ba23c;
-  font: 400 30px "Jua", sans-serif;
-}
 .group-121 {
   position: absolute;
   inset: 0;
 }
 .rectangle-278 {
-  background: #0ba23c;
+  background: #1c9181;
   border-radius: 24px;
   width: 80px;
   height: 35px;
@@ -948,7 +938,7 @@ export default {};
 .rectangle-279 {
   border-radius: 24px;
   border-style: solid;
-  border-color: #0ba23c;
+  border-color: #1c9181;
   border-width: 2px;
   width: 80px;
   height: 35px;
@@ -971,7 +961,7 @@ export default {};
 .rectangle-280 {
   border-radius: 24px;
   border-style: solid;
-  border-color: #0ba23c;
+  border-color: #1c9181;
   border-width: 2px;
   width: 80px;
   height: 35px;
@@ -999,5 +989,19 @@ export default {};
   top: 156px;
   overflow: visible;
 }
-
+.foody-logo {
+  color: #1c9181;
+  text-align: left;
+  font-family: "Dangrek", cursive;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2.04px;
+  line-height: normal;
+  position: absolute;
+  left: 145px;
+  top: 49px;
+  width: 102px;
+  height: 33px;
+}
 </style>
