@@ -98,16 +98,27 @@ export default {
           uid: uid.value,
           password: password.value,
         },
+      }).then((res) => {
+
+        console.log(res.data);
+
+        if(res.data.success){
+           location.href="/";
+        }
+        else{
+          alert(res.data.msg);
+        }
+
       });
-      console.log(res);
-      document.write(JSON.stringify(res));
+      // console.log(res);
+      // document.write(JSON.stringify(res));
     },
   },
-  created() {
-    axios.get('/api/login').then((response) => {
-      console.log(response.data);
-    });
-  },
+  // created() {
+  //   axios.get('/api/login').then((response) => {
+  //     console.log(response.data);
+  //   });
+  // },
 };
 </script>
 <style scoped>
