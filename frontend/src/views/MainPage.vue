@@ -1,9 +1,9 @@
 <template>
   <div class="landing-page">
     <div class="frame-19">
-      <template v-for="item in list">
+      <template v-for="item in list" :key="item">
         <RestaurantCard
-          :image="item.imgae"
+          :image="item.image"
           :title="item.title"
         ></RestaurantCard>
       </template>
@@ -14,17 +14,17 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import Header from '../components/Header.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
-import MenuCard from '../components/MenuCard.vue';
-import RestaurantName from '../components/RestaurantName.vue';
-import RegisterStepHeader from '../components/RegisterStepHeader.vue';
+import Header from "../components/Header.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
+import MenuCard from "../components/MenuCard.vue";
+import RestaurantName from "../components/RestaurantName.vue";
+import RegisterStepHeader from "../components/RegisterStepHeader.vue";
 
-import Hot_Pot_Stew from '@/assets/restaurant/Hot Pot Stew Restaurant.png';
-import Korean_Barbeque from '@/assets/restaurant/Korean Barbeque Restaurant.png';
+import Hot_Pot_Stew from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
+import Korean_Barbeque from "@/assets/restaurant/Korean Barbeque Restaurant.png";
 
 export default {
-  name: 'LandingPage',
+  name: "LandingPage",
   components: {
     Header,
     RestaurantCard,
@@ -38,16 +38,16 @@ export default {
     return {
       list: [
         {
-          imgae: Hot_Pot_Stew,
-          title: 'Hot Pot Stew Restaurant',
+          image: Hot_Pot_Stew,
+          title: "Hot Pot Stew Restaurant",
         },
         {
-          imgae: Korean_Barbeque,
-          title: 'Korean Barbeque Restaurant',
+          image: Korean_Barbeque,
+          title: "Korean Barbeque Restaurant",
         },
         {
-          imgae: Korean_Barbeque,
-          title: 'Korean Barbeque Restaurant',
+          image: Korean_Barbeque,
+          title: "Korean Barbeque Restaurant",
         },
       ],
     };
@@ -113,7 +113,7 @@ export default {
 .hot-pot-stew-resturant {
   color: #000000;
   text-align: left;
-  font: 500 20px 'Noto Sans', sans-serif;
+  font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 20px;
   top: 238px;
@@ -122,7 +122,7 @@ export default {
 ._4-8 {
   color: #000000;
   text-align: left;
-  font: 400 15px 'Noto Sans', sans-serif;
+  font: 400 15px "Noto Sans", sans-serif;
   position: absolute;
   left: 47px;
   top: 270px;
@@ -130,7 +130,7 @@ export default {
 ._240-ratings {
   color: #969595;
   text-align: left;
-  font: 400 15px 'Noto Sans', sans-serif;
+  font: 400 15px "Noto Sans", sans-serif;
   position: absolute;
   left: 79px;
   top: 270px;
@@ -158,7 +158,7 @@ export default {
 .korean-beef {
   color: #000000;
   text-align: left;
-  font: 500 20px 'Noto Sans', sans-serif;
+  font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 20px;
   top: 238px;
