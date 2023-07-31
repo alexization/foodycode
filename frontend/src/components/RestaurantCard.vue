@@ -2,7 +2,7 @@
   <div class="component">
     <div class="group-106">
       <div class="image">
-        <img :src="image" />
+        <img :src="require(`@/assets/restaurant/${restaurantName}.png`)" />
       </div>
       <div class="rectangle-181"></div>
     </div>
@@ -12,17 +12,17 @@
 </template>
 
 <script>
-import Default_image from '@/assets/restaurant/Hot Pot Stew Restaurant.png';
+//import Default_image from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
 
 export default {
   props: {
     title: {
       type: String,
-      default: 'Untitled Restaurant',
+      default: "Untitled Restaurant",
     },
-    image: {
+    restaurantName: {
       type: String,
-      default: Default_image,
+      default: "Hot Pot Stew Restaurant",
     },
   },
 
@@ -65,7 +65,7 @@ export default {
 .title {
   color: #000000;
   text-align: left;
-  font: 500 20px 'Noto Sans', sans-serif;
+  font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 20px;
   top: 238px;
