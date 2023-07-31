@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import Vector from '@/assets/Vector.png';
-import navigation_button from '@/assets/icon/navigation_button.png';
-import qrscanner_button from '@/assets/icon/qrscanner_button.png';
+import Vector from "@/assets/Vector.png";
+import navigation_button from "@/assets/icon/navigation_button.png";
+import qrscanner_button from "@/assets/icon/qrscanner_button.png";
 export default {
   data() {
     return {
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 
 .Header {
   height: 194px;
@@ -58,7 +58,7 @@ export default {
 .foody-logo {
   color: #1c9181;
   text-align: left;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
