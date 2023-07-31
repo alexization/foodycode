@@ -3,7 +3,7 @@
     <div class="frame-19">
       <template v-for="item in list" :key="item">
         <RestaurantCard
-          :image="item.image"
+          :restaurantName="item.image"
           :title="item.title"
         ></RestaurantCard>
       </template>
@@ -20,9 +20,8 @@ import MenuCard from "../components/MenuCard.vue";
 import RestaurantName from "../components/RestaurantName.vue";
 import RegisterStepHeader from "../components/RegisterStepHeader.vue";
 
-import Hot_Pot_Stew from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
-
-import Korean_Barbeque from "@/assets/restaurant/Korean Barbeque Restaurant.png";
+//import Hot_Pot_Stew from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
+//import Korean_Barbeque from "@/assets/restaurant/Korean Barbeque Restaurant.png";
 
 export default {
   name: "LandingPage",
@@ -44,15 +43,15 @@ export default {
     return {
       list: [
         {
-          image: Hot_Pot_Stew,
+          image: "Hot Pot Stew Restaurant",
           title: "Hot Pot Stew Restaurant",
         },
         {
-          image: Korean_Barbeque,
+          image: "Korean Barbeque Restaurant",
           title: "Korean Barbeque Restaurant",
         },
         {
-          image: Korean_Barbeque,
+          image: "Korean Barbeque Restaurant",
           title: "Korean Barbeque Restaurant",
         },
       ],
@@ -83,5 +82,4 @@ export default {
   left: 20px;
   top: 179px;
 }
-
 </style>
