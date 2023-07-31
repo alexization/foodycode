@@ -103,7 +103,7 @@ export default {
         console.log(res.data);
 
         if(res.data.success){
-           location.href="/";
+           location.href="#/";
         }
         else{
           alert(res.data.msg);
