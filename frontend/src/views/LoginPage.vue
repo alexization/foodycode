@@ -103,23 +103,22 @@ export default {
         console.log(res.data);
 
         if(res.data.success){
-          alert(res.data.success);
-          location.href="#/";
+           location.href="/";
         }
         else{
           alert(res.data.msg);
         }
 
       });
-      console.log(res);
-      document.write(JSON.stringify(res));
+      // console.log(res);
+      // document.write(JSON.stringify(res));
     },
   },
-  created() {
-    axios.get('/api/login').then((response) => {
-      console.log(response.data);
-    });
-  },
+  // created() {
+  //   axios.get('/api/login').then((response) => {
+  //     console.log(response.data);
+  //   });
+  // },
 };
 </script>
 <style scoped>

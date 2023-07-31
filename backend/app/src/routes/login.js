@@ -1,18 +1,18 @@
 var express = require("express");
 var router = express.Router();
-var users = require("../data/users.json");
+// var users = require("../data/users.json");
 
 const UserCtrl = require("../controller/UserCtrl");
 
-router.get("/", function (req, res, next) {
-  res.send(users);
-});
+// router.get("/", function (req, res, next) {
+//   res.send(users);
+// });
 
 router.post("/", UserCtrl.processLogin);
 
 
 // //register경로로 포스트요청이 오면 실행
-// router.post("/register",UserCtrl.processRegister);
+//router.post("/register",UserCtrl.processRegister);
 
 
 module.exports = router;
