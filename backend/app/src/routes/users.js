@@ -7,4 +7,6 @@ router.get("/", function (req, res, next) {
   res.send("respond with a resource hello");
 });
 
+
+/*b가 잘 분기되는지 확인을 하는중*/
 module.exports = router;
