@@ -40,7 +40,7 @@ class User{
 
     async register(){
         const client = this.body;
-
+        console.log(client.password);
         try {
         const response = await UserStorage.save(client);
         return response;

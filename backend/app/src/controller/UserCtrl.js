@@ -4,8 +4,8 @@ class UserCtrl {
 
   static async processLogin(req, res) {
     console.log(req.body);
-     const user = new User(req.body);
-     const response = await user.login();
+    const user = new User(req.body);
+    const response = await user.login();
     
 
     // //로그인 성공시 세션 생성
@@ -18,6 +18,7 @@ class UserCtrl {
   }
 
   static async processRegister(req, res) {
+    console.log("im regi");
     const user = new User(req.body);
     const response = await user.register();
     console.log(response);

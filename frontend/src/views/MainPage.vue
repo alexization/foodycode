@@ -33,6 +33,11 @@ export default {
     RegisterStepHeader,
   },
   props: {},
+  // created() {
+  //    axios.get('/api/login').then((response) => {
+  //      console.log(response);
+  //    });
+  //  },
   data() {
     // quickfix to have components available to pass as props
     return {

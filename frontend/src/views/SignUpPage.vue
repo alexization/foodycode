@@ -4,6 +4,33 @@
 
     <div class="rectangle-290"></div>
 
+    
+    <div class="input id">
+      <input
+        id="uid"
+        type="text"
+        name="uid"
+        placeholder="User Name"
+        maxlength="16"
+      />
+    </div>
+
+    
+    <div class="input password">
+      <input
+        type="password"
+        id="pw"
+        name="password"
+        placeholder="Password"
+        maxlength="32"
+      />
+    </div>
+
+
+
+
+    <button type="button" class="button" @click="onReg">LOGIN</button>
+
     <svg
       class="vector-51"
       width="15"
@@ -64,20 +91,60 @@
     <div class="accept">Accept</div>
 
     <div class="rectangle-277"></div>
+
+
   </div>
 </template>
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
 
+import axios from 'axios';
+import { RouterLink } from 'vue-router';
+
 export default {
   name: 'SignUpPageTerms5',
-  components: {},
+  components: {
+    RouterLink,
+  },
   props: {},
   data() {
     // quickfix to have components available to pass as props
     return {};
   },
+  methods: {
+    onReg: async function () {
+      const uid = document.getElementById('uid');
+      console.log(uid.value);
+      const password = document.getElementById('pw');
+      console.log(pw.value);
+      let res = await axios({
+        method: 'POST',
+        url: 'api/signup',
+        data: {
+          uid: uid.value,
+          password: password.value,
+        },
+      }).then((res) => {
+
+        console.log(res.data);
+
+        if(res.data.success){
+          
+          alert("reg success");
+        }
+        else{
+          alert(res.data);
+        }
+
+      });
+      // console.log(res);
+      // document.write(JSON.stringify(res));
+    },
+  },
 };
+
+
+
 </script>
 <style scoped>
 .sign-up-page-terms-5,
@@ -209,4 +276,58 @@ export default {
   left: 65px;
   top: 782px;
 }
+
+
+.input {
+  border-radius: 22px;
+  border-style: solid;
+  border-color: #fbdc71;
+  border-width: 1.5px;
+  width: 310px;
+  height: 45px;
+  position: absolute;
+  left: 40px;
+  top: 529px;
+}
+
+.input > input {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Nanum Gothic', sans-serif;
+  opacity: 0.7;
+  padding-left: 60px;
+  padding-top: 11px;
+  font-size: 15px;
+}
+
+
+.id {
+  position: absolute;
+  left: 40px;
+  top: 529px;
+  overflow: visible;
+}
+.password {
+  position: absolute;
+  left: 40px;
+  top: 590px;
+  overflow: visible;
+}
+.button {
+  position: absolute;
+  left: 40px;
+  top: 659px;
+  overflow: visible;
+  background: #1c9181;
+  border-radius: 22px;
+  width: 310px;
+  height: 45px;
+  font-size: 15pt;
+  color: white;
+  position: relative;
+  border: none;
+}
+
 </style>

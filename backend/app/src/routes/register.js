@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
- var users = "asdasd";
+// var users = require("../data/users.json");
 
 const UserCtrl = require("../controller/UserCtrl");
 
@@ -8,7 +8,7 @@ const UserCtrl = require("../controller/UserCtrl");
 //   res.send(users);
 // });
 
-router.post("/", UserCtrl.processLogin);
+router.post("/", UserCtrl.processRegister);
 
 
 // //register경로로 포스트요청이 오면 실행
