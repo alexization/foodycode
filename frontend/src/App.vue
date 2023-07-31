@@ -6,11 +6,14 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
 };
 </script>
 
 <style>
+body {
+  margin: 0;
+}
 .container {
   min-height: calc(100vh - 70px);
   overflow: auto;
