@@ -20,6 +20,8 @@ import MenuCard from "../components/MenuCard.vue";
 import RestaurantName from "../components/RestaurantName.vue";
 import RegisterStepHeader from "../components/RegisterStepHeader.vue";
 
+import axios from "axios";
+
 export default {
   name: "LandingPage",
   components: {
@@ -33,21 +35,31 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
+      image_name: [],
       list: [
         {
-          image: "Hot Pot Stew Restaurant",
+          image: a,
           title: "Hot Pot Stew Restaurant",
         },
         {
-          image: "Korean Barbeque Restaurant",
+          image: "Korean-Barbeque",
           title: "Korean Barbeque Restaurant",
         },
         {
-          image: "Korean Barbeque Restaurant",
+          image: "Korean-Barbeque",
           title: "Korean Barbeque Restaurant",
         },
       ],
     };
+  },
+
+  async created() {
+    axios.get("/api/main").then((response) => {
+      const a = response.data[0].image;
+      console.log(response.data[0].image);
+      this.image_name.push(response.data[0].image);
+      console.log(this.image_name);
+    });
   },
 };
 </script>
