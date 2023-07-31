@@ -18,6 +18,7 @@ class UserCtrl {
   }
 
   static async processRegister(req, res) {
+    console.log("im regi");
     const user = new User(req.body);
     const response = await user.register();
     console.log(response);

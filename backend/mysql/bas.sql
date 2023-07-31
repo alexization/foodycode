@@ -146,12 +146,13 @@ CREATE TABLE restaurant(
     rest_name varchar(30) NOT NULL,
     address varchar(50) NOT NULL,
     ceo_name varchar(30) NOT NULL,
+    img_url varchar(50),
     tel int NOT NULL
 );
 
 
 INSERT INTO restaurant()
-    values("rid","yeon tan bulgogi","addr","jhon","033-760-3333"),
+    values("rid","yeon tan bulgogi","addr","jhon","033-760-3333",),
 ("rid","dosmas","addr","jhon","033-760-3333"),
 ("rid","haru","addr","jhon","033-760-3333"),
 ("rid","zzang dol","addr","jhon","033-760-3333"),
