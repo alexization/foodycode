@@ -4,15 +4,8 @@ var router = express.Router();
 
 const UserCtrl = require("../controller/UserCtrl");
 
-// router.get("/", function (req, res, next) {
-//   res.send(users);
-// });
-
 router.post("/", UserCtrl.processLogin);
 
-
-// //register경로로 포스트요청이 오면 실행
-//router.post("/register",UserCtrl.processRegister);
 
 
 module.exports = router;

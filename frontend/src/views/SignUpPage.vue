@@ -137,8 +137,6 @@ export default {
         }
 
       });
-      // console.log(res);
-      // document.write(JSON.stringify(res));
     },
   },
 };

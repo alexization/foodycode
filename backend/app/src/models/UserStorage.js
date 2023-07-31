@@ -10,7 +10,6 @@ class UserStorage{
             const query = "SELECT * FROM users where uid = ?;";
             db.query(query,[id],(err,data)=>{
                 if(err) throw reject(`${err}`);
-                //console.log(data[0]);
                 resolve(data[0]);
             });
         });
@@ -21,7 +20,6 @@ class UserStorage{
             const query = "SELECT name FROM users where uid = ?;";
             db.query(query,[id],(err,data)=>{
                 if(err) throw reject(`${err}`);
-                //console.log(data[0]);
                 resolve(data[0]);
             });
         });
