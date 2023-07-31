@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-// var users = require("../data/users.json");
+ var users = "asdasd";
 
 const UserCtrl = require("../controller/UserCtrl");
 
