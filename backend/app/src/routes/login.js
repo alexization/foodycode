@@ -1,12 +1,10 @@
 var express = require("express");
 var router = express.Router();
- var users = "asdasd";
+var users = "asdasd";
 
 const UserCtrl = require("../controller/UserCtrl");
 
 router.post("/", UserCtrl.processLogin);
-
-
 
 module.exports = router;
 
