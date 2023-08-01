@@ -130,7 +130,8 @@ export default {
 
         if(res.data.success){
           
-          alert("reg success");
+          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
+          location.href="#/login";
         }
         else{
           alert(res.data);
