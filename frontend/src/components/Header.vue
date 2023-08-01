@@ -7,7 +7,7 @@
         <img :src="navigation_button" width="32" />
       </button>
 
-      <button class="qrscanner-button">
+      <button class="qr-scanner-button">
         <img :src="qrscanner_button" width="34" />
       </button>
 
@@ -15,7 +15,7 @@
         <input
           class="search-bar"
           type="text"
-          placeholder="    식당 이름 검색하기"
+          placeholder="식당 이름 검색하기"
         />
       </div>
     </div>
@@ -81,7 +81,7 @@ export default {
   overflow: visible;
 }
 
-.qrscanner-button {
+.qr-scanner-button {
   border: none;
   position: absolute;
   left: 305px;

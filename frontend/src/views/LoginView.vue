@@ -1,5 +1,5 @@
 <template>
-  <div class="log-in-page">
+  <div class="login-view">
     <div class="rectangle-262"></div>
 
     <button type="button" class="button" @click="onLogin">LOGIN</button>
@@ -115,11 +115,10 @@ export default {
 };
 </script>
 <style scoped>
-.log-in-page,
-.log-in-page * {
+.login-view * {
   box-sizing: border-box;
 }
-.log-in-page {
+.login-view {
   background: #ffffff;
   width: 390px;
   height: 844px;

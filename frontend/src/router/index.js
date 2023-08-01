@@ -3,38 +3,38 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    name: "MainPage",
-    component: () => import("../views/MainPage.vue"),
+    name: "home",
+    component: () => import("../views/HomeView.vue"),
   },
   {
     path: "/login",
-    name: "LoginPage",
-    component: () => import("../views/LoginPage.vue"),
+    name: "login",
+    component: () => import("../views/LoginView.vue"),
   },
   {
     path: "/signup",
-    name: "SignUpPage",
-    component: () => import("../views/SignUpPage.vue"),
+    name: "sign-up",
+    component: () => import("../views/SignUpView.vue"),
   },
   {
     path: "/signup2",
-    name: "SignUpPage2",
-    component: () => import("../views/SignUpPage2.vue"),
+    name: "sign-up2",
+    component: () => import("../views/SignUp2View.vue"),
   },
   {
     path: "/signup3",
-    name: "SignUpPage3",
-    component: () => import("../views/SignUpPage3.vue"),
+    name: "sign-up3",
+    component: () => import("../views/SignUp3View.vue"),
   },
   {
     path: "/filteredmenu",
-    name: "FilteredMenuPage",
-    component: () => import("../views/FilteredMenuPage.vue"),
+    name: "filtered-menu",
+    component: () => import("../views/FilteredMenuView.vue"),
   },
   {
     path: "/allmenu",
-    name: "AllMenuPage",
-    component: () => import("../views/AllMenuPage.vue"),
+    name: "all-menu",
+    component: () => import("../views/AllMenuView.vue"),
   },
 ];
 
