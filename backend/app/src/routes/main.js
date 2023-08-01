@@ -1,29 +1,9 @@
 var express = require("express");
 var router = express.Router();
 
-// const RestCtrl= require("../controller/MenuCtrl");
+const RestCtrl= require("../controller/RestCtrl");
 
-// router.get("/", RestCtrl.sendRestNamePic);
-
-// module.exports = router;
-var users = [
-  {
-    image: "Hot-Pot-Stew",
-    title: "Hot Pot Stew Restaurant",
-  },
-  {
-    image: "Korean-Barbeque",
-    title: "Korean Barbeque Restaurant",
-  },
-  {
-    image: "Korean-Barbeque",
-    title: "Korean Barbeque Restaurant",
-  },
-];
-
-router.get("/", function (req, res, next) {
-  res.send(users);
-});
+router.get("/", RestCtrl.sendRestNamePic);
 
 module.exports = router;
 
