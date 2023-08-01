@@ -3,7 +3,7 @@
     <div class="frame-19">
       <template v-for="item in list" :key="item">
         <RestaurantCard
-          :restaurantName="item.image"
+          :restaurantName= "item.image"
           :title="item.title"
         ></RestaurantCard>
       </template>
@@ -20,6 +20,8 @@ import MenuCard from "../components/MenuCard.vue";
 import RestaurantName from "../components/RestaurantName.vue";
 import RegisterStepHeader from "../components/RegisterStepHeader.vue";
 
+import axios from "axios";
+
 export default {
   name: "LandingPage",
   components: {
@@ -33,21 +35,15 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      list: [
-        {
-          image: "Hot Pot Stew Restaurant",
-          title: "Hot Pot Stew Restaurant",
-        },
-        {
-          image: "Korean Barbeque Restaurant",
-          title: "Korean Barbeque Restaurant",
-        },
-        {
-          image: "Korean Barbeque Restaurant",
-          title: "Korean Barbeque Restaurant",
-        },
-      ],
+      list: "",
     };
+  },
+
+  async created() {
+    axios.get("/api/main").then((response) => {
+      const restaurant_list = response.data;
+      this.list = restaurant_list;
+    });
   },
 };
 </script>

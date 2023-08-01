@@ -10,7 +10,6 @@ var loginRouter = require("./src/routes/login");
 var registerRouter = require("./src/routes/register");
 var mainRouter = require("./src/routes/main");
 
-
 var app = express();
 
 // view engine setup
