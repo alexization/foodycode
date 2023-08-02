@@ -99,22 +99,21 @@ export default {
           password: password.value,
         },
       }).then((res) => {
-
         console.log(res.data);
 
-        if(res.data.success){
-           location.href="#/";
-        }
-        else{
+        if (res.data.success) {
+          location.href = '#/';
+        } else {
           alert(res.data.msg);
         }
-
       });
     },
   },
 };
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 .login-view * {
   box-sizing: border-box;
 }
@@ -146,7 +145,7 @@ export default {
 .login2 {
   color: #143b22;
   text-align: left;
-  font: 800 20px 'Roboto', sans-serif;
+  font: 700 20px 'Roboto', sans-serif;
   position: absolute;
   left: calc(50% - 35px);
   top: 479px;

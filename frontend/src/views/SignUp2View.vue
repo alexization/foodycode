@@ -1,119 +1,113 @@
 <template>
   <div class="sign-up-page-register">
-    <svg
-      class="vector-51"
-      width="15"
-      viewBox="0 0 15 0"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M15 0.75C15.4142 0.75 15.75 0.414214 15.75 0C15.75 -0.414214 15.4142 -0.75 15 -0.75V0.75ZM-0.53033 -0.53033C-0.823223 -0.237437 -0.823223 0.237437 -0.53033 0.53033L4.24264 5.3033C4.53553 5.59619 5.01041 5.59619 5.3033 5.3033C5.59619 5.01041 5.59619 4.53553 5.3033 4.24264L1.06066 0L5.3033 -4.24264C5.59619 -4.53553 5.59619 -5.01041 5.3033 -5.3033C5.01041 -5.59619 4.53553 -5.59619 4.24264 -5.3033L-0.53033 -0.53033ZM15 -0.75H0V0.75H15V-0.75Z"
-        fill="black"
-      />
-    </svg>
+    <button class="arrow-back">
+      <img :src="arrow_back" width="25" @click="click_back" />
+    </button>
 
     <div class="group-121">
-      <div class="rectangle-278"></div>
-
       <div class="step-1">Step 1</div>
     </div>
 
     <div class="group-122">
-      <div class="rectangle-279"></div>
-
       <div class="step-2">Step 2</div>
     </div>
 
     <div class="group-123">
-      <div class="rectangle-280"></div>
-
       <div class="step-3">Step 3</div>
     </div>
 
-    <svg
-      class="line-6"
-      width="30"
-      viewBox="0 0 30 0"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0 0H30" stroke="#1C9181" />
-    </svg>
+    <div class="line-left">
+      <img :src="line" />
+    </div>
 
-    <svg
-      class="line-7"
-      width="30"
-      viewBox="0 0 30 0"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0 0H30" stroke="#1C9181" />
-    </svg>
+    <div class="line-right">
+      <img :src="line" />
+    </div>
 
-    <div class="email-address">Email Address</div>
+    <div class="uid">User ID</div>
+    <div class="uid-input">
+      <input type="text" id="uid" name="uid" maxlength="16" />
+    </div>
 
-    <div class="rectangle-281"></div>
-
-    <div class="rectangle-282"></div>
-
-    <div class="confrim">Confrim</div>
+    <button class="confirm" @click="click_confirm">Confirm</button>
 
     <div class="password">Password</div>
+    <div class="password-input">
+      <input type="password" id="pw" name="password" maxlength="32" />
+    </div>
 
-    <div class="rectangle-283"></div>
-
-    <div class="password-confrim">Password Confrim</div>
-
-    <div class="rectangle-284"></div>
+    <div class="password-confrim">Password Confirm</div>
+    <div class="confirm-input">
+      <input type="password" id="pw_confirm" name="pw_confirm" maxlength="32" />
+    </div>
 
     <div class="user-name">User Name</div>
 
-    <div class="rectangle-285"></div>
+    <div class="name-input">
+      <input type="text" id="user_name" name="user_name" />
+    </div>
 
     <div class="gender">Gender</div>
 
-    <div class="rectangle-287"></div>
+    <button class="Female" id="female" @click="click_female">Female</button>
 
-    <div class="rectangle-288"></div>
+    <button class="Male" id="male" @click="click_male">Male</button>
 
-    <div class="male">Male</div>
+    <div class="Age">Age</div>
+    <div class="Country">Country</div>
 
-    <div class="female">Female</div>
+    <div class="age-country">
+      <div class="age-input">
+        <input type="number" id="age" name="age" pattern="\d*" />
+      </div>
 
-    <div class="date-of-birth">Date of Birth</div>
-
-    <div class="group-124">
-      <div class="rectangle-286"></div>
-
-      <div class="year">Year</div>
-
-      <div class="rectangle-2872"></div>
-
-      <div class="month">Month</div>
-
-      <div class="rectangle-2882"></div>
-
-      <div class="date">Date</div>
-
-      <div class="style1">/</div>
-
-      <div class="style2">/</div>
+      <div class="country-input">
+        <input type="text" id="country" name="country" />
+      </div>
     </div>
 
-    <div class="rectangle-289"></div>
-
-    <div class="register-info">Register Info</div>
+    <button class="Register" @click="click_register">Register Info</button>
 
     <div class="foody-logo">FOODY</div>
   </div>
 </template>
 
 <script>
-export default {};
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
+export default {
+  data() {
+    return {
+      arrow_back,
+      line,
+    };
+  },
+  methods: {
+    click_back() {
+      location.href = '#/login';
+    },
+    click_confirm() {
+      alert('Click Confirm');
+    },
+    click_male() {
+      document.getElementById('male').style.backgroundColor = '#1c9181';
+      document.getElementById('female').style.backgroundColor = 'white';
+    },
+    click_female() {
+      document.getElementById('female').style.backgroundColor = '#1c9181';
+      document.getElementById('male').style.backgroundColor = 'white';
+    },
+    click_register() {
+      alert('Click Register');
+    },
+  },
+};
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+
 .sign-up-page-register,
 .sign-up-page-register * {
   box-sizing: border-box;
@@ -122,20 +116,24 @@ export default {};
   background: #ffffff;
   width: 390px;
   height: 844px;
-  position: relative;
+  position: sticky;
   overflow: hidden;
 }
-.vector-51 {
+.arrow-back {
   position: absolute;
   left: 30px;
-  top: 77px;
+  top: 64px;
+  width: 25px;
+  height: 25px;
   overflow: visible;
+  border: none;
+  background-color: white;
 }
 .group-121 {
-  position: absolute;
+  position: sticky;
   inset: 0;
 }
-.rectangle-278 {
+.step-1 {
   background: #1c9181;
   border-radius: 24px;
   width: 80px;
@@ -143,20 +141,17 @@ export default {};
   position: absolute;
   left: 45px;
   top: 139px;
-}
-.step-1 {
   color: #ffffff;
-  text-align: left;
-  font: 600 15px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 60px;
-  top: 146px;
+  text-align: center;
+  font: 600 15px 'Noto Sans', sans-serif;
+  padding-top: 5px;
 }
+
 .group-122 {
-  position: absolute;
+  position: sticky;
   inset: 0;
 }
-.rectangle-279 {
+.step-2 {
   border-radius: 24px;
   border-style: solid;
   border-color: #1c9181;
@@ -166,20 +161,17 @@ export default {};
   position: absolute;
   left: 155px;
   top: 139px;
-}
-.step-2 {
   color: #000000;
-  text-align: left;
-  font: 600 15px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 170px;
-  top: 146px;
+  text-align: center;
+  font: 600 15px 'Noto Sans', sans-serif;
+  padding-top: 5px;
 }
+
 .group-123 {
-  position: absolute;
+  position: sticky;
   inset: 0;
 }
-.rectangle-280 {
+.step-3 {
   border-radius: 24px;
   border-style: solid;
   border-color: #1c9181;
@@ -189,46 +181,75 @@ export default {};
   position: absolute;
   left: 265px;
   top: 139px;
-}
-.step-3 {
   color: #000000;
-  text-align: left;
-  font: 600 15px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 280px;
-  top: 146px;
+  text-align: center;
+  font: 600 15px 'Noto Sans', sans-serif;
+  padding-top: 5px;
 }
-.line-6 {
+
+.line-left {
   position: absolute;
   left: 125px;
-  top: 156px;
+  top: 142px;
   overflow: visible;
 }
-.line-7 {
+.line-right {
   position: absolute;
   left: 235px;
-  top: 156px;
+  top: 142px;
   overflow: visible;
 }
-.email-address {
+.uid {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 219px;
 }
-.rectangle-281 {
+
+input[type='text'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 257px;
   height: 30px;
+}
+input[type][id='user_name'] {
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 1px;
+  width: 330px;
+  height: 30px;
+}
+input[type][id='country'] {
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 1px;
+  width: 205px;
+  height: 30px;
+}
+
+input[type='password'] {
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 1px;
+  width: 330px;
+  height: 30px;
+}
+input[type='number'] {
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 1px;
+  width: 85px;
+  height: 30px;
+}
+.uid-input {
   position: absolute;
   left: 30px;
   top: 252px;
 }
-.rectangle-282 {
+.confirm {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -238,29 +259,20 @@ export default {};
   position: absolute;
   left: 285px;
   top: 252px;
+  text-align: center;
+  font: 600 14px 'Noto Sans', sans-serif;
+  color: black;
 }
-.confrim {
-  color: #000000;
-  text-align: left;
-  font: 600 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 292px;
-  top: 257px;
-}
+
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 322px;
 }
-.rectangle-283 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 330px;
-  height: 30px;
+.password-input {
   position: absolute;
   left: 30px;
   top: 355px;
@@ -268,17 +280,12 @@ export default {};
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 400px;
 }
-.rectangle-284 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 330px;
-  height: 30px;
+.confirm-input {
   position: absolute;
   left: 30px;
   top: 433px;
@@ -286,17 +293,12 @@ export default {};
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 503px;
 }
-.rectangle-285 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 330px;
-  height: 30px;
+.name-input {
   position: absolute;
   left: 30px;
   top: 536px;
@@ -304,12 +306,14 @@ export default {};
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 659px;
 }
-.rectangle-287 {
+.Female {
+  color: black;
+  background-color: white;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -318,8 +322,12 @@ export default {};
   position: absolute;
   left: 195px;
   top: 692px;
+  text-align: center;
+  font: 400 14px 'Noto Sans', sans-serif;
 }
-.rectangle-288 {
+.Male {
+  color: black;
+  background-color: white;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -328,125 +336,57 @@ export default {};
   position: absolute;
   left: 30px;
   top: 692px;
+  text-align: center;
+  font: 400 14px 'Noto Sans', sans-serif;
 }
-.male {
+.Age {
   color: #000000;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 97px;
-  top: 696px;
-}
-.female {
-  color: #000000;
-  text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 254px;
-  top: 696px;
-}
-.date-of-birth {
-  color: #000000;
-  text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
   left: 30px;
   top: 581px;
 }
-.group-124 {
+.Country {
+  color: #000000;
+  text-align: left;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
+  left: 150px;
+  top: 581px;
+}
+.age-country {
+  position: sticky;
   inset: 0;
 }
-.rectangle-286 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 85px;
-  height: 30px;
+.age-input {
   position: absolute;
   left: 30px;
   top: 614px;
 }
-.year {
-  color: #c3c3c3;
-  text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 59px;
-  top: 619px;
-}
-.rectangle-2872 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 85px;
-  height: 30px;
+
+.country-input {
   position: absolute;
   left: 150px;
   top: 614px;
 }
-.month {
-  color: #c3c3c3;
-  text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 173px;
-  top: 619px;
-}
-.rectangle-2882 {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 85px;
-  height: 30px;
-  position: absolute;
-  left: 270px;
-  top: 614px;
-}
-.date {
-  color: #c3c3c3;
-  text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 298px;
-  top: 619px;
-}
-.style1 {
-  color: #000000;
-  text-align: left;
-  font: 400 12px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 130px;
-  top: 621px;
-}
-.style2 {
-  color: #000000;
-  text-align: left;
-  font: 400 12px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 250px;
-  top: 621px;
-}
-.rectangle-289 {
+
+.Register {
   background: #1c9181;
   width: 390px;
   height: 60px;
   position: absolute;
   left: 0px;
   top: 784px;
-}
-.register-info {
   color: #ffffff;
-  text-align: left;
-  font: 400 20px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 124px;
-  top: 800px;
+  text-align: center;
+  font: 400 20px 'Noto Sans', sans-serif;
+  border: none;
 }
 .foody-logo {
   color: #1c9181;
   text-align: left;
-  font-family: "Dangrek", cursive;
+  font-family: 'Dangrek', cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
@@ -458,5 +398,4 @@ export default {};
   width: 102px;
   height: 33px;
 }
-
 </style>
