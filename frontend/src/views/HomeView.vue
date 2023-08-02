@@ -1,14 +1,15 @@
 <template>
   <div class="landing-page">
     <div class="frame-19">
-      <template v-for="item in list" :key="item">
+      <div v-for="item in list" :key="item">
         <RestaurantCard
           :restaurantName= "item.image"
           :title="item.title"
         ></RestaurantCard>
-      </template>
+      </div>
     </div>
     <Header></Header>
+    <SearchBar></SearchBar>
   </div>
 </template>
 
@@ -16,9 +17,7 @@
 /* Code generated with AutoHTML Plugin for Figma */
 import Header from "../components/Header.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
-import MenuCard from "../components/MenuCard.vue";
-import RestaurantName from "../components/RestaurantName.vue";
-import RegisterStepHeader from "../components/RegisterStepHeader.vue";
+import SearchBar from "../components/SearchBar.vue";
 
 import axios from "axios";
 
@@ -26,10 +25,8 @@ export default {
   name: "LandingPage",
   components: {
     Header,
-    RestaurantCard,
-    MenuCard,
-    RestaurantName,
-    RegisterStepHeader,
+    RestaurantCard,    
+    SearchBar,
   },
   props: {},
   data() {
@@ -48,14 +45,11 @@ export default {
 };
 </script>
 <style scoped>
-.landing-page,
 .landing-page * {
   box-sizing: border-box;
 }
 .landing-page {
   background: #ffffff;
-  width: 390px;
-  height: 844px;
   position: relative;
   overflow-y: auto;
 }
