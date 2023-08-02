@@ -8,8 +8,7 @@
         ></RestaurantCard>
         </template>
       </div>
-    <Header></Header>
-    <SearchBar></SearchBar>
+    <Header></Header>    
   </div>
 </template>
 
@@ -17,7 +16,6 @@
 /* Code generated with AutoHTML Plugin for Figma */
 import Header from "../components/Header.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
-import SearchBar from "../components/SearchBar.vue";
 
 import axios from "axios";
 
@@ -25,8 +23,7 @@ export default {
   name: "LandingPage",
   components: {
     Header,
-    RestaurantCard,    
-    SearchBar,
+    RestaurantCard,     
   },
   props: {},
   data() {
