@@ -1,7 +1,6 @@
 <template>
   <div class="landing-page">
     <div class="frame-19">
-      <SearchBar></SearchBar>
       <div v-for="item in list" :key="item">
         <RestaurantCard
           :restaurantName= "item.image"
@@ -10,6 +9,7 @@
       </div>
     </div>
     <Header></Header>
+    <SearchBar></SearchBar>
   </div>
 </template>
 

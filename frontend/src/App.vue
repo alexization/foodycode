@@ -1,12 +1,16 @@
 <template>
   <div class="container">
-    <router-view class="router-view" />
+    <router-view class="router-view"/>
   </div>
 </template>
 
 <script>
+import a from "./components/MenuCard.vue";
 export default {
   name: 'App',
+  components: {
+    a,
+  }
 };
 </script>
 
