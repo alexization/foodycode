@@ -14,14 +14,13 @@ export default {
 body {
   margin: 0;
 }
-.container {
-  min-height: calc(100vh - 70px);
+.container {  
+  min-height: calc(100vh - 70px);  
   overflow: auto;
-  margin: 0;
+  margin: 0px;
   background: rgb(255, 255, 255);
   background-position: center;
   position: relative;
-  z-index: 0;
 }
 
 .router-view {
@@ -29,8 +28,7 @@ body {
   min-height: calc(100vh - 73px);
   box-sizing: border-box;
   margin: auto;
-  padding: 0 0px;
-  padding-top: 0px;
+  padding: 0px;
   overflow: hidden;
 }
 </style>

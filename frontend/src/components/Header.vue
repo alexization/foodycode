@@ -1,105 +1,107 @@
 <template>
-  <div class="Header">
-    <div class="background-box">
-      <div class="foody-logo">FOODY</div>
-
-      <button class="navigation-button">
-        <img :src="navigation_button" width="32" />
-      </button>
-
-      <button class="qr-scanner-button">
-        <img :src="qrscanner_button" width="34" />
-      </button>
-
-      <div>
-        <input
-          class="search-bar"
-          type="text"
-          placeholder="식당 이름 검색하기"
-        />
-      </div>
+  <div class="header">
+    <!--메뉴판 버튼-->    
+    <div class="nav-wrap">
+      <Button @click="toggleMenu" class="navigation-button" to="/login">
+        <img :src="navigation_button" width="33"/>
+      </Button>
     </div>
+    <!--로고--> 
+    <div class="logo-wrap">
+      <div class="foody-logo">FOODY</div>
+    </div>
+    <!--QR촬영 버튼-->
+    <div class="qr-wrap">
+      <RouterLink class="qr-scanner-button" to="/login">
+        <img :src="qr_scanner_button" width="33" />
+      </RouterLink>
+    </div>    
   </div>
 </template>
 
 <script>
 import Vector from "@/assets/Vector.png";
 import navigation_button from "@/assets/icon/navigation_button.png";
-import qrscanner_button from "@/assets/icon/qrscanner_button.png";
+import qr_scanner_button from "@/assets/icon/qr_scanner_button.png";
+
 export default {
   data() {
     return {
       Vector,
       navigation_button,
-      qrscanner_button,
+      qr_scanner_button,
+      showMenu: false,
     };
   },
+  
+  methods: {
+    async toggleMenu() {
+      this.showMenu = !this.showMenu;
+
+    }
+  }
 };
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 
-.Header {
-  height: 194px;
+.header {
   position: sticky;
+  background-color: #ffffff;
+  height: 64px;
+  top: 0px;
   right: 0px;
   left: 0px;
-  top: 0px;
 }
-.background-box {
-  background: #ffffff;
-  width: 390px;
-  height: 194px;
-  position: sticky;
-  left: 0px;
-  top: 0px;
+
+.nav-wrap {
+  width: 20%;
+  height: 64px;
+  float: left;
 }
+
+.navigation-button {
+  width: 33px;
+  height: 33px;
+  padding: 1px;
+  border: 1px solid;
+  background-color: transparent;
+}
+
+.logo-wrap {
+  width: 60%;
+  height: 64px;  
+  float: left;
+}
+
 .foody-logo {
+  top: 10px;
+  left: 91px;
+  width: 102px;
+  height: 40px;
   color: #1c9181;
-  text-align: left;
+  text-align: center;
   font-family: "Dangrek", cursive;
-  font-size: 34px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 2.04px;
   line-height: normal;
-  position: absolute;
-  left: 145px;
-  top: 49px;
-  width: 102px;
+}
+
+.qr-wrap {
+  width: 20%;
+  height: 64px;
+  float: left;
+}
+
+.qr-scanner-button {    
+  top: 20px;
+  right: 20px;
+  width: 33px;
   height: 33px;
-}
-.navigation-button {
-  position: absolute;
-  left: 40px;
-  top: 60px;
-  width: 40px;
-  height: 32px;
-  border: none;
-  background-color: transparent;
-  overflow: visible;
-}
-
-.qr-scanner-button {
-  border: none;
-  position: absolute;
-  left: 305px;
-  top: 60px;
-  width: 40px;
-  height: 34px;
-  background-color: transparent;
-}
-
-.search-bar {
-  border-radius: 23px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1.5px;
-  width: 304px;
-  height: 35px;
-  position: absolute;
-  left: 39px;
-  top: 144px;
+  padding: 1px;
+  background-color: transparent;  
 }
 </style>
