@@ -2,13 +2,12 @@
   <div class="landing-page">
     <div class="frame-19">
       <template v-for="item in list" :key="item">
-        <!--변수이름 수정이 필요해 보입니다-->
         <RestaurantCard
           :restaurantName= "item.img_url"
           :title="item.rest_name"
         ></RestaurantCard>
+        </template>
       </div>
-    </div>
     <Header></Header>
     <SearchBar></SearchBar>
   </div>
@@ -39,6 +38,7 @@ export default {
 
   async created() {
     axios.get("/api/main").then((response) => {
+      console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
