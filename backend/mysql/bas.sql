@@ -82,6 +82,29 @@ INSERT INTO userAlgs(uid,algid)
     (4,8);
 
 
+drop table restaurant;
+CREATE TABLE restaurant(
+    id int NOT NULL AUTO_INCREMENT,
+    rest_id varchar(30) NOT NULL,
+    rest_name varchar(30) NOT NULL,
+    address varchar(50) NOT NULL,
+    ceo_name varchar(30) NOT NULL,
+    tel varchar(30) NOT NULL,
+    img_url varchar(50),
+
+    
+    PRIMARY KEY (id)
+);
+
+
+INSERT INTO restaurant(rest_id,rest_name,address,ceo_name,tel,img_url)
+    values("rid","yeon tan bulgogi","addr","jhon","033-760-3333","Yeon-Tan-Bulgogi"),
+("rid","saruerue","addr","jhon","033-760-3333","Korean-Barbeque"),
+("rid","zzang dol","addr","jhon","033-760-3333","Zzang-Dol"),
+("rid","haru","addr","jhon","033-760-3333","Hot-Pot-Stew");
+
+
+
 
 
 CREAT TABLE ingredients(
@@ -137,26 +160,6 @@ INSERT INTO menu()
         ("1","dark bulgogi","7500");
 
 
-
-
-
-CREATE TABLE restaurant(
-    id int NOT NULL AUTO_INCREMENT,
-    rest_id varchar(30) NOT NULL,
-    rest_name varchar(30) NOT NULL,
-    address varchar(50) NOT NULL,
-    ceo_name varchar(30) NOT NULL,
-    img_url varchar(50),
-    tel int NOT NULL
-);
-
-
-INSERT INTO restaurant()
-    values("rid","yeon tan bulgogi","addr","jhon","033-760-3333",),
-("rid","dosmas","addr","jhon","033-760-3333"),
-("rid","haru","addr","jhon","033-760-3333"),
-("rid","zzang dol","addr","jhon","033-760-3333"),
-("rid","saruerue","addr","jhon","033-760-3333");
 
 
 

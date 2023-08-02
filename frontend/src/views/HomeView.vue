@@ -1,10 +1,11 @@
 <template>
   <div class="landing-page">
     <div class="frame-19">
-      <div v-for="item in list" :key="item">
+      <template v-for="item in list" :key="item">
+        <!--변수이름 수정이 필요해 보입니다-->
         <RestaurantCard
-          :restaurantName= "item.image"
-          :title="item.title"
+          :restaurantName= "item.img_url"
+          :title="item.rest_name"
         ></RestaurantCard>
       </div>
     </div>

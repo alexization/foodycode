@@ -1,23 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var users = [
-  {
-    image: "Hot-Pot-Stew",
-    title: "Hot Pot Stew Restaurant",
-  },
-  {
-    image: "Korean-Barbeque",
-    title: "Korean Barbeque Restaurant",
-  },
-  {
-    image: "Korean-Barbeque",
-    title: "Korean Barbeque Restaurant",
-  },
-];
 
-router.get("/", function (req, res, next) {
-  res.send(users);
-});
+const RestCtrl= require("../controller/RestCtrl");
+
+router.get("/", RestCtrl.sendRestNamePic);
 
 module.exports = router;
 

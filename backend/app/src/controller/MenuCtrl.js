@@ -16,7 +16,6 @@ class MenuCtrl {
       res.redirect("/login");
     }
   }
-
 }
 
 module.exports = MenuCtrl;

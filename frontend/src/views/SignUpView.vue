@@ -68,7 +68,54 @@
 </template>
 
 <script>
-export default {};
+/* Code generated with AutoHTML Plugin for Figma */
+
+import axios from 'axios';
+import { RouterLink } from 'vue-router';
+
+export default {
+  name: 'SignUpPageTerms5',
+  components: {
+    RouterLink,
+  },
+  props: {},
+  data() {
+    // quickfix to have components available to pass as props
+    return {};
+  },
+  methods: {
+    onReg: async function () {
+      const uid = document.getElementById('uid');
+      console.log(uid.value);
+      const password = document.getElementById('pw');
+      console.log(pw.value);
+      let res = await axios({
+        method: 'POST',
+        url: 'api/signup',
+        data: {
+          uid: uid.value,
+          password: password.value,
+        },
+      }).then((res) => {
+
+        console.log(res.data);
+
+        if(res.data.success){
+          
+          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
+          location.href="#/login";
+        }
+        else{
+          alert(res.data);
+        }
+
+      });
+    },
+  },
+};
+
+
+
 </script>
 
 <style scoped>
