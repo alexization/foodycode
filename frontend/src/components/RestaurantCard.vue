@@ -12,8 +12,6 @@
 </template>
 
 <script>
-//import Default_image from "@/assets/restaurant/Hot Pot Stew Restaurant.png";
-
 export default {
   props: {
     title: {
