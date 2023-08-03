@@ -1,21 +1,13 @@
-const UserStorage = require("../models/UserStorage");
-const AlgStorage = require("../models/AlgStorage");
-
+const MenuStorage =require("../models/MenuStroage");
 
 class MenuCtrl {
 
-  static async show(req, res) {
-    const logined = req.session.is_logined;
-    if (logined) {
-    new UserStorage();
-    const userId = req.session.userid;
-    const arr = await AlgStorage.getUsersAlgName(userId);
-
-      res.render("home/show",{arr});
-    } else {
-      res.redirect("/login");
-    }
+  static async sendMenuInfo(req, res) {
+    const arr = await MenuStorage.getMenuInfo();
+    console.log(arr);
+    res.send(arr);
   }
+
 }
 
 module.exports = MenuCtrl;

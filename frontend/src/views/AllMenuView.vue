@@ -173,7 +173,26 @@
 </template>
 
 <script>
-export default {};
+/* Code generated with AutoHTML Plugin for Figma */
+
+import axios from "axios";
+
+export default {
+  name: "LandingPage",
+  props: {},
+  data() {
+    // quickfix to have components available to pass as props
+    return {
+      list: "",
+    };
+  },
+
+  async created() {
+    axios.get("/api/menu").then((response) => {
+      console.log(response.data);
+    });
+  },
+};
 </script>
 
 <style scoped>
