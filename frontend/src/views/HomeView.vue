@@ -3,12 +3,12 @@
     <div class="frame-19">
       <template v-for="item in list" :key="item">
         <RestaurantCard
-          :restaurantName= "item.img_url"
+          :restaurantName="item.img_url"
           :title="item.rest_name"
         ></RestaurantCard>
-        </template>
-      </div>
-    <Header></Header>    
+      </template>
+    </div>
+    <Header></Header>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   name: "LandingPage",
   components: {
     Header,
-    RestaurantCard,     
+    RestaurantCard,
   },
   props: {},
   data() {
@@ -42,15 +42,23 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .landing-page * {
   box-sizing: border-box;
 }
 .landing-page {
   background: #ffffff;
-  position: relative;
+  width: 390px;
+  height: 844px;
+  position: sticky;
   overflow-y: auto;
 }
+
+::-webkit-scrollbar {
+display: none;
+}
+
 .frame-19 {
   padding: 10px 0px 10px 0px;
   display: flex;

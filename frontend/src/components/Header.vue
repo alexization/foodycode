@@ -11,25 +11,22 @@
         <img :src="qr_scanner_button" width="34" />
       </button>
 
-      <div>
-        <input
-          class="search-bar"
-          type="text"
-          placeholder="    식당 이름 검색하기"
-        />
+      <div class="search">
+        <img :src="search_icon" width="25" />
+        <input type="text" placeholder="식당 이름 검색하기" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Vector from '@/assets/Vector.png';
-import navigation_button from '@/assets/icon/navigation_button.png';
-import qr_scanner_button from '@/assets/icon/qr_scanner_button.png';
+import search_icon from "@/assets/icon/search_icon.png";
+import navigation_button from "@/assets/icon/navigation_button.png";
+import qr_scanner_button from "@/assets/icon/qr_scanner_button.png";
 export default {
   data() {
     return {
-      Vector,
+      search_icon,
       navigation_button,
       qr_scanner_button,
     };
@@ -38,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 
 .Header {
   height: 194px;
@@ -58,7 +55,7 @@ export default {
 .foody-logo {
   color: #1c9181;
   text-align: left;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
@@ -91,15 +88,28 @@ export default {
   background-color: transparent;
 }
 
-.search-bar {
-  border-radius: 23px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1.5px;
-  width: 304px;
-  height: 35px;
+.search {
   position: absolute;
   left: 39px;
-  top: 144px;
+  top: 130px;
+  width: 260px;
+}
+
+input {  
+  width: 100%;
+  border: 1.5px solid #1c9181;
+  border-radius: 23px;
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.search > img {
+  position : absolute;
+  top: 7px;
+  left: 12px;
+  margin: 0;
 }
 </style>
