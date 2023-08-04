@@ -76,7 +76,6 @@
 import arrow_back from '@/assets/icon/arrow-back.png';
 import line from '@/assets/icon/Line.png';
 
-
 import axios from 'axios';
 export default {
   data() {
@@ -101,7 +100,6 @@ export default {
       document.getElementById('male').style.backgroundColor = 'white';
     },
     async click_register() {
-   
       const uid = document.getElementById('uid');
       console.log(uid.value);
       const password = document.getElementById('pw');
@@ -114,18 +112,14 @@ export default {
           password: password.value,
         },
       }).then((res) => {
-
         console.log(res.data);
 
-        if(res.data.success){
-          
-          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
-          location.href="#/login";
-        }
-        else{
+        if (res.data.success) {
+          alert('회원가입 완료! 로그인 페이지로 이동합니다.');
+          location.href = '#/login';
+        } else {
           alert(res.data);
         }
-
       });
     },
   },
@@ -156,20 +150,23 @@ export default {
   overflow: visible;
   border: none;
   background-color: white;
+  cursor: pointer;
 }
 .group-121 {
   position: sticky;
   inset: 0;
 }
 .step-1 {
-  background: #1c9181;
   border-radius: 24px;
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 2px;
   width: 80px;
   height: 35px;
   position: absolute;
   left: 45px;
   top: 139px;
-  color: #ffffff;
+  color: #000000;
   text-align: center;
   font: 600 15px 'Noto Sans', sans-serif;
   padding-top: 5px;
@@ -180,16 +177,14 @@ export default {
   inset: 0;
 }
 .step-2 {
+  background: #1c9181;
   border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
   width: 80px;
   height: 35px;
   position: absolute;
   left: 155px;
   top: 139px;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   font: 600 15px 'Noto Sans', sans-serif;
   padding-top: 5px;
@@ -290,6 +285,7 @@ input[type='number'] {
   text-align: center;
   font: 600 14px 'Noto Sans', sans-serif;
   color: black;
+  cursor: pointer;
 }
 
 .password {
@@ -352,6 +348,8 @@ input[type='number'] {
   top: 692px;
   text-align: center;
   font: 400 14px 'Noto Sans', sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
 }
 .Male {
   color: black;
@@ -366,6 +364,8 @@ input[type='number'] {
   top: 692px;
   text-align: center;
   font: 400 14px 'Noto Sans', sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
 }
 .Age {
   color: #000000;
@@ -408,8 +408,10 @@ input[type='number'] {
   top: 784px;
   color: #ffffff;
   text-align: center;
-  font: 400 20px 'Noto Sans', sans-serif;
+  font: 800 20px 'Noto Sans', sans-serif;
+  letter-spacing: 1.2px;
   border: none;
+  cursor: pointer;
 }
 .foody-logo {
   color: #1c9181;

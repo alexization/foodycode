@@ -243,6 +243,7 @@ export default {
   color: white;
   position: relative;
   border: none;
+  cursor: pointer;
 }
 
 .vector2 {
