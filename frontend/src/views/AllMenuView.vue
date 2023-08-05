@@ -38,9 +38,13 @@ export default {
 
   async created() {
     axios.get('/api/menu').then((response) => {
-      console.log(response.data);
+      //console.log(response.data);
       const menu_list = response.data;
       this.list = menu_list;
+    });
+    axios.get('/api/menu_alg').then((response) => {
+      console.log(response.data);
+      
     });
   },
 };
