@@ -5,6 +5,7 @@
         <RestaurantCard
           :restaurantName="item.img_url"
           :title="item.rest_name"
+          :telNum="item.tel"
         ></RestaurantCard>
       </template>
     </div>
@@ -14,13 +15,13 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import Header from "../components/Header.vue";
-import RestaurantCard from "../components/RestaurantCard.vue";
+import Header from '../components/Header.vue';
+import RestaurantCard from '../components/RestaurantCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "LandingPage",
+  name: 'LandingPage',
   components: {
     Header,
     RestaurantCard,
@@ -29,12 +30,12 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      list: "",
+      list: '',
     };
   },
 
   async created() {
-    axios.get("/api/main").then((response) => {
+    axios.get('/api/main').then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
@@ -56,7 +57,7 @@ export default {
 }
 
 ::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 .frame-19 {
