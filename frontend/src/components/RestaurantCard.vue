@@ -8,10 +8,15 @@
     </div>
 
     <div class="title" v-text="title"></div>
+    <div class="tel" v-text="telNum"></div>
+    <div class="tel">
+      <img :src="call" />
+    </div>
   </div>
 </template>
 
 <script>
+import call from '@/assets/icon/call.png';
 export default {
   props: {
     title: {
@@ -22,15 +27,22 @@ export default {
       type: String,
       default: 'Hot Pot Stew Restaurant',
     },
+    telNum: {
+      type: String,
+      default: '033-742-5878',
+    },
   },
 
   data() {
-    return {};
+    return {
+      call,
+    };
   },
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
 .component,
 .component * {
   box-sizing: border-box;
@@ -39,6 +51,7 @@ export default {
   width: 350px;
   height: 303px;
   position: relative;
+  cursor: pointer;
 }
 .Img-Pos {
   position: absolute;
@@ -47,10 +60,17 @@ export default {
 .image {
   background: rgba(0, 0, 0, 0.3);
   width: 350px;
-  height: 233px;
+  height: 188px;
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 45px;
+  border-radius: 9px;
+  flex-shrink: 0;
+}
+.image img {
+  width: 350px;
+  height: 188px;
+  border-radius: 9px;
 }
 .Img-Box {
   opacity: 0.699999988079071;
@@ -64,9 +84,27 @@ export default {
   color: #000000;
   text-align: left;
   font: 500 20px 'Noto Sans', sans-serif;
+  letter-spacing: 1.2px;
   position: absolute;
   left: 20px;
   top: 238px;
   width: 285px;
+}
+.tel {
+  color: #969595;
+  text-align: left;
+  font: 400 15px 'Noto Sans', sans-serif;
+  letter-spacing: 0.3px;
+  position: absolute;
+  left: 47px;
+  top: 270px;
+  width: 285px;
+}
+.tel img {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
 }
 </style>
