@@ -44,7 +44,9 @@ export default {
     });
     axios.get('/api/menu_alg').then((response) => {
       console.log(response.data);
-      
+    });
+    axios.get('/api/user_alg').then((response) => {
+      console.log(response.data);
     });
   },
 };
