@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = '#/login';
+      location.href = '#/signup';
     },
     click_confirm() {
       alert('Click Confirm');
