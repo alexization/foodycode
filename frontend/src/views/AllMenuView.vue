@@ -85,7 +85,6 @@ export default {
   overflow-y: auto;
 }
 .MenuList {
-  padding: 0px 0px 10px 0px;
   display: flex;
   flex-direction: column;
   gap: 0px;
@@ -94,13 +93,14 @@ export default {
   position: absolute;
   left: 0px;
   top: 181px;
+  padding-top: 10px;
 }
 .line {
   width: 330px;
   height: 5px;
-  background: linear-gradient(to right, #033931, #afd5cf);
+  background: linear-gradient(to right, #033931, #cedad8);
   position: relative;
-  bottom: -10px;
-  margin-bottom: 20px;
+  bottom: -15px;
+  margin-bottom: 25px;
 }
 </style>

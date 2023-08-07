@@ -56,20 +56,21 @@ export default {
   box-sizing: border-box;
 }
 .AlgMenuCard {
-  background: rgba(215, 215, 215, 0.569);
   width: 390px;
-  height: 160px;
+  height: 165px;
   position: relative;
 }
 .Card-Rectangle {
+  background: rgba(215, 215, 215, 0.6);
   border-style: solid;
-  border-color: #138373;
+  border-color: rgba(215, 215, 215, 0.6);
+  box-shadow: 2px 2px 1px 1px rgba(205, 205, 205, 0.8);
+  border-radius: 10px;
   border-width: 1px;
   width: 390px;
   height: 160px;
   position: absolute;
   left: 0px;
-  top: 0px;
 }
 .Img-Box {
   background: rgba(0, 0, 0, 0.3);
