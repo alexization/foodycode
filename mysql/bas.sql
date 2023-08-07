@@ -63,7 +63,7 @@ VALUES
     ("abalone"),
     ("oyster");
 
-
+drop table userAlgs;
 
 CREATE TABLE userAlgs(
     id int NOT NULL AUTO_INCREMENT,
@@ -78,8 +78,8 @@ CREATE TABLE userAlgs(
 INSERT INTO userAlgs(uid,algid)
     values(1,1),
     (1,3),
-    (1,4),
-    (1,5),
+    (1,2),
+    (1,10),
     (1,7),
     (2,3),
     (2,1),

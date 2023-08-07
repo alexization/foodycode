@@ -10,8 +10,6 @@ var loginRouter = require("./src/routes/login");
 var registerRouter = require("./src/routes/register");
 var mainRouter = require("./src/routes/main");
 var menuRouter = require("./src/routes/menu");
-var menuAlgRouter = require("./src/routes/menu_alg");
-var userAlgRouter = require("./src/routes/user_alg");
 
 var app = express();
 
@@ -31,8 +29,6 @@ app.use("/api/login", loginRouter);
 app.use("/api/signup", registerRouter);
 app.use("/api/main", mainRouter);
 app.use("/api/menu", menuRouter);
-app.use("/api/menu_alg",menuAlgRouter);
-app.use("/api/user_alg",userAlgRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
