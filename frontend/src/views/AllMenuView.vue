@@ -28,14 +28,14 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import RestaurantName from "../components/RestaurantName.vue";
-import MenuCard from "../components/MenuCard.vue";
-import AlgMenuCard from "../components/AlgMenuCard.vue";
+import RestaurantName from '../components/RestaurantName.vue';
+import MenuCard from '../components/MenuCard.vue';
+import AlgMenuCard from '../components/AlgMenuCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "LandingPage",
+  name: 'LandingPage',
   components: {
     RestaurantName,
     MenuCard,
@@ -45,20 +45,21 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      list: "",
-      alg_list: "",
+      list: '',
+      alg_list: '',
     };
   },
 
   async created() {
-    axios.get("/api/menu").then((response) => {
+    axios.get('/api/menu').then((response) => {
       const menu_list = [];
       const alg_menu = [];
       for (let i = 0; i < response.data.length; i++) {
         if (response.data[i].menu_alg.length === 0) {
           menu_list.push(response.data[i]);
         } else {
-          let str = response.data[i].menu_alg.join(", ");
+          response.data[i].menu_alg.sort();
+          let str = response.data[i].menu_alg.join(', ');
           response.data[i].menu_alg = [];
           response.data[i].menu_alg.push(str);
           alg_menu.push(response.data[i]);
@@ -91,16 +92,18 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 0px;
+  left: 5px;
   top: 181px;
   padding-top: 10px;
 }
 .line {
-  width: 330px;
-  height: 5px;
-  background: linear-gradient(to right, #033931, #cedad8);
+  width: 370px;
+  height: 3px;
+  left: 10px;
+  border-radius: 100px;
+  background: #42b2a36b;
   position: relative;
-  bottom: -15px;
+  bottom: -10px;
   margin-bottom: 25px;
 }
 </style>

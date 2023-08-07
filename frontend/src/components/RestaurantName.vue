@@ -44,17 +44,17 @@
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
 
 export default {
   props: {
     restaurantName: {
       type: String,
-      default: "Hot Pot Stew Restaurant",
+      default: 'Hot Pot Stew Restaurant',
     },
     userName: {
       type: String,
-      default: "Fooridge",
+      default: 'Fooridge',
     },
   },
   data() {
@@ -64,20 +64,20 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = "#/";
+      location.href = '#/';
     },
     order_confirm() {
-      alert("Click Order Confirm");
+      alert('Click Order Confirm');
     },
     click_basket() {
-      alert("Click Shopping Basket");
+      alert('Click Shopping Basket');
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 
 .RestaurantName,
 .RestaurantName * {
@@ -107,12 +107,13 @@ export default {
   overflow: visible;
   border: none;
   background-color: #42b2a3;
+  cursor: pointer;
 }
 
 .Rest-name {
   color: #000000;
   text-align: center;
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 101px;
   top: 60px;
@@ -122,7 +123,7 @@ export default {
 .filtered-menu-for {
   color: #000000;
   text-align: center;
-  font: 400 20px "Noto Sans", sans-serif;
+  font: 400 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 45px;
   top: 139px;
@@ -130,7 +131,7 @@ export default {
 .user-name {
   color: #fff;
   text-align: left;
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 220px;
   top: 139px;

@@ -12,12 +12,12 @@
       <div class="alg-name" v-text="algName"></div>
     </div>
     <div class="Menu-Ing" v-text="menuIng"></div>
-    <div class="Price" v-text="menuPrice"></div>
+    <div class="Price" v-text="menuPrice + ' KRW'"></div>
   </div>
 </template>
 
 <script>
-import warning from "../assets/icon/warning.png";
+import warning from '../assets/icon/warning.png';
 export default {
   data() {
     return {
@@ -27,24 +27,24 @@ export default {
   props: {
     menuName: {
       type: String,
-      default: "Soy Sauce Bulgogi",
+      default: 'Soy Sauce Bulgogi',
     },
     menuImg: {
       type: String,
-      default: "soy-sauce-bulgogi",
+      default: 'soy-sauce-bulgogi',
     },
     menuIng: {
       type: String,
       default:
-        "Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion",
+        'Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion',
     },
     menuPrice: {
       type: String,
-      default: "9000",
+      default: '9000',
     },
     algName: {
       type: String,
-      default: "Fork",
+      default: 'Fork',
     },
   },
 };
@@ -56,21 +56,22 @@ export default {
   box-sizing: border-box;
 }
 .AlgMenuCard {
-  width: 390px;
-  height: 165px;
+  width: 380px;
+  height: 170px;
   position: relative;
 }
 .Card-Rectangle {
   background: rgba(215, 215, 215, 0.6);
   border-style: solid;
   border-color: rgba(215, 215, 215, 0.6);
-  box-shadow: 2px 2px 1px 1px rgba(205, 205, 205, 0.8);
   border-radius: 10px;
   border-width: 1px;
-  width: 390px;
+  width: 380px;
+  left: 5px;
   height: 160px;
   position: absolute;
   left: 0px;
+  cursor: pointer;
 }
 .Img-Box {
   background: rgba(0, 0, 0, 0.3);
@@ -78,7 +79,7 @@ export default {
   height: 86px;
   border-radius: 10px;
   position: absolute;
-  left: 252px;
+  left: 247px;
   top: 10px;
 }
 .Img-Box img {
@@ -90,18 +91,18 @@ export default {
 .Menu-name {
   color: rgba(0, 0, 0, 0.3);
   text-align: left;
-  font: 600 15px "Noto Sans", sans-serif;
+  font: 600 15px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 20px;
+  left: 15px;
   top: 20px;
   width: 222px;
   height: 22px;
 }
 .Menu-Ing {
   text-align: left;
-  font: 300 12px "Noto Sans", sans-serif;
+  font: 300 12px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 20px;
+  left: 15px;
   top: 102px;
   width: 350px;
   height: 49px;
@@ -110,9 +111,9 @@ export default {
 .Price {
   color: #6060603e;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 121px;
+  left: 116px;
   top: 52px;
   width: 121px;
   height: 17px;
@@ -121,14 +122,14 @@ export default {
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 55px;
+  top: 75px;
   left: 10px;
 }
 .alg div {
   position: absolute;
-  top: 53px;
+  top: 73px;
   left: 33px;
-  font: 600 15px "Noto Sans", sans-serif;
+  font: 600 15px 'Noto Sans', sans-serif;
   text-align: left;
   color: red;
 }
