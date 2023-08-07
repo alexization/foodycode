@@ -41,8 +41,8 @@ export default {
       console.log(response.data);
       
       //콘솔에 milk로 뜨는게 menu_arg의 index = 1 인 알러지
-      console.log(response.data[0].menu_arg[1]);
-      
+      console.log(response.data[0].menu_alg[1]);
+
       const menu_list = response.data;
       this.list = menu_list;
     });

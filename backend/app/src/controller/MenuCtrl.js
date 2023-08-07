@@ -14,13 +14,13 @@ class MenuCtrl {
 
 
     for (let i = 0; i < arr_menuInfo.length; i++) {
-      arr_menuInfo[i].menu_arg = []; // 기본적으로 빈 배열로 초기화
+      arr_menuInfo[i].menu_alg = []; // 기본적으로 빈 배열로 초기화
     
       for (let j = 0; j < arr_menuAlg.length; j++) {
         if (arr_menuInfo[i].menu_name === arr_menuAlg[j].menu_name) {
-          // arr_menuAlg의 algname이 arr_userAlg에 있는지 확인하고, 있으면 menu_arg에 추가
+          // arr_menuAlg의 algname이 arr_userAlg에 있는지 확인하고, 있으면 menu_alg에 추가
           if (arr_userAlg.some((alg) => alg.algname === arr_menuAlg[j].algname)) {
-            arr_menuInfo[i].menu_arg.push(arr_menuAlg[j].algname);
+            arr_menuInfo[i].menu_alg.push(arr_menuAlg[j].algname);
           }
         }
       }
