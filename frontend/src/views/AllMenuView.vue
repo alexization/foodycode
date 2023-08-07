@@ -51,7 +51,7 @@ export default {
   },
 
   async created() {
-    const rest_name = this.$route.params.rest_name;
+    const rest_name = this.$route.params.rest_name_url_param;
     axios.get(`/api/menu/${rest_name}`).then((response) => {
       const menu_list = [];
       const alg_menu = [];
