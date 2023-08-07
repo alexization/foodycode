@@ -5,12 +5,16 @@ class MenuCtrl {
 
   static async sendMenuInfo(req, res) {
 
+    const rest_name = req.params.rest_name;
+    console.log("-------");
+    console.log(rest_name);
+    console.log("-------");
     //메뉴의 알러지 배열
-    const arr_menuAlg =await AlgStorage.getMenuAlgInfo();
+    const arr_menuAlg =await AlgStorage.getMenuAlgInfo(rest_name);
     //유저의 알러지 배열
     const arr_userAlg =  await AlgStorage.getUsersAlgName("lls");
     //메뉴전체 정보에대한 배열
-    const arr_menuInfo =  await MenuStorage.getMenuInfo();
+    const arr_menuInfo =  await MenuStorage.getMenuInfo(rest_name);
 
 
     for (let i = 0; i < arr_menuInfo.length; i++) {

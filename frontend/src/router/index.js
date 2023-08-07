@@ -32,7 +32,7 @@ const routes = [
     component: () => import('../views/FilteredMenuView.vue'),
   },
   {
-    path: '/allmenu',
+    path: '/allmenu/:rest_name',
     name: 'all-menu',
     component: () => import('../views/AllMenuView.vue'),
   },
