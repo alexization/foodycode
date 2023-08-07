@@ -1,16 +1,13 @@
 <template>
   <div class="container">
-    <router-view class="router-view"/>
+    <router-view class="router-view" />
   </div>
 </template>
 
 <script>
-import a from "./components/MenuCard.vue";
 export default {
   name: 'App',
-  components: {
-    a,
-  }
+  components: {},
 };
 </script>
 
@@ -18,8 +15,8 @@ export default {
 body {
   margin: 0;
 }
-.container {  
-  min-height: calc(100vh - 70px);  
+.container {
+  min-height: calc(100vh - 70px);
   overflow: auto;
   margin: 0px;
   background: rgb(255, 255, 255);

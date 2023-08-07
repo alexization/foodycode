@@ -49,7 +49,7 @@ export default {
 }
 .component {
   width: 350px;
-  height: 303px;
+  height: 260px;
   position: relative;
   cursor: pointer;
 }
@@ -63,7 +63,7 @@ export default {
   height: 188px;
   position: absolute;
   left: 0px;
-  top: 45px;
+  top: 10px;
   border-radius: 9px;
   flex-shrink: 0;
 }
@@ -75,10 +75,10 @@ export default {
 .Img-Box {
   opacity: 0.699999988079071;
   width: 350px;
-  height: 303px;
+  height: 250px;
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 10px;
 }
 .title {
   color: #000000;
@@ -87,7 +87,7 @@ export default {
   letter-spacing: 1.2px;
   position: absolute;
   left: 20px;
-  top: 238px;
+  top: 203px;
   width: 285px;
 }
 .tel {
@@ -97,14 +97,14 @@ export default {
   letter-spacing: 0.3px;
   position: absolute;
   left: 47px;
-  top: 270px;
+  top: 235px;
   width: 285px;
 }
 .tel img {
   position: absolute;
-  left: -30px;
-  top: 2px;
-  width: 20px;
-  height: 20px;
+  left: -25px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
 }
 </style>

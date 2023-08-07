@@ -64,7 +64,7 @@ export default {
   line-height: normal;
   position: absolute;
   left: 145px;
-  top: 49px;
+  top: 46px;
   width: 102px;
   height: 33px;
 }
