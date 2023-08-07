@@ -1,5 +1,5 @@
 <template>
-  <div class="MenuCard">
+  <div class="AlgMenuCard">
     <div class="Card-Rectangle"></div>
 
     <div class="Img-Box">
@@ -7,14 +7,23 @@
     </div>
 
     <div class="Menu-name" v-text="menuName"></div>
-
+    <div class="alg">
+      <img :src="warning" />
+      <div class="alg-name" v-text="algName"></div>
+    </div>
     <div class="Menu-Ing" v-text="menuIng"></div>
     <div class="Price" v-text="menuPrice"></div>
   </div>
 </template>
 
 <script>
+import warning from "../assets/icon/warning.png";
 export default {
+  data() {
+    return {
+      warning,
+    };
+  },
   props: {
     menuName: {
       type: String,
@@ -33,16 +42,21 @@ export default {
       type: String,
       default: "9000",
     },
+    algName: {
+      type: String,
+      default: "Fork",
+    },
   },
 };
 </script>
 
 <style scoped>
-.MenuCard,
-.MenuCard * {
+.AlgMenuCard,
+.AlgMenuCard * {
   box-sizing: border-box;
 }
-.MenuCard {
+.AlgMenuCard {
+  background: rgba(215, 215, 215, 0.569);
   width: 390px;
   height: 160px;
   position: relative;
@@ -70,9 +84,10 @@ export default {
   width: 128px;
   height: 86px;
   border-radius: 10px;
+  opacity: 0.7;
 }
 .Menu-name {
-  color: #000000;
+  color: rgba(0, 0, 0, 0.3);
   text-align: left;
   font: 600 15px "Noto Sans", sans-serif;
   position: absolute;
@@ -89,9 +104,10 @@ export default {
   top: 102px;
   width: 350px;
   height: 49px;
+  color: rgba(0, 0, 0, 0.3);
 }
 .Price {
-  color: #606060;
+  color: #6060603e;
   text-align: right;
   font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
@@ -99,5 +115,20 @@ export default {
   top: 52px;
   width: 121px;
   height: 17px;
+}
+.alg img {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 55px;
+  left: 10px;
+}
+.alg div {
+  position: absolute;
+  top: 53px;
+  left: 33px;
+  font: 600 15px "Noto Sans", sans-serif;
+  text-align: left;
+  color: red;
 }
 </style>

@@ -8,7 +8,7 @@ CREATE TABLE users(
     uid varchar(30) NOT NULL,
     name varchar(30) NOT NULL,
     psword varchar(30) NOT NULL,
-    age varchar(30) NOt NULL,
+    age varchar(30) NOT NULL,
     gen varchar(30) NOT NULL,
     country varchar(30) NOT NULL,
     email varchar(30) NOT NULL,
