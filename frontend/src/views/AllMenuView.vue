@@ -38,15 +38,13 @@ export default {
 
   async created() {
     axios.get('/api/menu').then((response) => {
-      //console.log(response.data);
+      console.log(response.data);
+      
+      //콘솔에 milk로 뜨는게 menu_arg의 index = 1 인 알러지
+      console.log(response.data[0].menu_arg[1]);
+      
       const menu_list = response.data;
       this.list = menu_list;
-    });
-    axios.get('/api/menu_alg').then((response) => {
-      console.log(response.data);
-    });
-    axios.get('/api/user_alg').then((response) => {
-      console.log(response.data);
     });
   },
 };
