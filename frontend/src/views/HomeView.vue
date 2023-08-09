@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header></Header>
+    <SearchBar></SearchBar>
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">
         <RestaurantCard
@@ -16,6 +17,7 @@
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
 import Header from '../components/Header.vue';
+import SearchBar from '../components/SearchBar.vue';
 import RestaurantCard from '../components/RestaurantCard.vue';
 
 import axios from 'axios';
@@ -24,6 +26,7 @@ export default {
   name: 'HomeView',
   components: {
     Header,
+    SearchBar,
     RestaurantCard,
   },
   props: {},
@@ -48,12 +51,12 @@ export default {
 
 .restaurant-list {
   position: absolute;
-  top: 180px;
+  top: 120px;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;  
   width: 100%;
-  height: calc(100vh - 180px);  
+  height: calc(100vh - 120px);  
 }
 
 @media screen and (min-width: 768px) {

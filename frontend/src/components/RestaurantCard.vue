@@ -50,7 +50,7 @@ export default {
   position: relative;
   display: block;
   height: 240px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   padding: 10px 0px;
   background: #ffffff;
   cursor: pointer;
@@ -104,5 +104,9 @@ img {
   top: 3px;
   width: 18px;
   height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  
 }
 </style>
