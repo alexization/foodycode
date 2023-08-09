@@ -1,35 +1,33 @@
 <template>
-  <div class="component">
-    <div class="Img-Pos">
-      <div class="image">
-        <img :src="require(`@/assets/restaurant/${restaurantName}.png`)" />
-      </div>
-      <div class="Img-Box"></div>
+  <div class="restuarant">
+    <div class="image-box">
+      <img :src="require(`@/assets/restaurant/${restaurantName}.png`)" />
     </div>
-
-    <div class="title" v-text="title"></div>
-    <div class="tel" v-text="telNum"></div>
-    <div class="tel">
-      <img :src="call" />
+    <div class="info-box">
+      <div class="title" v-text="title"></div>
+      <div class="tel" v-text="telNum"></div>
+      <div class="tel">
+        <img :src="call" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import call from '@/assets/icon/call.png';
+import call from "@/assets/icon/call.png";
 export default {
   props: {
     title: {
       type: String,
-      default: 'Untitled Restaurant',
+      default: "Untitled Restaurant",
     },
     restaurantName: {
       type: String,
-      default: 'Hot Pot Stew Restaurant',
+      default: "Hot Pot Stew Restaurant",
     },
     telNum: {
       type: String,
-      default: '033-742-5878',
+      default: "033-742-5878",
     },
   },
 
@@ -42,64 +40,64 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
-.component,
-.component * {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
+
+.restuarant * {
   box-sizing: border-box;
 }
-.component {
-  width: 350px;
-  height: 260px;
+
+.restuarant {
   position: relative;
+  display: block;
+  height: 240px;
+  margin-bottom: 10px;
+  padding: 10px 0px;
+  background: #ffffff;
   cursor: pointer;
 }
-.Img-Pos {
-  position: absolute;
-  inset: 0;
+
+.image-box {
+  width: 360px;
+  height: 180px; 
+  margin: auto; 
 }
-.image {
-  background: rgba(0, 0, 0, 0.3);
-  width: 350px;
-  height: 188px;
-  position: absolute;
-  left: 0px;
-  top: 10px;
-  border-radius: 9px;
-  flex-shrink: 0;
+
+img {
+  width: 360px;
+  height: 180px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
 }
-.image img {
-  width: 350px;
-  height: 188px;
-  border-radius: 9px;
+
+.info-box {
+  position: relative;
+  width: 360px;
+  height: 60px;
+  margin: auto;  
 }
-.Img-Box {
-  opacity: 0.699999988079071;
-  width: 350px;
-  height: 250px;
-  position: absolute;
-  left: 0px;
-  top: 10px;
-}
+
 .title {
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 360px;
   color: #000000;
-  text-align: left;
-  font: 500 20px 'Noto Sans', sans-serif;
   letter-spacing: 1.2px;
-  position: absolute;
-  left: 20px;
-  top: 203px;
-  width: 285px;
-}
-.tel {
-  color: #969595;
+  font: 500 20px "Noto Sans", sans-serif;
   text-align: left;
-  font: 400 15px 'Noto Sans', sans-serif;
-  letter-spacing: 0.3px;
-  position: absolute;
-  left: 47px;
-  top: 235px;
-  width: 285px;
 }
+
+.tel {
+  position: absolute;
+  left: 40px;
+  top: 35px;
+  width: 360px;
+  color: #969595;
+  letter-spacing: 0.3px;
+  font: 400 15px "Noto Sans", sans-serif;
+  text-align: left;
+}
+
 .tel img {
   position: absolute;
   left: -25px;

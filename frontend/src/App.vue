@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <router-view class="router-view" />
-  </div>
+  <main>
+    <div class="container">
+      <router-view/>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -15,21 +17,14 @@ export default {
 body {
   margin: 0;
 }
-.container {
-  min-height: calc(100vh - 70px);
-  overflow: auto;
-  margin: 0px;
-  background: rgb(255, 255, 255);
-  background-position: center;
-  position: relative;
-}
 
-.router-view {
-  max-width: 824px;
-  min-height: calc(100vh - 73px);
-  box-sizing: border-box;
-  margin: auto;
-  padding: 0px;
+.container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #ddd;
 }
 </style>

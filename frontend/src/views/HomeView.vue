@@ -1,15 +1,15 @@
 <template>
-  <div class="landing-page">
-    <div class="frame-19">
-      <template v-for="item in list" :key="item">
+  <div>
+    <Header></Header>
+    <div class="restaurant-list">
+      <div v-for="item in list" :key="item">
         <RestaurantCard
           :restaurantName="item.img_url"
           :title="item.rest_name"
           :telNum="item.tel"
         ></RestaurantCard>
-      </template>
+      </div>
     </div>
-    <Header></Header>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import RestaurantCard from '../components/RestaurantCard.vue';
 import axios from 'axios';
 
 export default {
-  name: 'LandingPage',
+  name: 'HomeView',
   components: {
     Header,
     RestaurantCard,
@@ -45,30 +45,22 @@ export default {
 </script>
 
 <style scoped>
-.landing-page * {
-  box-sizing: border-box;
-}
-.landing-page {
-  background: #ffffff;
-  width: 390px;
-  height: 844px;
-  position: sticky;
+
+.restaurant-list {
+  position: absolute;
+  top: 180px;
   overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;  
+  width: 100%;
+  height: calc(100vh - 180px);  
+}
+
+@media screen and (min-width: 768px) {
+  
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-.frame-19 {
-  padding: 10px 0px 10px 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  left: 20px;
-  top: 179px;
 }
 </style>

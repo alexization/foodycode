@@ -1,6 +1,6 @@
 <template>
-  <div class="Header">
-    <div class="background-box">
+  <div class="header">
+    <div class="background-box">    
       <div class="foody-logo">FOODY</div>
 
       <button class="navigation-button">
@@ -14,8 +14,8 @@
       <div class="search">
         <img :src="search_icon" width="25" />
         <input type="text" placeholder="식당 이름 검색하기" />
-      </div>
-    </div>
+      </div> 
+    </div>   
   </div>
 </template>
 
@@ -38,21 +38,25 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
 
-.Header {
-  height: 194px;
-  position: sticky;
-  right: 0px;
-  left: 0px;
-  top: 0px;
+.header * {
+  box-sizing: border-box;
 }
-.background-box {
+
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 175px;
+}
+.background-box {  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 175px;  
   background: #ffffff;
-  width: 390px;
-  height: 194px;
-  position: sticky;
-  left: 0px;
-  top: 0px;
 }
+
 .foody-logo {
   color: #1c9181;
   text-align: left;
