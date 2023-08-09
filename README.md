@@ -43,6 +43,7 @@ Node.js is worth choosing for startups because it provides fast development spee
 - [x] 회원가입 화면 만들기
 - [x] 메인메뉴 화면 만들기
 - [x] 식당메뉴 화면 만들기
+- [x] 반응형 화면 만들기
 - [x] 로그인 로직 만들기
 - [x] 회원가입 로직 만들기
 - [x] Vue.js 적용
