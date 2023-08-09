@@ -5,6 +5,8 @@ import router from './router';
 import store from './store';
 import axios from 'axios';
 
+import './assets/main.css';
+
 // createApp(App).use(router).mount('#app')
 // [앱 생성 실시]
 const app = createApp(App);

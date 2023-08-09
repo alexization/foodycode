@@ -1,29 +1,34 @@
 <template>
-  <div class="landing-page">
-    <div class="frame-19">
-      <template v-for="item in list" :key="item">
+  <div>
+    <Header></Header>
+    <div class="search-box">
+      <SearchBar></SearchBar>
+    </div>    
+    <div class="restaurant-list">
+      <div v-for="item in list" :key="item">
         <RestaurantCard
           :restaurantName="item.img_url"
           :title="item.rest_name"
           :telNum="item.tel"
         ></RestaurantCard>
-      </template>
+      </div>
     </div>
-    <Header></Header>
   </div>
 </template>
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
 import Header from '../components/Header.vue';
+import SearchBar from '../components/SearchBar.vue';
 import RestaurantCard from '../components/RestaurantCard.vue';
 
 import axios from 'axios';
 
 export default {
-  name: 'LandingPage',
+  name: 'HomeView',
   components: {
     Header,
+    SearchBar,
     RestaurantCard,
   },
   props: {},
@@ -45,30 +50,29 @@ export default {
 </script>
 
 <style scoped>
-.landing-page * {
-  box-sizing: border-box;
-}
-.landing-page {
+.search-box {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 70px;
   background: #ffffff;
-  width: 390px;
-  height: 844px;
-  position: sticky;
+}
+
+.restaurant-list {
+  position: absolute;
+  top: 130px;
   overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;  
+  width: 100%;
+  height: calc(100vh - 130px);  
+}
+
+@media screen and (min-width: 768px) {
+  
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-.frame-19 {
-  padding: 10px 0px 10px 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  left: 20px;
-  top: 179px;
 }
 </style>
