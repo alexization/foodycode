@@ -51,7 +51,10 @@ export default {
   },
 
   async created() {
+    //URL에서 전달받는 parmeter = rest_name_url_param
+    //요청할 API경로에 해당 값을 붙여 get요청
     const rest_name = this.$route.params.rest_name_url_param;
+
     axios.get(`/api/menu/${rest_name}`).then((response) => {
       const menu_list = [];
       const alg_menu = [];
