@@ -1,7 +1,9 @@
 <template>
   <div>
     <Header></Header>
-    <SearchBar></SearchBar>
+    <div class="search-box">
+      <SearchBar></SearchBar>
+    </div>    
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">
         <RestaurantCard
@@ -48,15 +50,22 @@ export default {
 </script>
 
 <style scoped>
+.search-box {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  top: 70px;
+  background: #ffffff;
+}
 
 .restaurant-list {
   position: absolute;
-  top: 120px;
+  top: 130px;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;  
   width: 100%;
-  height: calc(100vh - 120px);  
+  height: calc(100vh - 130px);  
 }
 
 @media screen and (min-width: 768px) {

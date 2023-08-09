@@ -44,7 +44,7 @@ export default {
   display: inline-flex;
   justify-content: flex-start;  
   width: 100%;
-  height: 80px;
+  height: 70px;
   background: #ffffff;
 }
 
