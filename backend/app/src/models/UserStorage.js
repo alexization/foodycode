@@ -29,9 +29,21 @@ class UserStorage{
     static async save(userInfo){
         return new Promise((resolve,reject) => {
             // const query = "INSERT INTO users(uid,name,psword) VALUES(?,?,?);";
-            //db.query(query,[userInfo.uid,userInfo.name,userInfo.psword],
-            const query = "INSERT INTO users(uid,psword,name,age,gen,country,email) VALUES(?,?,'3','3','3','3','3');";
-            
+            // db.query(query,[userInfo.uid,userInfo.name,userInfo.psword],
+            const info_query = "INSERT INTO users(uid,psword,name,age,gen,country,email) VALUES(?,?,'3','3','3','3','3');";
+        
+
+            let insertValues = '';
+            // 유저 알러지 정보가 하나라도 선택되어 있을때만 쿼리를 생성
+            if (userInfo.arr_algid.length > 0) {
+                insertValues = arr_algid.map(algid => `(${algid}, (SELECT id FROM users WHERE uid = '${userInfo.uid}'))`).join(', ');
+            }
+
+            // insertValues가 생성될때만 alg_Query를 생성
+            const alg_Query = insertValues ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};` : '';
+
+            const query = `${info_query}\n${alg_Query}`;
+
             db.query(query,[userInfo.uid,userInfo.password],(err)=>{
                 if(err) throw reject(`${err}`);
                 resolve({success:true});
@@ -40,22 +52,6 @@ class UserStorage{
         
     }
 
-    
-  static saveUserAlg(user_uid , arr_algid){
-    return new Promise((resolve,reject)=>{
-        const arr = arr_algid;
-        const uid = user_uid;
-    
-        const insertValues = arr.map(algid => `(${algid}, (SELECT id FROM users WHERE uid = '${uid}'))`).join(', ');
-        
-        const query = `INSERT INTO useralgs (algid, uid) VALUES ${insertValues};`;
-            db.query(query,[],(err,data)=>{
-                if (err) throw reject(`${err}`);
-                resolve({success:true});
-      });
-    });
- 
-  }
 
 
 
