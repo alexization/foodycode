@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import line from '@/assets/icon/Line.png';
+import line from "@/assets/icon/Line.png";
 
 export default {
   components: {},
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 .Step,
 .Step * {
   box-sizing: border-box;
@@ -66,7 +66,7 @@ export default {
   top: 30px;
   color: #ffffff;
   text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 600 15px "Noto Sans", sans-serif;
   padding-top: 5px;
 }
 
@@ -86,7 +86,7 @@ export default {
   left: 155px;
   color: #000000;
   text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 600 15px "Noto Sans", sans-serif;
   padding-top: 5px;
 }
 
@@ -106,7 +106,7 @@ export default {
   left: 265px;
   color: #000000;
   text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 600 15px "Noto Sans", sans-serif;
   padding-top: 5px;
 }
 

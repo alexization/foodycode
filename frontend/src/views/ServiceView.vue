@@ -126,18 +126,25 @@
     <button class="decline" @click="click_decline">Decline</button>
     <button class="accept" @click="click_accpet">Accept</button>
   </div>
+  <SignUpHeader></SignUpHeader>
+  <StepCard></StepCard>
 </template>
 
 <script>
+import SignUpHeader from "../components/SignUpHeader.vue";
+import StepCard from "../components/StepCard.vue";
 export default {
-  components: {},
+  components: {
+    SignUpHeader,
+    StepCard,
+  },
   props: {},
   data() {
     return {};
   },
   methods: {
     click_accpet() {
-      this.$emit("show_register");
+      location.href = "#/signup2";
     },
     click_decline() {
       location.href = "#/login";

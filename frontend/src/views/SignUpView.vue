@@ -1,31 +1,36 @@
 <template>
   <SignUpHead></SignUpHead>
   <StepCard></StepCard>
-  <ServiceCard v-show="service"></ServiceCard>
-  <RegisterInfo v-show="register"></RegisterInfo>
+  <RegisterInfo v-show="register" @change_page="allergy_page"></RegisterInfo>
+  <Allergy v-show="allergy"></Allergy>
 </template>
 
 <script>
-import SignUpHead from '../components/SignUpHeader.vue';
-import StepCard from '../components/StepCard.vue';
-import ServiceCard from '../components/ServiceCard.vue';
-import RegisterInfo from '../components/RegisterInfo.vue';
+import SignUpHead from "../components/SignUpHeader.vue";
+import StepCard from "../components/StepCard.vue";
+import RegisterInfo from "../components/RegisterInfo.vue";
+import Allergy from "../components/Allergy.vue";
 
 export default {
   components: {
     SignUpHead,
     StepCard,
-    ServiceCard,
     RegisterInfo,
+    Allergy,
   },
   props: {},
   data() {
     return {
-      service: true,
-      register: false,
+      register: true,
+      allergy: false,
     };
   },
-  methods: {},
+  methods: {
+    allergy_page() {
+      this.register = !this.register;
+      this.allergy = !this.allergy;
+    },
+  },
 };
 </script>
 
