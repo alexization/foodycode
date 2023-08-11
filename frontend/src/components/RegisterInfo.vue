@@ -1,29 +1,5 @@
 <template>
   <div class="sign-up-page-register">
-    <button class="arrow-back">
-      <img :src="arrow_back" width="25" @click="click_back" />
-    </button>
-
-    <div class="group-121">
-      <div class="step-1">Step 1</div>
-    </div>
-
-    <div class="group-122">
-      <div class="step-2">Step 2</div>
-    </div>
-
-    <div class="group-123">
-      <div class="step-3">Step 3</div>
-    </div>
-
-    <div class="line-left">
-      <img :src="line" />
-    </div>
-
-    <div class="line-right">
-      <img :src="line" />
-    </div>
-
     <div class="uid">User ID</div>
     <div class="uid-input">
       <input type="text" id="uid" name="uid" maxlength="16" />
@@ -66,17 +42,15 @@
       </div>
     </div>
 
-    <button class="Register" @click="click_register">Register Info</button>
-
-    <div class="foody-logo">FOODY</div>
+    <button class="Register" @click="click_register">Next</button>
   </div>
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
 
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
@@ -86,49 +60,49 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = '#/signup';
+      location.href = "#/signup";
     },
     click_confirm() {
-      alert('Click Confirm');
+      alert("Click Confirm");
     },
     click_male() {
-      document.getElementById('male').style.backgroundColor = '#1c9181';
-      document.getElementById('female').style.backgroundColor = 'white';
+      document.getElementById("male").style.backgroundColor = "#1c9181";
+      document.getElementById("female").style.backgroundColor = "white";
     },
     click_female() {
-      document.getElementById('female').style.backgroundColor = '#1c9181';
-      document.getElementById('male').style.backgroundColor = 'white';
+      document.getElementById("female").style.backgroundColor = "#1c9181";
+      document.getElementById("male").style.backgroundColor = "white";
     },
     async click_register() {
-      const uid = document.getElementById('uid');
-      console.log(uid.value);
-      const password = document.getElementById('pw');
-      console.log(pw.value);
-      let res = await axios({
-        method: 'POST',
-        url: 'api/signup',
-        data: {
-          uid: uid.value,
-          password: password.value,
-        },
-      }).then((res) => {
-        console.log(res.data);
-
-        if (res.data.success) {
-          alert('회원가입 완료! 로그인 페이지로 이동합니다.');
-          location.href = '#/login';
-        } else {
-          alert(res.data);
-        }
-      });
+      // const uid = document.getElementById("uid");
+      // console.log(uid.value);
+      // const password = document.getElementById("pw");
+      // console.log(pw.value);
+      // let res = await axios({
+      //   method: "POST",
+      //   url: "api/signup",
+      //   data: {
+      //     uid: uid.value,
+      //     password: password.value,
+      //   },
+      // }).then((res) => {
+      //   console.log(res.data);
+      //   if (res.data.success) {
+      //     alert("회원가입 완료! 로그인 페이지로 이동합니다.");
+      //     location.href = "#/login";
+      //   } else {
+      //     alert(res.data);
+      //   }
+      // });
+      this.$emit("change_page");
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
 .sign-up-page-register,
 .sign-up-page-register * {
@@ -137,115 +111,36 @@ export default {
 .sign-up-page-register {
   background: #ffffff;
   width: 390px;
-  height: 844px;
-  position: sticky;
+  height: 704px;
+  top: 140px;
+  position: relative;
   overflow: hidden;
 }
-.arrow-back {
-  position: absolute;
-  left: 30px;
-  top: 64px;
-  width: 25px;
-  height: 25px;
-  overflow: visible;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-}
-.group-121 {
-  position: sticky;
-  inset: 0;
-}
-.step-1 {
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 45px;
-  top: 139px;
-  color: #000000;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
 
-.group-122 {
-  position: sticky;
-  inset: 0;
-}
-.step-2 {
-  background: #1c9181;
-  border-radius: 24px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 155px;
-  top: 139px;
-  color: #ffffff;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
-
-.group-123 {
-  position: sticky;
-  inset: 0;
-}
-.step-3 {
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 265px;
-  top: 139px;
-  color: #000000;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
-
-.line-left {
-  position: absolute;
-  left: 125px;
-  top: 142px;
-  overflow: visible;
-}
-.line-right {
-  position: absolute;
-  left: 235px;
-  top: 142px;
-  overflow: visible;
-}
 .uid {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 219px;
+  top: 50px;
 }
 
-input[type='text'] {
+input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 257px;
   height: 30px;
 }
-input[type][id='user_name'] {
+input[type][id="user_name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 330px;
   height: 30px;
 }
-input[type][id='country'] {
+input[type][id="country"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -253,14 +148,14 @@ input[type][id='country'] {
   height: 30px;
 }
 
-input[type='password'] {
+input[type="password"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 330px;
   height: 30px;
 }
-input[type='number'] {
+input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -270,7 +165,7 @@ input[type='number'] {
 .uid-input {
   position: absolute;
   left: 30px;
-  top: 252px;
+  top: 82px;
 }
 .confirm {
   background: #ffffff;
@@ -281,9 +176,9 @@ input[type='number'] {
   height: 30px;
   position: absolute;
   left: 285px;
-  top: 252px;
+  top: 82px;
   text-align: center;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -291,49 +186,49 @@ input[type='number'] {
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 322px;
+  top: 152px;
 }
 .password-input {
   position: absolute;
   left: 30px;
-  top: 355px;
+  top: 185px;
 }
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 400px;
+  top: 230px;
 }
 .confirm-input {
   position: absolute;
   left: 30px;
-  top: 433px;
+  top: 263px;
 }
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 503px;
+  top: 333px;
 }
 .name-input {
   position: absolute;
   left: 30px;
-  top: 536px;
+  top: 366px;
 }
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 659px;
+  top: 489px;
 }
 .Female {
   color: black;
@@ -345,9 +240,9 @@ input[type='number'] {
   height: 30px;
   position: absolute;
   left: 195px;
-  top: 692px;
+  top: 522px;
   text-align: center;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -361,27 +256,27 @@ input[type='number'] {
   height: 30px;
   position: absolute;
   left: 30px;
-  top: 692px;
+  top: 522px;
   text-align: center;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   cursor: pointer;
   transition: 0.5s;
 }
 .Age {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 30px;
-  top: 581px;
+  top: 411px;
 }
 .Country {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 150px;
-  top: 581px;
+  top: 411px;
 }
 .age-country {
   position: sticky;
@@ -390,13 +285,13 @@ input[type='number'] {
 .age-input {
   position: absolute;
   left: 30px;
-  top: 614px;
+  top: 444px;
 }
 
 .country-input {
   position: absolute;
   left: 150px;
-  top: 614px;
+  top: 444px;
 }
 
 .Register {
@@ -405,10 +300,10 @@ input[type='number'] {
   height: 60px;
   position: absolute;
   left: 0px;
-  top: 784px;
+  top: 644px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px 'Noto Sans', sans-serif;
+  font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
@@ -416,7 +311,7 @@ input[type='number'] {
 .foody-logo {
   color: #1c9181;
   text-align: left;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;

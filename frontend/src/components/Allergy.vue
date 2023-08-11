@@ -4,43 +4,43 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="abalone" />
+            <input type="checkbox" v-model="allergy" value="19" />
             <span>Abalone</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="chicken" />
+            <input type="checkbox" v-model="allergy" value="15" />
             <span>Chicken</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="mackerel" />
+            <input type="checkbox" v-model="allergy" value="7" />
             <span>Mackerel</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="oyster" />
+            <input type="checkbox" v-model="allergy" value="20" />
             <span>Oyster</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="pork" />
+            <input type="checkbox" v-model="allergy" value="10" />
             <span>Pork</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="soy" />
+            <input type="checkbox" v-model="allergy" value="5" />
             <span>Soy</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="walnut" />
+            <input type="checkbox" v-model="allergy" value="14" />
             <span>Walnut</span>
           </label>
         </div>
@@ -56,43 +56,43 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="beef" />
+            <input type="checkbox" v-model="allergy" value="16" />
             <span>Beef</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="crab" />
+            <input type="checkbox" v-model="allergy" value="8" />
             <span>Crab</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="milk" />
+            <input type="checkbox" v-model="allergy" value="2" />
             <span>Milk</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="peach" />
+            <input type="checkbox" v-model="allergy" value="11" />
             <span>Peach</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="shellfish" />
+            <input type="checkbox" v-model="allergy" value="17" />
             <span>Shellfish</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="sulfites" />
+            <input type="checkbox" v-model="allergy" value="13" />
             <span>Sulfites</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="wheat" />
+            <input type="checkbox" v-model="allergy" value="6" />
             <span>Wheat</span>
           </label>
         </div>
@@ -109,37 +109,37 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="buckwheat" />
+            <input type="checkbox" v-model="allergy" value="3" />
             <span>Buckwheat</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="egg" />
+            <input type="checkbox" v-model="allergy" value="1" />
             <span>Egg</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="mussel" />
+            <input type="checkbox" v-model="allergy" value="18" />
             <span>Mussel</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="peanut" />
+            <input type="checkbox" v-model="allergy" value="4" />
             <span>Peanut</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="shrimp" />
+            <input type="checkbox" v-model="allergy" value="9" />
             <span>Shrimp</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="tomato" />
+            <input type="checkbox" v-model="allergy" value="12" />
             <span>Tomato</span>
           </label>
         </div>
@@ -160,49 +160,19 @@
 
     <button class="next-button" @click="click_next">Next</button>
 
-    <div class="component-12">
-      <div class="rectangle-269"></div>
-      <div class="foody-logo">FOODY</div>
+    <div class="please-select-the-food-you-are-allergic-to-from-the-following">
+      Please select the food you are allergic to from the following.
+    </div>
 
-      <button class="arrow-back">
-        <img :src="arrow_back" width="25" @click="click_back" />
-      </button>
-      <div
-        class="please-select-the-food-you-are-allergic-to-from-the-following"
-      >
-        Please select the food you are allergic to from the following.
-      </div>
-
-      <div class="excludes-menus-containing-the-selected-food">
-        Excludes menus containing the selected food
-      </div>
-
-      <div class="group-121">
-        <div class="step-1">Step 1</div>
-      </div>
-
-      <div class="group-122">
-        <div class="step-2">Step 2</div>
-      </div>
-
-      <div class="group-123">
-        <div class="step-3">Step 3</div>
-      </div>
-
-      <div class="line-left">
-        <img :src="line" />
-      </div>
-
-      <div class="line-right">
-        <img :src="line" />
-      </div>
+    <div class="excludes-menus-containing-the-selected-food">
+      Excludes menus containing the selected food
     </div>
   </div>
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
 
 export default {
   data() {
@@ -214,7 +184,7 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = '#/signup';
+      location.href = "#/signup";
     },
     click_next() {
       console.log(this.allergy);
@@ -225,9 +195,9 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 
 .selecting-page,
 .selecting-page * {
@@ -236,7 +206,8 @@ export default {
 .selecting-page {
   background: #ffffff;
   width: 390px;
-  height: 844px;
+  height: 704px;
+  top: 140px;
   position: relative;
   overflow-y: auto;
 }
@@ -248,7 +219,7 @@ export default {
   justify-content: flex-start;
   position: absolute;
   left: 30px;
-  top: 336px;
+  top: 140px;
 }
 .button-frame-second {
   display: inline-flex;
@@ -258,7 +229,7 @@ export default {
   justify-content: flex-start;
   position: absolute;
   left: 145px;
-  top: 336px;
+  top: 140px;
 }
 .button-frame-third {
   display: inline-flex;
@@ -268,157 +239,43 @@ export default {
   justify-content: flex-start;
   position: absolute;
   left: 260px;
-  top: 336px;
+  top: 140px;
 }
 
-.arrow-back {
-  position: absolute;
-  left: 30px;
-  top: 64px;
-  width: 25px;
-  height: 25px;
-  overflow: visible;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-}
 .next-button {
   background: #1c9181;
   width: 390px;
   height: 50px;
   position: absolute;
   left: 0px;
-  top: 794px;
+  top: 654px;
   color: #ffffff;
   text-align: center;
-  font: 400 30px 'Jua', sans-serif;
+  font: 400 30px "Jua", sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
 }
 
-.component-12 {
-  width: 390px;
-  height: 252px;
-  position: sticky;
-  left: 0px;
-  top: 0px;
-}
-.rectangle-269 {
-  background: #ffffff;
-  width: 390px;
-  height: 333px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
 .please-select-the-food-you-are-allergic-to-from-the-following {
   color: #000000;
   text-align: center;
-  font: 500 20px 'Noto Sans', sans-serif;
+  font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 15.77px;
-  top: 221.65px;
+  top: 20px;
   width: 358.46px;
   height: 56.7px;
 }
 .excludes-menus-containing-the-selected-food {
   color: #000000;
   text-align: center;
-  font: 300 13px 'Noto Sans', sans-serif;
+  font: 300 13px "Noto Sans", sans-serif;
   position: absolute;
   left: 35.74px;
-  top: 283.6px;
+  top: 80px;
   width: 317.47px;
   height: 18.9px;
-}
-.group-121 {
-  position: sticky;
-  inset: 0;
-}
-.step-1 {
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 45px;
-  top: 139px;
-  color: #000000;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
-
-.group-122 {
-  position: sticky;
-  inset: 0;
-}
-.step-2 {
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 155px;
-  top: 139px;
-  color: #000000;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
-
-.group-123 {
-  position: sticky;
-  inset: 0;
-}
-.step-3 {
-  background: #1c9181;
-  border-radius: 24px;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 2px;
-  width: 80px;
-  height: 35px;
-  position: absolute;
-  left: 265px;
-  top: 139px;
-  color: #ffffff;
-  text-align: center;
-  font: 600 15px 'Noto Sans', sans-serif;
-  padding-top: 5px;
-}
-
-.line-left {
-  position: absolute;
-  left: 125px;
-  top: 142px;
-  overflow: visible;
-}
-.line-right {
-  position: absolute;
-  left: 235px;
-  top: 142px;
-  overflow: visible;
-}
-.foody-logo {
-  color: #1c9181;
-  text-align: left;
-  font-family: 'Dangrek', cursive;
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 2.04px;
-  line-height: normal;
-  position: absolute;
-  left: 145px;
-  top: 49px;
-  width: 102px;
-  height: 33px;
 }
 .frame-button {
   max-width: 330px;
@@ -432,7 +289,7 @@ export default {
 .frame-button div label {
   cursor: pointer;
 }
-.frame-button div label input[type='checkbox'] {
+.frame-button div label input[type="checkbox"] {
   display: none;
 }
 .frame-button div label span {
@@ -444,20 +301,20 @@ export default {
   height: 42px;
   color: #000000;
   text-align: center;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   padding-top: 9px;
   transition: 0.5s;
   overflow: hidden;
 }
 .frame-button div label span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.frame-button div label input[type='checkbox']:checked ~ span {
+.frame-button div label input[type="checkbox"]:checked ~ span {
   background: #42b2a3;
 }
 </style>
