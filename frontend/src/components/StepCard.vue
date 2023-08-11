@@ -1,15 +1,15 @@
 <template>
   <div class="Step">
     <div class="group-121">
-      <div class="step-1">Step 1</div>
+      <div class="step-1" ref="step1">Step 1</div>
     </div>
 
     <div class="group-122">
-      <div class="step-2">Step 2</div>
+      <div class="step-2" ref="step2">Step 2</div>
     </div>
 
     <div class="group-123">
-      <div class="step-3">Step 3</div>
+      <div class="step-3" ref="step3">Step 3</div>
     </div>
 
     <div class="line-left">
@@ -27,13 +27,35 @@ import line from "@/assets/icon/Line.png";
 
 export default {
   components: {},
-  props: {},
+  props: ["now_page"],
   data() {
     return {
       line,
     };
   },
   methods: {},
+  mounted() {
+    const step_1 = this.$refs.step1.style;
+    const step_2 = this.$refs.step2.style;
+
+    if (this.now_page === true) {
+      step_1.background = "white";
+      step_1.color = "black";
+      step_2.background = "#1c9181";
+      step_2.color = "white";
+    }
+  },
+  updated() {
+    const step_2 = this.$refs.step2.style;
+    const step_3 = this.$refs.step3.style;
+
+    if (this.now_page === false) {
+      step_2.background = "white";
+      step_2.color = "black";
+      step_3.background = "#1c9181";
+      step_3.color = "white";
+    }
+  },
 };
 </script>
 
@@ -58,7 +80,10 @@ export default {
 }
 .step-1 {
   background: #1c9181;
+  border-color: #1c9181;
+  border-style: solid;
   border-radius: 24px;
+  border-width: 2px;
   width: 80px;
   height: 35px;
   position: absolute;

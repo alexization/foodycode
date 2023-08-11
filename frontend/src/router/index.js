@@ -34,14 +34,6 @@ const routes = [
     },
   },
   {
-    path: "/signup3",
-    name: "sign-up3",
-    component: () => import("../views/SignUp3View.vue"),
-    meta: {
-      title: "Sign Up Step3 FOODY",
-    },
-  },
-  {
     path: "/filteredmenu",
     name: "filtered-menu",
     component: () => import("../views/FilteredMenuView.vue"),

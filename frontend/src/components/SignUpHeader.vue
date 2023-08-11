@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
 
 export default {
   components: {},
-  props: {},
+  props: ["now_page"],
   data() {
     return {
       line,
@@ -24,16 +24,23 @@ export default {
     };
   },
   methods: {
-    // mounted 에서 location.href를 통해서 뒤로가기 눌렀을 때 url 가져와야 됨
     click_back() {
-      location.href = '#/login';
+      const url = window.location.href.split("/");
+      const url_href = url[url.length - 1];
+      if (url_href === "signup") {
+        location.href = "#/login";
+      } else if (this.now_page === true) {
+        location.href = "#/signup";
+      } else {
+        this.$router.go(this.$router.currentRoute);
+      }
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 .SignUp-Head,
 .SignUp-Head * {
   box-sizing: border-box;
@@ -57,7 +64,7 @@ export default {
   margin-left: -50px;
   width: 100px;
   height: 40px;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;

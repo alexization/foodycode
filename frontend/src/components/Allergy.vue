@@ -4,43 +4,43 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="abalone" />
+            <input type="checkbox" v-model="allergy" value="19" />
             <span>Abalone</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="chicken" />
+            <input type="checkbox" v-model="allergy" value="15" />
             <span>Chicken</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="mackerel" />
+            <input type="checkbox" v-model="allergy" value="7" />
             <span>Mackerel</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="oyster" />
+            <input type="checkbox" v-model="allergy" value="20" />
             <span>Oyster</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="pork" />
+            <input type="checkbox" v-model="allergy" value="10" />
             <span>Pork</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="soy" />
+            <input type="checkbox" v-model="allergy" value="5" />
             <span>Soy</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="walnut" />
+            <input type="checkbox" v-model="allergy" value="14" />
             <span>Walnut</span>
           </label>
         </div>
@@ -56,43 +56,43 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="beef" />
+            <input type="checkbox" v-model="allergy" value="16" />
             <span>Beef</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="crab" />
+            <input type="checkbox" v-model="allergy" value="8" />
             <span>Crab</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="milk" />
+            <input type="checkbox" v-model="allergy" value="2" />
             <span>Milk</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="peach" />
+            <input type="checkbox" v-model="allergy" value="11" />
             <span>Peach</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="shellfish" />
+            <input type="checkbox" v-model="allergy" value="17" />
             <span>Shellfish</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="sulfites" />
+            <input type="checkbox" v-model="allergy" value="13" />
             <span>Sulfites</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="wheat" />
+            <input type="checkbox" v-model="allergy" value="6" />
             <span>Wheat</span>
           </label>
         </div>
@@ -109,37 +109,37 @@
       <div class="frame-button">
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="buckwheat" />
+            <input type="checkbox" v-model="allergy" value="3" />
             <span>Buckwheat</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="egg" />
+            <input type="checkbox" v-model="allergy" value="1" />
             <span>Egg</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="mussel" />
+            <input type="checkbox" v-model="allergy" value="18" />
             <span>Mussel</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="peanut" />
+            <input type="checkbox" v-model="allergy" value="4" />
             <span>Peanut</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="shrimp" />
+            <input type="checkbox" v-model="allergy" value="9" />
             <span>Shrimp</span>
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" v-model="allergy" value="tomato" />
+            <input type="checkbox" v-model="allergy" value="12" />
             <span>Tomato</span>
           </label>
         </div>

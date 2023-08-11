@@ -1,6 +1,6 @@
 <template>
-  <SignUpHead></SignUpHead>
-  <StepCard></StepCard>
+  <SignUpHead v-bind:now_page="register"></SignUpHead>
+  <StepCard v-bind:now_page="register"></StepCard>
   <RegisterInfo v-show="register" @change_page="allergy_page"></RegisterInfo>
   <Allergy v-show="allergy"></Allergy>
 </template>
