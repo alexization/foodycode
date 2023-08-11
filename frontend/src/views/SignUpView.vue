@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import SignUpHead from "../components/SignUpHeader.vue";
-import StepCard from "../components/StepCard.vue";
-import RegisterInfo from "../components/RegisterInfo.vue";
-import Allergy from "../components/Allergy.vue";
+import SignUpHead from '../components/SignUpHeader.vue';
+import StepCard from '../components/StepCard.vue';
+import RegisterInfo from '../components/RegisterInfo.vue';
+import Allergy from '../components/Allergy.vue';
 
 export default {
   components: {

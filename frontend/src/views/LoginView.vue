@@ -135,12 +135,6 @@ export default {
   left: 40px;
   top: 590px;
 }
-.group-120 {
-  position: absolute;
-  left: 40px;
-  top: 659px;
-  overflow: visible;
-}
 
 .login2 {
   color: #143b22;
