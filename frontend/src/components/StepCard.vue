@@ -1,16 +1,8 @@
 <template>
   <div class="Step">
-    <div class="group-121">
-      <div class="step-1" ref="step1">Step 1</div>
-    </div>
-
-    <div class="group-122">
-      <div class="step-2" ref="step2">Step 2</div>
-    </div>
-
-    <div class="group-123">
-      <div class="step-3" ref="step3">Step 3</div>
-    </div>
+    <div class="step-1" ref="step1">Step 1</div>
+    <div class="step-2" ref="step2">Step 2</div>
+    <div class="step-3" ref="step3">Step 3</div>
 
     <div class="line-left">
       <img :src="line" />
@@ -67,84 +59,75 @@ export default {
 }
 .Step {
   background: #ffffff;
-  width: 390px;
-  height: 70px;
-  top: 70px;
-  position: fixed;
+  width: 100vw;
+  height: 8vh;
+  top: 8vh;
+  position: absolute;
   overflow: hidden;
 }
 
-.group-121 {
-  position: sticky;
-  inset: 0;
-}
 .step-1 {
   background: #1c9181;
   border-color: #1c9181;
   border-style: solid;
   border-radius: 24px;
   border-width: 2px;
-  width: 80px;
-  height: 35px;
+  width: 20vw;
+  height: 4vh;
   position: absolute;
-  left: 45px;
-  top: 30px;
+  left: 11.5vw;
+  top: 3vh;
   color: #ffffff;
   text-align: center;
   font: 600 15px "Noto Sans", sans-serif;
-  padding-top: 5px;
 }
 
-.group-122 {
-  position: sticky;
-  inset: 0;
-}
 .step-2 {
   border-radius: 24px;
   border-style: solid;
   border-color: #1c9181;
   border-width: 2px;
-  width: 80px;
-  height: 35px;
+  width: 20vw;
+  height: 4vh;
   position: absolute;
-  top: 30px;
-  left: 155px;
+  top: 3vh;
+  left: 39.7vw;
   color: #000000;
   text-align: center;
   font: 600 15px "Noto Sans", sans-serif;
-  padding-top: 5px;
 }
 
-.group-123 {
-  position: sticky;
-  inset: 0;
-}
 .step-3 {
   border-radius: 24px;
   border-style: solid;
   border-color: #1c9181;
   border-width: 2px;
-  width: 80px;
-  height: 35px;
+  width: 20vw;
+  height: 4vh;
   position: absolute;
-  top: 30px;
-  left: 265px;
+  top: 3vh;
+  left: 67.9vw;
   color: #000000;
   text-align: center;
   font: 600 15px "Noto Sans", sans-serif;
-  padding-top: 5px;
 }
 
 .line-left {
   position: absolute;
-  left: 125px;
-  top: 30px;
+  left: 31.4vw;
+  top: 3.6vh;
   overflow: visible;
+}
+.line-left img {
+  width: 8.5vw;
 }
 .line-right {
   position: absolute;
-  left: 235px;
-  top: 30px;
+  left: 59.5vw;
+  top: 3.6vh;
   overflow: visible;
+}
+.line-right img {
+  width: 8.5vw;
 }
 </style>

@@ -46,24 +46,20 @@ export default {
   box-sizing: border-box;
 }
 .SignUp-Head {
-  position: fixed;
-  top: 0px;
-  left: 0px;
+  position: absolute;
+  top: 0vh;
   display: inline-flex;
   justify-content: flex-start;
-  width: 100%;
-  height: 70px;
+  width: 100vw;
+  height: 8vh;
   background: #ffffff;
 }
 
 .foody-logo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -30px;
-  margin-left: -50px;
-  width: 100px;
-  height: 40px;
+  width: 25vw;
+  height: 4vh;
+  left: 39.7vw;
   font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
@@ -74,18 +70,16 @@ export default {
 }
 
 .arrow-back {
-  position: relative;
-  width: 20%;
-  height: 100%;
+  position: absolute;
+  top: 1.7vh;
+  left: 1vw;
+  width: 10vw;
+  height: 4vh;
 }
 button {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-top: -20px;
-  margin-left: -20px;
-  width: 40px;
-  height: 40px;
+  width: 10vw;
+  height: 4vh;
   border: none;
   background: none;
 }
