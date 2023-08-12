@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="container">
-      <router-view/>
+      <router-view />
     </div>
   </main>
 </template>
@@ -19,12 +19,9 @@ body {
 }
 
 .container {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  overflow: scroll;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background: #ddd;
 }
 </style>

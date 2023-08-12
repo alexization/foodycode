@@ -4,7 +4,7 @@
       <div class="Footer"></div>
       <div class="terms-of-service">Terms of Service</div>
       <svg
-        class="download-simple"
+        class="download-img"
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -18,7 +18,7 @@
       </svg>
 
       <svg
-        class="vector2"
+        class="print-img"
         width="21"
         height="18"
         viewBox="0 0 21 18"
@@ -32,7 +32,7 @@
       </svg>
       <div class="line-top"></div>
       <div class="line-bottom"></div>
-      <div class="last-update-march-2023">Last update March 2023</div>
+      <div class="last-update-text">Last update March 2023</div>
     </div>
 
     <div class="scroll terms">
@@ -162,26 +162,26 @@ export default {
 }
 .Service {
   background: #ffffff;
-  width: 390px;
-  height: 704px;
-  top: 140px;
+  width: 100vw;
+  height: 83vh;
+  top: 16vh;
   position: relative;
   overflow: hidden;
 }
 
 .Head {
   background: #ffffff;
-  width: 390px;
-  height: 130px;
+  width: 100vw;
+  height: 15vh;
   position: relative;
 }
 .Footer {
   background: #ffffff;
-  width: 390px;
-  height: 104px;
+  width: 100vw;
+  height: 12.3vh;
   position: absolute;
-  left: 0px;
-  top: 600px;
+  left: 0vw;
+  top: 71.1vh;
 }
 
 .terms-of-service {
@@ -189,74 +189,74 @@ export default {
   text-align: left;
   font: 700 20px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 56px;
+  left: 7.7vw;
+  top: 6.6vh;
   letter-spacing: 1.2px;
 }
-.download-simple {
+.download-img {
   position: absolute;
-  left: 300px;
-  top: 72px;
+  left: 76.9vw;
+  top: 8.5vh;
   overflow: visible;
 }
-.vector2 {
+.print-img {
   position: absolute;
-  left: 339px;
-  top: 75px;
+  left: 86.9vw;
+  top: 8.9vh;
   overflow: visible;
 }
-.last-update-march-2023 {
+.last-update-text {
   color: #000000;
   text-align: left;
   font: 400 10px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 82px;
+  left: 7.7vw;
+  top: 9.7vh;
   letter-spacing: 0.6px;
 }
 
-.decline {
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 110px;
-  height: 35px;
-  position: absolute;
-  left: 210px;
-  top: 642px;
-  color: #1c9181;
-  text-align: center;
-  font: 400 15px "Noto Sans", sans-serif;
-  cursor: pointer;
-  background: none;
-}
 .accept {
   background: #1c9181;
-  width: 110px;
-  height: 35px;
+  width: 28.2vw;
+  height: 4.1vh;
   position: absolute;
-  left: 65px;
-  top: 642px;
+  left: 16.7vw;
+  top: 76.1vh;
   color: #ffffff;
   text-align: center;
   font: 400 15px "Noto Sans", sans-serif;
   border: none;
   cursor: pointer;
 }
+.decline {
+  border-style: solid;
+  border-color: #1c9181;
+  border-width: 1px;
+  width: 28.2vw;
+  height: 4.1vh;
+  position: absolute;
+  left: 53.8vw;
+  top: 76.1vh;
+  color: #1c9181;
+  text-align: center;
+  font: 400 15px "Noto Sans", sans-serif;
+  cursor: pointer;
+  background: none;
+}
 
 .scroll {
   position: relative;
   display: inline-block;
-  width: 330px;
-  height: 466px;
-  padding-right: 30px;
-  margin-left: 30px;
-  margin-right: 65px;
+  width: 84.6vw;
+  height: 55.2vh;
+  padding-right: 7.7vw;
+  margin-left: 7.7vw;
+  margin-right: 16.7vw;
   overflow-y: scroll;
   box-sizing: border-box;
 }
 .terms::-webkit-scrollbar {
-  width: 5px;
+  width: 1.3vw;
 }
 .terms::-webkit-scrollbar-thumb {
   background: #fbdc71;
@@ -273,20 +273,20 @@ export default {
 .service-text {
   font: 300 10px "Noto Sans", sans-serif;
   letter-spacing: 0.6px;
-  margin-left: 10px;
-  line-height: 15px;
+  margin-left: 2.6vw;
+  line-height: 3.8vw;
 }
 .line-top {
-  width: 370px;
-  height: 1px;
-  top: 107px;
+  width: 94.9vw;
+  height: 0.1vh;
+  top: 12.7vh;
   position: absolute;
   background: #e3e3e3;
 }
 .line-bottom {
-  width: 370px;
-  height: 1px;
-  top: 620px;
+  width: 94.9vw;
+  height: 0.1vh;
+  top: 73.5vh;
   position: absolute;
   background: #e3e3e3;
 }

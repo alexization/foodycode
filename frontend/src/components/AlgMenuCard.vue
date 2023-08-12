@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import warning from '../assets/icon/warning.png';
+import warning from "../assets/icon/warning.png";
 export default {
   data() {
     return {
@@ -27,24 +27,24 @@ export default {
   props: {
     menuName: {
       type: String,
-      default: 'Soy Sauce Bulgogi',
+      default: "Soy Sauce Bulgogi",
     },
     menuImg: {
       type: String,
-      default: 'soy-sauce-bulgogi',
+      default: "soy-sauce-bulgogi",
     },
     menuIng: {
       type: String,
       default:
-        'Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion',
+        "Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion",
     },
     menuPrice: {
       type: String,
-      default: '9000',
+      default: "9000",
     },
     algName: {
       type: String,
-      default: 'Fork',
+      default: "Fork",
     },
   },
 };
@@ -56,8 +56,8 @@ export default {
   box-sizing: border-box;
 }
 .AlgMenuCard {
-  width: 380px;
-  height: 170px;
+  width: 97.4vw;
+  height: 20.1vh;
   position: relative;
 }
 .Card-Rectangle {
@@ -66,70 +66,68 @@ export default {
   border-color: rgba(215, 215, 215, 0.6);
   border-radius: 10px;
   border-width: 1px;
-  width: 380px;
-  left: 5px;
-  height: 160px;
+  width: 97.4vw;
+  height: 20.1vh;
   position: absolute;
-  left: 0px;
   cursor: pointer;
 }
 .Img-Box {
   background: rgba(0, 0, 0, 0.3);
-  width: 128px;
-  height: 86px;
+  width: 32.8vw;
+  height: 10.2vh;
   border-radius: 10px;
   position: absolute;
-  left: 247px;
-  top: 10px;
+  left: 62.6vw;
+  top: 1.2vh;
 }
 .Img-Box img {
-  width: 128px;
-  height: 86px;
+  width: 32.8vw;
+  height: 10.2vh;
   border-radius: 10px;
   opacity: 0.7;
 }
 .Menu-name {
   color: rgba(0, 0, 0, 0.3);
   text-align: left;
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 600 15px "Noto Sans", sans-serif;
   position: absolute;
-  left: 15px;
-  top: 20px;
-  width: 222px;
-  height: 22px;
+  left: 3.8vw;
+  top: 2.4vh;
+  width: 56.9vw;
+  height: 2.6vh;
 }
 .Menu-Ing {
   text-align: left;
-  font: 300 12px 'Noto Sans', sans-serif;
+  font: 300 12px "Noto Sans", sans-serif;
   position: absolute;
-  left: 15px;
-  top: 102px;
-  width: 350px;
-  height: 49px;
+  left: 3.8vw;
+  top: 12.1vh;
+  width: 89.7vw;
+  height: 5.8vh;
   color: rgba(0, 0, 0, 0.3);
 }
 .Price {
   color: #6060603e;
   text-align: right;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
-  left: 116px;
-  top: 52px;
-  width: 121px;
-  height: 17px;
+  left: 29.7vw;
+  top: 6.2vh;
+  width: 31vw;
+  height: 2vh;
 }
 .alg img {
-  width: 18px;
-  height: 18px;
+  width: 4.6vw;
+  height: 2.1vh;
   position: absolute;
-  top: 75px;
-  left: 10px;
+  top: 19.2vw;
+  left: 1.2vh;
 }
 .alg div {
   position: absolute;
-  top: 73px;
-  left: 33px;
-  font: 600 15px 'Noto Sans', sans-serif;
+  top: 18.7vw;
+  left: 3.9vh;
+  font: 600 15px "Noto Sans", sans-serif;
   text-align: left;
   color: red;
 }

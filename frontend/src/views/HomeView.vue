@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="search-box">
       <SearchBar></SearchBar>
-    </div>    
+    </div>
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">
         <RestaurantCard
@@ -63,13 +63,12 @@ export default {
   top: 130px;
   overflow-y: auto;
   overflow-x: hidden;
-  box-sizing: border-box;  
+  box-sizing: border-box;
   width: 100%;
-  height: calc(100vh - 130px);  
+  height: calc(var(--vh, 1vh) * 100 - 130px);
 }
 
 @media screen and (min-width: 768px) {
-  
 }
 
 ::-webkit-scrollbar {

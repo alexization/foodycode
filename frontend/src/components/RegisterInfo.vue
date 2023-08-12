@@ -110,10 +110,10 @@ export default {
 }
 .sign-up-page-register {
   background: #ffffff;
-  width: 390px;
-  height: 704px;
-  top: 140px;
-  position: relative;
+  width: 100vw;
+  height: 83.4vh;
+  top: 16.6vh;
+  position: absolute;
   overflow: hidden;
 }
 
@@ -122,61 +122,61 @@ export default {
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 50px;
+  left: 7.7vw;
+  top: 5.9vh;
 }
 
 input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 257px;
-  height: 30px;
+  width: 65.9vw;
+  height: 3.6vh;
 }
 input[type][id="user_name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 330px;
-  height: 30px;
+  width: 84.6vw;
+  height: 3.6vh;
 }
 input[type][id="country"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 205px;
-  height: 30px;
+  width: 52.6vw;
+  height: 3.6vh;
 }
 
 input[type="password"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 330px;
-  height: 30px;
+  width: 84.6vw;
+  height: 3.6vh;
 }
 input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 85px;
-  height: 30px;
+  width: 21.8vw;
+  height: 3.6vh;
 }
 .uid-input {
   position: absolute;
-  left: 30px;
-  top: 82px;
+  left: 7.7vw;
+  top: 9.7vh;
 }
 .confirm {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
   border-width: 1px;
-  width: 75px;
-  height: 30px;
+  width: 19.2vw;
+  height: 3.6vh;
   position: absolute;
-  left: 285px;
-  top: 82px;
+  left: 73.1vw;
+  top: 9.7vh;
   text-align: center;
   font: 600 14px "Noto Sans", sans-serif;
   color: black;
@@ -188,47 +188,47 @@ input[type="number"] {
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 152px;
+  left: 7.7vw;
+  top: 18vh;
 }
 .password-input {
   position: absolute;
-  left: 30px;
-  top: 185px;
+  left: 7.7vw;
+  top: 21.9vh;
 }
 .password-confrim {
   color: #000000;
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 230px;
+  left: 7.7vw;
+  top: 27.3vh;
 }
 .confirm-input {
   position: absolute;
-  left: 30px;
-  top: 263px;
+  left: 7.7vw;
+  top: 31.2vh;
 }
 .user-name {
   color: #000000;
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 333px;
+  left: 7.7vw;
+  top: 39.5vh;
 }
 .name-input {
   position: absolute;
-  left: 30px;
-  top: 366px;
+  left: 7.7vw;
+  top: 43.4vh;
 }
 .gender {
   color: #000000;
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 489px;
+  left: 7.7vw;
+  top: 57.9vh;
 }
 .Female {
   color: black;
@@ -236,11 +236,11 @@ input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 165px;
-  height: 30px;
+  width: 42.3vw;
+  height: 3.6vh;
   position: absolute;
-  left: 195px;
-  top: 522px;
+  left: 50vw;
+  top: 61.8vh;
   text-align: center;
   font: 400 14px "Noto Sans", sans-serif;
   cursor: pointer;
@@ -252,11 +252,11 @@ input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 165px;
-  height: 30px;
+  width: 42.3vw;
+  height: 3.6vh;
   position: absolute;
-  left: 30px;
-  top: 522px;
+  left: 7.7vw;
+  top: 61.8vh;
   text-align: center;
   font: 400 14px "Noto Sans", sans-serif;
   cursor: pointer;
@@ -267,16 +267,16 @@ input[type="number"] {
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 30px;
-  top: 411px;
+  left: 7.7vw;
+  top: 48.7vh;
 }
 .Country {
   color: #000000;
   text-align: left;
   font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
-  left: 150px;
-  top: 411px;
+  left: 38.5vw;
+  top: 48.7vh;
 }
 .age-country {
   position: sticky;
@@ -284,43 +284,28 @@ input[type="number"] {
 }
 .age-input {
   position: absolute;
-  left: 30px;
-  top: 444px;
+  left: 7.7vw;
+  top: 52.6vh;
 }
 
 .country-input {
   position: absolute;
-  left: 150px;
-  top: 444px;
+  left: 38.5vw;
+  top: 52.6vh;
 }
 
 .Register {
   background: #1c9181;
-  width: 390px;
-  height: 60px;
+  width: 100vw;
+  height: 7.1vh;
   position: absolute;
-  left: 0px;
-  top: 644px;
+  left: 0vw;
+  top: 76.3vh;
   color: #ffffff;
   text-align: center;
   font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
-}
-.foody-logo {
-  color: #1c9181;
-  text-align: left;
-  font-family: "Dangrek", cursive;
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 2.04px;
-  line-height: normal;
-  position: absolute;
-  left: 145px;
-  top: 49px;
-  width: 102px;
-  height: 33px;
 }
 </style>
