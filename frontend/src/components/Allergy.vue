@@ -205,31 +205,31 @@ export default {
 }
 .selecting-page {
   background: #ffffff;
-  width: 390px;
-  height: 704px;
-  top: 140px;
-  position: relative;
+  width: 100vw;
+  height: 83.4vh;
+  top: 16.6vh;
+  position: absolute;
   overflow-y: auto;
 }
 .button-frame {
   display: inline-flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 0vw;
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 30px;
-  top: 140px;
+  left: 7.7vw;
+  top: 16.6vh;
 }
 .button-frame-second {
   display: inline-flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 0vw;
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 145px;
-  top: 140px;
+  left: 37.2vw;
+  top: 16.6vh;
 }
 .button-frame-third {
   display: inline-flex;
@@ -238,17 +238,17 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 260px;
-  top: 140px;
+  left: 66.7vw;
+  top: 16.6vh;
 }
 
 .next-button {
   background: #1c9181;
-  width: 390px;
-  height: 50px;
+  width: 100vw;
+  height: 5.9vh;
   position: absolute;
-  left: 0px;
-  top: 654px;
+  left: 0vw;
+  top: 77.5vh;
   color: #ffffff;
   text-align: center;
   font: 400 30px "Jua", sans-serif;
@@ -262,29 +262,29 @@ export default {
   text-align: center;
   font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
-  left: 15.77px;
-  top: 20px;
-  width: 358.46px;
-  height: 56.7px;
+  left: 4.1vw;
+  top: 2.4vh;
+  width: 91.8vw;
+  height: 6.8vh;
 }
 .excludes-menus-containing-the-selected-food {
   color: #000000;
   text-align: center;
   font: 300 13px "Noto Sans", sans-serif;
   position: absolute;
-  left: 35.74px;
-  top: 80px;
-  width: 317.47px;
-  height: 18.9px;
+  left: 9.2vw;
+  top: 9.5vh;
+  width: 81.3vw;
+  height: 2.3vh;
 }
 .frame-button {
-  max-width: 330px;
+  max-width: 84.6vw;
   margin: 0 auto;
   display: felx;
   flex-wrap: wrap;
 }
 .frame-button div {
-  margin-bottom: 10px;
+  margin-bottom: 1.2vh;
 }
 .frame-button div label {
   cursor: pointer;
@@ -297,8 +297,8 @@ export default {
   display: inline-block;
   background: #f1f1f1;
   border-radius: 5px;
-  width: 100px;
-  height: 42px;
+  width: 25.6vw;
+  height: 5vh;
   color: #000000;
   text-align: center;
   font: 400 17px "Noto Sans", sans-serif;
@@ -311,8 +311,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 .frame-button div label input[type="checkbox"]:checked ~ span {
   background: #42b2a3;
