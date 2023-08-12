@@ -1,30 +1,26 @@
 <template>
   <div class="login-view">
-    <div class="rectangle-262"></div>
+    <button type="button" class="login-button" @click="onLogin">LOGIN</button>
 
-    <button type="button" class="button" @click="onLogin">LOGIN</button>
+    <div class="login-text">LOGIN</div>
 
-    <div class="login2">LOGIN</div>
+    <input
+      class="input-id"
+      id="uid"
+      type="text"
+      name="uid"
+      placeholder="User Name"
+      maxlength="16"
+    />
 
-    <div class="input id">
-      <input
-        id="uid"
-        type="text"
-        name="uid"
-        placeholder="User Name"
-        maxlength="16"
-      />
-    </div>
-
-    <div class="input password">
-      <input
-        type="password"
-        id="pw"
-        name="password"
-        placeholder="Password"
-        maxlength="32"
-      />
-    </div>
+    <input
+      class="input-pw"
+      type="password"
+      id="pw"
+      name="password"
+      placeholder="Password"
+      maxlength="32"
+    />
 
     <div class="find-my-id">Find my ID</div>
 
@@ -37,7 +33,7 @@
     </div>
 
     <svg
-      class="vector"
+      class="password-img"
       width="15"
       height="17"
       viewBox="0 0 15 17"
@@ -51,7 +47,7 @@
     </svg>
 
     <svg
-      class="vector2"
+      class="user-img"
       width="15"
       height="15"
       viewBox="0 0 15 15"
@@ -64,17 +60,17 @@
       />
     </svg>
 
-    <img class="gro-11111-2" :src="LogoImg" />
+    <img class="logo-img" :src="LogoImg" />
   </div>
 </template>
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import Logo from '@/assets/login/Logo.png';
-import axios from 'axios';
-import { RouterLink } from 'vue-router';
+import Logo from "@/assets/login/Logo.png";
+import axios from "axios";
+import { RouterLink } from "vue-router";
 
 export default {
-  name: 'LogInPage',
+  name: "LogInPage",
   components: {
     RouterLink,
   },
@@ -87,13 +83,13 @@ export default {
   },
   methods: {
     onLogin: async function () {
-      const uid = document.getElementById('uid');
+      const uid = document.getElementById("uid");
       console.log(uid.value);
-      const password = document.getElementById('pw');
+      const password = document.getElementById("pw");
 
       let res = await axios({
-        method: 'POST',
-        url: 'api/login',
+        method: "POST",
+        url: "api/login",
         data: {
           uid: uid.value,
           password: password.value,
@@ -102,7 +98,7 @@ export default {
         console.log(res.data);
 
         if (res.data.success) {
-          location.href = '#/';
+          location.href = "#/";
         } else {
           alert(res.data.msg);
         }
@@ -112,127 +108,113 @@ export default {
 };
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 .login-view * {
   box-sizing: border-box;
 }
 .login-view {
   background: #ffffff;
-  width: 390px;
-  height: 844px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
-.rectangle-262 {
-  border-radius: 22px;
-  border-style: solid;
-  border-color: #fbdc71;
-  border-width: 1.5px;
-  width: 310px;
-  height: 45px;
-  position: absolute;
-  left: 40px;
-  top: 590px;
-}
-
-.login2 {
+.login-text {
   color: #143b22;
   text-align: left;
-  font: 700 20px 'Roboto', sans-serif;
+  font: 700 20px "Roboto", sans-serif;
   position: absolute;
-  left: calc(50% - 35px);
-  top: 479px;
+  left: calc(50vw - 35px);
+  top: 56vh;
 }
 
-.input {
-  border-radius: 22px;
+.input-id {
+  border-radius: 5.6rem;
   border-style: solid;
   border-color: #fbdc71;
-  border-width: 1.5px;
-  width: 310px;
-  height: 45px;
+  border-width: 0.38vw;
+  width: 79vw;
+  height: 5.3vh;
   position: absolute;
-  left: 40px;
-  top: 529px;
+  left: 2vw;
+  top: 62vh;
+  left: 10vw;
+  font-size: 3vw;
+  padding-left: 15vw;
 }
-
-.input > input {
-  width: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  font-family: 'Nanum Gothic', sans-serif;
-  opacity: 0.7;
-  padding-left: 60px;
-  padding-top: 11px;
-  font-size: 15px;
+.input-pw {
+  border-radius: 5.6rem;
+  border-style: solid;
+  border-color: #fbdc71;
+  border-width: 0.38vw;
+  width: 79vw;
+  height: 5.3vh;
+  position: absolute;
+  left: 2vw;
+  top: 69vh;
+  left: 10vw;
+  font-size: 3vw;
+  padding-left: 15vw;
 }
-
 .find-my-id {
   color: #143b22;
   text-align: left;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 79px;
-  top: 714px;
+  left: 20vw;
+  top: 84vh;
 }
 .find-my-pw {
   color: #143b22;
   text-align: left;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 166px;
-  top: 714px;
+  left: 42vw;
+  top: 84vh;
 }
 .sign-up {
   color: #143b22;
   text-align: left;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 262px;
-  top: 714px;
+  left: 67vw;
+  top: 84vh;
 }
 .click-here-if-you-are-manager {
   color: #143b22;
   text-align: left;
-  font: 400 14px 'Noto Sans', sans-serif;
+  font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 167px;
-  top: 795px;
+  left: 42vw;
+  top: 94vh;
 }
-.vector {
+.password-img {
   position: absolute;
-  left: 65px;
-  top: 604px;
+  left: 16vw;
+  top: 71vh;
+  overflow: visible;
+}
+.user-img {
+  position: absolute;
+  left: 16vw;
+  top: 64vh;
   overflow: visible;
 }
 
-.id {
+.login-button {
   position: absolute;
-  left: 40px;
-  top: 529px;
-  overflow: visible;
-}
-.password {
-  position: absolute;
-  left: 40px;
-  top: 590px;
-  overflow: visible;
-}
-.button {
-  position: absolute;
-  left: 40px;
-  top: 659px;
+  left: 10vw;
+  top: 78vh;
   overflow: visible;
   background: #1c9181;
   border-radius: 22px;
-  width: 310px;
-  height: 45px;
+  width: 79vw;
+  height: 5vh;
   font-size: 15pt;
   color: white;
   position: relative;
@@ -240,18 +222,12 @@ export default {
   cursor: pointer;
 }
 
-.vector2 {
-  position: absolute;
-  left: 65px;
-  top: 543px;
-  overflow: visible;
-}
-.gro-11111-2 {
+.logo-img {
   border-radius: 20px;
-  width: 150px;
-  height: 150px;
+  width: 38vw;
+  height: 17vh;
   position: absolute;
-  left: 120px;
-  top: 169px;
+  left: 30vw;
+  top: 20vh;
 }
 </style>

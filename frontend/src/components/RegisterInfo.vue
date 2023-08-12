@@ -113,7 +113,7 @@ export default {
   width: 390px;
   height: 704px;
   top: 140px;
-  position: relative;
+  position: fixed;
   overflow: hidden;
 }
 

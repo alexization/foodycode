@@ -1,15 +1,17 @@
 <template>
-  <SignUpHead v-bind:now_page="register"></SignUpHead>
-  <StepCard v-bind:now_page="register"></StepCard>
-  <RegisterInfo v-show="register" @change_page="allergy_page"></RegisterInfo>
-  <Allergy v-show="allergy"></Allergy>
+  <div class="signup">
+    <SignUpHead v-bind:now_page="register"></SignUpHead>
+    <StepCard v-bind:now_page="register"></StepCard>
+    <RegisterInfo v-show="register" @change_page="allergy_page"></RegisterInfo>
+    <Allergy v-show="allergy"></Allergy>
+  </div>
 </template>
 
 <script>
-import SignUpHead from '../components/SignUpHeader.vue';
-import StepCard from '../components/StepCard.vue';
-import RegisterInfo from '../components/RegisterInfo.vue';
-import Allergy from '../components/Allergy.vue';
+import SignUpHead from "../components/SignUpHeader.vue";
+import StepCard from "../components/StepCard.vue";
+import RegisterInfo from "../components/RegisterInfo.vue";
+import Allergy from "../components/Allergy.vue";
 
 export default {
   components: {
@@ -34,4 +36,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.signup {
+  background: white;
+  width: 390px;
+  height: 844px;
+  position: absolute;
+}
+</style>
