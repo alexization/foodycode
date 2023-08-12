@@ -39,8 +39,8 @@ export default {
 <style scoped>
 .signup {
   background: white;
-  width: 390px;
-  height: 844px;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
 }
 </style>
