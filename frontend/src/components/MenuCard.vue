@@ -18,20 +18,20 @@ export default {
   props: {
     menuName: {
       type: String,
-      default: 'Soy Sauce Bulgogi',
+      default: "Soy Sauce Bulgogi",
     },
     menuImg: {
       type: String,
-      default: 'soy-sauce-bulgogi',
+      default: "soy-sauce-bulgogi",
     },
     menuIng: {
       type: String,
       default:
-        'Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion',
+        "Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion",
     },
     menuPrice: {
       type: String,
-      default: '9000',
+      default: "9000",
     },
   },
 };
@@ -43,8 +43,9 @@ export default {
   box-sizing: border-box;
 }
 .MenuCard {
-  width: 380px;
-  height: 170px;
+  width: 97.4vw;
+  height: 20.1vh;
+  margin-bottom: 1vh;
   position: relative;
 }
 .Card-Rectangle {
@@ -53,55 +54,53 @@ export default {
   box-shadow: 2px 2px 1px 1px rgba(205, 205, 205, 0.2);
   border-radius: 10px;
   border-width: 1px;
-  width: 380px;
-  left: 5px;
-  height: 160px;
+  width: 97.4vw;
+  height: 20.1vh;
   position: absolute;
-  left: 0px;
   cursor: pointer;
-  padding-top: 10px;
+  padding-top: 1.2vh;
 }
 .Img-Box {
   background: rgba(0, 0, 0, 0.3);
-  width: 128px;
-  height: 86px;
+  width: 32.8vw;
+  height: 10.2vh;
   border-radius: 10px;
   position: absolute;
-  left: 247px;
-  top: 10px;
+  left: 62.6vw;
+  top: 1.2vh;
 }
 .Img-Box img {
-  width: 128px;
-  height: 86px;
+  width: 32.8vw;
+  height: 10.2vh;
   border-radius: 10px;
 }
 .Menu-name {
   color: #000000;
   text-align: left;
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 600 15px "Noto Sans", sans-serif;
   position: absolute;
-  left: 15px;
-  top: 20px;
-  width: 222px;
-  height: 22px;
+  left: 3.8vw;
+  top: 2.4vh;
+  width: 56.9vw;
+  height: 2.6vh;
 }
 .Menu-Ing {
   text-align: left;
-  font: 300 12px 'Noto Sans', sans-serif;
+  font: 300 12px "Noto Sans", sans-serif;
   position: absolute;
-  left: 15px;
-  top: 102px;
-  width: 350px;
-  height: 49px;
+  left: 3.8vw;
+  top: 12.1vh;
+  width: 89.7vw;
+  height: 5.8vh;
 }
 .Price {
   color: #606060;
   text-align: right;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
-  left: 116px;
-  top: 52px;
-  width: 121px;
-  height: 17px;
+  left: 29.7vw;
+  top: 6.2vh;
+  width: 31vw;
+  height: 2vh;
 }
 </style>

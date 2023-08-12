@@ -28,14 +28,14 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import RestaurantName from '../components/RestaurantName.vue';
-import MenuCard from '../components/MenuCard.vue';
-import AlgMenuCard from '../components/AlgMenuCard.vue';
+import RestaurantName from "../components/RestaurantName.vue";
+import MenuCard from "../components/MenuCard.vue";
+import AlgMenuCard from "../components/AlgMenuCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'LandingPage',
+  name: "LandingPage",
   components: {
     RestaurantName,
     MenuCard,
@@ -45,8 +45,8 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      list: '',
-      alg_list: '',
+      list: "",
+      alg_list: "",
     };
   },
 
@@ -63,7 +63,7 @@ export default {
           menu_list.push(response.data[i]);
         } else {
           response.data[i].menu_alg.sort();
-          let str = response.data[i].menu_alg.join(', ');
+          let str = response.data[i].menu_alg.join(", ");
           response.data[i].menu_alg = [];
           response.data[i].menu_alg.push(str);
           alg_menu.push(response.data[i]);
@@ -83,8 +83,8 @@ export default {
 }
 .MenuView {
   background: #ffffff;
-  width: 390px;
-  height: 844px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
@@ -92,22 +92,22 @@ export default {
 .MenuList {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 0vw;
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 5px;
-  top: 181px;
-  padding-top: 10px;
+  left: 1.3vw;
+  top: 21.4vh;
+  padding-top: 1.2vh;
 }
 .line {
-  width: 370px;
-  height: 3px;
-  left: 10px;
+  width: 94.9vw;
+  height: 0.4vh;
+  left: 2.6vw;
   border-radius: 100px;
   background: #42b2a36b;
   position: relative;
-  bottom: -10px;
-  margin-bottom: 25px;
+  bottom: -1.2vh;
+  margin-bottom: 3vh;
 }
 </style>
