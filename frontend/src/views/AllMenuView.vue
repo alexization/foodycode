@@ -103,7 +103,7 @@ export default {
 .line {
   width: 94.9vw;
   height: 0.4vh;
-  left: 2.6vw;
+  left: 1.5vw;
   border-radius: 100px;
   background: #42b2a36b;
   position: relative;
