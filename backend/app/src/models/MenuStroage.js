@@ -1,4 +1,4 @@
-db = require('../config/db');
+const db = require('../config/db');
 
 class MenuStorage {
   static getMenuInfo(rest_name) {
