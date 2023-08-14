@@ -16,14 +16,14 @@
 <script>
 import call from "@/assets/icon/call.png";
 export default {
-  props: {
-    title: {
-      type: String,
-      default: "Untitled Restaurant",
-    },
+  props: {    
     restaurantName: {
       type: String,
       default: "Hot Pot Stew Restaurant",
+    },
+    title: {
+      type: String,
+      default: "Untitled Restaurant",
     },
     telNum: {
       type: String,
@@ -50,7 +50,7 @@ export default {
   position: relative;
   display: block;
   height: 240px;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 10px 0px;
   background: #ffffff;
   cursor: pointer;

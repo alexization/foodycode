@@ -1,31 +1,32 @@
 <template>
   <div class="header">
     <div class="nav-box">
-      <button>
-        <img :src="navigation_button" width="32" />
+      <button @click="this.$emit('toggleMenu')">
+        <img :src="NavBtnImage" width="32" />
       </button>
     </div>
     <div class="logo-box">
       <div class="foody-logo">FOODY</div>
-    </div>  
+    </div>
     <div class="qr-box">
       <button>
-        <img :src="qr_scanner_button" width="32" />
+        <img :src="QrScannerBtnImage" width="32" />
       </button>
     </div>
-  </div>
+  </div>  
 </template>
 
 <script>
-import navigation_button from "@/assets/icon/navigation_button.png";
-import qr_scanner_button from "@/assets/icon/qr_scanner_button.png";
-export default {
+import NavBtnImage from "@/assets/icon/navigation_button.png";
+import QrScannerBtnImage from "@/assets/icon/qr_scanner_button.png";
+
+export default {  
   data() {
     return {
-      navigation_button,
-      qr_scanner_button,
+      NavBtnImage,
+      QrScannerBtnImage,      
     };
-  },
+  }, 
 };
 </script>
 
@@ -42,14 +43,14 @@ export default {
   top: 0px;
   left: 0px;
   display: inline-flex;
-  justify-content: flex-start;  
+  justify-content: flex-start;
   width: 100%;
   height: 70px;
   background: #ffffff;
 }
 
 .nav-box {
-  position: relative;  
+  position: relative;
   width: 20%;
   height: 100%;
 }
@@ -73,10 +74,10 @@ button {
 }
 
 .foody-logo {
-  position: absolute; 
+  position: absolute;
   top: 50%;
-  left: 50%;    
-  margin-top: -30px;    /* 로고 위치 조정 */
+  left: 50%;
+  margin-top: -30px; /* 로고 위치 조정 */
   margin-left: -50px;
   width: 100px;
   height: 40px;
@@ -95,6 +96,6 @@ button {
   height: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 500px) {
 }
 </style>

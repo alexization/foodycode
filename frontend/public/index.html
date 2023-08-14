@@ -6,7 +6,7 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
     />
     <title>FOODY</title>
     <style>
@@ -20,11 +20,26 @@
     <script type="module" src="/src/main.js"></script>
   </body>
   <script>
+    // 모바일 브라우저 100vh 반응형 적용
     let customVH = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", customVH + "px");
     window.addEventListener("resize", () => {
       let customVH = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", customVH + "px");
     });
+
+    // Double tab Zoom 방지
+    var lastTouchEnd = 0;
+    document.documentElement.addEventListener(
+      "touchend",
+      function (event) {
+        var now = new Date().getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      },
+      false
+    );
   </script>
 </html>
