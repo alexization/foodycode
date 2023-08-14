@@ -19,10 +19,10 @@
         eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
         voluptatem. Ut enim ad minima veniam, quis nostru
       </div>
-      <div class="spice-level">Spice Level</div>
+      <div class="allergy-tag">Allergy</div>
       <div class="price">Price</div>
       <div class="menu-price">9000 won</div>
-      <button class="remove-background">
+      <button class="remove-background" @click="click_remove">
         <img class="remove" src="@/assets/icon/remove.png" />
       </button>
       <button class="add-background">
@@ -44,9 +44,16 @@ export default {
     // quickfix to have components available to pass as props
     return {};
   },
+  methods: {
+    click_remove() {
+      alert("Click Remove");
+    },
+  },
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+
 .description-page,
 .description-page * {
   box-sizing: border-box;
@@ -121,7 +128,7 @@ export default {
   width: 350px;
   height: 101px;
 }
-.spice-level {
+.allergy-tag {
   color: #000000;
   text-align: right;
   font: 600 14px "Noto Sans", sans-serif;
