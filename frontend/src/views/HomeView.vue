@@ -5,30 +5,34 @@
       <SearchBar></SearchBar>
     </div>
     <div class="restaurant-list">
-      <div v-for="item in list" :key="item">
-        <RestaurantCard
-          :restaurantName="item.img_url"
-          :title="item.rest_name"
-          :telNum="item.tel"
-        ></RestaurantCard>
+      <div v-for="item in list" :key="item">        
+        <router-link :to="`/allmenu/${item.rest_name}`">
+          <RestaurantCard
+            :restaurantName="item.img_url"
+            :title="item.rest_name"
+            :telNum="item.tel"
+          />
+        </router-link>
       </div>
-    </div>
+    </div>    
 
     <Transition name="fade">
       <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
     </Transition>
 
-    <Transition name="slide">      
+    <Transition name="slide">
       <nav class="nav-bar" v-show="showMenu">
         <div>
           <button class="close" @click="toggleMenu">
             <img :src="CloseIcon" width="20" />
           </button>
         </div>
-        <div v-for="{name, url} in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{ name }}</router-link>
+        <div v-for="{ name, url } in navList" :key="name">
+          <router-link :to="url" @click="callback" class="link">{{
+            name
+          }}</router-link>
         </div>
-      </nav>      
+      </nav>
     </Transition>
   </div>
 </template>
@@ -114,10 +118,10 @@ export default {
 
 .nav-bar {
   position: fixed;
-  z-index: 1;  
-  display: flex;  
+  z-index: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;  
+  justify-content: flex-start;
   box-sizing: border-box;
   width: 60%;
   height: 100%;
@@ -125,17 +129,17 @@ export default {
   background-color: white;
 }
 
-.nav-bar > div { 
-  box-sizing: border-box; 
+.nav-bar > div {
+  box-sizing: border-box;
   width: 100%;
   height: 44px;
   padding: 12px 0;
-  padding-left: 20px;  
+  padding-left: 20px;
 }
 
 .link {
   font-size: 13pt;
-  color: black;  
+  color: black;
   text-decoration: none;
 }
 
