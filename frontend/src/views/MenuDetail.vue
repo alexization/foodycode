@@ -1,0 +1,199 @@
+<template>
+  <div class="description-page">
+    <img class="menu-img" src="@/assets/menu/kimchi.png" />
+    <button class="arrow-back-background">
+      <img class="arrow-back" src="@/assets/icon/arrow_back_iOS.png" />
+    </button>
+
+    <div class="detail-group">
+      <div class="menu-name">Rich Soybean Paste Jjigae</div>
+      <div class="details">Details</div>
+      <div class="detail-text">
+        &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+        voluptatem. Ut enim ad minima veniam, quis nostru
+      </div>
+      <div class="spice-level">Spice Level</div>
+      <div class="price">Price</div>
+      <div class="menu-price">9000 won</div>
+      <button class="remove-background">
+        <img class="remove" src="@/assets/icon/remove.png" />
+      </button>
+      <button class="add-background">
+        <img class="add" src="@/assets/icon/add.png" />
+      </button>
+      <div class="count">1</div>
+    </div>
+    <button class="add-cart">Add to Cart</button>
+  </div>
+</template>
+<script>
+/* Code generated with AutoHTML Plugin for Figma */
+
+export default {
+  name: "DescriptionPage",
+  components: {},
+  props: {},
+  data() {
+    // quickfix to have components available to pass as props
+    return {};
+  },
+};
+</script>
+<style scoped>
+.description-page,
+.description-page * {
+  box-sizing: border-box;
+}
+.description-page {
+  background: #ffffff;
+  width: 390px;
+  height: 844px;
+  position: relative;
+  overflow-y: auto;
+}
+.menu-img {
+  background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+  width: 390px;
+  height: 282px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.arrow-back-background {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 21px;
+  border: none;
+  top: 50px;
+  left: 19px;
+  cursor: pointer;
+}
+.arrow-back-background img {
+  width: 32px;
+  height: 24px;
+  padding-top: 3px;
+  padding-left: 8px;
+}
+
+.detail-group {
+  position: sticky;
+  inset: 0;
+}
+.menu-name {
+  color: #000000;
+  text-align: left;
+  font: 600 16px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 310px;
+  width: 345px;
+}
+.details {
+  color: #000000;
+  text-align: right;
+  font: 600 14px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 362px;
+}
+.detail-text {
+  color: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 93.75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  text-align: left;
+  font: 400 10px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 391px;
+  width: 350px;
+  height: 101px;
+}
+.spice-level {
+  color: #000000;
+  text-align: right;
+  font: 600 14px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 522px;
+}
+.price {
+  color: #000000;
+  text-align: right;
+  font: 600 14px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 662px;
+}
+
+.menu-price {
+  color: #1c9181;
+  text-align: left;
+  font: 400 19px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 691px;
+}
+
+.remove-background {
+  background: #d9d9d9;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 266px;
+  top: 693px;
+  border: none;
+  cursor: pointer;
+}
+.remove-background img {
+  width: 19px;
+  height: 19px;
+}
+.add-background {
+  background: #d9d9d9;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 344px;
+  top: 693px;
+  border: none;
+  cursor: pointer;
+}
+.add-background img {
+  width: 19px;
+  height: 19px;
+}
+.count {
+  color: #000000;
+  text-align: left;
+  font: 400 18px "Noto Sans", sans-serif;
+  position: absolute;
+  left: 311px;
+  top: 691px;
+}
+.add-cart {
+  width: 350px;
+  height: 39px;
+  position: absolute;
+  border-radius: 7px;
+  background: #1c9181;
+  border: none;
+  top: 775px;
+  left: 20px;
+  color: white;
+}
+</style>

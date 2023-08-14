@@ -49,6 +49,11 @@ const routes = [
       title: "Menu FOODY",
     },
   },
+  {
+    path: "/detail",
+    name: "menu-detail",
+    component: () => import("../views/MenuDetail.vue"),
+  },
 ];
 
 const router = createRouter({
