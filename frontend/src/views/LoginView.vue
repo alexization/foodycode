@@ -115,7 +115,7 @@ export default {
 }
 .login-view {
   background: #ffffff;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -125,37 +125,35 @@ export default {
   text-align: left;
   font: 700 20px "Roboto", sans-serif;
   position: absolute;
-  left: calc(50vw - 35px);
-  top: 56vh;
+  left: calc(50% - 35px);
+  top: 479px;
 }
 
 .input-id {
-  border-radius: 5.6rem;
+  border-radius: 22px;
   border-style: solid;
   border-color: #fbdc71;
-  border-width: 0.38vw;
-  width: 79vw;
-  height: 5.3vh;
+  border-width: 1.5px;
+  width: 79.5%;
+  height: 45px;
   position: absolute;
-  left: 2vw;
-  top: 62vh;
-  left: 10vw;
-  font-size: 3vw;
-  padding-left: 15vw;
+  top: 529px;
+  left: 10.3%;
+  font-size: 15px;
+  padding-left: 15.4%;
 }
 .input-pw {
-  border-radius: 5.6rem;
+  border-radius: 22px;
   border-style: solid;
   border-color: #fbdc71;
-  border-width: 0.38vw;
-  width: 79vw;
-  height: 5.3vh;
+  border-width: 1.5px;
+  width: 79.5%;
+  height: 45px;
   position: absolute;
-  left: 2vw;
-  top: 69vh;
-  left: 10vw;
-  font-size: 3vw;
-  padding-left: 15vw;
+  top: 590px;
+  left: 10.3%;
+  font-size: 15px;
+  padding-left: 15.4%;
 }
 .find-my-id {
   color: #143b22;
@@ -163,8 +161,8 @@ export default {
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 20vw;
-  top: 84vh;
+  left: 20%;
+  top: 714px;
 }
 .find-my-pw {
   color: #143b22;
@@ -172,8 +170,8 @@ export default {
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 42vw;
-  top: 84vh;
+  left: 42%;
+  top: 714px;
 }
 .sign-up {
   color: #143b22;
@@ -181,8 +179,8 @@ export default {
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 67vw;
-  top: 84vh;
+  left: 67%;
+  top: 714px;
 }
 .click-here-if-you-are-manager {
   color: #143b22;
@@ -190,32 +188,32 @@ export default {
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
   position: absolute;
-  left: 42vw;
-  top: 94vh;
+  left: 42%;
+  top: 795px;
 }
 .password-img {
   position: absolute;
-  left: 16vw;
-  top: 71vh;
+  left: 16%;
+  top: 604px;
   overflow: visible;
 }
 .user-img {
   position: absolute;
-  left: 16vw;
-  top: 64vh;
+  left: 16%;
+  top: 545px;
   overflow: visible;
 }
 
 .login-button {
   position: absolute;
-  left: 10vw;
-  top: 78vh;
+  left: 10%;
+  top: 659px;
   overflow: visible;
   background: #1c9181;
   border-radius: 22px;
-  width: 79vw;
-  height: 5vh;
-  font-size: 15pt;
+  width: 79%;
+  height: 45px;
+  font-size: 15px;
   color: white;
   position: relative;
   border: none;
@@ -224,10 +222,10 @@ export default {
 
 .logo-img {
   border-radius: 20px;
-  width: 38vw;
-  height: 17vh;
+  width: 38%;
+  height: 17.7%;
   position: absolute;
-  left: 30vw;
-  top: 20vh;
+  left: 30%;
+  top: 169px;
 }
 </style>
