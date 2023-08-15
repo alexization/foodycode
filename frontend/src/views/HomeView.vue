@@ -1,31 +1,53 @@
 <template>
   <div>
-    <Header></Header>
+    <Header @toggleMenu="toggleMenu"></Header>
     <div class="search-box">
       <SearchBar></SearchBar>
     </div>
     <div class="restaurant-list">
-      <div v-for="item in list" :key="item">
-        <RestaurantCard
-          :restaurantName="item.img_url"
-          :title="item.rest_name"
-          :telNum="item.tel"
-        ></RestaurantCard>
+      <div v-for="item in list" :key="item">        
+        <router-link :to="`/allmenu/${item.rest_name}`">
+          <RestaurantCard
+            :restaurantName="item.img_url"
+            :title="item.rest_name"
+            :telNum="item.tel"
+          />
+        </router-link>
       </div>
-    </div>
+    </div>    
+
+    <Transition name="fade">
+      <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
+    </Transition>
+
+    <Transition name="slide">
+      <nav class="nav-bar" v-show="showMenu">
+        <div>
+          <button class="close" @click="toggleMenu">
+            <img :src="CloseIcon" width="20" />
+          </button>
+        </div>
+        <div v-for="{ name, url } in navList" :key="name">
+          <router-link :to="url" @click="callback" class="link">{{
+            name
+          }}</router-link>
+        </div>
+      </nav>
+    </Transition>
   </div>
 </template>
 
 <script>
-/* Code generated with AutoHTML Plugin for Figma */
-import Header from '../components/Header.vue';
-import SearchBar from '../components/SearchBar.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
+import CloseIcon from "@/assets/icon/close.png";
 
-import axios from 'axios';
+import Header from "../components/Header.vue";
+import SearchBar from "../components/SearchBar.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
+
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     SearchBar,
@@ -33,18 +55,31 @@ export default {
   },
   props: {},
   data() {
-    // quickfix to have components available to pass as props
     return {
-      list: '',
+      CloseIcon,
+      showMenu: false,
+      list: "",
+      navList: [
+        { name: "내정보", url: "" },
+        { name: "로그인", url: "/login" },
+        { name: "로그아웃", url: "" },
+      ],
     };
   },
-
   async created() {
-    axios.get('/api/main').then((response) => {
+    axios.get("/api/main").then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
+  },
+  methods: {
+    async toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+    callback() {
+      this.showMenu = false;
+    },
   },
 };
 </script>
@@ -68,10 +103,101 @@ export default {
   height: calc(var(--vh, 1vh) * 100 - 130px);
 }
 
-@media screen and (min-width: 768px) {
+/* 사이드 메뉴 열었을때 배경 흐리게 */
+.dimmer {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000077;
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+.nav-bar {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 60%;
+  height: 100%;
+  padding: 15px 8px;
+  background-color: white;
+}
+
+.nav-bar > div {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  padding: 12px 0;
+  padding-left: 20px;
+}
+
+.link {
+  font-size: 13pt;
+  color: black;
+  text-decoration: none;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+}
+
+@media screen and (min-width: 500px) {
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Transition navigation bar fade */
+.fade-enter-active {
+  transition: opacity 0.25s ease;
+}
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Transition navigation bar slide */
+.slide-enter-active {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.slide-leave-active {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(-25%);
+}
+.slide-enter-to {
+  opacity: 1;
+}
+.slide-leave-from {
+  opacity: 1;
+}
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-25%);
 }
 </style>
