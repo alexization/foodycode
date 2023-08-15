@@ -1,38 +1,43 @@
 <template>
   <div class="sign-up-page-register">
-    <div class="uid">User ID</div>
-    <div class="uid-input">
-      <input type="text" id="uid" name="uid" maxlength="16" />
-    </div>
+    <div class="register-page">
+      <div class="uid">User ID</div>
+      <div class="uid-input">
+        <input type="text" id="uid" name="uid" maxlength="16" />
+      </div>
 
-    <button class="confirm" @click="click_confirm">Confirm</button>
+      <button class="confirm" @click="click_confirm">Confirm</button>
 
-    <div class="password">Password</div>
-    <div class="password-input">
-      <input type="password" id="pw" name="password" maxlength="32" />
-    </div>
+      <div class="password">Password</div>
+      <div class="password-input">
+        <input type="password" id="pw" name="password" maxlength="32" />
+      </div>
 
-    <div class="password-confrim">Password Confirm</div>
-    <div class="confirm-input">
-      <input type="password" id="pw_confirm" name="pw_confirm" maxlength="32" />
-    </div>
+      <div class="password-confrim">Password Confirm</div>
+      <div class="confirm-input">
+        <input
+          type="password"
+          id="pw_confirm"
+          name="pw_confirm"
+          maxlength="32"
+        />
+      </div>
 
-    <div class="user-name">User Name</div>
+      <div class="user-name">User Name</div>
 
-    <div class="name-input">
-      <input type="text" id="user_name" name="user_name" />
-    </div>
+      <div class="name-input">
+        <input type="text" id="user_name" name="user_name" />
+      </div>
 
-    <div class="gender">Gender</div>
+      <div class="gender">Gender</div>
 
-    <button class="Female" id="female" @click="click_female">Female</button>
+      <button class="Female" id="female" @click="click_female">Female</button>
 
-    <button class="Male" id="male" @click="click_male">Male</button>
+      <button class="Male" id="male" @click="click_male">Male</button>
 
-    <div class="Age">Age</div>
-    <div class="Country">Country</div>
+      <div class="Age">Age</div>
+      <div class="Country">Country</div>
 
-    <div class="age-country">
       <div class="age-input">
         <input type="number" id="age" name="age" pattern="\d*" />
       </div>
@@ -41,16 +46,15 @@
         <input type="text" id="country" name="country" />
       </div>
     </div>
-
     <button class="Register" @click="click_register">Next</button>
   </div>
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
-import line from "@/assets/icon/Line.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
 
-import axios from "axios";
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -60,18 +64,18 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = "#/signup";
+      location.href = '#/signup';
     },
     click_confirm() {
-      alert("Click Confirm");
+      alert('Click Confirm');
     },
     click_male() {
-      document.getElementById("male").style.backgroundColor = "#1c9181";
-      document.getElementById("female").style.backgroundColor = "white";
+      document.getElementById('male').style.backgroundColor = '#1c9181';
+      document.getElementById('female').style.backgroundColor = 'white';
     },
     click_female() {
-      document.getElementById("female").style.backgroundColor = "#1c9181";
-      document.getElementById("male").style.backgroundColor = "white";
+      document.getElementById('female').style.backgroundColor = '#1c9181';
+      document.getElementById('male').style.backgroundColor = 'white';
     },
     async click_register() {
       // const uid = document.getElementById("uid");
@@ -94,15 +98,15 @@ export default {
       //     alert(res.data);
       //   }
       // });
-      this.$emit("change_page");
+      this.$emit('change_page');
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
 
 .sign-up-page-register,
 .sign-up-page-register * {
@@ -110,75 +114,81 @@ export default {
 }
 .sign-up-page-register {
   background: #ffffff;
-  width: 100vw;
-  height: 83.4vh;
-  top: 16.6vh;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 130px);
+  top: 130px;
   position: absolute;
-  overflow: hidden;
 }
-
+.register-page {
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 190px);
+  position: absolute;
+  overflow-x: clip;
+  overflow-y: scroll;
+}
 .uid {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 5.9vh;
+  left: 7.7%;
+  top: 29.8px;
 }
 
-input[type="text"] {
+input[type='text'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 65.9vw;
-  height: 3.6vh;
+  width: 65.9%;
+  height: 30.4px;
 }
-input[type][id="user_name"] {
+input[type][id='user_name'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 84.6vw;
-  height: 3.6vh;
+  width: 84.6%;
+  height: 30.4px;
 }
-input[type][id="country"] {
+input[type][id='country'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 52.6vw;
-  height: 3.6vh;
+  width: 52.6%;
+  height: 30.4px;
 }
 
-input[type="password"] {
+input[type='password'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 84.6vw;
-  height: 3.6vh;
+  width: 84.6%;
+  height: 30.4px;
 }
-input[type="number"] {
+input[type='number'] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 21.8vw;
-  height: 3.6vh;
+  width: 21.8%;
+  height: 30.4px;
 }
 .uid-input {
   position: absolute;
-  left: 7.7vw;
-  top: 9.7vh;
+  left: 7.7%;
+  top: 61.9px;
+  width: 100%;
 }
 .confirm {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
   border-width: 1px;
-  width: 19.2vw;
-  height: 3.6vh;
+  width: 19.2%;
+  height: 30.4px;
   position: absolute;
-  left: 73.1vw;
-  top: 9.7vh;
+  left: 73.1%;
+  top: 61.9px;
   text-align: center;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -186,49 +196,52 @@ input[type="number"] {
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 18vh;
+  left: 7.7%;
+  top: 131.9px;
 }
 .password-input {
   position: absolute;
-  left: 7.7vw;
-  top: 21.9vh;
+  left: 7.7%;
+  top: 164.8px;
+  width: 100%;
 }
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 27.3vh;
+  left: 7.7%;
+  top: 210.4px;
 }
 .confirm-input {
   position: absolute;
-  left: 7.7vw;
-  top: 31.2vh;
+  left: 7.7%;
+  top: 243.3px;
+  width: 100%;
 }
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 39.5vh;
+  left: 7.7%;
+  top: 313.4px;
 }
 .name-input {
   position: absolute;
-  left: 7.7vw;
-  top: 43.4vh;
+  left: 7.7%;
+  top: 346.3px;
+  width: 100%;
 }
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 57.9vh;
+  left: 7.7%;
+  top: 468.7px;
 }
 .Female {
   color: black;
@@ -236,13 +249,13 @@ input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 42.3vw;
-  height: 3.6vh;
+  width: 42.3%;
+  height: 30.4px;
   position: absolute;
-  left: 50vw;
-  top: 61.8vh;
+  left: 50%;
+  top: 501.6px;
   text-align: center;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -252,58 +265,59 @@ input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 42.3vw;
-  height: 3.6vh;
+  width: 42.3%;
+  height: 30.4px;
   position: absolute;
-  left: 7.7vw;
-  top: 61.8vh;
+  left: 7.7%;
+  top: 501.6px;
   text-align: center;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   cursor: pointer;
   transition: 0.5s;
 }
 .Age {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 7.7vw;
-  top: 48.7vh;
+  left: 7.7%;
+  top: 391px;
 }
 .Country {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 38.5vw;
-  top: 48.7vh;
+  left: 38.5%;
+  top: 391px;
 }
 .age-country {
-  position: sticky;
+  position: absolute;
   inset: 0;
 }
 .age-input {
   position: absolute;
-  left: 7.7vw;
-  top: 52.6vh;
+  left: 7.7%;
+  top: 424px;
+  width: 100%;
 }
 
 .country-input {
   position: absolute;
-  left: 38.5vw;
-  top: 52.6vh;
+  left: 38.5%;
+  top: 424px;
+  width: 100%;
 }
 
 .Register {
   background: #1c9181;
-  width: 100vw;
-  height: 7.1vh;
+  width: 100%;
+  height: 60px;
   position: absolute;
-  left: 0vw;
-  top: 76.3vh;
+  bottom: 0px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px "Noto Sans", sans-serif;
+  font: 800 20px 'Noto Sans', sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;

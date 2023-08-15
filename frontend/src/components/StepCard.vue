@@ -4,13 +4,9 @@
     <div class="step-2" ref="step2">Step 2</div>
     <div class="step-3" ref="step3">Step 3</div>
 
-    <div class="line-left">
-      <img :src="line" />
-    </div>
+    <div class="line-left"></div>
 
-    <div class="line-right">
-      <img :src="line" />
-    </div>
+    <div class="line-right"></div>
   </div>
 </template>
 
@@ -59,11 +55,10 @@ export default {
 }
 .Step {
   background: #ffffff;
-  width: 100vw;
-  height: 8vh;
-  top: 8vh;
+  width: 100%;
+  height: 60px;
+  top: 70px;
   position: absolute;
-  overflow: hidden;
 }
 
 .step-1 {
@@ -72,13 +67,15 @@ export default {
   border-style: solid;
   border-radius: 24px;
   border-width: 2px;
-  width: 20vw;
-  height: 4vh;
+  width: 20%;
+  height: 35px;
   position: absolute;
-  left: 11.5vw;
-  top: 3vh;
+  left: 11.5%;
+  top: 20px;
   color: #ffffff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font: 600 15px "Noto Sans", sans-serif;
 }
 
@@ -87,13 +84,15 @@ export default {
   border-style: solid;
   border-color: #1c9181;
   border-width: 2px;
-  width: 20vw;
-  height: 4vh;
+  width: 20%;
+  height: 35px;
   position: absolute;
-  top: 3vh;
-  left: 39.7vw;
+  top: 20px;
+  left: 39.7%;
   color: #000000;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font: 600 15px "Noto Sans", sans-serif;
 }
 
@@ -102,32 +101,32 @@ export default {
   border-style: solid;
   border-color: #1c9181;
   border-width: 2px;
-  width: 20vw;
-  height: 4vh;
+  width: 20%;
+  height: 35px;
   position: absolute;
-  top: 3vh;
-  left: 67.9vw;
+  top: 20px;
+  left: 67.9%;
   color: #000000;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font: 600 15px "Noto Sans", sans-serif;
 }
 
 .line-left {
   position: absolute;
-  left: 31.4vw;
-  top: 3.6vh;
-  overflow: visible;
-}
-.line-left img {
-  width: 8.5vw;
+  left: 31.4%;
+  top: 35px;
+  width: 8.5%;
+  height: 2px;
+  background: #1c9181;
 }
 .line-right {
   position: absolute;
-  left: 59.5vw;
-  top: 3.6vh;
-  overflow: visible;
-}
-.line-right img {
-  width: 8.5vw;
+  left: 59.5%;
+  top: 35px;
+  width: 8.5%;
+  height: 2px;
+  background: #1c9181;
 }
 </style>

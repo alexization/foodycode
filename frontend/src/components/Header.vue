@@ -13,20 +13,20 @@
         <img :src="QrScannerBtnImage" width="32" />
       </button>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
 import NavBtnImage from "@/assets/icon/navigation_button.png";
 import QrScannerBtnImage from "@/assets/icon/qr_scanner_button.png";
 
-export default {  
+export default {
   data() {
     return {
       NavBtnImage,
-      QrScannerBtnImage,      
+      QrScannerBtnImage,
     };
-  }, 
+  },
 };
 </script>
 
@@ -39,9 +39,9 @@ export default {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0px;
-  left: 0px;
+  z-index: 100;
   display: inline-flex;
   justify-content: flex-start;
   width: 100%;
@@ -94,8 +94,5 @@ button {
   position: relative;
   width: 20%;
   height: 100%;
-}
-
-@media screen and (min-width: 500px) {
 }
 </style>

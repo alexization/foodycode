@@ -22,16 +22,16 @@
   <script>
     // 모바일 브라우저 100vh 반응형 적용
     let customVH = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", customVH + "px");
-    window.addEventListener("resize", () => {
+    document.documentElement.style.setProperty('--vh', customVH + 'px');
+    window.addEventListener('resize', () => {
       let customVH = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", customVH + "px");
+      document.documentElement.style.setProperty('--vh', customVH + 'px');
     });
 
     // Double tab Zoom 방지
     var lastTouchEnd = 0;
     document.documentElement.addEventListener(
-      "touchend",
+      'touchend',
       function (event) {
         var now = new Date().getTime();
         if (now - lastTouchEnd <= 300) {

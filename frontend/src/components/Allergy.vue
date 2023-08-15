@@ -171,8 +171,8 @@
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
-import line from "@/assets/icon/Line.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
 
 export default {
   data() {
@@ -184,7 +184,7 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = "#/signup";
+      location.href = '#/signup';
     },
     click_next() {
       console.log(this.allergy);
@@ -195,9 +195,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
 
 .selecting-page,
 .selecting-page * {
@@ -251,7 +251,7 @@ export default {
   top: 77.5vh;
   color: #ffffff;
   text-align: center;
-  font: 400 30px "Jua", sans-serif;
+  font: 400 30px 'Jua', sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
@@ -260,7 +260,7 @@ export default {
 .please-select-the-food-you-are-allergic-to-from-the-following {
   color: #000000;
   text-align: center;
-  font: 500 20px "Noto Sans", sans-serif;
+  font: 500 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 4.1vw;
   top: 2.4vh;
@@ -270,7 +270,7 @@ export default {
 .excludes-menus-containing-the-selected-food {
   color: #000000;
   text-align: center;
-  font: 300 13px "Noto Sans", sans-serif;
+  font: 300 13px 'Noto Sans', sans-serif;
   position: absolute;
   left: 9.2vw;
   top: 9.5vh;
@@ -289,7 +289,7 @@ export default {
 .frame-button div label {
   cursor: pointer;
 }
-.frame-button div label input[type="checkbox"] {
+.frame-button div label input[type='checkbox'] {
   display: none;
 }
 .frame-button div label span {
@@ -301,20 +301,20 @@ export default {
   height: 5vh;
   color: #000000;
   text-align: center;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   padding-top: 9px;
   transition: 0.5s;
   overflow: hidden;
 }
 .frame-button div label span::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
 }
-.frame-button div label input[type="checkbox"]:checked ~ span {
+.frame-button div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
 }
 </style>

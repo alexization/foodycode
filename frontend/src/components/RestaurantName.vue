@@ -44,17 +44,17 @@
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
 
 export default {
   props: {
     restaurantName: {
       type: String,
-      default: "Hot Pot Stew Restaurant",
+      default: 'Hot Pot Stew Restaurant',
     },
     userName: {
       type: String,
-      default: "Fooridge",
+      default: 'Fooridge',
     },
   },
   data() {
@@ -64,47 +64,46 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = "#/";
+      location.href = '#/';
     },
     order_confirm() {
-      alert("Click Order Confirm");
+      alert('Click Order Confirm');
     },
     click_basket() {
-      alert("Click Shopping Basket");
+      alert('Click Shopping Basket');
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 
 .RestaurantName,
 .RestaurantName * {
   box-sizing: border-box;
 }
 .RestaurantName {
-  width: 100vw;
-  height: 21.3vh;
-  position: relative;
+  width: 100%;
+  height: 180px;
+  position: absolute;
 }
 .Rectangle {
   background: #42b2a3;
-  width: 100vw;
-  height: 21.3vh;
+  width: 100%;
+  height: 180px;
   position: absolute;
-  left: 0vw;
-  top: 0vh;
+  left: 0px;
+  top: 0px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .arrow-back {
   position: absolute;
-  left: 7.7vw;
-  top: 7.6vh;
-  width: 6.4vw;
-  height: 3vh;
-  overflow: visible;
+  left: 7.7%;
+  top: 14px;
+  width: 6.4%;
+  height: 25.3px;
   border: none;
   background-color: #42b2a3;
   cursor: pointer;
@@ -113,39 +112,37 @@ export default {
 .Rest-name {
   color: #000000;
   text-align: center;
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 25.9vw;
-  top: 7.1vh;
-  width: 48.2vw;
-  height: 10.3vh;
+  left: 25.9%;
+  top: 14px;
+  width: 48.2%;
+  height: 87px;
 }
 .filtered-menu-for {
   color: #000000;
   text-align: left;
-  font: 400 20px "Noto Sans", sans-serif;
+  font: 400 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 11.5vw;
-  top: 16.5vh;
+  left: 11.5%;
+  top: 139px;
 }
 .user-name {
   color: #fff;
   text-align: left;
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 56.4vw;
-  top: 16.5vh;
+  left: 56.4%;
+  top: 139px;
 }
 .Order {
   position: absolute;
-  left: 77.4vw;
-  top: 8.3vh;
-  overflow: visible;
+  left: 77.4%;
+  top: 17px;
 }
 .Basket {
   position: absolute;
-  left: 86.7vw;
-  top: 7.9vh;
-  overflow: visible;
+  left: 86.7%;
+  top: 14px;
 }
 </style>

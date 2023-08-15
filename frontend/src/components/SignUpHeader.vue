@@ -5,8 +5,9 @@
         <img :src="arrow_back" width="25" @click="click_back" />
       </button>
     </div>
-
-    <div class="foody-logo">FOODY</div>
+    <div class="logo-box">
+      <div class="foody-logo">FOODY</div>
+    </div>
   </div>
 </template>
 
@@ -48,18 +49,26 @@ export default {
 .SignUp-Head {
   position: absolute;
   top: 0vh;
+  z-index: 100;
   display: inline-flex;
   justify-content: flex-start;
-  width: 100vw;
-  height: 8vh;
+  width: 100%;
+  height: 70px;
   background: #ffffff;
 }
-
+.logo-box {
+  position: relative;
+  width: 60%;
+  height: 100%;
+}
 .foody-logo {
   position: absolute;
-  width: 25vw;
-  height: 4vh;
-  left: 39.7vw;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px; /* 로고 위치 조정 */
+  margin-left: -50px;
+  width: 100px;
+  height: 40px;
   font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
@@ -70,16 +79,18 @@ export default {
 }
 
 .arrow-back {
-  position: absolute;
-  top: 1.7vh;
-  left: 1vw;
-  width: 10vw;
-  height: 4vh;
+  position: relative;
+  width: 20%;
+  height: 100%;
 }
 button {
   position: absolute;
-  width: 10vw;
-  height: 4vh;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
   border: none;
   background: none;
 }
