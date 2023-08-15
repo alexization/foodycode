@@ -10,6 +10,7 @@ class AlgStorage{
             const query = "select allergies.algname FROM users right join userAlgs ON users.id = userAlgs.uid inner join allergies ON userAlgs.algid = allergies.id where users.uid = ?;";
             db.query(query,[id],(err,data)=>{
                 if(err) throw reject(`${err}`);
+              
                 resolve(data);
             });
         });
