@@ -34,19 +34,22 @@
 // const query = `${info_query}\n${alg_Query}`;
 
 
-const userInfo = "sdfsdf";
-const arr_algid = [1];
 
-const info_query = "INSERT INTO users(uid, psword, name, age, gen, country, email) VALUES (?, ?, '3', '3', '3', '3', '3');";
 
-let insertValues = '';
-// 유저 알러지 정보가 하나라도 선택되어 있을 때만 테이블에 저장
-if (arr_algid.length > 0) {
-    insertValues = arr_algid.map(algid => `(${algid}, (SELECT id FROM users WHERE uid = ?))`).join(', ');
-}
+////
+// const userInfo = "sdfsdf";
+// const arr_algid = [1];
 
-const alg_Query = insertValues ? `INSERT INTO useralgs (algid, uid) VALUES ${insertValues};` : '';
+// const info_query = "INSERT INTO users(uid, psword, name, age, gen, country, email) VALUES (?, ?, '3', '3', '3', '3', '3');";
 
-const query = `${info_query}\n${alg_Query}`;
+// let insertValues = '';
+// // 유저 알러지 정보가 하나라도 선택되어 있을 때만 테이블에 저장
+// if (arr_algid.length > 0) {
+//     insertValues = arr_algid.map(algid => `(${algid}, (SELECT id FROM users WHERE uid = ?))`).join(', ');
+// }
 
-console.log(query);
+// const alg_Query = insertValues ? `INSERT INTO useralgs (algid, uid) VALUES ${insertValues};` : '';
+
+// const query = `${info_query}\n${alg_Query}`;
+
+// console.log(query);

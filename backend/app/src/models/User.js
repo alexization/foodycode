@@ -41,6 +41,19 @@ class User{
 
     }
 
+    async getUsersInfo(){
+        const client = this.body;
+        try{
+            const response = await UserStorage.getUsersInfo(client);
+            return response;
+        } catch(err){
+            const a= {success:false,msg:err}
+            return a;
+        }
+
+    }
+
+
 
 }
 

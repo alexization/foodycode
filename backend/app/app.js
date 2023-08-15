@@ -15,6 +15,8 @@ var registerRouter = require("./src/routes/register");
 var mainRouter = require("./src/routes/main");
 var menuRouter = require("./src/routes/menu");
 
+var useralgRouter = require("./src/routes/useralg");
+
 var app = express();
 
 // view engine setup
@@ -41,6 +43,8 @@ app.use("/api/login", loginRouter);
 app.use("/api/signup", registerRouter);
 app.use("/api/main", mainRouter);
 app.use("/api/menu", menuRouter);
+app.use("/api/useralg",useralgRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
