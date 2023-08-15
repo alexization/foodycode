@@ -1,5 +1,6 @@
 const User = require("../models/User");
 
+
 class UserCtrl {
 
   static async processLogin(req, res) {
@@ -8,7 +9,7 @@ class UserCtrl {
     const response = await user.login();
     
 
-    //로그인 성공시 세션 생성
+    // 로그인 성공시 세션 생성
     if (response.success) {
       req.session.is_logined = true;
       req.session.userid = req.body.uid;
@@ -23,8 +24,13 @@ class UserCtrl {
     console.log(response);
     return res.json(response);
   }
-
   
+  static async getUserInfo(req,res){
+    const user = new User(req.body);
+    const response = await user.getUserInfo();
+    console.log(response);
+    return res.json(response);
+  }
 
 }
 
