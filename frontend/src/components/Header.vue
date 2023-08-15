@@ -95,7 +95,4 @@ button {
   width: 20%;
   height: 100%;
 }
-
-@media screen and (min-width: 500px) {
-}
 </style>

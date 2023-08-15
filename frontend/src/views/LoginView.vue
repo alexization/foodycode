@@ -59,8 +59,9 @@
         fill="#146330"
       />
     </svg>
-
-    <img class="logo-img" :src="LogoImg" />
+    <div class="logo">
+      <img class="logo-img" :src="LogoImg" />
+    </div>
   </div>
 </template>
 <script>
@@ -117,8 +118,8 @@ export default {
   background: #ffffff;
   width: 100%;
   height: 100vh;
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  overflow: scroll;
 }
 .login-text {
   color: #143b22;
@@ -220,12 +221,16 @@ export default {
   cursor: pointer;
 }
 
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .logo-img {
   border-radius: 20px;
-  width: 38%;
-  height: 17.7%;
+  width: 150px;
+  height: 150px;
   position: absolute;
-  left: 30%;
   top: 169px;
 }
 </style>

@@ -205,7 +205,7 @@ export default {
 }
 .selecting-page {
   background: #ffffff;
-  width: 100vw;
+  width: 100%;
   height: 83.4vh;
   top: 16.6vh;
   position: absolute;

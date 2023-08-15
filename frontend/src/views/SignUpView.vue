@@ -25,6 +25,8 @@ export default {
     return {
       register: true,
       allergy: false,
+      a: "",
+      b: {},
     };
   },
   methods: {
@@ -39,8 +41,8 @@ export default {
 <style scoped>
 .signup {
   background: white;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  position: absolute;
+  position: relative;
 }
 </style>
