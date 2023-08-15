@@ -1,9 +1,9 @@
 <template>
   <div>
     <Header @toggleMenu="toggleMenu"></Header>
-    <div class="search-box">
-      <SearchBar></SearchBar>
-    </div>
+    <div class="user-info-box">
+      <HomeUserInfo></HomeUserInfo> 
+    </div>    
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">        
         <router-link :to="`/allmenu/${item.rest_name}`">
@@ -28,9 +28,7 @@
           </button>
         </div>
         <div v-for="{ name, url } in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{
-            name
-          }}</router-link>
+          <router-link :to="url" @click="callback" class="link">{{ name }}</router-link>
         </div>
       </nav>
     </Transition>
@@ -41,7 +39,7 @@
 import CloseIcon from "@/assets/icon/close.png";
 
 import Header from "../components/Header.vue";
-import SearchBar from "../components/SearchBar.vue";
+import HomeUserInfo from "../components/HomeUserInfo.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
 
 import axios from "axios";
@@ -50,7 +48,7 @@ export default {
   name: "HomeView",
   components: {
     Header,
-    SearchBar,
+    HomeUserInfo,
     RestaurantCard,
   },
   props: {},
@@ -85,22 +83,22 @@ export default {
 </script>
 
 <style scoped>
-.search-box {
+.user-info-box{
   position: absolute;
-  width: 100%;
-  height: 60px;
   top: 70px;
+  width: 100%;
+  height: 110px;  
   background: #ffffff;
 }
 
 .restaurant-list {
   position: absolute;
-  top: 130px;
+  top: 180px;
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);
+  height: calc(var(--vh, 1vh) * 100 - 180px);
 }
 
 /* 사이드 메뉴 열었을때 배경 흐리게 */

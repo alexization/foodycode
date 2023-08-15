@@ -45,8 +45,8 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {
-      list: "",
-      alg_list: "",
+      list: [],
+      alg_list: [],
     };
   },
 
@@ -70,7 +70,7 @@ export default {
         }
       }
       this.list = menu_list;
-      this.alg_list = alg_menu;
+      this.alg_list = alg_menu;      
     });
   },
 };
