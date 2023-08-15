@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import SignUpHead from "../components/SignUpHeader.vue";
-import StepCard from "../components/StepCard.vue";
-import RegisterInfo from "../components/RegisterInfo.vue";
-import Allergy from "../components/Allergy.vue";
+import SignUpHead from '../components/SignUpHeader.vue';
+import StepCard from '../components/StepCard.vue';
+import RegisterInfo from '../components/RegisterInfo.vue';
+import Allergy from '../components/Allergy.vue';
 
 export default {
   components: {
@@ -25,8 +25,6 @@ export default {
     return {
       register: true,
       allergy: false,
-      a: "",
-      b: {},
     };
   },
   methods: {
@@ -43,6 +41,6 @@ export default {
   background: white;
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: absolute;
 }
 </style>

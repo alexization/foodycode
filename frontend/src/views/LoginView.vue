@@ -1,7 +1,11 @@
 <template>
   <div class="login-view">
-    <button type="button" class="login-button" @click="onLogin">LOGIN</button>
-
+    <button class="button-back" @click="click_back">
+      <img src="@/assets/icon/arrow-back.png" width="25" />
+    </button>
+    <div class="logo">
+      <img class="logo-img" :src="LogoImg" />
+    </div>
     <div class="login-text">LOGIN</div>
 
     <input
@@ -21,16 +25,13 @@
       placeholder="Password"
       maxlength="32"
     />
+    <button type="button" class="login-button" @click="onLogin">LOGIN</button>
 
     <div class="find-my-id">Find my ID</div>
 
     <div class="find-my-pw">Find my PW</div>
 
     <RouterLink class="sign-up" to="/signup">Sign Up</RouterLink>
-
-    <div class="click-here-if-you-are-manager">
-      Click Here If You Are Manager
-    </div>
 
     <svg
       class="password-img"
@@ -59,19 +60,19 @@
         fill="#146330"
       />
     </svg>
-    <div class="logo">
-      <img class="logo-img" :src="LogoImg" />
+    <div class="click-here-if-you-are-manager">
+      Click Here If You Are Manager
     </div>
   </div>
 </template>
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import Logo from "@/assets/login/Logo.png";
-import axios from "axios";
-import { RouterLink } from "vue-router";
+import Logo from '@/assets/login/Logo.png';
+import axios from 'axios';
+import { RouterLink } from 'vue-router';
 
 export default {
-  name: "LogInPage",
+  name: 'LogInPage',
   components: {
     RouterLink,
   },
@@ -83,14 +84,17 @@ export default {
     };
   },
   methods: {
+    click_back() {
+      location.href = '#/';
+    },
     onLogin: async function () {
-      const uid = document.getElementById("uid");
+      const uid = document.getElementById('uid');
       console.log(uid.value);
-      const password = document.getElementById("pw");
+      const password = document.getElementById('pw');
 
       let res = await axios({
-        method: "POST",
-        url: "api/login",
+        method: 'POST',
+        url: 'api/login',
         data: {
           uid: uid.value,
           password: password.value,
@@ -99,7 +103,7 @@ export default {
         console.log(res.data);
 
         if (res.data.success) {
-          location.href = "#/";
+          location.href = '#/';
         } else {
           alert(res.data.msg);
         }
@@ -109,27 +113,35 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 .login-view * {
   box-sizing: border-box;
 }
 .login-view {
   background: #ffffff;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   position: absolute;
   overflow: scroll;
 }
 .login-text {
   color: #143b22;
   text-align: left;
-  font: 700 20px "Roboto", sans-serif;
+  font: 700 20px 'Roboto', sans-serif;
   position: absolute;
   left: calc(50% - 35px);
-  top: 479px;
+  top: 350px;
 }
-
+.button-back {
+  position: absolute;
+  top: 16px;
+  left: 19px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+}
 .input-id {
   border-radius: 22px;
   border-style: solid;
@@ -138,7 +150,7 @@ export default {
   width: 79.5%;
   height: 45px;
   position: absolute;
-  top: 529px;
+  top: 400px;
   left: 10.3%;
   font-size: 15px;
   padding-left: 15.4%;
@@ -151,7 +163,7 @@ export default {
   width: 79.5%;
   height: 45px;
   position: absolute;
-  top: 590px;
+  top: 461px;
   left: 10.3%;
   font-size: 15px;
   padding-left: 15.4%;
@@ -159,56 +171,54 @@ export default {
 .find-my-id {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 20%;
-  top: 714px;
+  top: 585px;
 }
 .find-my-pw {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 42%;
-  top: 714px;
+  top: 585px;
 }
 .sign-up {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 67%;
-  top: 714px;
+  top: 585px;
 }
 .click-here-if-you-are-manager {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
   position: absolute;
   left: 42%;
-  top: 795px;
+  top: 645px;
 }
 .password-img {
   position: absolute;
   left: 16%;
-  top: 604px;
-  overflow: visible;
+  top: 475px;
 }
 .user-img {
   position: absolute;
   left: 16%;
-  top: 545px;
-  overflow: visible;
+  top: 416px;
 }
 
 .login-button {
   position: absolute;
   left: 10%;
-  top: 659px;
+  top: 530px;
   overflow: visible;
   background: #1c9181;
   border-radius: 22px;
@@ -231,6 +241,6 @@ export default {
   width: 150px;
   height: 150px;
   position: absolute;
-  top: 169px;
+  top: 40px;
 }
 </style>

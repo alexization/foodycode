@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   components: {},
 };
 </script>
@@ -22,7 +22,7 @@ body {
   width: 100%;
   max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.08) 0 0 20px 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   height: calc(var(--vh, 1vh) * 100);
   background: #ffffff;
 }

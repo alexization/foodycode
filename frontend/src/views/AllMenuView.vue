@@ -28,14 +28,14 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import RestaurantName from "../components/RestaurantName.vue";
-import MenuCard from "../components/MenuCard.vue";
-import AlgMenuCard from "../components/AlgMenuCard.vue";
+import RestaurantName from '../components/RestaurantName.vue';
+import MenuCard from '../components/MenuCard.vue';
+import AlgMenuCard from '../components/AlgMenuCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "LandingPage",
+  name: 'LandingPage',
   components: {
     RestaurantName,
     MenuCard,
@@ -63,14 +63,14 @@ export default {
           menu_list.push(response.data[i]);
         } else {
           response.data[i].menu_alg.sort();
-          let str = response.data[i].menu_alg.join(", ");
+          let str = response.data[i].menu_alg.join(', ');
           response.data[i].menu_alg = [];
           response.data[i].menu_alg.push(str);
           alg_menu.push(response.data[i]);
         }
       }
       this.list = menu_list;
-      this.alg_list = alg_menu;      
+      this.alg_list = alg_menu;
     });
   },
 };
@@ -83,31 +83,32 @@ export default {
 }
 .MenuView {
   background: #ffffff;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  position: relative;
+  position: absolute;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow-y: auto;
 }
 .MenuList {
+  width: 98.7%;
   display: flex;
   flex-direction: column;
-  gap: 0vw;
+  gap: 0px;
   align-items: flex-start;
   justify-content: flex-start;
   position: absolute;
-  left: 1.3vw;
-  top: 21.4vh;
-  padding-top: 1.2vh;
+  left: 1.3%;
+  top: 180px;
+  padding-top: 10.1px;
 }
 .line {
-  width: 94.9vw;
-  height: 0.4vh;
-  left: 1.5vw;
+  width: 94%;
+  height: 3.4px;
+  left: 1.5%;
   border-radius: 100px;
   background: #42b2a36b;
   position: relative;
-  bottom: -1.2vh;
-  margin-bottom: 3vh;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 </style>

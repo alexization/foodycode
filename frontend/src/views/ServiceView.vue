@@ -132,8 +132,8 @@
 </template>
 
 <script>
-import SignUpHeader from "../components/SignUpHeader.vue";
-import StepCard from "../components/StepCard.vue";
+import SignUpHeader from '../components/SignUpHeader.vue';
+import StepCard from '../components/StepCard.vue';
 export default {
   components: {
     SignUpHeader,
@@ -145,18 +145,18 @@ export default {
   },
   methods: {
     click_accpet() {
-      location.href = "#/signup2";
+      location.href = '#/signup2';
     },
     click_decline() {
-      location.href = "#/login";
+      location.href = '#/login';
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
 .Service,
 .Service * {
   box-sizing: border-box;
@@ -174,13 +174,12 @@ export default {
   height: calc(var(--vh, 1vh) * 100 - 356px);
   top: 256px;
   position: absolute;
-  overflow: scroll;
 }
 
 .terms-of-service {
   color: #000000;
   text-align: left;
-  font: 700 20px "Noto Sans", sans-serif;
+  font: 700 20px 'Noto Sans', sans-serif;
   position: absolute;
   left: 7.7%;
   top: 40px;
@@ -199,7 +198,7 @@ export default {
 .last-update-text {
   color: #000000;
   text-align: left;
-  font: 400 10px "Noto Sans", sans-serif;
+  font: 400 10px 'Noto Sans', sans-serif;
   position: absolute;
   left: 7.7%;
   top: 68px;
@@ -210,7 +209,7 @@ export default {
   position: relative;
   display: inline-block;
   width: 84.6%;
-  height: 465.9px;
+  height: calc(var(--vh, 1vh) * 100 - 356px);
   padding-right: 7.7%;
   margin-left: 7.7%;
   margin-right: 7.7%;
@@ -229,11 +228,11 @@ export default {
 }
 
 .title {
-  font: 600 12px "Noto Sans", sans-serif;
+  font: 600 12px 'Noto Sans', sans-serif;
   letter-spacing: 0.6px;
 }
 .service-text {
-  font: 300 10px "Noto Sans", sans-serif;
+  font: 300 10px 'Noto Sans', sans-serif;
   letter-spacing: 0.6px;
   margin-left: 2.6%;
   line-height: 20px;
@@ -268,7 +267,7 @@ export default {
   top: 40px;
   color: #ffffff;
   text-align: center;
-  font: 400 15px "Noto Sans", sans-serif;
+  font: 400 15px 'Noto Sans', sans-serif;
   border: none;
   cursor: pointer;
 }
@@ -283,7 +282,7 @@ export default {
   top: 40px;
   color: #1c9181;
   text-align: center;
-  font: 400 15px "Noto Sans", sans-serif;
+  font: 400 15px 'Noto Sans', sans-serif;
   cursor: pointer;
   background: none;
 }
