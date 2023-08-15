@@ -5,7 +5,7 @@
       <HomeUserInfo></HomeUserInfo> 
     </div>    
     <div class="restaurant-list">
-      <div v-for="item in list" :key="item">        
+      <div v-for="item in list" :key="item">
         <router-link :to="`/allmenu/${item.rest_name}`">
           <RestaurantCard
             :restaurantName="item.img_url"
@@ -14,7 +14,7 @@
           />
         </router-link>
       </div>
-    </div>    
+    </div>
 
     <Transition name="fade">
       <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>

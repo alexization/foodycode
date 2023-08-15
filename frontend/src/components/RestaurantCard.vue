@@ -57,13 +57,14 @@ export default {
 }
 
 .image-box {
-  width: 360px;
-  height: 180px; 
-  margin: auto; 
+  width: 94%;
+  height: 180px;
+  margin: auto;
 }
 
 img {
-  width: 360px;
+  width: 94%;
+  margin-left: 3%;
   height: 180px;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
@@ -71,16 +72,16 @@ img {
 
 .info-box {
   position: relative;
-  width: 360px;
+  width: 94%;
   height: 60px;
-  margin: auto;  
+  margin: auto;
 }
 
 .title {
   position: absolute;
-  left: 10px;
+  left: 2.6%;
   top: 5px;
-  width: 360px;
+  width: 94%;
   color: #000000;
   letter-spacing: 1.2px;
   font: 500 20px "Noto Sans", sans-serif;
@@ -89,9 +90,9 @@ img {
 
 .tel {
   position: absolute;
-  left: 40px;
+  left: 10.3%;
   top: 35px;
-  width: 360px;
+  width: 94%;
   color: #969595;
   letter-spacing: 0.3px;
   font: 400 15px "Noto Sans", sans-serif;
@@ -100,13 +101,12 @@ img {
 
 .tel img {
   position: absolute;
-  left: -25px;
+  left: -10%;
   top: 3px;
   width: 18px;
   height: 18px;
 }
 
 @media screen and (min-width: 768px) {
-  
 }
 </style>
