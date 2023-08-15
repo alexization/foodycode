@@ -23,17 +23,17 @@ export default {
   data() {
     return {
       UserIcon,
-      userName: "SungHyun",
-      allergyList: ["pork", "beef", "milk", "apple", "egg", "orange", "good"],
+      userName: "",
+      allergyList: [],
     };
   },
-  /* async created() {
+  async created() {
     axios.get("/api/useralg").then((response) => {
       response.data.useralgs.sort();
       this.userName = response.data.uname;
-      this.allergyList = response.data.useralgs[0].algname;
+      this.allergyList = response.data.useralgs;
     });
-  }, */
+  },
 };
 </script>
 
@@ -90,8 +90,7 @@ export default {
 }
 
 .alg-tag {
-  position: relative;
-  
+  position: relative;  
   height: 35px;
   padding: 4px 10px 0px;
   border: 1px solid #1c9181;
@@ -102,5 +101,9 @@ export default {
   letter-spacing: 1.2px;
   font: 400 16px "Noto Sans", sans-serif;
   text-align: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 </style>
