@@ -70,16 +70,6 @@ export default {
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
-   
-
-    axios.get("/api/useralg").then((response) => {
-      //user이름과 알러지 이름 배열 출력
-      console.log(response.data.useralgs);
-      
-      console.log(response.data.uname);
-
-    });
-
   },
   methods: {
     async toggleMenu() {

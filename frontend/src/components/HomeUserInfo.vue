@@ -7,7 +7,9 @@
       <div class="user-name" v-text="`Welcome ${userName}!`"></div>
     </div>
     <div class="user-alg-box">
-      <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">{{ allergy }}</div>
+      <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
+        {{ allergy }}
+      </div>
     </div>
   </div>
 </template>
@@ -21,18 +23,17 @@ export default {
   data() {
     return {
       UserIcon,
-      userName: "sunghyun",
-      allergyList: ["pork", "beef", "milk", "apple", "egg", "peach", "orange", "water"],      
+      userName: "SungHyun",
+      allergyList: ["pork", "beef", "milk", "apple", "egg", "orange", "good"],
     };
   },
-  //async created() {
-   // axios.get("/api/main").then((response) => {
-     // console.log(response.data);
-      //response.data.menu_alg.sort();
-      //this.userName = response.data.user_name;
-      //this.allergyList = response.data.user_alg;
-    //});
- // },
+  /* async created() {
+    axios.get("/api/useralg").then((response) => {
+      response.data.useralgs.sort();
+      this.userName = response.data.uname;
+      this.allergyList = response.data.useralgs[0].algname;
+    });
+  }, */
 };
 </script>
 
@@ -85,20 +86,21 @@ export default {
   width: 360px;
   height: 55px;
   margin: 0px auto;
-  padding: 0px 10px 20px;
+  padding: 0px 10px 10px;
 }
 
-.alg-tag {  
-  position: relative;  
+.alg-tag {
+  position: relative;
+  
   height: 35px;
-  padding: 5px;
-  border: 1px solid #d9d9d9;
+  padding: 4px 10px 0px;
+  border: 1px solid #1c9181;
   border-radius: 10px;
-  margin: 0px 5px;
+  margin-right: 10px;
   background: #1c9181;
   color: #ffffff;
   letter-spacing: 1.2px;
-  font: 500 20px "Noto Sans", sans-serif;
+  font: 400 16px "Noto Sans", sans-serif;
   text-align: center;
 }
 </style>
