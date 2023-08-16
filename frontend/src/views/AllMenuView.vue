@@ -3,7 +3,7 @@
     <div class="MenuList">
       <div class="menu">
         <div v-for="item in list" :key="item">
-          <router-link :to="`${url_href}/${item.menu_name}`">
+          <router-link :to="`${url_href}/${item.id}`">
             <MenuCard
               :menuName="item.menu_name"
               :menuImg="item.img_url"
@@ -16,7 +16,7 @@
       <div class="line"></div>
       <div class="alg-menu">
         <div v-for="item in alg_list" :key="item">
-          <router-link :to="`${this.url_href}/${item.menu_name}`">
+          <router-link :to="`${this.url_href}/${item.id}`">
             <AlgMenuCard
               :menuName="item.menu_name"
               :menuImg="item.img_url"

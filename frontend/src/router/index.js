@@ -50,7 +50,7 @@ const routes = [
     },
   },
   {
-    path: "/allmenu/:rest_name_url_param/:menu_name_url_param",
+    path: "/allmenu/:rest_name_url_param/:menu_id_url_param",
     name: "menu-detail",
     component: () => import("../views/MenuDetail.vue"),
     meta: {
