@@ -50,9 +50,12 @@ const routes = [
     },
   },
   {
-    path: "/detail",
+    path: "/allmenu/:rest_name_url_param/:menu_name_url_param",
     name: "menu-detail",
     component: () => import("../views/MenuDetail.vue"),
+    meta: {
+      title: "Detail Menu FOODY",
+    },
   },
 ];
 

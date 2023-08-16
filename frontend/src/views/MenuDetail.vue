@@ -2,7 +2,7 @@
   <div class="detail-page">
     <div class="description-page">
       <img class="menu-img" src="@/assets/menu/kimchi.png" />
-      <button class="arrow-back-background">
+      <button class="arrow-back-background" @click="click_back">
         <img class="arrow-back" src="@/assets/icon/arrow_back_iOS.png" />
       </button>
 
@@ -25,7 +25,7 @@
       <button class="remove-background" @click="click_remove">
         <img class="remove" src="@/assets/icon/remove.png" />
       </button>
-      <button class="add-background">
+      <button class="add-background" @click="click_add">
         <img class="add" src="@/assets/icon/add.png" />
       </button>
       <div class="count">1</div>
@@ -44,12 +44,27 @@ export default {
   props: {},
   data() {
     // quickfix to have components available to pass as props
-    return {};
+    return {
+      prev_url: "",
+    };
   },
   methods: {
     click_remove() {
       alert("Click Remove");
     },
+    click_add() {
+      alert("Click Add");
+    },
+    click_back() {
+      this.prev_url = "#" + this.prev_url;
+      location.href = this.prev_url;
+    },
+  },
+  created() {
+    this.url = window.location.href.split("#")[1];
+    this.url_href = this.url.split("/");
+    this.url_href.pop();
+    this.prev_url = this.url_href.join("/");
   },
 };
 </script>
