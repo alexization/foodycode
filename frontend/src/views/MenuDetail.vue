@@ -1,11 +1,11 @@
 <template>
-  <div class="description-page">
-    <img class="menu-img" src="@/assets/menu/kimchi.png" />
-    <button class="arrow-back-background">
-      <img class="arrow-back" src="@/assets/icon/arrow_back_iOS.png" />
-    </button>
+  <div class="detail-page">
+    <div class="description-page">
+      <img class="menu-img" src="@/assets/menu/kimchi.png" />
+      <button class="arrow-back-background">
+        <img class="arrow-back" src="@/assets/icon/arrow_back_iOS.png" />
+      </button>
 
-    <div class="detail-group">
       <div class="menu-name">Rich Soybean Paste Jjigae</div>
       <div class="details">Details</div>
       <div class="detail-text">
@@ -30,7 +30,9 @@
       </button>
       <div class="count">1</div>
     </div>
-    <button class="add-cart">Add to Cart</button>
+    <div class="Footer">
+      <button class="add-cart">Add to Cart</button>
+    </div>
   </div>
 </template>
 <script>
@@ -54,20 +56,25 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
-.description-page,
-.description-page * {
+.detail-page,
+.detail-page * {
   box-sizing: border-box;
 }
-.description-page {
+.detail-page {
   background: #ffffff;
-  width: 390px;
-  height: 844px;
-  position: relative;
-  overflow-y: auto;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+.description-page {
+  width: 100%;
+  height: calc(var(--hv, 1vh) * 100 - 50px);
+  position: absolute;
+  overflow-y: scroll;
 }
 .menu-img {
   background: linear-gradient(to left, #d9d9d9, #d9d9d9);
-  width: 390px;
+  width: 100%;
   height: 282px;
   position: absolute;
   left: 0px;
@@ -82,7 +89,7 @@ export default {
   border-radius: 21px;
   border: none;
   top: 50px;
-  left: 19px;
+  left: 20px;
   cursor: pointer;
 }
 .arrow-back-background img {
@@ -92,25 +99,21 @@ export default {
   padding-left: 8px;
 }
 
-.detail-group {
-  position: sticky;
-  inset: 0;
-}
 .menu-name {
   color: #000000;
   text-align: left;
   font: 600 16px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 310px;
-  width: 345px;
+  width: 88.5%;
 }
 .details {
   color: #000000;
   text-align: right;
   font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 362px;
 }
 .detail-text {
@@ -123,9 +126,9 @@ export default {
   text-align: left;
   font: 400 10px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 391px;
-  width: 350px;
+  width: 90%;
   height: 101px;
 }
 .allergy-tag {
@@ -133,7 +136,7 @@ export default {
   text-align: right;
   font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 522px;
 }
 .price {
@@ -141,7 +144,7 @@ export default {
   text-align: right;
   font: 600 14px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 662px;
 }
 
@@ -150,7 +153,7 @@ export default {
   text-align: left;
   font: 400 19px "Noto Sans", sans-serif;
   position: absolute;
-  left: 20px;
+  left: 5.1%;
   top: 691px;
 }
 
@@ -160,7 +163,7 @@ export default {
   width: 23px;
   height: 23px;
   position: absolute;
-  left: 266px;
+  left: 68.2%;
   top: 693px;
   border: none;
   cursor: pointer;
@@ -175,7 +178,7 @@ export default {
   width: 23px;
   height: 23px;
   position: absolute;
-  left: 344px;
+  left: 88.2%;
   top: 693px;
   border: none;
   cursor: pointer;
@@ -189,18 +192,24 @@ export default {
   text-align: left;
   font: 400 18px "Noto Sans", sans-serif;
   position: absolute;
-  left: 311px;
+  left: 80%;
   top: 691px;
 }
+.Footer {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 5%;
+}
 .add-cart {
-  width: 350px;
-  height: 39px;
+  width: 90%;
+  height: 40px;
   position: absolute;
   border-radius: 7px;
   background: #1c9181;
   border: none;
-  top: 775px;
-  left: 20px;
   color: white;
+  margin-bottom: 10px;
 }
 </style>
