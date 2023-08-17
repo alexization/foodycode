@@ -45,18 +45,18 @@ export default {
 }
 
 .user-info-wrapper {
-  position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 110px;
+  height: 110px;  
+  margin: 0px;
   background: #ffffff;
 }
 
 .user-name-box {
   display: inline-flex;
   justify-content: flex-start;
-  width: 360px;
+  width: 88%;
   height: 55px;
   margin: 0px auto;
 }
@@ -83,27 +83,28 @@ export default {
   display: flex;
   justify-content: flex-start;
   overflow-x: auto;
-  width: 360px;
+  width: 100%;
   height: 55px;
   margin: 0px auto;
-  padding: 0px 10px 10px;
+  padding: 0px 6% 10px;
 }
 
 .alg-tag {
   position: relative;  
   height: 35px;
   padding: 4px 10px 0px;
-  border: 1px solid #1c9181;
-  border-radius: 10px;
-  margin-right: 10px;
-  background: #1c9181;
-  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  margin: 0px 2.5px;
+  background: rgba(28, 145, 129, .1);
+  color: rgba(28, 145, 129, 1);
   letter-spacing: 1.2px;
   font: 400 16px "Noto Sans", sans-serif;
   text-align: center;
 }
 
-::-webkit-scrollbar {
-  display: none;
+.user-alg-box::-webkit-scrollbar {
+  display: none;   
 }
+
 </style>
