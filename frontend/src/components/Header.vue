@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import NavBtnImage from "@/assets/icon/navigation_button.png";
-import QrScannerBtnImage from "@/assets/icon/qr_scanner_button.png";
+import NavBtnImage from '@/assets/icon/navigation_button.png';
+import QrScannerBtnImage from '@/assets/icon/qr_scanner_button.png';
 
 export default {
   data() {
@@ -31,8 +31,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
 
 .header * {
   box-sizing: border-box;
@@ -41,7 +41,6 @@ export default {
 .header {
   position: sticky;
   top: 0px;
-  z-index: 100;
   display: inline-flex;
   justify-content: flex-start;
   width: 100%;
@@ -81,7 +80,7 @@ button {
   margin-left: -50px;
   width: 100px;
   height: 40px;
-  font-family: "Dangrek", cursive;
+  font-family: 'Dangrek', cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;

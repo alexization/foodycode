@@ -49,6 +49,14 @@ const routes = [
       title: "Menu FOODY",
     },
   },
+  {
+    path: "/allmenu/:rest_name_url_param/:menu_id_url_param",
+    name: "menu-detail",
+    component: () => import("../views/MenuDetail.vue"),
+    meta: {
+      title: "Detail Menu FOODY",
+    },
+  },
 ];
 
 const router = createRouter({
