@@ -1,34 +1,24 @@
 <template>
   <div class="detail-page">
     <div class="description-page">
-      <img class="menu-img" src="@/assets/menu/kimchi.png" />
+      <img class="menu-img" :src="require(`@/assets/menu/${img_url}.png`)" />
       <button class="arrow-back-background" @click="click_back">
         <img class="arrow-back" src="@/assets/icon/arrow_back_iOS.png" />
       </button>
 
-      <div class="menu-name">Rich Soybean Paste Jjigae</div>
+      <div class="menu-name" v-text="detail_list.menu_name"></div>
       <div class="details">Details</div>
-      <div class="detail-text">
-        &quot;Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-        voluptatem. Ut enim ad minima veniam, quis nostru
-      </div>
+      <div class="detail-text" v-text="detail_list.menu_ing"></div>
       <div class="allergy-tag">Allergy</div>
       <div class="price">Price</div>
-      <div class="menu-price">9000 won</div>
+      <div class="menu-price" v-text="detail_list.menu_price + ' won'"></div>
       <button class="remove-background" @click="click_remove">
         <img class="remove" src="@/assets/icon/remove.png" />
       </button>
       <button class="add-background" @click="click_add">
         <img class="add" src="@/assets/icon/add.png" />
       </button>
-      <div class="count">1</div>
+      <div class="count" v-text="menu_count"></div>
     </div>
     <div class="Footer">
       <button class="add-cart">Add to Cart</button>
@@ -36,40 +26,54 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
+
 /* Code generated with AutoHTML Plugin for Figma */
 
 export default {
-  name: "DescriptionPage",
+  name: 'DescriptionPage',
   components: {},
   props: {},
   data() {
     // quickfix to have components available to pass as props
     return {
-      prev_url: "",
+      prev_rest: '',
+      prev_url: '',
+      menu_count: 1,
+      detail_list: [],
+      img_url: 'loading',
     };
   },
   methods: {
     click_remove() {
-      alert("Click Remove");
+      if (this.menu_count < 2) {
+        alert('최소주문 개수입니다');
+      } else {
+        this.menu_count -= 1;
+      }
     },
     click_add() {
-      alert("Click Add");
+      this.menu_count += 1;
     },
     click_back() {
-      this.prev_url = "#" + this.prev_url;
+      this.prev_url = '#/allmenu/' + this.prev_rest;
       location.href = this.prev_url;
     },
   },
   created() {
-    this.url = window.location.href.split("#")[1];
-    this.url_href = this.url.split("/");
-    this.url_href.pop();
-    this.prev_url = this.url_href.join("/");
+    const menu_id = this.$route.params.menu_id_url_param;
+    const rest_name = this.$route.params.rest_name_url_param;
+    this.prev_rest = rest_name;
+
+    axios.get(`/api/menuDetail/${menu_id}`).then((response) => {
+      this.detail_list = response.data[0];
+      this.img_url = this.detail_list.img_url;
+    });
   },
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
 
 .detail-page,
 .detail-page * {
@@ -117,7 +121,7 @@ export default {
 .menu-name {
   color: #000000;
   text-align: left;
-  font: 600 16px "Noto Sans", sans-serif;
+  font: 600 16px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 310px;
@@ -126,7 +130,7 @@ export default {
 .details {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 362px;
@@ -139,7 +143,7 @@ export default {
     rgba(0, 0, 0, 0) 100%
   );
   text-align: left;
-  font: 400 10px "Noto Sans", sans-serif;
+  font: 400 10px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 391px;
@@ -149,7 +153,7 @@ export default {
 .allergy-tag {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 522px;
@@ -157,7 +161,7 @@ export default {
 .price {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 662px;
@@ -166,7 +170,7 @@ export default {
 .menu-price {
   color: #1c9181;
   text-align: left;
-  font: 400 19px "Noto Sans", sans-serif;
+  font: 400 19px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 691px;
@@ -205,7 +209,7 @@ export default {
 .count {
   color: #000000;
   text-align: left;
-  font: 400 18px "Noto Sans", sans-serif;
+  font: 400 18px 'Noto Sans', sans-serif;
   position: absolute;
   left: 80%;
   top: 691px;
@@ -215,7 +219,6 @@ export default {
   height: 50px;
   position: absolute;
   bottom: 0px;
-  left: 5%;
 }
 .add-cart {
   width: 90%;
@@ -226,5 +229,6 @@ export default {
   border: none;
   color: white;
   margin-bottom: 10px;
+  left: 5%;
 }
 </style>
