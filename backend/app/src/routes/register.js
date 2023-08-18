@@ -1,10 +1,8 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-const UserCtrl = require("../controller/UserCtrl");
+const UserCtrl = require('../controller/UserCtrl');
 
-router.post("/", UserCtrl.processRegister);
-
-
+router.post('/', UserCtrl.processRegister);
 
 module.exports = router;
 

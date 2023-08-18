@@ -1,11 +1,7 @@
-"use strict";
+'use strict';
 
-const AlgStorage = require("./AlgStorage");
+const AlgStorage = require('./AlgStorage');
 
-class Menu{
-
-    async sendMenu(){
-        
-    }
-
+class Menu {
+  async sendMenu() {}
 }
