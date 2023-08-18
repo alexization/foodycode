@@ -8,8 +8,18 @@
 
     <div class="Rest-name" v-text="restaurantName"></div>
 
-    <div class="filtered-menu-for">Filtered Menu For</div>
-    <div class="user-name" v-text="userName"></div>
+    <div
+      class="prev-login"
+      v-if="this.login_status === false"
+      @click="go_login"
+    >
+      <span>Please Login First</span>
+      <img src="@/assets/icon/login.png" />
+    </div>
+    <div class="onlogin-user" v-else-if="this.login_status === true">
+      <span>Filtered Menu For </span>
+      <span class="user-name" v-text="this.userName"></span>
+    </div>
 
     <svg
       class="Order"
@@ -45,6 +55,7 @@
 
 <script>
 import arrow_back from '@/assets/icon/arrow-back.png';
+import axios from 'axios';
 
 export default {
   props: {
@@ -52,14 +63,12 @@ export default {
       type: String,
       default: 'Hot Pot Stew Restaurant',
     },
-    userName: {
-      type: String,
-      default: 'Fooridge',
-    },
   },
   data() {
     return {
       arrow_back,
+      userName: '',
+      login_status: false,
     };
   },
   methods: {
@@ -72,6 +81,22 @@ export default {
     click_basket() {
       alert('Click Shopping Basket');
     },
+    go_login() {
+      location.href = '#/login';
+    },
+  },
+  async created() {
+    axios
+      .get('/api/useralg')
+      .then((response) => {
+        this.userName = response.data.uname.toUpperCase();
+        console.log(this.userName);
+        console.log(this.userName.length);
+        this.login_status = true;
+      })
+      .catch((error) => {
+        this.login_status = false;
+      });
   },
 };
 </script>
@@ -85,13 +110,13 @@ export default {
 }
 .RestaurantName {
   width: 100%;
-  height: 180px;
+  height: 140px;
   position: absolute;
 }
 .Rectangle {
   background: #42b2a3;
   width: 100%;
-  height: 180px;
+  height: 140px;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -119,21 +144,35 @@ export default {
   width: 48.2%;
   height: 87px;
 }
-.filtered-menu-for {
+.prev-login {
+  color: #000000;
+  text-align: center;
+  font: 600 20px 'Noto Sans', sans-serif;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 85px;
+  color: black;
+}
+
+.prev-login img {
+  margin-left: 5px;
+  margin-bottom: -3px;
+  width: 20px;
+  height: 20px;
+}
+.onlogin-user {
   color: #000000;
   text-align: left;
   font: 400 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 11.5%;
-  top: 139px;
+  width: 100%;
+  text-align: center;
+  top: 85px;
 }
 .user-name {
-  color: #fff;
-  text-align: left;
   font: 600 20px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 56.4%;
-  top: 139px;
+  color: white;
 }
 .Order {
   position: absolute;

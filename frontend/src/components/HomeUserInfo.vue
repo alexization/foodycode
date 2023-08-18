@@ -15,30 +15,33 @@
 </template>
 
 <script>
-import UserIcon from "@/assets/icon/user.png";
+import UserIcon from '@/assets/icon/user.png';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
     return {
       UserIcon,
-      userName: "",
+      userName: '',
       allergyList: [],
     };
   },
   async created() {
-    axios.get("/api/useralg").then((response) => {
-      response.data.useralgs.sort();
-      this.userName = response.data.uname;
-      this.allergyList = response.data.useralgs;
-    });
+    axios
+      .get('/api/useralg')
+      .then((response) => {
+        response.data.useralgs.sort();
+        this.userName = response.data.uname;
+        this.allergyList = response.data.useralgs;
+      })
+      .catch((error) => {});
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
 
 .user-info-wrapper * {
   box-sizing: border-box;
@@ -48,7 +51,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 110px;  
+  height: 110px;
   margin: 0px;
   background: #ffffff;
 }
@@ -75,7 +78,7 @@ export default {
   padding-left: 10px;
   color: #000000;
   letter-spacing: 1.2px;
-  font: 500 20px "Noto Sans", sans-serif;
+  font: 500 20px 'Noto Sans', sans-serif;
   text-align: left;
 }
 
@@ -90,21 +93,20 @@ export default {
 }
 
 .alg-tag {
-  position: relative;  
+  position: relative;
   height: 35px;
   padding: 4px 10px 0px;
   border: none;
   border-radius: 15px;
   margin: 0px 2.5px;
-  background: rgba(28, 145, 129, .1);
+  background: rgba(28, 145, 129, 0.1);
   color: rgba(28, 145, 129, 1);
   letter-spacing: 1.2px;
-  font: 400 16px "Noto Sans", sans-serif;
+  font: 400 16px 'Noto Sans', sans-serif;
   text-align: center;
 }
 
 .user-alg-box::-webkit-scrollbar {
-  display: none;   
+  display: none;
 }
-
 </style>
