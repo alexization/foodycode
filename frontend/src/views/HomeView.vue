@@ -2,8 +2,8 @@
   <div>
     <Header @toggleMenu="toggleMenu"></Header>
     <div class="user-info-box">
-      <HomeUserInfo></HomeUserInfo> 
-    </div>    
+      <HomeUserInfo></HomeUserInfo>
+    </div>
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">
         <router-link :to="`/allmenu/${item.rest_name}`">
@@ -28,7 +28,9 @@
           </button>
         </div>
         <div v-for="{ name, url } in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{ name }}</router-link>
+          <router-link :to="url" @click="callback" class="link">{{
+            name
+          }}</router-link>
         </div>
       </nav>
     </Transition>
@@ -36,16 +38,16 @@
 </template>
 
 <script>
-import CloseIcon from "@/assets/icon/close.png";
+import CloseIcon from '@/assets/icon/close.png';
 
-import Header from "../components/Header.vue";
-import HomeUserInfo from "../components/HomeUserInfo.vue";
-import RestaurantCard from "../components/RestaurantCard.vue";
+import Header from '../components/Header.vue';
+import HomeUserInfo from '../components/HomeUserInfo.vue';
+import RestaurantCard from '../components/RestaurantCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     Header,
     HomeUserInfo,
@@ -56,16 +58,16 @@ export default {
     return {
       CloseIcon,
       showMenu: false,
-      list: "",
+      list: '',
       navList: [
-        { name: "내정보", url: "" },
-        { name: "로그인", url: "/login" },
-        { name: "로그아웃", url: "" },
+        { name: '내정보', url: '' },
+        { name: '로그인', url: '/login' },
+        { name: '로그아웃', url: '' },
       ],
     };
   },
   async created() {
-    axios.get("/api/main").then((response) => {
+    axios.get('/api/main').then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
@@ -83,11 +85,11 @@ export default {
 </script>
 
 <style scoped>
-.user-info-box{
+.user-info-box {
   position: absolute;
   top: 70px;
   width: 100%;
-  height: 110px;  
+  height: 110px;
   background: #ffffff;
 }
 
@@ -115,7 +117,7 @@ export default {
 }
 
 .nav-bar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -123,6 +125,7 @@ export default {
   box-sizing: border-box;
   width: 60%;
   height: 100%;
+  top: 0px;
   padding: 15px 8px;
   background-color: white;
 }
