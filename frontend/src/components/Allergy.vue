@@ -158,7 +158,7 @@
       </div>
     </div>
 
-    <button class="next-button" @click="click_next">Next</button>
+    <button class="Register-button" @click="click_next">Register</button>
 
     <div class="please-select-the-food-you-are-allergic-to-from-the-following">
       Please select the food you are allergic to from the following.
@@ -187,8 +187,7 @@ export default {
       location.href = '#/signup';
     },
     click_next() {
-      console.log(this.allergy);
-      alert(this.allergy);
+      this.$emit('alg_data', this.allergy);
     },
   },
 };
@@ -205,7 +204,7 @@ export default {
 }
 .selecting-page {
   background: #ffffff;
-  width: 100vw;
+  width: 100%;
   height: 83.4vh;
   top: 16.6vh;
   position: absolute;
@@ -242,12 +241,12 @@ export default {
   top: 16.6vh;
 }
 
-.next-button {
+.Register-button {
   background: #1c9181;
-  width: 100vw;
-  height: 5.9vh;
+  width: 100%;
+  height: 49.8px;
   position: absolute;
-  left: 0vw;
+  left: 0px;
   top: 77.5vh;
   color: #ffffff;
   text-align: center;
@@ -262,9 +261,9 @@ export default {
   text-align: center;
   font: 500 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 4.1vw;
+  left: 16px;
   top: 2.4vh;
-  width: 91.8vw;
+  width: 91.8%;
   height: 6.8vh;
 }
 .excludes-menus-containing-the-selected-food {
@@ -272,19 +271,18 @@ export default {
   text-align: center;
   font: 300 13px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 9.2vw;
+  left: 36px;
   top: 9.5vh;
-  width: 81.3vw;
+  width: 81.3%;
   height: 2.3vh;
 }
 .frame-button {
   max-width: 84.6vw;
   margin: 0 auto;
-  display: felx;
   flex-wrap: wrap;
 }
 .frame-button div {
-  margin-bottom: 1.2vh;
+  margin-bottom: 10.1px;
 }
 .frame-button div label {
   cursor: pointer;

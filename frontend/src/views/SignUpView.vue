@@ -7,15 +7,15 @@
       @change_page="allergy_page"
       @register_value="get_data"
     ></RegisterInfo>
-    <Allergy v-show="allergy"></Allergy>
+    <Allergy v-show="allergy" @alg_data="get_alg_data"></Allergy>
   </div>
 </template>
 
 <script>
-import SignUpHead from "../components/SignUpHeader.vue";
-import StepCard from "../components/StepCard.vue";
-import RegisterInfo from "../components/RegisterInfo.vue";
-import Allergy from "../components/Allergy.vue";
+import SignUpHead from '../components/SignUpHeader.vue';
+import StepCard from '../components/StepCard.vue';
+import RegisterInfo from '../components/RegisterInfo.vue';
+import Allergy from '../components/Allergy.vue';
 
 export default {
   components: {
@@ -29,6 +29,7 @@ export default {
     return {
       register: true,
       allergy: false,
+      user_info: {},
     };
   },
   methods: {
@@ -38,6 +39,13 @@ export default {
     },
     get_data(data) {
       console.log(data);
+      this.user_info = data;
+    },
+
+    // this.user_info에 최종 유저 데이터가 들어옴 해당 위치에서 post 하면 될듯
+    get_alg_data(data) {
+      this.user_info.alg = data;
+      console.log(this.user_info);
     },
   },
 };
