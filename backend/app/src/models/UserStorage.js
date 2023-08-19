@@ -27,12 +27,12 @@ class UserStorage {
   static async save(userInfo) {
     return new Promise((resolve, reject) => {
       const info_query =
-        "INSERT INTO users(uid,psword,name,age,gen,country,email) VALUES(?,?,'3','3','3','3','3');";
+        "INSERT INTO users(uid,psword,name,age,gen,country,email) VALUES(?,?,?,?,?,?,'test0820@yonsei.ac.kr');";
 
-      db.query(info_query, [userInfo.uid, userInfo.password], (err) => {
+      db.query(info_query, [userInfo.uid, userInfo.psword,userInfo.name,userInfo.age,userInfo.gender,userInfo.country], (err) => {
         console.log(info_query);
         if (err) throw reject(`${err}`);
-
+        
         //resolve먼저 해버리면 알러지 전에 반환해버리니깐 나눠서
         //resolve({success:true});
       });
