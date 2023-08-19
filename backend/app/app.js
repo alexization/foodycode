@@ -8,9 +8,15 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 // var indexRouter = require("./src/routes/index");
+//안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
+
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
+
+var restLoginRouter = require('./src/routes/restlogin');
+var restRegisterRouter = require('./src/routes/restregister');
+
 var mainRouter = require('./src/routes/main');
 var menuRouter = require('./src/routes/menu');
 var menuDetailRouter = require('./src/routes/menuDetail');
@@ -39,9 +45,16 @@ app.use(
 );
 
 // app.use("/", indexRouter);
+// 이거 뭔가안쓰는것같은데?
 app.use('/api/users', usersRouter);
+
 app.use('/api/login', loginRouter);
 app.use('/api/signup', registerRouter);
+
+
+app.use('/apu/restlogin',restLoginRouter);
+app.use('/apu/restresingup',restRegisterRouter);
+
 app.use('/api/main', mainRouter);
 app.use('/api/menu', menuRouter);
 app.use('/api/useralg', useralgRouter);
