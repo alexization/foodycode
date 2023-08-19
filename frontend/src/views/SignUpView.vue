@@ -2,16 +2,20 @@
   <div class="signup">
     <SignUpHead v-bind:now_page="register"></SignUpHead>
     <StepCard v-bind:now_page="register"></StepCard>
-    <RegisterInfo v-show="register" @change_page="allergy_page"></RegisterInfo>
+    <RegisterInfo
+      v-show="register"
+      @change_page="allergy_page"
+      @register_value="get_data"
+    ></RegisterInfo>
     <Allergy v-show="allergy"></Allergy>
   </div>
 </template>
 
 <script>
-import SignUpHead from '../components/SignUpHeader.vue';
-import StepCard from '../components/StepCard.vue';
-import RegisterInfo from '../components/RegisterInfo.vue';
-import Allergy from '../components/Allergy.vue';
+import SignUpHead from "../components/SignUpHeader.vue";
+import StepCard from "../components/StepCard.vue";
+import RegisterInfo from "../components/RegisterInfo.vue";
+import Allergy from "../components/Allergy.vue";
 
 export default {
   components: {
@@ -31,6 +35,9 @@ export default {
     allergy_page() {
       this.register = !this.register;
       this.allergy = !this.allergy;
+    },
+    get_data(data) {
+      console.log(data);
     },
   },
 };

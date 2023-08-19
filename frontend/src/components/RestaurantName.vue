@@ -54,40 +54,40 @@
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import axios from 'axios';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import axios from "axios";
 
 export default {
   props: {
     restaurantName: {
       type: String,
-      default: 'Hot Pot Stew Restaurant',
+      default: "Hot Pot Stew Restaurant",
     },
   },
   data() {
     return {
       arrow_back,
-      userName: '',
+      userName: "",
       login_status: false,
     };
   },
   methods: {
     click_back() {
-      location.href = '#/';
+      location.href = "#/";
     },
     order_confirm() {
-      alert('Click Order Confirm');
+      alert("Click Order Confirm");
     },
     click_basket() {
-      alert('Click Shopping Basket');
+      alert("Click Shopping Basket");
     },
     go_login() {
-      location.href = '#/login';
+      location.href = "#/login";
     },
   },
   async created() {
     axios
-      .get('/api/useralg')
+      .get("/api/useralg")
       .then((response) => {
         this.userName = response.data.uname.toUpperCase();
         console.log(this.userName);
@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
 .RestaurantName,
 .RestaurantName * {
@@ -137,7 +137,7 @@ export default {
 .Rest-name {
   color: #000000;
   text-align: center;
-  font: 600 20px 'Noto Sans', sans-serif;
+  font: 600 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 25.9%;
   top: 14px;
@@ -147,12 +147,13 @@ export default {
 .prev-login {
   color: #000000;
   text-align: center;
-  font: 600 20px 'Noto Sans', sans-serif;
+  font: 600 20px "Noto Sans", sans-serif;
   position: absolute;
   width: 100%;
   text-align: center;
   top: 85px;
   color: black;
+  cursor: pointer;
 }
 
 .prev-login img {
@@ -164,14 +165,14 @@ export default {
 .onlogin-user {
   color: #000000;
   text-align: left;
-  font: 400 20px 'Noto Sans', sans-serif;
+  font: 400 20px "Noto Sans", sans-serif;
   position: absolute;
   width: 100%;
   text-align: center;
   top: 85px;
 }
 .user-name {
-  font: 600 20px 'Noto Sans', sans-serif;
+  font: 600 20px "Noto Sans", sans-serif;
   color: white;
 }
 .Order {
