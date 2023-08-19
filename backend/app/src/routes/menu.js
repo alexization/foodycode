@@ -5,4 +5,6 @@ const MenuCtrl = require('../controller/MenuCtrl');
 
 router.get('/:rest_name', MenuCtrl.sendMenuInfo);
 
+router.put('/',MenuCtrl.addMenu);
+
 module.exports = router;

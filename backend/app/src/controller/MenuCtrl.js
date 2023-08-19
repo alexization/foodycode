@@ -44,6 +44,11 @@ class MenuCtrl {
     const arr_menuDetail = await MenuStorage.getMenuDetail(menu_id);
     res.send(arr_menuDetail);
   }
+
+  static async addMenu(req,res){
+    const response = await MenuStorage.save(req.body);
+    return res.send(response);
+  }
 }
 
 module.exports = MenuCtrl;
