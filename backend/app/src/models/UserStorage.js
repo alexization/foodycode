@@ -33,10 +33,23 @@ class UserStorage {
         console.log(info_query);
         if (err) throw reject(`${err}`);
         
-        //resolve먼저 해버리면 알러지 전에 반환해버리니깐 나눠서
-        //resolve({success:true});
+        //알러지 없으면 추가 할필요 없음
+        if(userInfo.arr_algid.length === 0){
+        
+      console.log("no alg!!!!");
+      console.log("no alg!!!!");
+      console.log("no alg!!!!");
+      console.log("no alg!!!!");
+      
+      console.log("==================");
+        return resolve({success:true});
+        }
       });
 
+      console.log("yes alg!!!!");
+      console.log("yes alg!!!!");
+      console.log("yes alg!!!!");
+      console.log("yes alg!!!!");
       //inservalues에 빈문자열 할당, if문 후 쿼리 생성
       let insertValues = '';
 
@@ -56,7 +69,7 @@ class UserStorage {
 
         db.query(alg_query, [userInfo.uid, userInfo.password], (err) => {
           if (err) throw reject(`${err}`);
-          resolve({ success: true });
+          return resolve({ success: true });
         });
       }
     });
