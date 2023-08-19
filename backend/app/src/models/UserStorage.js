@@ -45,7 +45,7 @@ class UserStorage {
         insertValues = userInfo.arr_algid
           .map(
             (algid) =>
-              `(${algid}, (SELECT id FROM users WHERE uid = '${userInfo.uid}'))`
+              `(${algid}, (SELECT id FROM users WHERE uid = ?))`
           )
           .join(', ');
 
@@ -54,10 +54,12 @@ class UserStorage {
           ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
           : '';
 
-        db.query(alg_query, [userInfo.uid, userInfo.password], (err) => {
+        db.query(alg_query, [userInfo.uid], (err) => {
           if (err) throw reject(`${err}`);
           resolve({ success: true });
         });
+
+        //이랬을때 만약 알러지 데이터 입력안하면 resovle()없나? 확인다시
       }
     });
   }
