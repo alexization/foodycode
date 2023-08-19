@@ -65,7 +65,7 @@ export default {
     return {
       arrow_back,
       line,
-      register_data: [],
+      register_data: {},
     };
   },
   methods: {
@@ -76,18 +76,18 @@ export default {
       alert("Click Confirm");
     },
     async click_register() {
-      this.register_data.push(document.getElementById("uid").value);
-      this.register_data.push(document.getElementById("pw").value);
-      this.register_data.push(document.getElementById("user_name").value);
+      this.register_data.id = document.getElementById("uid").value;
+      this.register_data.pw = document.getElementById("pw").value;
+      this.register_data.user_name = document.getElementById("user_name").value;
       var radios = document.getElementsByName("gender");
 
       radios.forEach((elem) => {
         if (elem.checked) {
-          this.register_data.push(elem.value);
+          this.register_data.gender = elem.value;
         }
       });
-      this.register_data.push(document.getElementById("age").value);
-      this.register_data.push(document.getElementById("country").value);
+      this.register_data.age = document.getElementById("age").value;
+      this.register_data.country = document.getElementById("country").value;
 
       this.$emit("register_value", this.register_data);
       // const uid = document.getElementById("uid");
