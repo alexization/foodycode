@@ -60,9 +60,9 @@ export default {
       showMenu: false,
       list: '',
       navList: [
-        { name: '내정보', url: '' },
-        { name: '로그인', url: '/login' },
-        { name: '로그아웃', url: '' },
+        { name: 'myFoody', url: '/myfoody' },
+        { name: 'Login', url: '/login' },
+        { name: 'Logout', url: '' },
       ],
     };
   },
@@ -85,6 +85,8 @@ export default {
 </script>
 
 <style scoped>
+ @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+
 .user-info-box {
   position: absolute;
   top: 70px;
@@ -139,7 +141,7 @@ export default {
 }
 
 .link {
-  font-size: 13pt;
+  font: 600 15px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
 }
