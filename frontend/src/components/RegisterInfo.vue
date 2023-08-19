@@ -26,7 +26,7 @@
       <div class="user-name">User Name</div>
 
       <div class="name-input">
-        <input type="text" id="user_name" name="user_name" />
+        <input type="text" id="name" name="user_name" />
       </div>
       <div class="Age">Age</div>
       <div class="Country">Country</div>
@@ -78,7 +78,7 @@ export default {
     async click_register() {
       this.register_data.id = document.getElementById("uid").value;
       this.register_data.pw = document.getElementById("pw").value;
-      this.register_data.user_name = document.getElementById("user_name").value;
+      this.register_data.name = document.getElementById("name").value;
       var radios = document.getElementsByName("gender");
 
       radios.forEach((elem) => {
