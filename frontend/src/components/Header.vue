@@ -64,6 +64,7 @@ button {
   height: 40px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .logo-box {

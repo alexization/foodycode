@@ -153,6 +153,7 @@ export default {
   text-align: center;
   top: 85px;
   color: black;
+  cursor: pointer;
 }
 
 .prev-login img {

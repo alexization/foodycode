@@ -149,6 +149,7 @@ export default {
   height: 20px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {
