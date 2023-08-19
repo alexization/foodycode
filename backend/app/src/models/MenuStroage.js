@@ -24,11 +24,11 @@ class MenuStorage {
   }
 
   //알러지정보 추가 필요
- static async save(menuinfo){
+ static async save(menuinfo,rest_id){
   return new Promise((resolve,reject)=>{
     const menuquery = `INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
     values(?,?,?,"test_menu_img",?);`;
-    db.query(menuquery,[menuinfo.rest_id,menuinfo.name,menuinfo.price,menuinfo.ing],(err)=>{
+    db.query(menuquery,[rest_id,menuinfo.name,menuinfo.price,menuinfo.ing],(err)=>{
       if(err) throw reject(`${err}`);
       if(menuinfo.arr_algid.length === 0)
         { 
