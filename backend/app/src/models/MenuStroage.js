@@ -22,6 +22,18 @@ class MenuStorage {
       });
     });
   }
+
+  //알러지정보 추가 필요
+ static async save(menuinfo){
+  return new Promise((resolve,reject)=>{
+    const query = `INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
+    values(?,?,"7000","test_menu_img","test-menu-info");`;
+    db.query(query,[menuinfo.rest_id,menuinfo.name],(err)=>{
+      if(err) throw reject(`${err}`);
+      resolve({success:true});
+    })
+  })
+ }
 }
 
 module.exports = MenuStorage;
