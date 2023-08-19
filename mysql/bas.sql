@@ -274,3 +274,9 @@ where users.uid = lls;
 use login_lecture;
 desc users;
 select * from users;
+
+
+-- --MySQL8.0버전 root 비밀번호 변경
+-- ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '변경할 비밀번호';
+-- -- 변경사항 저장 (안해도 동작하긴 함)
+-- FLUSH PRIVILEGES;
