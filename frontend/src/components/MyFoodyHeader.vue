@@ -46,7 +46,7 @@
   }
   
   .my-info-header {
-    position: fixed;
+    position: absolute;
     top: 0px;
     display: inline-flex;
     justify-content: flex-start;

@@ -103,6 +103,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100 - 180px);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* 사이드 메뉴 열었을때 배경 흐리게 */
@@ -136,14 +137,15 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 44px;
-  padding: 12px 0;
+  padding: 12px 0px;
   padding-left: 20px;
 }
 
 .link {
-  font: 600 15px "Noto Sans", sans-serif;
+  font: 600 16px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .close {
