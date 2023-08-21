@@ -6,7 +6,7 @@
         </button>
       </div>
       <div class="title-box">
-        <div class="my-foody-title">myFoody</div>
+        <div class="my-foody-title">{{ title }}</div>
       </div>
       <div class="home-box">
         <button>
@@ -21,12 +21,18 @@
   import home from "@/assets/icon/home.png";
   
   export default {
+    props: {
+      title: {
+            type: String,
+            default: "myFoody",
+        }
+    },
     data() {
       return {
         arrow_back,
-        home,
+        home,        
       };
-    },
+    },   
     methods: {
       click_back() {
           this.$router.go(-1);

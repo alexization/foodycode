@@ -7,15 +7,15 @@
       <div class="user-name">{{ userName }}</div>
     </div>
     <div class="menu-box">
-      <div v-for="{ name, url } in menuList" :key="name">
-        <router-link :to="url" class="menu-content">
-          <div v-show="name !== ''" class="menu-name">
-            {{ name }}
+      <div v-for="item in menuList" :key="item.name">
+        <router-link :to="`/myfoody/${item.url_name}`" class="menu-content">
+          <div v-show="item.name !== ''" class="menu-name">
+            {{ item.name }}
           </div>
-          <div v-show="name !== ''" class="arrow-img">
+          <div v-show="item.name !== ''" class="arrow-img">
             <img :src="arrow" width="15" />
           </div>
-          <div v-show="name === ''" class="user-alg-box">
+          <div v-show="item.name === ''" class="user-alg-box">
             <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
               {{ allergy }}
             </div>
@@ -42,14 +42,14 @@ export default {
   data() {
     return {
       arrow,
-      menuList: [
-        { name: "Edit User Name", url: "/" },
-        { name: "Change Password", url: "/" },
-        { name: "Edit My Allergy", url: "/" },
-        { name: "", url: "/myfoody" },
-      ],
       userName: "",
       allergyList: [],
+      menuList: [
+        { name: "Edit User Name", url_name: "user-name" },
+        { name: "Change Password", url_name: "password" },
+        { name: "Edit My Allergy", url_name: "my-allergy" },
+        { name: "", url_name: "" },
+      ],
     };
   },
   async created() {
