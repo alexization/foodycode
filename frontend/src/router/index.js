@@ -10,6 +10,14 @@ const routes = [
     },
   },
   {
+    path: '/myfoody',
+    name: 'my-foody',
+    component: () => import('../views/MyFoodyView.vue'),
+    meta: {
+      title: 'My Foody FOODY',
+    },
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import('../views/LoginView.vue'),
