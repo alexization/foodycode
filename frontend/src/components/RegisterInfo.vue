@@ -26,15 +26,8 @@
       <div class="user-name">User Name</div>
 
       <div class="name-input">
-        <input type="text" id="user_name" name="user_name" />
+        <input type="text" id="name" name="user_name" />
       </div>
-
-      <div class="gender">Gender</div>
-
-      <button class="Female" id="female" @click="click_female">Female</button>
-
-      <button class="Male" id="male" @click="click_male">Male</button>
-
       <div class="Age">Age</div>
       <div class="Country">Country</div>
 
@@ -45,39 +38,58 @@
       <div class="country-input">
         <input type="text" id="country" name="country" />
       </div>
+
+      <div class="gender">Gender</div>
+      <div class="select-gender">
+        <input type="radio" id="male" name="gender" value="남" /><label
+          for="male"
+          >Male</label
+        >
+        <input type="radio" id="female" name="gender" value="여" /><label
+          for="female"
+          >Female</label
+        >
+      </div>
     </div>
     <button class="Register" @click="click_register">Next</button>
   </div>
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
 
-import axios from 'axios';
+import axios from "axios";
 export default {
   data() {
     return {
       arrow_back,
       line,
+      register_data: {},
     };
   },
   methods: {
     click_back() {
-      location.href = '#/signup';
+      location.href = "#/signup";
     },
     click_confirm() {
-      alert('Click Confirm');
-    },
-    click_male() {
-      document.getElementById('male').style.backgroundColor = '#1c9181';
-      document.getElementById('female').style.backgroundColor = 'white';
-    },
-    click_female() {
-      document.getElementById('female').style.backgroundColor = '#1c9181';
-      document.getElementById('male').style.backgroundColor = 'white';
+      alert("Click Confirm");
     },
     async click_register() {
+      this.register_data.id = document.getElementById("uid").value;
+      this.register_data.pw = document.getElementById("pw").value;
+      this.register_data.name = document.getElementById("name").value;
+      var radios = document.getElementsByName("gender");
+
+      radios.forEach((elem) => {
+        if (elem.checked) {
+          this.register_data.gender = elem.value;
+        }
+      });
+      this.register_data.age = document.getElementById("age").value;
+      this.register_data.country = document.getElementById("country").value;
+
+      this.$emit("register_value", this.register_data);
       // const uid = document.getElementById("uid");
       // console.log(uid.value);
       // const password = document.getElementById("pw");
@@ -98,15 +110,15 @@ export default {
       //     alert(res.data);
       //   }
       // });
-      this.$emit('change_page');
+      this.$emit("change_page");
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
 .sign-up-page-register,
 .sign-up-page-register * {
@@ -129,27 +141,27 @@ export default {
 .uid {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 29.8px;
 }
 
-input[type='text'] {
+input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 65.9%;
   height: 30.4px;
 }
-input[type][id='user_name'] {
+input[type][id="user_name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 84.6%;
   height: 30.4px;
 }
-input[type][id='country'] {
+input[type][id="country"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -157,14 +169,14 @@ input[type][id='country'] {
   height: 30.4px;
 }
 
-input[type='password'] {
+input[type="password"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   width: 84.6%;
   height: 30.4px;
 }
-input[type='number'] {
+input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -188,7 +200,7 @@ input[type='number'] {
   left: 73.1%;
   top: 61.9px;
   text-align: center;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -196,7 +208,7 @@ input[type='number'] {
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 131.9px;
@@ -210,7 +222,7 @@ input[type='number'] {
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 210.4px;
@@ -224,7 +236,7 @@ input[type='number'] {
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 313.4px;
@@ -238,47 +250,47 @@ input[type='number'] {
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 468.7px;
 }
-.Female {
-  color: black;
-  background-color: white;
-  border-style: solid;
-  border-color: #1c9181;
-  border-width: 1px;
-  width: 42.3%;
-  height: 30.4px;
+
+.select-gender {
   position: absolute;
-  left: 50%;
-  top: 501.6px;
-  text-align: center;
-  font: 400 14px 'Noto Sans', sans-serif;
-  cursor: pointer;
-  transition: 0.5s;
+  top: 502px;
+  width: 100%;
+  height: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
-.Male {
-  color: black;
-  background-color: white;
+.select-gender input[type="radio"] {
+  display: none;
+}
+.select-gender input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  height: 30px;
+  width: 50%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 42.3%;
-  height: 30.4px;
-  position: absolute;
-  left: 7.7%;
-  top: 501.6px;
   text-align: center;
-  font: 400 14px 'Noto Sans', sans-serif;
-  cursor: pointer;
+  font: 400 14px "Noto Sans", sans-serif;
+}
+.select-gender input[type="radio"] + label {
+  background-color: #fff;
+  color: black;
+}
+.select-gender input[type="radio"]:checked + label {
   transition: 0.5s;
+  background-color: #1c9181;
+  color: #fff;
 }
 .Age {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 391px;
@@ -286,7 +298,7 @@ input[type='number'] {
 .Country {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 38.5%;
   top: 391px;
@@ -317,7 +329,7 @@ input[type='number'] {
   bottom: 0px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px 'Noto Sans', sans-serif;
+  font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;

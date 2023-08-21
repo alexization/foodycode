@@ -1,28 +1,34 @@
 <template>
   <div class="MenuView">
     <div class="MenuList">
-      <template v-for="item in list" :key="item">
-        <MenuCard
-          :menuName="item.menu_name"
-          :menuImg="item.img_url"
-          :menuIng="item.menu_ing"
-          :menuPrice="item.menu_price"
-        >
-        </MenuCard>
-      </template>
+      <div class="menu">
+        <div v-for="item in list" :key="item">
+          <router-link :to="`${url_href}/${item.id}`">
+            <MenuCard
+              :menuName="item.menu_name"
+              :menuImg="item.img_url"
+              :menuIng="item.menu_ing"
+              :menuPrice="item.menu_price"
+            />
+          </router-link>
+        </div>
+      </div>
       <div class="line"></div>
-      <template v-for="item in alg_list" :key="item">
-        <AlgMenuCard
-          :menuName="item.menu_name"
-          :menuImg="item.img_url"
-          :menuIng="item.menu_ing"
-          :menuPrice="item.menu_price"
-          :algName="item.menu_alg[0]"
-        >
-        </AlgMenuCard>
-      </template>
+      <div class="alg-menu">
+        <div v-for="item in alg_list" :key="item">
+          <router-link :to="`${this.url_href}/${item.id}`">
+            <AlgMenuCard
+              :menuName="item.menu_name"
+              :menuImg="item.img_url"
+              :menuIng="item.menu_ing"
+              :menuPrice="item.menu_price"
+              :algName="item.menu_alg[0]"
+            />
+          </router-link>
+        </div>
+      </div>
     </div>
-    <RestaurantName></RestaurantName>
+    <RestaurantName :restaurantName="this.rest_title"></RestaurantName>
   </div>
 </template>
 
@@ -47,14 +53,18 @@ export default {
     return {
       list: [],
       alg_list: [],
+      url_href: '',
+      rest_title: '',
+      user_name: '',
     };
   },
 
   async created() {
+    this.url = window.location.href.split('#');
+    this.url_href = this.url[1];
     //URL에서 전달받는 parmeter = rest_name_url_param
     //요청할 API경로에 해당 값을 붙여 get요청
     const rest_name = this.$route.params.rest_name_url_param;
-
     axios.get(`/api/menu/${rest_name}`).then((response) => {
       const menu_list = [];
       const alg_menu = [];
@@ -71,6 +81,7 @@ export default {
       }
       this.list = menu_list;
       this.alg_list = alg_menu;
+      this.rest_title = rest_name;
     });
   },
 };
@@ -98,8 +109,18 @@ export default {
   justify-content: flex-start;
   position: absolute;
   left: 1.3%;
-  top: 180px;
+  top: 140px;
   padding-top: 10.1px;
+}
+.menu {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.alg-menu {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 .line {
   width: 94%;
