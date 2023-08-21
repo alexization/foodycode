@@ -7,15 +7,15 @@
       <div class="user-name">{{ userName }}</div>
     </div>
     <div class="menu-box">
-      <div v-for="item in menuList" :key="item.name">
-        <router-link :to="`/myfoody/${item.url_name}`" class="menu-content">
-          <div v-show="item.name !== ''" class="menu-name">
-            {{ item.name }}
+      <div v-for="{name, url_name} in menuList" :key="name">
+        <router-link :to="`/myfoody/${url_name}`" class="menu-content">
+          <div v-show="name !== ''" class="menu-name">
+            {{ name }}
           </div>
-          <div v-show="item.name !== ''" class="arrow-img">
+          <div v-show="name !== ''" class="arrow-img">
             <img :src="arrow" width="15" />
           </div>
-          <div v-show="item.name === ''" class="user-alg-box">
+          <div v-show="name === ''" class="user-alg-box">
             <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
               {{ allergy }}
             </div>

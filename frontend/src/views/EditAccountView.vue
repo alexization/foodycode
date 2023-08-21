@@ -2,6 +2,9 @@
   <div class="background">
     <MyFoodyHeader :title="title"></MyFoodyHeader>
     <hr class="line" />
+    <EditUserName v-show="role == 0"></EditUserName>
+    <EditPassword v-show="role == 1"></EditPassword>
+    <EditAllergy v-show="role == 2"></EditAllergy>
   </div>
 </template>
 
@@ -9,25 +12,37 @@
 import arrow from "@/assets/icon/arrow.png";
 
 import MyFoodyHeader from "../components/MyFoodyHeader.vue";
+import EditUserName from '../components/EditUserName.vue';
+import EditPassword from '../components/EditPassword.vue';
+import EditAllergy from '../components/EditAllergy.vue';
 
 export default {
   name: "EditAccountView",
   components: {
     MyFoodyHeader,
+    EditUserName,
+    EditPassword,
+    EditAllergy,
   },
   props: {},
   data() {
     return {
       arrow,
       title: "",
+      role: 0,
     };
   },
   created() {
-    if (this.$route.params.edit_id_url_param == "user-name")
+    if (this.$route.params.edit_id_url_param == "user-name") {
       this.title = "Edit User Name";
-    else if (this.$route.params.edit_id_url_param == "password")
+      this.role = 0;
+    } else if (this.$route.params.edit_id_url_param == "password") {
       this.title = "Change Password";
-    else this.title = "Edit My Allergy";
+      this.role = 1;
+    } else {
+      this.title = "Edit My Allergy";
+      this.role = 2;
+    }
   },
 };
 </script>
