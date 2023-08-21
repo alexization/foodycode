@@ -61,8 +61,7 @@
     width: 90%;
     height: 40px;
     margin: 0px auto;
-    padding: 0px;
-    padding-left: 20px;
+    padding: 0px 20px;
     background: #eeeeee;
     font: 600 15px "Noto Sans", sans-serif;
     color: #525252;
