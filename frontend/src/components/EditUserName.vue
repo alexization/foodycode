@@ -8,12 +8,17 @@
           id="name"
           class="input-user-name"
           :placeholder="userName"
+          @blur="onChange"
         />
-        <div class="user-instruction">{{ username_instruction[0] }}</div>
+        <div class="user-instruction">
+          {{ username_instruction[info_number] }}
+        </div>
       </div>
       <hr class="line" />
       <div class="button-box">
-        <button @click.self.prevent="edit_username">Edit</button>
+        <button id="btn" class="edit-btn" @click.self.prevent="edit_username">
+          Edit
+        </button>
       </div>
     </form>
   </div>
@@ -31,9 +36,12 @@ export default {
       username_instruction: [
         "This field is required.",
         "This is your current username.",
+        "Please enter your username in 2~20 characters.",
         "Username is available",
       ],
-      edit_username_data: {},
+      info_number: 0, // username_instruction 배열 index
+      showInstruction: false, // 처음에는 username_instruction이 안보이도록 설정
+      input_data: {}, // input 태그 value data
     };
   },
   async created() {
@@ -46,24 +54,62 @@ export default {
   },
   methods: {
     isUsernameCorrect(res_data) {
-      if (this.edit_username_data.username === "") {
-        console.log(this.username_instruction[0]);
-        return false;
-      } else if (this.edit_username_data.username === this.userName) {
-        console.log(this.username_instruction[1]);
-        return false;
+      if (res_data.username === "") {
+        return { success: false, case: 0, info: this.username_instruction[0] };
+      } else if (res_data.username === this.userName) {
+        return { success: false, case: 1, info: this.username_instruction[1] };
+      } else if (res_data.username.length <= 1 || res_data.username.length > 20) {
+        return { success: false, case: 2, info: this.username_instruction[2] };
       } else {
-        console.log(this.username_instruction[2]);
-        return true;
+        return { success: true, case: 3, info: this.username_instruction[3] };
+      }
+    },
+    async onChange() {
+      this.input_data.username = document.getElementById("name").value;
+      const result = this.isUsernameCorrect(this.input_data);
+
+      if (result.success) {
+        this.cssStyle(result.success);
+        this.info_number = 3;
+      } else {
+        this.cssStyle(result.success);
+        if (result.case === 0) {
+          this.info_number = 0;
+        } else if (result.case === 1) {
+          this.info_number = 1;
+        } else if (result.case === 2) {
+          this.info_number = 2;
+        }
+      }
+    },
+    cssStyle(res) {
+      var button = document.querySelector(".edit-btn");
+      var buttonElement = document.getElementById("btn");
+      var user_instruction = document.querySelector(".user-instruction");
+
+      if (res) {
+        button.style.background = "#1c9181";
+        button.style.cursor = "pointer";
+        button.style.border = "1px solid #1c9181";
+        buttonElement.disabled = false;
+        user_instruction.style.color = "#00ae00";
+        user_instruction.style.display = "flex";
+      } else {
+        button.style.background = "#cccccc";
+        button.style.cursor = "disabled";
+        button.style.border = "1px solid #cccccc";
+        buttonElement.disabled = true;
+        user_instruction.style.color = "#ff2b2b";
+        user_instruction.style.display = "flex";
       }
     },
     async edit_username() {
-      this.edit_username_data.username = document.getElementById("name").value;
-      if (this.isUsernameCorrect(this.edit_username_data.username)) {
-        console.log(this.edit_username_data);
+      this.input_data.username = document.getElementById("name").value;
+      if (this.isUsernameCorrect(this.input_data).success) {
+        console.log(this.input_data);
         this.$router.push({ path: "/myfoody" });
       } else {
-        alert("오류입니다.");
+        alert("error");
       }
     },
   },
@@ -132,17 +178,6 @@ input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.user-instruction {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 30px;
-  margin-left: 35px;
-  font: 600 13px "Noto Sans", sans-serif;
-  color: #ff2b2b;
-}
-
 .line {
   position: absolute;
   bottom: 70px;
@@ -162,7 +197,7 @@ input:focus::-ms-input-placeholder {
   background: #ffffff;
 }
 
-button {
+.edit-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,6 +209,17 @@ button {
   background: #cccccc;
   font: 600 16px "Noto Sans", sans-serif;
   color: #ffffff;
-  cursor: pointer;
+  cursor: disabled;
+}
+
+.user-instruction {
+  position: relative;
+  display: none;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-left: 35px;
+  font: 600 13px "Noto Sans", sans-serif;
+  color: #ff2b2b;
 }
 </style>
