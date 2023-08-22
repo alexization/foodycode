@@ -8,6 +8,7 @@
         class="input-password"
         placeholder="current password"
       />
+      <div class="cur-pwd-instruction">{{ cur_pwd_instruction[1] }}</div>
       <div class="instruction">New Password</div>
       <input
         type="password"
@@ -15,7 +16,9 @@
         class="input-password"
         placeholder="new password"
       />
+      <div class="new-pwd-instruction">{{ new_pwd_instruction[0] }}</div>
     </div>
+
     <hr class="line" />
     <div class="button-box">
       <button>Change</button>
@@ -24,7 +27,26 @@
 </template>
 
 <script>
-export default {};
+export default {
+  components: {},
+  props: {},
+  data() {
+    return {
+      cur_pwd_instruction: [
+        "This field is required.",
+        "Current password is not correct.",
+        "Correct password.",
+      ],
+      new_pwd_instruction: ["This field is required."],
+      res_data: {},
+    };
+  },
+  methods: {
+    isPwdCorrect() {
+
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -50,7 +72,7 @@ export default {};
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  height: 200px;
+  height: 240px;
   background: #ffffff;
 }
 
@@ -87,6 +109,28 @@ input:focus::placeholder {
 /* Edge */
 input:focus::-ms-input-placeholder {
   color: transparent;
+}
+
+.cur-pwd-instruction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-left: 35px;
+  font: 600 13px "Noto Sans", sans-serif;
+  color: #ff2b2b;
+}
+
+.new-pwd-instruction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-left: 35px;
+  font: 600 13px "Noto Sans", sans-serif;
+  color: #ff2b2b;
 }
 
 .line {

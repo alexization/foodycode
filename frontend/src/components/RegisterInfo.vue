@@ -304,6 +304,7 @@ input[type="text"] {
   border-width: 1px;
   width: 65.9%;
   height: 30.4px;
+  outline: none;
 }
 input[type][id="user_name"] {
   border-style: solid;
@@ -311,6 +312,7 @@ input[type][id="user_name"] {
   border-width: 1px;
   width: 84.6%;
   height: 30.4px;
+  outline: none;
 }
 input[type][id="country"] {
   border-style: solid;
@@ -318,6 +320,7 @@ input[type][id="country"] {
   border-width: 1px;
   width: 52.6%;
   height: 30.4px;
+  outline: none;
 }
 
 input[type="password"] {
@@ -326,6 +329,7 @@ input[type="password"] {
   border-width: 1px;
   width: 84.6%;
   height: 30.4px;
+  outline: none;
 }
 input[type="number"] {
   border-style: solid;
@@ -333,12 +337,14 @@ input[type="number"] {
   border-width: 1px;
   width: 21.8%;
   height: 30.4px;
+  outline: none;
 }
 .uid-input {
   position: absolute;
   left: 7.7%;
   top: 61.9px;
   width: 100%;
+  outline: none;
 }
 .confirm {
   background: #ffffff;
@@ -478,6 +484,7 @@ input[type="number"] {
   font: 500 14px "Noto Sans", sans-serif;
   color: black;
   background: white;
+  outline: none;
 }
 
 .Register {

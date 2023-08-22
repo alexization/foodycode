@@ -8,6 +8,7 @@
         class="input-user-name"
         :placeholder="userName"
       />
+      <div class="user-instruction ">{{ username_instruction[0] }}</div>
     </div>
     <hr class="line" />
     <div class="button-box">
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       userName: "",
+      username_instruction: ["This field is required.", ""],
     };
   },
   async created() {
@@ -35,6 +37,11 @@ export default {
         this.userName = response.data.uname;
       })
       .catch((error) => {});
+  },
+  methods: {
+    isUsernameCorrect() {
+      
+    },
   },
 };
 </script>
@@ -62,7 +69,7 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  height: 100px;
+  height: 120px;
   background: #ffffff;
 }
 
@@ -99,6 +106,17 @@ input:focus::placeholder {
 /* Edge */
 input:focus::-ms-input-placeholder {
   color: transparent;
+}
+
+.user-instruction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-left: 35px;
+  font: 600 13px "Noto Sans", sans-serif;
+  color: #ff2b2b;
 }
 
 .line {
