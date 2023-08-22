@@ -2,6 +2,7 @@
   <div class="Head">
     <div class="terms-of-service">Terms of Service</div>
     <svg
+      @click="download_button"
       class="download-img"
       width="24"
       height="24"
@@ -16,6 +17,7 @@
     </svg>
 
     <svg
+      @click="print_button"
       class="print-img"
       width="21"
       height="18"
@@ -367,6 +369,12 @@ export default {
     },
     click_decline() {
       location.href = "#/login";
+    },
+    download_button() {
+      alert("Comming Soon..");
+    },
+    print_button() {
+      alert("Comming Soon..");
     },
   },
 };
