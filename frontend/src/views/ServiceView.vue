@@ -33,91 +33,309 @@
   </div>
   <div class="Service">
     <div class="scroll terms">
-      <p class="title">1. Using of Services</p>
+      <p class="title">Chapter 1: General Provisions</p>
+      <br />
+      <p class="title">Article 1 (Purpose)</p>
       <p class="service-text">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        These Terms and Conditions stipulate all matters related to the use and
+        provision of services of the FOODYCODE “homepage” and the FOODYCODE
+        “application” (hereinafter “homepage” and “application” are referred to
+        as “APP”) operated by FOORIDGE. for purpose.
       </p>
-      <p class="title">2. Your Account</p>
+
+      <p class="title">Article 2 (Definition of Terms)</p>
       <p class="service-text">
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-        odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
-        quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-        eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+        ① The definitions of terms used in these Terms and Conditions are as
+        follows. “Service” refers to all services provided by the company, such
+        as guarantee analysis services that “users” can use through PCs and
+        mobile devices implemented. “User” refers to members and non-members who
+        access the “APP” and receive the services provided by the “APP” in
+        accordance with these Terms and Conditions. “Member” refers to a person
+        who has registered as a member by providing personal information to
+        “APP” and uses the services provided by “APP”. “Mobile device” refers to
+        a device that can be used by downloading or installing content, such as
+        mobile phones, smartphones, personal digital assistants (PDAs), and
+        tablets. “Account information” refers to the information provided by the
+        member to the company, such as the member's member number, external
+        account information such as my insurance, and device information.
+        “Application” means all programs that are downloaded or installed
+        through a mobile device to use the services provided by the company.
+        <br />
+        ② The definitions of the terms used in these Terms and Conditions,
+        except for those set forth in Paragraph 1 of this Article, shall be
+        governed by related laws and service-specific policies.
       </p>
-      <p class="title">3. 1914 translation by H. Rackham</p>
+      <p class="title">Article 3 (Effect and change of terms and conditions)</p>
       <p class="service-text">
-        "But I must explain to you how all this mistaken idea of denouncing
-        pleasure and praising pain was born and I will give you a complete
-        account of the system, and expound the actual teachings of the great
-        explorer of the truth, the master-builder of human happiness. No one
-        rejects, dislikes, or avoids pleasure itself, because it is pleasure,
-        but because those who do not know Section 1.10.33 of "de Finibus Bonorum
-        et Malorum", written by Cicero in 45 BC "At vero eos et accusamus et
-        iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-        deleniti atque corrupti quos dolores et quas molestias excepturi sint
-        occaecati cupiditate non provident, similique sunt in culpa qui officia
-        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-        rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta
-        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-        placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-        repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-        rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et
-        molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-        delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-        perferendis doloribus asperiores repellat." Section 1.10.33 of "de
-        Finibus Bonorum et Malorum", written by Cicero in 45 BC "At vero eos et
-        accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-        voluptatum deleniti atque corrupti quos dolores et quas molestias
-        excepturi sint occaecati cupiditate non provident, similique sunt in
-        culpa qui officia deserunt mollitia animi, id est laborum et dolorum
-        fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
-        libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit
-        quo minus id quod maxime placeat facere possimus, omnis voluptas
-        assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et
-        aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-        voluptates repudiandae sint et molestiae non recusandae. Itaque earum
-        rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
-        maiores alias consequatur aut perferendis doloribus asperiores
-        repellat."
+        ① These terms and conditions become effective when posted on the “APP”
+        or its connection screen or notified to users.
+        <br />② If there are unavoidable conditions or circumstances, the
+        company may revise these terms and conditions to the extent that it does
+        not violate relevant laws such as the 「Regulation of Terms and
+        Conditions」 and 「Act on Promotion of Information and Communications
+        Network Utilization and Information Protection」. <br />③ When the
+        company revises the terms and conditions, it specifies the date of
+        application, the details of the amendment, and the reason for the
+        amendment, and notifies the user by posting it on the “APP” or its
+        connection screen at least 7 days before the effective date. However, if
+        the changed content is unfavorable to the member or is a significant
+        change, it will be notified in the same way as in the text until 30 days
+        prior to the effective date, and the member's e-mail address, e-memo,
+        message in the service, text message (LMS/SMS ) to notify members. In
+        this case, the contents before and after the revision are clearly
+        compared and displayed so that members can easily understand them.
+        <br />④ When the company revises the terms and conditions, after
+        notifying the revised terms and conditions, the member's consent to the
+        application of the revised terms and conditions is checked. When the
+        company makes a notice or notice under Paragraph 3, the company also
+        announces or notifies that the member will be deemed to have agreed
+        unless the member expresses his or her intention to agree or reject the
+        revised terms and conditions. If you do not mark, you can be regarded as
+        agreeing to the revised terms and conditions. If the member does not
+        agree to the revised terms and conditions, the company or member may
+        terminate the service use contract.
       </p>
-      <p class="title">4. Sed vel imperdiet dui</p>
-      <p class="service-text">
-        Nulla felis magna, rhoncus quis mauris ut, fringilla lobortis magna. Ut
-        nunc erat, vulputate sit amet ultrices eget, lobortis sit amet urna. Sed
-        pharetra egestas erat. Suspendisse semper feugiat dui imperdiet
-        malesuada. Proin dolor tellus, convallis quis placerat lobortis, lacinia
-        vitae nisi. Morbi ac justo at lorem interdum laoreet ac ut libero. Duis
-        at lobortis libero. Praesent blandit at massa eu bibendum. Nullam
-        pretium turpis ut imperdiet scelerisque. Phasellus ac mi lobortis,
-        finibus mi eu, ultricies purus. In eu laoreet diam, facilisis aliquet
-        justo. Sed non mollis nulla, eget tempus mi. Quisque purus dolor, mollis
-        eu consequat vitae, suscipit vitae elit. Quisque lacinia non dolor non
-        rutrum. Aliquam sapien mauris, ornare vitae condimentum at, dictum ac
-        magna. In fermentum, velit in scelerisque elementum, ligula mi suscipit
-        tortor, non consequat dui turpis in justo.
+
+      <p class="title">
+        Article 4 (Guidelines outside of the Terms and Conditions)
       </p>
-      <p class="title">5. Nam in risus commodo quam</p>
       <p class="service-text">
-        Suspendisse accumsan metus ex, sed rutrum neque cursus a. Donec in lorem
-        pulvinar, tincidunt mi rhoncus, lacinia tellus. Phasellus augue ipsum,
-        rutrum at neque nec, varius imperdiet urna. Duis aliquet mauris at diam
-        varius, tincidunt accumsan mauris mattis. Nam nec metus id est sagittis
-        condimentum. Aliquam viverra, turpis ut lacinia auctor, justo velit
-        euismod nunc, et euismod sem dui quis purus. Integer finibus enim eget
-        velit congue volutpat. Praesent vehicula velit et velit posuere
-        volutpat. Suspendisse euismod, tortor eget consectetur sollicitudin,
-        tortor dolor convallis mauris, congue tristique metus arcu et massa. Sed
-        molestie tristique justo, eu mattis lacus pellentesque vehicula.
+        Matters not specified in these Terms and Conditions and the
+        interpretation of these Terms and Conditions shall be governed by
+        relevant laws and customs, such as the 「Act on the Regulation of Terms
+        and Conditions」, the 「Act on Promotion of Information and
+        Communications Network Utilization and Information Protection, etc.」
+        follow
+      </p>
+
+      <p class="title">Article 5 (Membership Registration)</p>
+      <p class="service-text">
+        ① When a user applies for membership by agreeing to the terms and
+        conditions after entering membership information according to the form
+        set forth in the “APP”, the company approves the application and becomes
+        a member. <br />② In principle, the company accepts the application for
+        membership in accordance with the preceding paragraph. However, the
+        company may reject membership registration or lose membership after the
+        fact for users who fall under any of the following subparagraphs. If
+        member information is falsely entered or another person's name is stolen
+        In the case of using the service through an abnormal or indirect method
+        in a country where the company does not provide the service If the
+        application is made for the purpose of hindering social well-being and
+        order or morals If you want to use the service for fraudulent purposes
+        If you want to use the service for the purpose of pursuing profit If the
+        applicant for membership has previously lost membership in accordance
+        with these terms and conditions If you are under the age of 14 In case
+        the acceptance is judged to be inappropriate for other reasons
+        corresponding to each subparagraph <br />③ If there is a change in the
+        member information registered at the time of signup, the member must
+        immediately notify the company of the change by directly modifying the
+        “APP” or by e-mail or other means.
+      </p>
+
+      <p class="title">
+        Article 6 (Withdrawal of Membership and Loss of Qualification)
+      </p>
+      <p class="service-text">
+        ① If a member does not want to use the service at any time, he or she
+        may request withdrawal at any time, in which case the company will
+        immediately process the withdrawal of membership. Due to membership
+        withdrawal, all usage information held by the member within the service
+        will be deleted and recovery will be impossible. <br />② The company may
+        notify the member and restrict or suspend the use of the service or
+        cancel membership if there is a serious reason why the member cannot
+        maintain this contract, such as prohibiting this agreement or acting
+        against public order and morals. <br />③ If the company loses
+        membership, membership registration is canceled. In this case, the
+        member is notified and given an opportunity to explain before member
+        registration is canceled. <br />④ The company suspends or terminates the
+        use contract and separates the member's personal information to protect
+        the personal information of the member who has not used the company's
+        service for one year consecutively from the latest service use date
+        (hereinafter referred to as "dormant account"). Actions such as storage
+        or destruction may be taken. In this case, members will be notified of
+        the fact that measures such as suspension or termination of the
+        contract, separate storage or destruction of personal information will
+        be taken, and personal information to be destroyed, 30 days prior to the
+        date of action.
+      </p>
+
+      <p class="title">Article 7 (Notification to Members)</p>
+      <p class="service-text">
+        ① When the company notifies members, it can be done by e-mail or cell
+        phone number submitted by the member to the company. <br />② In the case
+        of notification to unspecified members, the company can substitute
+        individual notification by posting on the "APP" for more than 30 days.
+      </p>
+
+      <p class="title">Article 8 (Obligations of the Company)</p>
+      <p class="service-text">
+        ① The Company sincerely observes the exercise of rights and fulfillment
+        of obligations stipulated in the relevant laws and these terms and
+        conditions in good faith. <br />② The company must have a security
+        system to protect personal information (including credit information) so
+        that members can use the service safely, and disclose and comply with
+        the personal information processing policy. The company does not
+        disclose or provide the member's personal information to a third party,
+        except as stipulated in these terms and conditions and the personal
+        information processing policy. <br />③ In order to provide continuous
+        and stable service, the company is in the process of improving the
+        service. We will do our best to repair or restore it without delay.
+      </p>
+
+      <p class="title">Article 9 (Obligations of Members)</p>
+      <p class="service-text">
+        ① Members shall not engage in any of the following acts in relation to
+        the use of the services provided by the company. Stealing someone else's
+        name or entering false information when applying for use or changing
+        member information An act of impersonating an employee or operator of
+        the company or sending an e-mail by stealing the name of another person,
+        an act of pretending to be someone else or falsely specifying a
+        relationship with another person Unauthorized collection, storage,
+        posting or dissemination of personal information of other members An act
+        of using the service for purposes other than its original purpose, such
+        as for-profit, business, advertising, public relations, political
+        activities, election campaigns, etc. An act of copying, distributing,
+        promoting or commercially using information obtained by using the
+        company's service without permission, or an act of using the service by
+        exploiting known or unknown bugs Acts of deceiving others to gain
+        advantage, acts of causing harm to others in relation to the use of the
+        company's services Infringing on the intellectual property rights or
+        portrait rights of the company or others, defaming or inflicting damage
+        on the reputation of others Intentionally transmitting, posting, or
+        distributing information (computer programs) whose transmission or
+        posting is prohibited by law, or viruses, computer code, files,
+        programs, etc. designed for the purpose of interfering with or
+        destroying the normal operation of computer software, hardware, or
+        telecommunications equipment or act of using Change the application
+        without obtaining special rights from the company, add or insert other
+        programs into the application, hack or reverse engineer the server, leak
+        or change the source code or application data, build a separate server,
+        or An act of impersonating a company by arbitrarily changing or stealing
+        a part of the site Other acts that violate related laws or against good
+        customs and other social norms <br />② Members are responsible for
+        managing their ID and password, and they must not be used by third
+        parties. <br />③ Users must comply with the provisions of these terms
+        and conditions and related laws.
+      </p>
+
+      <p class="title">Article 10 (Use of Service)</p>
+      <p class="service-text">
+        ① “APP” provides the following services to members. However, in order to
+        use the service provided by the company as “APP”, the user may be
+        additionally requested to consent to the terms of use of location
+        information and the provision of “account information” if necessary, and
+        if consent is not given, some services such as insurance contract
+        inquiry may be limited. Insurance contract inquiry and analysis
+        information provision See my insurance (Korea Credit Information
+        Service) APP subscription agency email reception service Insurance
+        product related planner connection and guarantee consulting Explanation
+        and guidance on insurance products handled by the company Provision of
+        contents such as current affairs, finance, investment, real estate,
+        health management, etc. Services related to insurance claims Other
+        services determined by the company <br />② If the company has obtained
+        separate consent from the member, it can provide various useful
+        information about service use to the member by text message, push
+        notification, etc., in addition to posting on the “APP”. <br />③ In
+        principle, the use of the service is 24/7 unless there is a special
+        problem in the business or technology of the "APP". However, exceptions
+        are made for the days and times set by the company due to the need for
+        regular inspections, etc.<br />④ The company may temporarily suspend the
+        provision of services in the event of maintenance, inspection,
+        replacement of the “APP” system, failure of the system, loss of
+        communication, or other force majeure. However, in case of service
+        interruption, the company notifies the “APP” in advance, and if there is
+        an unavoidable reason for not notifying in advance, it notifies the
+        member by the method specified in Article.
+      </p>
+
+      <p class="title">
+        Article 11 (Protection and Use of Personal Information)
+      </p>
+      <p class="service-text">
+        ① Company collects the minimum amount of information necessary to
+        provide smooth service when collecting information from users. <br />②
+        When the company collects personally identifiable personal information
+        and account information of a user, it must obtain the user's consent.
+        <br />③ The company does not provide the member's personal information
+        to others without the consent of the member, except in accordance with
+        the relevant laws or when there is a request from the relevant
+        government agency. <br />④ Users may request to view and correct errors
+        or withdraw their consent to their personal information held by the
+        company at any time, and the company is obliged to take necessary
+        measures without delay. If a user requests correction of an error, the
+        personal information will not be used until the error is corrected.
+        <br />⑤ Other personal information-related matters are subject to the
+        privacy policy separately posted on the “APP”.
+      </p>
+
+      <p class="title">Article 12 (Company's Immunity)</p>
+      <p class="service-text">
+        ① The company shall deal with damages suffered by users or third parties
+        due to the temporary suspension of service provision due to reasons in
+        Article 10, paragraphs 3 and 4 of these Terms and Conditions, unless
+        otherwise specified in the relevant laws. No separate compensation is
+        given to <br />② The company is not responsible for any obstacles in
+        service use caused by the member's intention or negligence. <br />③ The
+        company is not responsible for the reliability and accuracy of
+        information or data posted in relation to the service unless there is
+        intentional or gross negligence. <br />④ The company is not responsible
+        for any damages incurred to members in connection with the use of
+        services provided free of charge. <br />⑤ The company is not responsible
+        for the member's failure to obtain or lose the expected benefits by
+        using the service. <br />⑥ The company is not responsible for damages
+        caused by members not managing their “APP” ID and password, mobile
+        device password, account information, etc. <br />⑦ If a member cannot
+        use all or part of the content due to a change of mobile device, change
+        of mobile device number, change of operating system (OS) version,
+        overseas roaming, change of carrier, etc., the company shall not be held
+        liable. <br />⑧ If a member deletes the content or account information
+        provided by the company, the company is not responsible for it.
+      </p>
+
+      <p class="title">Article 13 (Attribution of copyright, etc.)</p>
+      <p class="service-text">
+        ① The copyright and other intellectual property rights for the contents
+        within the service produced by the company belong to the company.
+        <br />② Members may use methods (editing, publishing, performing,
+        distributing, broadcasting, etc. , including the creation of secondary
+        works, etc. (the same shall apply below) should not be used for
+        commercial purposes or allowed to be used by others. <br />③ If a
+        member's post contains content that violates related laws, such as the
+        Information and Communications Network Act and the Copyright Act, the
+        holder of right may request suspension or deletion of the post in
+        accordance with the procedures set forth in the relevant law, and civil
+        and criminal responsibilities arising therefrom. is entirely borne by
+        the member himself, and the company must take action in accordance with
+        the relevant laws. <br />④ Even if there is no request from the right
+        holder pursuant to the preceding paragraph, the company may take
+        temporary measures against the post in accordance with the relevant laws
+        if there is a reason for recognizing infringement of rights or if it
+        violates other company policies and related laws. <br />⑤ This article
+        is valid while the company operates the service, and continues to apply
+        even after membership withdrawal.
+      </p>
+
+      <p class="title">
+        Article 14 (Member's Grievance Handling and Dispute Resolution)
+      </p>
+      <p class="service-text">
+        ① Considering the member's convenience, the company guides members on
+        how to present their opinions or complaints within the service or on the
+        connection screen. <br />② If the opinion or complaint raised by the
+        member is objectively recognized as legitimate, the company will
+        promptly process it within a reasonable period of time. However, if the
+        processing takes a long time, the member is notified of the reason for
+        the long period of time and the processing schedule in the service or in
+        accordance with Article 8.
+      </p>
+
+      <p class="title">Article 15 (Jurisdiction and Governing Law)</p>
+      <p class="service-text">
+        These terms and conditions shall be governed by and interpreted in
+        accordance with the laws of the Republic of Korea. If a lawsuit is filed
+        due to a dispute between the company and the member, the court in
+        accordance with the procedure prescribed by law shall be the competent
+        court.
       </p>
     </div>
   </div>
@@ -132,8 +350,8 @@
 </template>
 
 <script>
-import SignUpHeader from '../components/SignUpHeader.vue';
-import StepCard from '../components/StepCard.vue';
+import SignUpHeader from "../components/SignUpHeader.vue";
+import StepCard from "../components/StepCard.vue";
 export default {
   components: {
     SignUpHeader,
@@ -145,18 +363,18 @@ export default {
   },
   methods: {
     click_accpet() {
-      location.href = '#/signup2';
+      location.href = "#/signup2";
     },
     click_decline() {
-      location.href = '#/login';
+      location.href = "#/login";
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 .Service,
 .Service * {
   box-sizing: border-box;
@@ -179,7 +397,7 @@ export default {
 .terms-of-service {
   color: #000000;
   text-align: left;
-  font: 700 20px 'Noto Sans', sans-serif;
+  font: 700 20px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 40px;
@@ -198,7 +416,7 @@ export default {
 .last-update-text {
   color: #000000;
   text-align: left;
-  font: 400 10px 'Noto Sans', sans-serif;
+  font: 400 10px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 68px;
@@ -228,11 +446,11 @@ export default {
 }
 
 .title {
-  font: 600 12px 'Noto Sans', sans-serif;
+  font: 600 12px "Noto Sans", sans-serif;
   letter-spacing: 0.6px;
 }
 .service-text {
-  font: 300 10px 'Noto Sans', sans-serif;
+  font: 300 10px "Noto Sans", sans-serif;
   letter-spacing: 0.6px;
   margin-left: 2.6%;
   line-height: 20px;
@@ -267,7 +485,7 @@ export default {
   top: 40px;
   color: #ffffff;
   text-align: center;
-  font: 400 15px 'Noto Sans', sans-serif;
+  font: 400 15px "Noto Sans", sans-serif;
   border: none;
   cursor: pointer;
 }
@@ -282,7 +500,7 @@ export default {
   top: 40px;
   color: #1c9181;
   text-align: center;
-  font: 400 15px 'Noto Sans', sans-serif;
+  font: 400 15px "Noto Sans", sans-serif;
   cursor: pointer;
   background: none;
 }
