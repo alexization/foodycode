@@ -231,7 +231,6 @@
 import arrow_back from "@/assets/icon/arrow-back.png";
 import line from "@/assets/icon/Line.png";
 
-import axios from "axios";
 export default {
   data() {
     return {
@@ -262,26 +261,6 @@ export default {
       this.register_data.country = document.getElementById("country").value;
 
       this.$emit("register_value", this.register_data);
-      // const uid = document.getElementById("uid");
-      // console.log(uid.value);
-      // const password = document.getElementById("pw");
-      // console.log(pw.value);
-      // let res = await axios({
-      //   method: "POST",
-      //   url: "api/signup",
-      //   data: {
-      //     uid: uid.value,
-      //     password: password.value,
-      //   },
-      // }).then((res) => {
-      //   console.log(res.data);
-      //   if (res.data.success) {
-      //     alert("회원가입 완료! 로그인 페이지로 이동합니다.");
-      //     location.href = "#/login";
-      //   } else {
-      //     alert(res.data);
-      //   }
-      // });
       this.$emit("change_page");
     },
   },
