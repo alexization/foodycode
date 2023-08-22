@@ -31,7 +31,7 @@ export default {
   async created() {
     axios
       .get("/api/useralg")
-      .then((response) => {        
+      .then((response) => {
         this.userName = response.data.uname;
       })
       .catch((error) => {});
@@ -49,6 +49,7 @@ export default {
 .wrapper {
   position: absolute;
   top: 80px;
+  overflow: hidden;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100 - 80px);
   background: #ffffff;
@@ -79,7 +80,7 @@ export default {
 .input-user-name {
   position: relative;
   border: 1px solid #eeeeee;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 90%;
   height: 40px;
   margin: 0px auto;
@@ -87,6 +88,17 @@ export default {
   background: #eeeeee;
   font: 600 15px "Noto Sans", sans-serif;
   color: #525252;
+  outline: none;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+input:focus::placeholder {
+  color: transparent;
+}
+
+/* Edge */
+input:focus::-ms-input-placeholder {
+  color: transparent;
 }
 
 .line {
@@ -113,8 +125,9 @@ button {
   align-items: center;
   justify-content: center;
   border: 1px solid #cccccc;
-  width: 90%;
-  height: 40px;
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
   margin: auto;
   background: #cccccc;
   font: 600 16px "Noto Sans", sans-serif;
