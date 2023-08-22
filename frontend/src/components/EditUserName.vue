@@ -1,19 +1,21 @@
 <template>
   <div class="wrapper">
-    <div class="user-name-box">
-      <div class="instruction">Please enter your new username</div>
-      <input
-        type="text"
-        id="name"
-        class="input-user-name"
-        :placeholder="userName"
-      />
-      <div class="user-instruction ">{{ username_instruction[0] }}</div>
-    </div>
-    <hr class="line" />
-    <div class="button-box">
-      <button>Edit</button>
-    </div>
+    <form v-on:submit.prevent>
+      <div class="user-name-box">
+        <div class="instruction">Please enter your new username</div>
+        <input
+          type="text"
+          id="name"
+          class="input-user-name"
+          :placeholder="userName"
+        />
+        <div class="user-instruction">{{ username_instruction[0] }}</div>
+      </div>
+      <hr class="line" />
+      <div class="button-box">
+        <button @click.self.prevent="edit_username">Edit</button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -21,13 +23,17 @@
 import axios from "axios";
 
 export default {
-  name: "MyFoodyView",
   components: {},
   props: {},
   data() {
     return {
       userName: "",
-      username_instruction: ["This field is required.", ""],
+      username_instruction: [
+        "This field is required.",
+        "This is your current username.",
+        "Username is available",
+      ],
+      edit_username_data: {},
     };
   },
   async created() {
@@ -39,8 +45,26 @@ export default {
       .catch((error) => {});
   },
   methods: {
-    isUsernameCorrect() {
-      
+    isUsernameCorrect(res_data) {
+      if (this.edit_username_data.username === "") {
+        console.log(this.username_instruction[0]);
+        return false;
+      } else if (this.edit_username_data.username === this.userName) {
+        console.log(this.username_instruction[1]);
+        return false;
+      } else {
+        console.log(this.username_instruction[2]);
+        return true;
+      }
+    },
+    async edit_username() {
+      this.edit_username_data.username = document.getElementById("name").value;
+      if (this.isUsernameCorrect(this.edit_username_data.username)) {
+        console.log(this.edit_username_data);
+        this.$router.push({ path: "/myfoody" });
+      } else {
+        alert("오류입니다.");
+      }
     },
   },
 };
@@ -150,5 +174,6 @@ button {
   background: #cccccc;
   font: 600 16px "Noto Sans", sans-serif;
   color: #ffffff;
+  cursor: pointer;
 }
 </style>

@@ -1,28 +1,30 @@
 <template>
   <div class="wrapper">
-    <div class="user-name-box">
-      <div class="instruction">Current Password</div>
-      <input
-        type="password"
-        id="cur_pwd"
-        class="input-password"
-        placeholder="current password"
-      />
-      <div class="cur-pwd-instruction">{{ cur_pwd_instruction[1] }}</div>
-      <div class="instruction">New Password</div>
-      <input
-        type="password"
-        id="new_pwd"
-        class="input-password"
-        placeholder="new password"
-      />
-      <div class="new-pwd-instruction">{{ new_pwd_instruction[0] }}</div>
-    </div>
+    <form v-on:submit.prevent>
+      <div class="user-name-box">
+        <div class="instruction">Current Password</div>
+        <input
+          type="password"
+          id="cur_pwd"
+          class="input-password"
+          placeholder="current password"
+        />
+        <div class="cur-pwd-instruction">{{ cur_pwd_instruction[1] }}</div>
+        <div class="instruction">New Password</div>
+        <input
+          type="password"
+          id="new_pwd"
+          class="input-password"
+          placeholder="new password"
+        />
+        <div class="new-pwd-instruction">{{ new_pwd_instruction[0] }}</div>
+      </div>
 
-    <hr class="line" />
-    <div class="button-box">
-      <button>Change</button>
-    </div>
+      <hr class="line" />
+      <div class="button-box">
+        <button @click.self.prevent="change_password">Change</button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -38,12 +40,43 @@ export default {
         "Correct password.",
       ],
       new_pwd_instruction: ["This field is required."],
-      res_data: {},
+      res_data: { password: "123" },
+      current_password_data: "",
+      change_password_data: {},
     };
   },
   methods: {
-    isPwdCorrect() {
-
+    isCurPwdCorrect() {
+      this.current_password_data = document.getElementById("cur_pwd").value;
+      if (this.current_password_data === "") {
+        console.log(this.cur_pwd_instruction[0]);
+        return false;
+      } else if (this.current_password_data !== this.res_data.password) {
+        console.log(this.cur_pwd_instruction[1]);
+        return false;
+      } else {
+        console.log(this.cur_pwd_instruction[2]);
+        return true;
+      }
+    },
+    isNewPwdCorrect(res_data) {
+      if (this.change_password_data.cur_pwd === "") {
+        console.log(this.new_pwd_instruction[0]);
+        return false;
+      } else {
+        console.log("new_pwd가 입력되었습니다.");
+        return true;
+      }
+    },
+    async change_password() {
+      this.change_password_data.cur_pwd =
+        document.getElementById("new_pwd").value;
+      if (this.isNewPwdCorrect(this.change_password_data.cur_pwd)) {
+        console.log(this.change_password_data);
+        this.$router.push({ path: "/myfoody" });
+      } else {
+        console.log("오류입니다.");
+      }
     },
   },
 };
@@ -164,5 +197,6 @@ button {
   background: #cccccc;
   font: 600 16px "Noto Sans", sans-serif;
   color: #ffffff;
+  cursor: pointer;
 }
 </style>
