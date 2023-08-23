@@ -163,6 +163,7 @@ export default {
   left: 10.3%;
   font-size: 15px;
   padding-left: 15.4%;
+  outline: none;
 }
 .input-pw {
   border-radius: 22px;
@@ -176,7 +177,19 @@ export default {
   left: 10.3%;
   font-size: 15px;
   padding-left: 15.4%;
+  outline: none;
 }
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+input:focus::placeholder {
+  color: transparent;
+}
+
+/* Edge */
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
 .find-my-id {
   color: #143b22;
   text-align: left;
