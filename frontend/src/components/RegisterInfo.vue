@@ -20,8 +20,10 @@
           id="pw_confirm"
           name="pw_confirm"
           maxlength="32"
+          v-model="user_pw"
         />
       </div>
+      <span>{{ current_status }}</span>
 
       <div class="user-name">User Name</div>
 
@@ -228,15 +230,22 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import arrow_back from "@/assets/icon/arrow-back.png";
 import line from "@/assets/icon/Line.png";
 
 export default {
+  setup() {
+    return {
+      user_pw: ref(),
+    };
+  },
   data() {
     return {
       arrow_back,
       line,
       register_data: {},
+      current_status: "Please Input PW",
     };
   },
   methods: {
@@ -262,6 +271,22 @@ export default {
 
       this.$emit("register_value", this.register_data);
       this.$emit("change_page");
+    },
+    checkPW() {
+      console.log(document.getElementById("pw").value);
+      console.log(document.getElementById("pw_confirm").value);
+      this.user_password = document.getElementById("pw").value;
+      this.confirm_password = document.getElementById("pw_confirm").value;
+      if (this.user_password != this.confirm_password) {
+        this.current_status = "Not Match";
+      } else {
+        this.current_status = "Match";
+      }
+    },
+  },
+  watch: {
+    user_pw() {
+      this.checkPW();
     },
   },
 };
