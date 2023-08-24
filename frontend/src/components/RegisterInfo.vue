@@ -20,7 +20,16 @@
           id="pw_confirm"
           name="pw_confirm"
           maxlength="32"
+          v-model="user_pw"
         />
+      </div>
+      <div class="confirm_status" v-if="current_status === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not_match" id="status">Passwords do not match</span>
+      </div>
+      <div class="confirm_status" v-else-if="current_status === true">
+        <img src="@/assets/icon/correct.png" />
+        <span class="match">Passwords match</span>
       </div>
 
       <div class="user-name">User Name</div>
@@ -228,15 +237,23 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import arrow_back from "@/assets/icon/arrow-back.png";
 import line from "@/assets/icon/Line.png";
 
 export default {
+  setup() {
+    return {
+      user_pw: ref(),
+    };
+  },
   data() {
     return {
       arrow_back,
       line,
       register_data: {},
+      current_status: "",
+      status_text: "Please Input Text",
     };
   },
   methods: {
@@ -262,6 +279,20 @@ export default {
 
       this.$emit("register_value", this.register_data);
       this.$emit("change_page");
+    },
+    checkPW() {
+      this.user_password = document.getElementById("pw").value;
+      this.confirm_password = document.getElementById("pw_confirm").value;
+      if (this.user_password != this.confirm_password) {
+        this.current_status = false;
+      } else {
+        this.current_status = true;
+      }
+    },
+  },
+  watch: {
+    user_pw() {
+      this.checkPW();
     },
   },
 };
@@ -389,6 +420,23 @@ input[type="number"] {
   left: 7.7%;
   top: 243.3px;
   width: 100%;
+}
+.confirm_status {
+  position: absolute;
+  top: 280px;
+  left: 7.7%;
+}
+.confirm_status img {
+  width: 14px;
+  height: 14px;
+}
+.not_match {
+  color: red;
+  font: 600 14px "Noto Sans", sans-serif;
+}
+.match {
+  color: #1c9181;
+  font: 600 14px "Noto Sans", sans-serif;
 }
 .user-name {
   color: #000000;
