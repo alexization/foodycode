@@ -104,8 +104,8 @@ INSERT INTO userAlgs(uid,algid)
 drop table restaurant;
 CREATE TABLE restaurant(
     id int NOT NULL AUTO_INCREMENT,
-    rest_id varchar(30) NOT NULL,
-    rest_psword varchar(30) NOT NULL,
+    uid varchar(30) NOT NULL,
+    psword varchar(30) NOT NULL,
     rest_name varchar(30) NOT NULL,
     address varchar(50) NOT NULL,
     ceo_name varchar(30) NOT NULL,
@@ -118,10 +118,10 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(rest_id,rest_psword,rest_name,address,ceo_name,tel,img_url)
-    values("rid","123","Yeon Tan Bulgogi","addr","jhon","033-742-5878","Yeon-Tan-Bulgogi"),
-("rid","123","Saruerue","addr","jhon","033-760-3242","Korean-Barbeque"),
-("rid","123","Zzang Dol","addr","jhon","033-760-7765","Zzang-Dol"),
-("rid","123","Haru","addr","jhon","033-733-8513","Hot-Pot-Stew");
+    values("ytb","123","Yeon Tan Bulgogi","addr","jhon","033-742-5878","Yeon-Tan-Bulgogi"),
+("srr","123","Saruerue","addr","jhon","033-760-3242","Korean-Barbeque"),
+("zzd","123","Zzang Dol","addr","jhon","033-760-7765","Zzang-Dol"),
+("hru","123","Haru","addr","jhon","033-733-8513","Hot-Pot-Stew");
 
 
 
