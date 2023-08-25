@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <div class="nav-box">
-      <button @click="this.$emit('toggleMenu')">
-        <img :src="NavBtnImage" width="32" />
+      <button @click="prev_page">
+        <img src="@/assets/icon/arrow-back.png" width="32" />
       </button>
     </div>
     <div class="logo-box">
@@ -22,12 +22,9 @@
 </template>
 
 <script>
-import NavBtnImage from "@/assets/icon/navigation_button.png";
-
 export default {
   data() {
     return {
-      NavBtnImage,
       edit_status: false,
     };
   },
@@ -38,6 +35,9 @@ export default {
       }
       this.edit_status = !this.edit_status;
       this.$emit("change_status");
+    },
+    prev_page() {
+      location.href = "#/manager";
     },
   },
 };

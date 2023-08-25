@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header @toggleMenu="toggleMenu" @change_status="status"></Header>
+    <Header @change_status="status"></Header>
     <div class="edit-page">
       <div class="preview-text">
         <img src="@/assets/icon/visibility.png" />
@@ -51,31 +51,11 @@
         </div>
       </div>
     </div>
-    <Transition name="fade">
-      <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
-    </Transition>
-
-    <Transition name="slide">
-      <nav class="nav-bar" v-show="showMenu">
-        <div>
-          <button class="close" @click="toggleMenu">
-            <img :src="CloseIcon" width="20" />
-          </button>
-        </div>
-        <div v-for="{ name, url } in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{
-            name
-          }}</router-link>
-        </div>
-      </nav>
-    </Transition>
   </div>
 </template>
 
 <script>
-import CloseIcon from "@/assets/icon/close.png";
-
-import Header from "../components/manager/EditHeader.vue";
+import Header from "../components/manager/EditRestHeader.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
 
 import axios from "axios";
@@ -90,14 +70,7 @@ export default {
   data() {
     return {
       edit_status: false,
-      CloseIcon,
-      showMenu: false,
       list: "",
-      navList: [
-        { name: "myFoody", url: "/myfoody" },
-        { name: "Login", url: "/login" },
-        { name: "Logout", url: "" },
-      ],
     };
   },
   //   async created() {
@@ -108,12 +81,6 @@ export default {
   //     });
   //   },
   methods: {
-    async toggleMenu() {
-      this.showMenu = !this.showMenu;
-    },
-    callback() {
-      this.showMenu = false;
-    },
     status() {
       this.edit_status = !this.edit_status;
     },
@@ -228,55 +195,6 @@ export default {
   height: 26px;
   padding: 2px;
   padding-left: 5px;
-}
-/* 사이드 메뉴 열었을때 배경 흐리게 */
-.dimmer {
-  position: fixed;
-  z-index: 1;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: #00000077;
-  opacity: 1;
-  transition: opacity 0.25s;
-}
-
-.nav-bar {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  width: 60%;
-  height: 100%;
-  top: 0px;
-  padding: 15px 8px;
-  background-color: white;
-}
-
-.nav-bar > div {
-  box-sizing: border-box;
-  width: 100%;
-  height: 44px;
-  padding: 12px 0px;
-  padding-left: 20px;
-}
-
-.link {
-  font: 600 16px "Noto Sans", sans-serif;
-  color: black;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-.close {
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: none;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {
