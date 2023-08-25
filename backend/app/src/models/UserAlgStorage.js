@@ -19,7 +19,7 @@ class AlgStorage {
   static getUsersAlgid(uid) {
     return new Promise((resolve, reject) => {
       const query =
-        'select allergies.id FROM users right join userAlgs ON users.id = userAlgs.uid inner join allergies ON userAlgs.algid = allergies.id where users.uid = ?;';
+        'select algid FROM useralgs where uid = (SELECT id FROM users WHERE uid = ?);';
       db.query(query, [uid], (err, data) => {
         if (err) throw reject(`${err}`);
 

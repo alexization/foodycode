@@ -98,8 +98,10 @@ function findUniqueElements(arrayA, arrayB) {
     return { uniqueInA, uniqueInB };
   }
   
-  const arrayA = [1, 2, 3, 4, 5];
-  const arrayB = [3, 4, 5, 6, 7];
+  let arrayA = [1,2,3];
+
+  let arrayB = [1,2,3];
+
   
   const { uniqueInA, uniqueInB } = findUniqueElements(arrayA, arrayB);
   
