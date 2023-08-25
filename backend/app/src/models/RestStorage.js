@@ -25,8 +25,9 @@ class RestStorage {
 //async뺴도되나?
   static async save(restInfo){
     return new Promise((resolve,reject)=>{
-      const query = `INSERT INTO restaurant (rest_id,rest_psword,rest_name,address,ceo_name,tel,img_url)
-      values(?,?,"test rest name","test address","test ceo name","test tel","testurl");`;
+      const query = `INSERT INTO restaurant 
+      (uid,psword,rest_name,address,ceo_name,tel,img_url)
+      values(?,?,?,?,?,?,"restaurant_init");`;
       db.query(query,[restInfo.uid,restInfo.password],(err)=>{
         if(err) throw reject(`${err}`);
         resolve({success:true});

@@ -36,14 +36,14 @@ export default {
       let res = await axios({
         method: "POST",
         url: "api/restsignup",
+        //변수명 맞춰주기
         data: {
           uid: user.id,
           psword: user.pw,
-          age: user.age,
-          name: user.name,
-          country: user.country,
-          gender: user.gender,
-          arr_algid: user.alg,
+          ceo_name: user.name,
+          rest_name: user.rest_name,
+          tel: user.tel,
+          address: user.address,
         },
       }).then((res) => {
         console.log(res.data);
