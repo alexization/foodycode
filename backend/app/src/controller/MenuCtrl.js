@@ -1,5 +1,5 @@
 const MenuStorage = require('../models/MenuStroage');
-const AlgStorage = require('../models/AlgStorage');
+const AlgStorage = require('../models/UserAlgStorage');
 
 class MenuCtrl {
   static async sendMenuInfo(req, res) {
@@ -43,6 +43,11 @@ class MenuCtrl {
 
     const arr_menuDetail = await MenuStorage.getMenuDetail(menu_id);
     res.send(arr_menuDetail);
+  }
+
+  static async addMenu(req,res){
+    const response = await MenuStorage.save(req.body);
+    return res.send(response);
   }
 }
 

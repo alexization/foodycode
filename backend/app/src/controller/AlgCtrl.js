@@ -1,4 +1,4 @@
-const AlgStorage = require('../models/AlgStorage');
+const AlgStorage = require('../models/UserAlgStorage');
 const UserStorage = require('../models/UserStorage');
 
 class AlgCtrl {

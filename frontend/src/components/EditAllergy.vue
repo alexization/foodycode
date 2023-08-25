@@ -164,7 +164,7 @@
         </div>
       </div>
 
-      <button class="Register-button" @click="click_next">Edit</button>
+      <button class="Register-button" @click="click_edit">Edit</button>
 
       <div
         class="please-select-the-food-you-are-allergic-to-from-the-following"
@@ -205,8 +205,25 @@ export default {
       .catch((error) => {});
   },
   methods: {    
-    click_next() {
-      this.$emit("alg_data", this.allergy);
+    click_edit() {
+      
+      console.log("asd");
+   
+      axios
+      .put("/api/useralg", { 
+        arr_algid : this.allergy
+      })
+      .then((res) => { 
+        console.log(res.data.success);
+        if (res.data.success) {
+          alert("수정 완료!");
+          this.$router.go(this.$router.currentRoute);
+        } else {
+          alert(res.data);
+        }
+      });
+   
+
     },
   },
 };

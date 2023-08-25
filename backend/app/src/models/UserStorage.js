@@ -55,10 +55,11 @@ class UserStorage {
 
       // 유저 알러지 정보가 하나라도 선택되어 있을때만 쿼리를 생성
       if (userInfo.arr_algid.length > 0) {
+        
         insertValues = userInfo.arr_algid
           .map(
             (algid) =>
-              `(${algid}, (SELECT id FROM users WHERE uid = '${userInfo.uid}'))`
+              `(${algid}, (SELECT id FROM users WHERE uid = ?))`
           )
           .join(', ');
 
@@ -67,10 +68,12 @@ class UserStorage {
           ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
           : '';
 
-        db.query(alg_query, [userInfo.uid, userInfo.password], (err) => {
+        db.query(alg_query, [userInfo.uid], (err) => {
           if (err) throw reject(`${err}`);
           return resolve({ success: true });
         });
+
+        //이랬을때 만약 알러지 데이터 입력안하면 resovle()없나? 확인다시
       }
     });
   }

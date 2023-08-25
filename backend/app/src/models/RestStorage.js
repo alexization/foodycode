@@ -10,6 +10,44 @@ class RestStorage {
       });
     });
   }
+
+  static getUserInfo(id){
+    return new Promise((resolve, reject)=>{
+      const query = `SELECT * from restaurant where rest_id = ?;`;
+      db.query(query,[id],(err,data)=>{
+        if(err) throw reject(`${err}`);
+        resolve(data[0]);
+      })
+    })
+
+  }
+
+//async뺴도되나?
+  static async save(restInfo){
+    return new Promise((resolve,reject)=>{
+      const query = `INSERT INTO restaurant (rest_id,rest_psword,rest_name,address,ceo_name,tel,img_url)
+      values(?,?,"test rest name","test address","test ceo name","test tel","testurl");`;
+      db.query(query,[restInfo.uid,restInfo.password],(err)=>{
+        if(err) throw reject(`${err}`);
+        resolve({success:true});
+      })
+    })
+  }
+
+
+  //id에 where절에 뭐넣을지 고민중
+  static async update(restInfo){
+    return new Promise((resolve,reject)=>{
+      const query = `UPDATE restaurant 
+      SET rest_psword = ?, rest_name = ? , address = ? , ceo_name = ? , tel =? , img_url = ?
+      where rest_id = ?;`;
+      db.query(query,[restInfo.password,restInfo.name,restInfo.address,restInfo.ceo_name,restInfo.tel,restInfo.img_url],(err)=>{
+        if(err) throw reject(`${err}`);
+        resolve({success:true});
+      })
+    })
+  }
+
 }
 
 module.exports = RestStorage;
