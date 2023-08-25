@@ -83,6 +83,7 @@ export default {
   width: 20%;
   height: 100%;
 }
+
 button {
   position: absolute;
   left: 50%;

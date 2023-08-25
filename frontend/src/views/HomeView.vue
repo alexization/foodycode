@@ -60,9 +60,9 @@ export default {
       showMenu: false,
       list: '',
       navList: [
-        { name: '내정보', url: '' },
-        { name: '로그인', url: '/login' },
-        { name: '로그아웃', url: '' },
+        { name: 'myFoody', url: '/myfoody' },
+        { name: 'Login', url: '/login' },
+        { name: 'Logout', url: '' },
       ],
     };
   },
@@ -85,6 +85,8 @@ export default {
 </script>
 
 <style scoped>
+ @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+
 .user-info-box {
   position: absolute;
   top: 70px;
@@ -101,6 +103,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100 - 180px);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* 사이드 메뉴 열었을때 배경 흐리게 */
@@ -134,14 +137,15 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 44px;
-  padding: 12px 0;
+  padding: 12px 0px;
   padding-left: 20px;
 }
 
 .link {
-  font-size: 13pt;
+  font: 600 16px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .close {
@@ -149,6 +153,7 @@ export default {
   height: 20px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 500px) {

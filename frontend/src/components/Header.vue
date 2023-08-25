@@ -9,7 +9,7 @@
       <div class="foody-logo">FOODY</div>
     </div>
     <div class="qr-box">
-      <button>
+      <button @click="click_qr">
         <img :src="QrScannerBtnImage" width="32" />
       </button>
     </div>
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import NavBtnImage from '@/assets/icon/navigation_button.png';
-import QrScannerBtnImage from '@/assets/icon/qr_scanner_button.png';
+import NavBtnImage from "@/assets/icon/navigation_button.png";
+import QrScannerBtnImage from "@/assets/icon/qr_scanner_button.png";
 
 export default {
   data() {
@@ -27,12 +27,17 @@ export default {
       QrScannerBtnImage,
     };
   },
+  methods: {
+    click_qr() {
+      alert("Comming Soon..");
+    },
+  },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
 
 .header * {
   box-sizing: border-box;
@@ -64,6 +69,7 @@ button {
   height: 40px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .logo-box {
@@ -80,7 +86,7 @@ button {
   margin-left: -50px;
   width: 100px;
   height: 40px;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
