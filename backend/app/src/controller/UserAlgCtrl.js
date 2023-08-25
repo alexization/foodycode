@@ -27,3 +27,5 @@ class UserAlgCtrl{
 
     }
 }
+
+module.exports = UserAlgCtrl;
