@@ -1,68 +1,84 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: () => import('../views/HomeView.vue'),
+    path: "/",
+    name: "home",
+    component: () => import("../views/HomeView.vue"),
     meta: {
-      title: 'Home FOODY',
+      title: "Home FOODY",
     },
   },
   {
-    path: '/myfoody',
-    name: 'my-foody',
-    component: () => import('../views/MyFoodyView.vue'),
+    path: "/manager",
+    name: "manager-home",
+    component: () => import("../views/HomeManager.vue"),
     meta: {
-      title: 'My Foody FOODY',
+      title: "Home FOODY",
     },
   },
   {
-    path: '/myfoody/:edit_id_url_param',
-    name: 'edit-myfoody',
-    component: () => import('../views/EditAccountView.vue'),
+    path: "/myfoody",
+    name: "my-foody",
+    component: () => import("../views/MyFoodyView.vue"),
     meta: {
-      title: 'Edit myFoody FOODY',
-    },    
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/LoginView.vue'),
-    meta: {
-      title: 'Login FOODY',
+      title: "My Foody FOODY",
     },
   },
   {
-    path: '/signup',
-    name: 'sign-up',
-    component: () => import('../views/ServiceView.vue'),
+    path: "/myfoody/:edit_id_url_param",
+    name: "edit-myfoody",
+    component: () => import("../views/EditAccountView.vue"),
     meta: {
-      title: 'Sign Up Step1 FOODY',
+      title: "Edit myFoody FOODY",
     },
   },
   {
-    path: '/signup2',
-    name: 'sign-up2',
-    component: () => import('../views/SignUpView.vue'),
+    path: "/login",
+    name: "login",
+    component: () => import("../views/LoginView.vue"),
     meta: {
-      title: 'Sign Up Step2 FOODY',
+      title: "Login FOODY",
     },
   },
   {
-    path: '/allmenu/:rest_name_url_param',
-    name: 'all-menu',
-    component: () => import('../views/AllMenuView.vue'),
+    path: "/mlogin",
+    name: "manager-login",
+    component: () => import("../views/LoginManager.vue"),
     meta: {
-      title: 'Menu FOODY',
+      title: "Login FOODY",
     },
   },
   {
-    path: '/allmenu/:rest_name_url_param/:menu_id_url_param',
-    name: 'menu-detail',
-    component: () => import('../views/MenuDetail.vue'),
+    path: "/signup",
+    name: "sign-up",
+    component: () => import("../views/ServiceView.vue"),
     meta: {
-      title: 'Detail Menu FOODY',
+      title: "Sign Up Step1 FOODY",
+    },
+  },
+  {
+    path: "/signup2",
+    name: "sign-up2",
+    component: () => import("../views/SignUpView.vue"),
+    meta: {
+      title: "Sign Up Step2 FOODY",
+    },
+  },
+  {
+    path: "/allmenu/:rest_name_url_param",
+    name: "all-menu",
+    component: () => import("../views/AllMenuView.vue"),
+    meta: {
+      title: "Menu FOODY",
+    },
+  },
+  {
+    path: "/allmenu/:rest_name_url_param/:menu_id_url_param",
+    name: "menu-detail",
+    component: () => import("../views/MenuDetail.vue"),
+    meta: {
+      title: "Detail Menu FOODY",
     },
   },
 ];
@@ -74,7 +90,7 @@ const router = createRouter({
 
 // View 타이틀 동적 생성
 router.afterEach((to, from) => {
-  const title = to.meta.title === undefined ? 'FOODY' : to.meta.title;
+  const title = to.meta.title === undefined ? "FOODY" : to.meta.title;
   if (title) document.title = title;
 });
 

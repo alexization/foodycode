@@ -6,14 +6,14 @@
     <div class="logo">
       <img class="logo-img" :src="LogoImg" />
     </div>
-    <div class="login-text">LOGIN</div>
+    <div class="login-text">MANAGER LOGIN</div>
 
     <input
       class="input-id"
       id="uid"
       type="text"
       name="uid"
-      placeholder="User Name"
+      placeholder="Manager Name"
       maxlength="16"
     />
 
@@ -60,9 +60,6 @@
         fill="#146330"
       />
     </svg>
-    <RouterLink class="click-here-if-you-are-manager" to="/mlogin">
-      Click Here If You Are Manager
-    </RouterLink>
   </div>
 </template>
 <script>
@@ -90,7 +87,6 @@ export default {
     find_pw() {
       alert("Comming Soon..");
     },
-
     click_back() {
       location.href = "#/";
     },
@@ -134,10 +130,10 @@ export default {
 }
 .login-text {
   color: #143b22;
-  text-align: left;
+  text-align: center;
   font: 700 20px "Roboto", sans-serif;
   position: absolute;
-  left: calc(50% - 35px);
+  width: 100%;
   top: 350px;
 }
 .button-back {
@@ -214,16 +210,6 @@ input:focus::-ms-input-placeholder {
   position: absolute;
   left: 67%;
   top: 585px;
-}
-.click-here-if-you-are-manager {
-  color: #143b22;
-  text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
-  text-decoration: underline;
-  position: absolute;
-  left: 42%;
-  top: 645px;
-  cursor: pointer;
 }
 .password-img {
   position: absolute;
