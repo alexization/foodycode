@@ -31,7 +31,7 @@
 
     <div class="find-my-pw" @click="find_pw">Find my PW</div>
 
-    <RouterLink class="sign-up" to="/signup">Sign Up</RouterLink>
+    <RouterLink class="sign-up" to="/manager-signup">Sign Up</RouterLink>
 
     <svg
       class="password-img"
