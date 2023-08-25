@@ -26,7 +26,7 @@ class RestCtrl {
     const user = new Rest(req.body);
     const response = await user.register();
 
-    return res.json({success:false});
+    return res.json(response);
   }
 
   

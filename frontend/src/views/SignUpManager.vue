@@ -49,7 +49,8 @@ export default {
         console.log(res.data);
         if (res.data.success) {
           alert("회원가입 완료! 로그인 페이지로 이동합니다.");
-          location.href = "#/login";
+          // 경로 이름수정
+          location.href = "#/mlogin";
         } else {
           alert(res.data);
         }
