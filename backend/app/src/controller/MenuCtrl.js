@@ -1,5 +1,5 @@
 const MenuStorage = require('../models/MenuStroage');
-const AlgStorage = require('../models/AlgStorage');
+const AlgStorage = require('../models/UserAlgStorage');
 
 class MenuCtrl {
   static async sendMenuInfo(req, res) {

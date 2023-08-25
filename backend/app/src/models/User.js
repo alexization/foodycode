@@ -10,7 +10,7 @@ class User {
   async login() {
     const client = this.body;
     try {
-      const { psword, uid, in_date } = await UserStorage.getUsersInfo(
+      const { psword, uid } = await UserStorage.getUsersInfo(
         client.uid
       );
 

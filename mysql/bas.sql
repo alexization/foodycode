@@ -96,6 +96,11 @@ INSERT INTO userAlgs(uid,algid)
     (4,8);
 
 
+-- uid가 2이고 algid가 3인 행 삭제
+-- DELETE FROM userAlgs
+-- WHERE uid = 2 AND algid IN (3, 4, 5);
+
+
 drop table restaurant;
 CREATE TABLE restaurant(
     id int NOT NULL AUTO_INCREMENT,
