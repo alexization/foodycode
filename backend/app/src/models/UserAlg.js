@@ -21,7 +21,7 @@ class UserAlg{
         const arr_prealgid = [];
         
         for (let i = 0; i < arr_useralgid.length; i++) {
-          arr_prealgid.push(arr_useralgid[i].algname);
+          arr_prealgid.push(arr_useralgid[i].algid);
         }
 
         function findUniqueElements(arrA, arrB) {
@@ -31,10 +31,10 @@ class UserAlg{
           }
           
           
-        const { uniqueInA, uniqueInB } = findUniqueElements(arr_prealgid, arr_editalgid);
+        const { uniqueInA:A, uniqueInB:B } = findUniqueElements(arr_prealgid, arr_editalgid);
           
-          console.log("Unique in A:", uniqueInA);
-          console.log("Unique in B:", uniqueInB)
+        console.log("Unique in A:", A);
+        console.log("Unique in B:", B);
 
         const response = await UserAlgStorage.save(uid,arr_algid);
 
