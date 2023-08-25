@@ -18,7 +18,7 @@ class RestCtrl {
     //   req.session.userid = req.body.rest_id;
     // }
 
-    return req.json(response);
+    return res.json(response);
   }
 
   static async processRegister(req,res){
