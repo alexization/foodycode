@@ -35,7 +35,7 @@ export default {
 
       let res = await axios({
         method: "POST",
-        url: "api/restregister",
+        url: "api/restsignup",
         data: {
           uid: user.id,
           psword: user.pw,
