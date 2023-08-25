@@ -429,6 +429,7 @@ input[type="number"] {
 .confirm_status img {
   width: 14px;
   height: 14px;
+  vertical-align: middle;
 }
 .not_match {
   color: red;

@@ -16,10 +16,10 @@
 <script>
 import call from "@/assets/icon/call.png";
 export default {
-  props: {    
+  props: {
     restaurantName: {
       type: String,
-      default: "Hot Pot Stew Restaurant",
+      default: "Hot-Pot-Stew",
     },
     title: {
       type: String,
