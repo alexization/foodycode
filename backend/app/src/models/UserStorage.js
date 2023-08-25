@@ -53,6 +53,9 @@ class UserStorage {
       //inservalues에 빈문자열 할당, if문 후 쿼리 생성
       let insertValues = '';
 
+      // db query에 생기는 ?의 갯수만큼 uid배열을 준비해야함
+      const uidArray = new Array(userInfo.arr_algid.length).fill(userInfo.uid);
+
       // 유저 알러지 정보가 하나라도 선택되어 있을때만 쿼리를 생성
       if (userInfo.arr_algid.length > 0) {
         insertValues = userInfo.arr_algid
@@ -67,7 +70,7 @@ class UserStorage {
           ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
           : '';
 
-        db.query(alg_query, [userInfo.uid], (err) => {
+        db.query(alg_query,db query, (err) => {
           if (err) throw reject(`${err}`);
           return resolve({ success: true });
         });
