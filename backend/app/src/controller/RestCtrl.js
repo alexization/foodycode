@@ -22,10 +22,11 @@ class RestCtrl {
   }
 
   static async processRegister(req,res){
+    console.log(req.body);
     const user = new Rest(req.body);
     const response = await user.register();
 
-    return res.json(response);
+    return res.json({success:false});
   }
 
   

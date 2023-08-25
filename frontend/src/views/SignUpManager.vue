@@ -27,7 +27,7 @@ export default {
     };
   },
   methods: {
-    get_data(data) {
+    async get_data(data) {
       console.log(data);
       this.user_info = data;
 
@@ -87,7 +87,6 @@ export default {
     //     }
     //   });
     // },
-  },
 };
 </script>
 
