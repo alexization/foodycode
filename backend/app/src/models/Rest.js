@@ -12,7 +12,7 @@ class Rest{
         try{
             const{rest_psword,rest_id}=await RestStorage.getUserInfo(client.uid);
 
-                if(rest_id === client.uid && rest_psword === client.password){
+                if(rest_id === client.uid && rest_psword === client.rest_psword){
                     return {success: true};
                 }
                 else{
