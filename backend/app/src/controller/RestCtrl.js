@@ -9,7 +9,9 @@ class RestCtrl {
   }
 
   static async processLogin(req,res){
+    console.log(req.body);
     const user = new Rest(req.body);
+
     const response = await user.login();
 
 
@@ -18,7 +20,7 @@ class RestCtrl {
     //   req.session.userid = req.body.rest_id;
     // }
 
-    return req.json(response);
+    return res.json(response);
   }
 
   static async processRegister(req,res){

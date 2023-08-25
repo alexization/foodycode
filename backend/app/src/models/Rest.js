@@ -9,10 +9,11 @@ class Rest{
     
     async login(){
         const client=this.body;
+        console.log(client);
         try{
-            const{rest_psword,rest_id}=await RestStorage.getUserInfo(client.uid);
+            const{psword:rest_psword,uid:rest_id}=await RestStorage.getUserInfo(client.uid);
 
-                if(rest_id === client.uid && rest_psword === client.rest_psword){
+                if(rest_id === client.uid && rest_psword === client.psword){
                     return {success: true};
                 }
                 else{
@@ -27,7 +28,6 @@ class Rest{
     
     async register(){
         const client = this.body;
-        console.log(client);
         try{
             const response = await RestStorage.save(client);
             return response;

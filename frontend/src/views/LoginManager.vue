@@ -91,23 +91,22 @@ export default {
       location.href = "#/";
     },
     onLogin: async function () {
-      location.href = "#/manager";
       const uid = document.getElementById("uid");
       console.log(uid.value);
-      const password = document.getElementById("pw");
+      const psword = document.getElementById("pw");
 
       let res = await axios({
         method: "POST",
         url: "api/restlogin",
         data: {
           uid: uid.value,
-          password: password.value,
+          psword: psword.value,
         },
       }).then((res) => {
         console.log(res.data);
 
         if (res.data.success) {
-          location.href = "#/";
+          location.href = "#/manager";
         } else {
           alert(res.data.msg);
         }

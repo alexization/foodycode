@@ -13,7 +13,7 @@ class RestStorage {
 
   static getUserInfo(id){
     return new Promise((resolve, reject)=>{
-      const query = `SELECT * from restaurant where rest_id = ?;`;
+      const query = `SELECT * from restaurant where uid = ?;`;
       db.query(query,[id],(err,data)=>{
         if(err) throw reject(`${err}`);
         resolve(data[0]);
