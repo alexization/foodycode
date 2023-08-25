@@ -3,15 +3,14 @@
 const UserAlgStorage = require('./UserAlgStorage');
 
 class UserAlg{
-    
+
     constructor(body){
         this.body = body;
 
     }
 
     // 알러지배열을 받아 원래 없던건 추가, 있던건 삭제하도록
-    async edit_alg(){
-        const uid = this.body.uid;
+    async edit_alg(uid){
         const arr_newalgid = this.body.arr_algid;
 
         // DB에서 가져오는 배열
@@ -49,6 +48,7 @@ class UserAlg{
             await UserAlgStorage.save(arr_algid_add);
         }
 
+        return {success:true};
 
 
     }
