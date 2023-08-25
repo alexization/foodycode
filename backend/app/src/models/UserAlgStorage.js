@@ -39,9 +39,16 @@ class AlgStorage {
     });
   }
 
-  static save(uid, ...arr_alg){
+  static save(uid, arr_alg){
     return new Promise((resolve,reject)=>{
+
+      const uidArray = new Array(arr_alg.length).fill(uid);
+
       let insertValues = '';
+      
+      console.log(`in save query`);
+      console.log(arr_alg);
+      
       insertValues = arr_alg
           .map(
             (algid) =>
@@ -50,20 +57,26 @@ class AlgStorage {
           .join(', ');
 
         // insertValues가 생성될때만 alg_Query를 생성  (혹시모를 오류)
+        console.log(`${typeof uid} : ${uid}`);
         const alg_query = insertValues
           ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
           : '';
-
-        db.query(alg_query, [uid], (err) => {
+          
+         
+          console.log(alg_query);
+        db.query(alg_query, uidArray, (err) => {
           if (err) throw reject(`${err}`);
-          return resolve({ success: true });
+          resolve({ success: true });
         });
     })
   }
 
-  static delete(uid, ...arr_alg){
+  static delete(uid, arr_alg){
     return new Promise((resolve,reject)=>{
       let insertValues = '';
+
+      const uidArray = new Array(arr_alg.length).fill(uid);
+
       insertValues = arr_alg
           .map(
             (algid) =>
@@ -77,10 +90,10 @@ class AlgStorage {
           WHERE uid = (SELECT id FROM users WHERE uid = ?)
           AND algid IN (${insertValues});`
           : '';
-
-        db.query(alg_query, [uid], (err) => {
+            console.log(alg_query);
+        db.query(alg_query, uidArray, (err) => {
           if (err) throw reject(`${err}`);
-          return resolve({ success: true });
+         resolve({ success: true });
         });
     })
   }

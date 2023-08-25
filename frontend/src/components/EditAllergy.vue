@@ -206,7 +206,24 @@ export default {
   },
   methods: {    
     click_edit() {
-      this.$emit("alg_data", this.allergy);
+      
+      console.log("asd");
+   
+      axios
+      .put("/api/useralg", { 
+        arr_algid : this.allergy
+      })
+      .then((res) => { 
+        console.log(res.data.success);
+        if (res.data.success) {
+          alert("수정 완료!");
+          this.$router.go(this.$router.currentRoute);
+        } else {
+          alert(res.data);
+        }
+      });
+   
+
     },
   },
 };

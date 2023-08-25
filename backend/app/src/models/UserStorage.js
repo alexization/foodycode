@@ -55,6 +55,7 @@ class UserStorage {
 
       // 유저 알러지 정보가 하나라도 선택되어 있을때만 쿼리를 생성
       if (userInfo.arr_algid.length > 0) {
+        
         insertValues = userInfo.arr_algid
           .map(
             (algid) =>

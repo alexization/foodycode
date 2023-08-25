@@ -11,11 +11,16 @@ class UserAlg{
 
     // 알러지배열을 받아 원래 없던건 추가, 있던건 삭제하도록
     async edit_alg(uid){
-        const arr_newalgid = this.body.arr_algid;
 
+        //문자열로 받아진거 숫자로
+        const arr_inputalgid_num = this.body.arr_algid;
+        const arr_newalgid = arr_inputalgid_num.map(str => parseInt(str, 10));
+        
+        
+        console.log(this.body.arr_algid);
         // DB에서 가져오는 배열
         const arr_useralgid = await UserAlgStorage.getUsersAlgid(uid);
-
+        console.log(`bring user alg id = ${arr_useralgid}`);
         
         // 기존에 유저에게 있던 알러지 ID 배열.
         // DB에서 갓잡은 상태이기 떄문에 배열로 바까줌;
@@ -27,6 +32,7 @@ class UserAlg{
             arr_prealgid.push(arr_useralgid[i].algid);
             }
         }
+        console.log(`bring pre alg id = ${arr_prealgid}`);
         
         function findUniqueElements(pre_arr, new_arr) {
             const uniqueInpre = pre_arr.filter(element => !new_arr.includes(element));
@@ -35,19 +41,22 @@ class UserAlg{
         }
         
         
-        const { uniqueInpre:arr_algid_del, uniqueInnew:arr_algid_add} = findUniqueElements(arr_prealgid, arr_newalgid);
-
-    
+        let { uniqueInpre:arr_algid_del, uniqueInnew:arr_algid_add} = findUniqueElements(arr_prealgid, arr_newalgid);
+       
+        console.log(`${arr_algid_del.length}`);
+        console.log(`${arr_algid_add.length}`);
         
-        if(arr_algid_del.length<0){
-            await UserAlgStorage.delete(arr_algid_del);
+        if(arr_algid_del.length>0){
+         await UserAlgStorage.delete(uid,arr_algid_del);
+                }
+
+
+        
+        if(arr_algid_add.length>0){
+          await UserAlgStorage.save(uid,arr_algid_add); 
         }
 
-        
-        if(arr_algid_add.length<0){
-            await UserAlgStorage.save(arr_algid_add);
-        }
-
+        console.log("go return");
         return {success:true};
 
 
@@ -57,3 +66,4 @@ class UserAlg{
 
 
 module.exports = UserAlg;
+
