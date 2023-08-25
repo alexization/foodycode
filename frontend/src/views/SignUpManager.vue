@@ -30,6 +30,32 @@ export default {
     get_data(data) {
       console.log(data);
       this.user_info = data;
+
+      const user = this.user_info;
+
+      let res = await axios({
+        method: "POST",
+        url: "api/restregister",
+        data: {
+          uid: user.id,
+          psword: user.pw,
+          age: user.age,
+          name: user.name,
+          country: user.country,
+          gender: user.gender,
+          arr_algid: user.alg,
+        },
+      }).then((res) => {
+        console.log(res.data);
+        if (res.data.success) {
+          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
+          location.href = "#/login";
+        } else {
+          alert(res.data);
+        }
+      });
+    },
+
     },
 
     // this.user_info에 최종 유저 데이터가 들어옴 해당 위치에서 post 하면 될듯
