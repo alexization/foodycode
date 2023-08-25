@@ -58,11 +58,27 @@ const routes = [
     },
   },
   {
+    path: "/manager-signup",
+    name: "manager-signup",
+    component: () => import("../views/ServiceManager.vue"),
+    meta: {
+      title: "Sign Up Step1 FOODY",
+    },
+  },
+  {
     path: "/signup2",
     name: "sign-up2",
     component: () => import("../views/SignUpView.vue"),
     meta: {
       title: "Sign Up Step2 FOODY",
+    },
+  },
+  {
+    path: "/manager-signup2",
+    name: "manager-signup2",
+    component: () => import("../views/SignUpManager.vue"),
+    meta: {
+      title: "Sign Up Step1 FOODY",
     },
   },
   {
