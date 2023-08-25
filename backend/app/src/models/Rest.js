@@ -27,6 +27,7 @@ class Rest{
     
     async register(){
         const client = this.body;
+        console.log(client);
         try{
             const response = await RestStorage.save(client);
             return response;

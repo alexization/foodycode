@@ -27,9 +27,36 @@ export default {
     };
   },
   methods: {
-    get_data(data) {
+    async get_data(data) {
       console.log(data);
       this.user_info = data;
+
+      const user = this.user_info;
+
+      let res = await axios({
+        method: "POST",
+        url: "api/restsignup",
+        //변수명 맞춰주기
+        data: {
+          uid: user.id,
+          psword: user.pw,
+          ceo_name: user.name,
+          rest_name: user.rest_name,
+          tel: user.tel,
+          address: user.address,
+        },
+      }).then((res) => {
+        console.log(res.data);
+        if (res.data.success) {
+          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
+          // 경로 이름수정
+          location.href = "#/mlogin";
+        } else {
+          alert(res.data);
+        }
+      });
+    },
+
     },
 
     // this.user_info에 최종 유저 데이터가 들어옴 해당 위치에서 post 하면 될듯
@@ -61,7 +88,6 @@ export default {
     //     }
     //   });
     // },
-  },
 };
 </script>
 
