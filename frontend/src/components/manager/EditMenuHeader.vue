@@ -8,13 +8,21 @@
 
     <div class="Rest-name" v-text="restaurantName"></div>
 
-    <div class="edit_button"><img src="@/assets/icon/edit.png" /></div>
+    <div class="edit_button" v-if="this.edit_status === false">
+      <button @click="change_status">
+        <img src="@/assets/icon/edit.png" />
+      </button>
+    </div>
+    <div class="edit_button" v-else>
+      <button @click="change_status">
+        <img src="@/assets/icon/save.png" />
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import arrow_back from "@/assets/icon/arrow-back.png";
-import axios from "axios";
 
 export default {
   props: {
@@ -28,14 +36,16 @@ export default {
       arrow_back,
       userName: "",
       login_status: false,
+      edit_status: false,
     };
   },
   methods: {
     click_back() {
       location.href = "#/manager";
     },
-    go_login() {
-      location.href = "#/login";
+    change_status() {
+      this.edit_status = !this.edit_status;
+      this.$emit("edit_status");
     },
   },
 };
@@ -121,6 +131,10 @@ export default {
   right: 35px;
   width: 32px;
   height: 32px;
+}
+.edit_button button {
+  border: none;
+  background: none;
 }
 .edit_button img {
   width: 32px;
