@@ -52,8 +52,8 @@ app.use('/api/login', loginRouter);
 app.use('/api/signup', registerRouter);
 
 
-app.use('/apu/restlogin',restLoginRouter);
-app.use('/apu/restsingup',restRegisterRouter);
+app.use('/api/restlogin',restLoginRouter);
+app.use('/api/restsignup',restRegisterRouter);
 
 app.use('/api/main', mainRouter);
 app.use('/api/menu', menuRouter);
