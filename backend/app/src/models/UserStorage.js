@@ -70,7 +70,7 @@ class UserStorage {
           ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
           : '';
 
-        db.query(alg_query,db query, (err) => {
+        db.query(alg_query,uidArray, (err) => {
           if (err) throw reject(`${err}`);
           return resolve({ success: true });
         });
