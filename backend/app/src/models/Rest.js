@@ -27,13 +27,14 @@ class Rest{
     
     async register(){
         const client = this.body;
-        try{
-            const response = await RestStorage.save(client);
-            return response;
-        } catch(err){
-            const b={success: false,msg: err};
-            return b;
-        }
+        console.log(client);
+        // try{
+        //     const response = await RestStorage.save(client);
+        //     return response;
+        // } catch(err){
+        //     const b={success: false,msg: err};
+        //     return b;
+        // }
     }
 
     async edit(){
