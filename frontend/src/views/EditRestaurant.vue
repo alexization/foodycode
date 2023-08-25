@@ -50,32 +50,32 @@
           </div>
         </div>
       </div>
-      <Transition name="fade">
-        <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
-      </Transition>
-
-      <Transition name="slide">
-        <nav class="nav-bar" v-show="showMenu">
-          <div>
-            <button class="close" @click="toggleMenu">
-              <img :src="CloseIcon" width="20" />
-            </button>
-          </div>
-          <div v-for="{ name, url } in navList" :key="name">
-            <router-link :to="url" @click="callback" class="link">{{
-              name
-            }}</router-link>
-          </div>
-        </nav>
-      </Transition>
     </div>
+    <Transition name="fade">
+      <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
+    </Transition>
+
+    <Transition name="slide">
+      <nav class="nav-bar" v-show="showMenu">
+        <div>
+          <button class="close" @click="toggleMenu">
+            <img :src="CloseIcon" width="20" />
+          </button>
+        </div>
+        <div v-for="{ name, url } in navList" :key="name">
+          <router-link :to="url" @click="callback" class="link">{{
+            name
+          }}</router-link>
+        </div>
+      </nav>
+    </Transition>
   </div>
 </template>
 
 <script>
 import CloseIcon from "@/assets/icon/close.png";
 
-import Header from "../components/manager/HeaderManager.vue";
+import Header from "../components/manager/EditHeader.vue";
 import RestaurantCard from "../components/RestaurantCard.vue";
 
 import axios from "axios";

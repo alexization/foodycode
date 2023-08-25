@@ -10,14 +10,6 @@ const routes = [
     },
   },
   {
-    path: "/manager",
-    name: "manager-home",
-    component: () => import("../views/HomeManager.vue"),
-    meta: {
-      title: "Home FOODY",
-    },
-  },
-  {
     path: "/myfoody",
     name: "my-foody",
     component: () => import("../views/MyFoodyView.vue"),
@@ -79,6 +71,14 @@ const routes = [
     component: () => import("../views/MenuDetail.vue"),
     meta: {
       title: "Detail Menu FOODY",
+    },
+  },
+  {
+    path: "/restedit",
+    name: "restaurant-edit",
+    component: () => import("../views/EditRestaurant.vue"),
+    meta: {
+      title: "Home FOODY",
     },
   },
 ];
