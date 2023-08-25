@@ -9,7 +9,9 @@ class RestCtrl {
   }
 
   static async processLogin(req,res){
+    console.log(req.body);
     const user = new Rest(req.body);
+
     const response = await user.login();
 
 
