@@ -8,9 +8,14 @@
     <div class="logo-box">
       <div class="foody-logo">FOODY</div>
     </div>
-    <div class="edit-button">
+    <div class="edit-button" v-if="this.edit_status === false">
       <button @click="click_edit">
         <img src="@/assets/icon/edit.png" width="32" />
+      </button>
+    </div>
+    <div class="edit-button" v-else>
+      <button @click="click_edit">
+        <img src="@/assets/icon/save.png" width="32" />
       </button>
     </div>
   </div>
@@ -23,11 +28,16 @@ export default {
   data() {
     return {
       NavBtnImage,
+      edit_status: false,
     };
   },
   methods: {
-    click_qr() {
-      alert("Comming Soon..");
+    click_edit() {
+      if (this.edit_status === true) {
+        console.log("Post Data");
+      }
+      this.edit_status = !this.edit_status;
+      this.$emit("change_status");
     },
   },
 };
