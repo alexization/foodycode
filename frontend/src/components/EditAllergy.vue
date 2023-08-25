@@ -164,7 +164,7 @@
         </div>
       </div>
 
-      <button class="Register-button" @click="click_next">Edit</button>
+      <button class="Register-button" @click="click_edit">Edit</button>
 
       <div
         class="please-select-the-food-you-are-allergic-to-from-the-following"
@@ -205,7 +205,7 @@ export default {
       .catch((error) => {});
   },
   methods: {    
-    click_next() {
+    click_edit() {
       this.$emit("alg_data", this.allergy);
     },
   },
