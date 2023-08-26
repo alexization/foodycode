@@ -17,7 +17,9 @@
       </div>
     </div>
 
-    <button class="Register-button" @click="click_next">Register</button>
+    <div class="foot">
+      <button class="Register-button" @click="click_next">Register</button>
+    </div>
   </div>
 </template>
 
@@ -75,6 +77,10 @@ export default {
           number: '4',
         },
         {
+          name: 'Pine nut',
+          number: '21',
+        },
+        {
           name: 'Pork',
           number: '10',
         },
@@ -91,6 +97,10 @@ export default {
           number: '5',
         },
         {
+          name: 'Squid',
+          number: '22',
+        },
+        {
           name: 'Sulfites',
           number: '13',
         },
@@ -105,22 +115,6 @@ export default {
         {
           name: 'Wheat',
           number: '6',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
         },
       ],
       arrow_back,
@@ -153,7 +147,6 @@ export default {
   background: #ffffff;
   width: 100%;
   top: 130px;
-  height: 100%;
   position: absolute;
 }
 .Info-Group {
@@ -225,18 +218,23 @@ export default {
 .allergy-row div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
 }
+.foot {
+  position: fixed;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+  max-width: 500px;
+}
 .Register-button {
   background: #1c9181;
-  width: 100%;
   height: 60px;
+  width: 100%;
   color: #ffffff;
   text-align: center;
   font: 400 30px 'Jua', sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
-  position: fixed;
-  left: 0;
   bottom: 0;
 }
 </style>

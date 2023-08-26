@@ -232,7 +232,9 @@
         >
       </div>
     </div>
-    <button class="Register" @click="click_register">Next</button>
+    <div class="foot">
+      <button class="Register" @click="click_register">Next</button>
+    </div>
   </div>
 </template>
 
@@ -309,16 +311,15 @@ export default {
 .sign-up-page-register {
   background: #ffffff;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);
+  height: 100%;
   top: 130px;
   position: absolute;
 }
 .register-page {
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 190px);
+  height: 100%;
   position: absolute;
   overflow-x: clip;
-  overflow-y: scroll;
 }
 .uid {
   color: #000000;
@@ -535,13 +536,16 @@ input[type='number'] {
   background: white;
   outline: none;
 }
-
+.foot {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  max-width: 500px;
+}
 .Register {
   background: #1c9181;
   width: 100%;
   height: 60px;
-  position: absolute;
-  bottom: 0px;
   color: #ffffff;
   text-align: center;
   font: 800 20px 'Noto Sans', sans-serif;

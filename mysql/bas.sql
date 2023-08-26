@@ -61,7 +61,9 @@ VALUES
     ("shellfish"),
     ("mussel"),
     ("abalone"),
-    ("oyster");
+    ("oyster"),
+    ("Pine nut"),
+    ("Squid");
 
 drop table userAlgs;
 
