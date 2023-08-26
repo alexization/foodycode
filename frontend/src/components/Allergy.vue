@@ -77,6 +77,10 @@ export default {
           number: '4',
         },
         {
+          name: 'Pine nut',
+          number: '21',
+        },
+        {
           name: 'Pork',
           number: '10',
         },
@@ -93,6 +97,10 @@ export default {
           number: '5',
         },
         {
+          name: 'Squid',
+          number: '22',
+        },
+        {
           name: 'Sulfites',
           number: '13',
         },
@@ -107,22 +115,6 @@ export default {
         {
           name: 'Wheat',
           number: '6',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
-        },
-        {
-          name: 'None',
-          number: 'none',
         },
       ],
       arrow_back,
@@ -155,7 +147,6 @@ export default {
   background: #ffffff;
   width: 100%;
   top: 130px;
-  height: 100%;
   position: absolute;
 }
 .Info-Group {
