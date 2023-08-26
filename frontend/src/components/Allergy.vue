@@ -36,7 +36,95 @@ export default {
         { name: 'Abalone', number: '19' },
         {
           name: 'Beef',
+          number: '16',
+        },
+        {
+          name: 'Buckwheat',
+          number: '3',
+        },
+        {
+          name: 'Chicken',
           number: '15',
+        },
+        {
+          name: 'Crab',
+          number: '8',
+        },
+        {
+          name: 'Egg',
+          number: '1',
+        },
+        {
+          name: 'Mackerel',
+          number: '7',
+        },
+        {
+          name: 'Milk',
+          number: '2',
+        },
+        {
+          name: 'Mussel',
+          number: '18',
+        },
+        {
+          name: 'Oyster',
+          number: '20',
+        },
+        {
+          name: 'Peach',
+          number: '11',
+        },
+        {
+          name: 'Peanut',
+          number: '4',
+        },
+        {
+          name: 'Pork',
+          number: '10',
+        },
+        {
+          name: 'Shellfish',
+          number: '17',
+        },
+        {
+          name: 'Shrimp',
+          number: '9',
+        },
+        {
+          name: 'Soy',
+          number: '5',
+        },
+        {
+          name: 'Sulfites',
+          number: '13',
+        },
+        {
+          name: 'Tomato',
+          number: '12',
+        },
+        {
+          name: 'Walnut',
+          number: '14',
+        },
+        {
+          name: 'Wheat',
+          number: '6',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
         },
       ],
       arrow_back,
