@@ -6,184 +6,33 @@
       </div>
     </div>
     <div class="selecting-page">
-      <div class="button-frame">
-        <div class="frame-button">
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="19" />
-              <span>Abalone</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="15" />
-              <span>Chicken</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="7" />
-              <span>Mackerel</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="20" />
-              <span>Oyster</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="10" />
-              <span>Pork</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="5" />
-              <span>Soy</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="14" />
-              <span>Walnut</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="none" />
-              <span>None</span>
-            </label>
-          </div>
+      <div class="Info-Group">
+        <div class="Main-Info">
+          Please select the food you are allergic to from the following.
         </div>
+        <div class="Semi-Info">Excludes menus containing the selected food</div>
       </div>
-      <div class="button-frame-second">
-        <div class="frame-button">
+      <div class="allergy-row">
+        <div v-for="item in allergy_list" :key="item">
           <div>
             <label>
-              <input type="checkbox" v-model="allergy" value="16" />
-              <span>Beef</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="8" />
-              <span>Crab</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="2" />
-              <span>Milk</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="11" />
-              <span>Peach</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="17" />
-              <span>Shellfish</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="13" />
-              <span>Sulfites</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="6" />
-              <span>Wheat</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="none" />
-              <span>None</span>
-            </label>
-          </div>
-          <div></div>
-        </div>
-      </div>
-      <div class="button-frame-third">
-        <div class="frame-button">
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="3" />
-              <span>Buckwheat</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="1" />
-              <span>Egg</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="18" />
-              <span>Mussel</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="4" />
-              <span>Peanut</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="9" />
-              <span>Shrimp</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="12" />
-              <span>Tomato</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="none" />
-              <span>None</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" v-model="allergy" value="none" />
-              <span>None</span>
+              <input type="checkbox" v-model="allergy" :value="item.number" />
+              <span v-text="item.name"></span>
             </label>
           </div>
         </div>
       </div>
 
-      <button class="Register-button" @click="click_edit">Edit</button>
-
-      <div
-        class="please-select-the-food-you-are-allergic-to-from-the-following"
-      >
-        Please select the food you are allergic to from the following.
-      </div>
-
-      <div class="excludes-menus-containing-the-selected-food">
-        Excludes menus containing the selected food
-      </div>
+      <button class="Register-button" @click="click_next">Register</button>
     </div>
   </div>
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
-import line from "@/assets/icon/Line.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
@@ -192,11 +41,106 @@ export default {
       arrow_back,
       line,
       allergyList: [],
+      allergy_list: [
+        { name: 'Abalone', number: '19' },
+        {
+          name: 'Beef',
+          number: '16',
+        },
+        {
+          name: 'Buckwheat',
+          number: '3',
+        },
+        {
+          name: 'Chicken',
+          number: '15',
+        },
+        {
+          name: 'Crab',
+          number: '8',
+        },
+        {
+          name: 'Egg',
+          number: '1',
+        },
+        {
+          name: 'Mackerel',
+          number: '7',
+        },
+        {
+          name: 'Milk',
+          number: '2',
+        },
+        {
+          name: 'Mussel',
+          number: '18',
+        },
+        {
+          name: 'Oyster',
+          number: '20',
+        },
+        {
+          name: 'Peach',
+          number: '11',
+        },
+        {
+          name: 'Peanut',
+          number: '4',
+        },
+        {
+          name: 'Pork',
+          number: '10',
+        },
+        {
+          name: 'Shellfish',
+          number: '17',
+        },
+        {
+          name: 'Shrimp',
+          number: '9',
+        },
+        {
+          name: 'Soy',
+          number: '5',
+        },
+        {
+          name: 'Sulfites',
+          number: '13',
+        },
+        {
+          name: 'Tomato',
+          number: '12',
+        },
+        {
+          name: 'Walnut',
+          number: '14',
+        },
+        {
+          name: 'Wheat',
+          number: '6',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+        {
+          name: 'None',
+          number: 'none',
+        },
+      ],
     };
   },
   async created() {
     axios
-      .get("/api/useralg")
+      .get('/api/useralg')
       .then((response) => {
         response.data.useralgs.sort();
         this.userName = response.data.uname;
@@ -204,35 +148,32 @@ export default {
       })
       .catch((error) => {});
   },
-  methods: {    
+  methods: {
     click_edit() {
-      
-      console.log("asd");
-   
-      axios
-      .put("/api/useralg", { 
-        arr_algid : this.allergy
-      })
-      .then((res) => { 
-        console.log(res.data.success);
-        if (res.data.success) {
-          alert("수정 완료!");
-          this.$router.go(this.$router.currentRoute);
-        } else {
-          alert(res.data);
-        }
-      });
-   
+      console.log('asd');
 
+      axios
+        .put('/api/useralg', {
+          arr_algid: this.allergy,
+        })
+        .then((res) => {
+          console.log(res.data.success);
+          if (res.data.success) {
+            alert('수정 완료!');
+            this.$router.go(this.$router.currentRoute);
+          } else {
+            alert(res.data);
+          }
+        });
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
 
 .user-alg-box {
   position: relative;
@@ -242,7 +183,7 @@ export default {
   overflow-x: auto;
   box-sizing: border-box;
   width: 100%;
-  height: 59px;  
+  height: 59px;
   padding: 10px 7% 10px;
   background: #ffffff;
 }
@@ -257,7 +198,7 @@ export default {
   background: rgba(28, 145, 129, 0.1);
   color: rgba(28, 145, 129, 1);
   letter-spacing: 1.2px;
-  font: 400 16px "Noto Sans", sans-serif;
+  font: 400 16px 'Noto Sans', sans-serif;
   text-align: center;
 }
 
@@ -271,114 +212,92 @@ export default {
 .selecting-page {
   background: #ffffff;
   width: 100%;
-  height: 83.4vh;
-  top: 16.6vh;
+  top: 143px;
+  height: 100%;
   position: absolute;
-  overflow-y: auto;
 }
-.button-frame {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0vw;
-  align-items: flex-start;
-  justify-content: flex-start;
+.Info-Group {
+  height: 80px;
+  top: 10px;
   position: absolute;
-  left: 7.7vw;
-  top: 16.6vh;
-}
-.button-frame-second {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0vw;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  left: 37.2vw;
-  top: 16.6vh;
-}
-.button-frame-third {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: absolute;
-  left: 66.7vw;
-  top: 16.6vh;
-}
-
-.Register-button {
-  background: #1c9181;
   width: 100%;
-  height: 49.8px;
-  position: absolute;
-  left: 0px;
-  top: 77.5vh;
-  color: #ffffff;
-  text-align: center;
-  font: 400 30px "Jua", sans-serif;
-  letter-spacing: 1.8px;
-  border: none;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.please-select-the-food-you-are-allergic-to-from-the-following {
+.Main-Info {
   color: #000000;
   text-align: center;
-  font: 500 20px "Noto Sans", sans-serif;
+  font: 500 20px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 16px;
-  top: 2.4vh;
-  width: 91.8%;
-  height: 6.8vh;
+  width: 90%;
+  height: 60px;
 }
-.excludes-menus-containing-the-selected-food {
+.Semi-Info {
   color: #000000;
   text-align: center;
-  font: 300 13px "Noto Sans", sans-serif;
+  font: 300 13px 'Noto Sans', sans-serif;
   position: absolute;
-  left: 36px;
-  top: 9.5vh;
-  width: 81.3%;
-  height: 2.3vh;
+  top: 60px;
+  width: 85%;
+  height: 20px;
 }
-.frame-button {
-  max-width: 84.6vw;
-  margin: 0 auto;
+.allergy-row {
+  top: 100px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  padding-bottom: 60px;
 }
-.frame-button div {
-  margin-bottom: 10.1px;
+.allergy-row div {
+  display: flex;
+  width: 30%;
+  margin-bottom: 10px;
+  justify-content: center;
 }
-.frame-button div label {
+.allergy-row div label {
   cursor: pointer;
 }
-.frame-button div label input[type="checkbox"] {
+.allergy-row div label input[type='checkbox'] {
   display: none;
 }
-.frame-button div label span {
+.allergy-row div label span {
   position: relative;
   display: inline-block;
   background: #f1f1f1;
   border-radius: 5px;
-  width: 25.6vw;
-  height: 5vh;
+  width: 110px;
+  height: 42px;
   color: #000000;
   text-align: center;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   padding-top: 9px;
   transition: 0.5s;
   overflow: hidden;
 }
-.frame-button div label span::before {
-  content: "";
+.allergy-row div label span::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
 }
-.frame-button div label input[type="checkbox"]:checked ~ span {
+.allergy-row div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
+}
+.Register-button {
+  background: #1c9181;
+  width: 100%;
+  height: 60px;
+  color: #ffffff;
+  text-align: center;
+  font: 400 30px 'Jua', sans-serif;
+  letter-spacing: 1.8px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 </style>
