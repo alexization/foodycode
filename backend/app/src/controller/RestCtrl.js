@@ -37,6 +37,7 @@ class RestCtrl {
     const response = await RestStorage.getMyUserInfo(uid);
     console.log(response);
     
+    
     return res.json(response);
   }
   
