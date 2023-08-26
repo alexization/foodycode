@@ -1,13 +1,11 @@
 <template>
   <div class="selecting-page">
-    <div class="please-select-the-food-you-are-allergic-to-from-the-following">
-      Please select the food you are allergic to from the following.
+    <div class="Info-Group">
+      <div class="Main-Info">
+        Please select the food you are allergic to from the following.
+      </div>
+      <div class="Semi-Info">Excludes menus containing the selected food</div>
     </div>
-
-    <div class="excludes-menus-containing-the-selected-food">
-      Excludes menus containing the selected food
-    </div>
-
     <div class="allergy-row">
       <div v-for="item in allergy_list" :key="item">
         <div>
@@ -19,9 +17,7 @@
       </div>
     </div>
 
-    <div class="register">
-      <button class="Register-button" @click="click_next">Register</button>
-    </div>
+    <button class="Register-button" @click="click_next">Register</button>
   </div>
 </template>
 
@@ -156,19 +152,43 @@ export default {
 .selecting-page {
   background: #ffffff;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);
-  top: 140px;
+  top: 130px;
+  height: 100%;
   position: absolute;
-  overflow-y: auto;
 }
-
+.Info-Group {
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Main-Info {
+  color: #000000;
+  text-align: center;
+  font: 500 20px 'Noto Sans', sans-serif;
+  position: absolute;
+  width: 90%;
+  height: 60px;
+}
+.Semi-Info {
+  color: #000000;
+  text-align: center;
+  font: 300 13px 'Noto Sans', sans-serif;
+  position: absolute;
+  top: 60px;
+  width: 85%;
+  height: 20px;
+}
 .allergy-row {
-  top: 140px;
+  top: 100px;
   position: absolute;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  padding-bottom: 60px;
 }
 .allergy-row div {
   display: flex;
@@ -205,42 +225,18 @@ export default {
 .allergy-row div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
 }
-.register {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  bottom: 0px;
-}
 .Register-button {
   background: #1c9181;
   width: 100%;
-  height: 50px;
+  height: 60px;
   color: #ffffff;
   text-align: center;
   font: 400 30px 'Jua', sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
-}
-
-.please-select-the-food-you-are-allergic-to-from-the-following {
-  color: #000000;
-  text-align: center;
-  font: 500 20px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 16px;
-  top: 20.3px;
-  width: 91.8%;
-  height: 57.4px;
-}
-.excludes-menus-containing-the-selected-food {
-  color: #000000;
-  text-align: center;
-  font: 300 13px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 36px;
-  top: 81px;
-  width: 81.3%;
-  height: 19.5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 </style>
