@@ -30,6 +30,15 @@ class RestCtrl {
     return res.json(response);
   }
 
+  static async sendMyRestInfo(req,res){
+    
+    const uid = req.session.rest_uid;
+
+    const response = await RestStorage.getMyUserInfo(uid);
+    console.log(response);
+    
+    return res.json(response);
+  }
   
 
 }
