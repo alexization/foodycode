@@ -14,6 +14,8 @@ var usersRouter = require('./src/routes/users');
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
 
+var restuserRouter = require("./src/routes/restuser");
+
 var restLoginRouter = require('./src/routes/restlogin');
 var restRegisterRouter = require('./src/routes/restregister');
 
@@ -51,6 +53,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/signup', registerRouter);
 
+app.use('/api/restuser', restuserRouter);
 
 app.use('/api/restlogin',restLoginRouter);
 app.use('/api/restsignup',restRegisterRouter);
