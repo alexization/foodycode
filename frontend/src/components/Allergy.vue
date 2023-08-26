@@ -17,7 +17,9 @@
       </div>
     </div>
 
-    <button class="Register-button" @click="click_next">Register</button>
+    <div class="foot">
+      <button class="Register-button" @click="click_next">Register</button>
+    </div>
   </div>
 </template>
 
@@ -225,18 +227,23 @@ export default {
 .allergy-row div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
 }
+.foot {
+  position: fixed;
+  bottom: 0px;
+  height: 60px;
+  width: 100%;
+  max-width: 500px;
+}
 .Register-button {
   background: #1c9181;
-  width: 100%;
   height: 60px;
+  width: 100%;
   color: #ffffff;
   text-align: center;
   font: 400 30px 'Jua', sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
-  position: fixed;
-  left: 0;
   bottom: 0;
 }
 </style>
