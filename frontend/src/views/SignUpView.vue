@@ -17,8 +17,7 @@ import StepCard from '../components/StepCard.vue';
 import RegisterInfo from '../components/RegisterInfo.vue';
 import Allergy from '../components/Allergy.vue';
 
-
-import axios from "axios";
+import axios from 'axios';
 import { useSSRContext } from 'vue';
 
 export default {
@@ -50,12 +49,12 @@ export default {
     async get_alg_data(data) {
       this.user_info.alg = data;
       console.log(this.user_info);
-      
+
       const user = this.user_info;
-      
+
       let res = await axios({
-        method: "POST",
-        url: "api/signup",
+        method: 'POST',
+        url: 'api/signup',
         data: {
           uid: user.id,
           psword: user.pw,
@@ -68,8 +67,8 @@ export default {
       }).then((res) => {
         console.log(res.data);
         if (res.data.success) {
-          alert("회원가입 완료! 로그인 페이지로 이동합니다.");
-          location.href = "#/login";
+          alert('회원가입 완료! 로그인 페이지로 이동합니다.');
+          location.href = '#/login';
         } else {
           alert(res.data);
         }

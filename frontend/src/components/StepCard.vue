@@ -1,12 +1,10 @@
 <template>
   <div class="Step">
     <div class="step-1" ref="step1">Step 1</div>
-    <div class="step-2" ref="step2">Step 2</div>
-    <div class="step-3" ref="step3">Step 3</div>
-
     <div class="line-left"></div>
-
+    <div class="step-2" ref="step2">Step 2</div>
     <div class="line-right"></div>
+    <div class="step-3" ref="step3">Step 3</div>
   </div>
 </template>
 
@@ -59,6 +57,9 @@ export default {
   height: 60px;
   top: 70px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-1 {
@@ -69,9 +70,6 @@ export default {
   border-width: 2px;
   width: 20%;
   height: 35px;
-  position: absolute;
-  left: 11.5%;
-  top: 20px;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -86,9 +84,6 @@ export default {
   border-width: 2px;
   width: 20%;
   height: 35px;
-  position: absolute;
-  top: 20px;
-  left: 39.7%;
   color: #000000;
   display: flex;
   justify-content: center;
@@ -103,9 +98,6 @@ export default {
   border-width: 2px;
   width: 20%;
   height: 35px;
-  position: absolute;
-  top: 20px;
-  left: 67.9%;
   color: #000000;
   display: flex;
   justify-content: center;
@@ -114,17 +106,11 @@ export default {
 }
 
 .line-left {
-  position: absolute;
-  left: 31.4%;
-  top: 35px;
   width: 8.5%;
   height: 2px;
   background: #1c9181;
 }
 .line-right {
-  position: absolute;
-  left: 59.5%;
-  top: 35px;
   width: 8.5%;
   height: 2px;
   background: #1c9181;
