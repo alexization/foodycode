@@ -19,7 +19,7 @@ export default {
   props: {
     restaurantName: {
       type: String,
-      default: "Hot-Pot-Stew",
+      default: "restaurant_init",
     },
     title: {
       type: String,
