@@ -121,7 +121,8 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
-    values("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","teol-bone"),
+    values ("rid","123","Yeon Tan Bulgogi","addr","jhon","033-742-5878","Yeon-Tan-Bulgogi"),
+    ("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","teol-bone"),
 ("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-3242","jeonseonseng"),
 ("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon");
 
@@ -182,16 +183,19 @@ CREATE TABLE menu(
 
 
 INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
-    values("1","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
-        ("1","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("1","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
-        ("2","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("2","Shred Potato Pancake","6000","gamjachejeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("2","Kimchi Pancake","6000","kimchijeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("2","Seafood and Green Onin Pancake","9000","hemulpajeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Fried Boneless Chicken Plate","15000","tongsalpeulleiteu", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Stir-fried Beef Brisket with Mung Bean Sprouts","13000","sukjubokkeum", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Korean-style Raw Beef for Freshman","13000","saenaegi-yukoe", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam");
+    values ("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
+        ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
+    ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
+        ("2","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("2","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
+        ("3","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Shred Potato Pancake","6000","gamjachejeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Kimchi Pancake","6000","kimchijeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Seafood and Green Onin Pancake","9000","hemulpajeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("4","Fried Boneless Chicken Plate","15000","tongsalpeulleiteu", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("4","Stir-fried Beef Brisket with Mung Bean Sprouts","13000","sukjubokkeum", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("4","Korean-style Raw Beef for Freshman","13000","saenaegi-yukoe", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam");
 
 
 
