@@ -63,7 +63,8 @@ VALUES
     ("abalone"),
     ("oyster"),
     ("Pine nut"),
-    ("Squid");
+    ("Squid"),
+    ("Sesame");
 
 drop table userAlgs;
 
@@ -109,7 +110,7 @@ CREATE TABLE restaurant(
     uid varchar(30) NOT NULL,
     psword varchar(30) NOT NULL,
     rest_name varchar(30) NOT NULL,
-    address varchar(50) NOT NULL,
+    address varchar(100) NOT NULL,
     ceo_name varchar(30) NOT NULL,
     tel varchar(30) NOT NULL,
     img_url varchar(50),
@@ -120,11 +121,9 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
-    values("ytb","123","Yeon Tan Bulgogi","addr","jhon","033-742-5878","restaurant_init"),
-("srr","123","Saruerue","addr","jhon","033-760-3242","restaurant_init"),
-("zzd","123","Zzang Dol","addr","jhon","033-760-7765","restaurant_init"),
-("hru","123","Haru","addr","jhon","033-733-8513","restaurant_init");
-
+    values("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","teol-bone"),
+("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-3242","jeonseonseng"),
+("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon");
 
 
 
@@ -172,7 +171,7 @@ drop table menu;
 CREATE TABLE menu(
     id int NOT NULL AUTO_INCREMENT,
     rest_id int NOT NULL,
-    menu_name varchar(30) NOT NULL,
+    menu_name varchar(100) NOT NULL,
     menu_price varchar(50) NOT NULL,
     img_url varchar(50) NOT NULL,
     menu_ing varchar(200) NOT NULL,
@@ -183,9 +182,16 @@ CREATE TABLE menu(
 
 
 INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
-    values("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
-        ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice");
+    values("1","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
+        ("1","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("1","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
+        ("2","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("2","Shred Potato Pancake","6000","gamjachejeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("2","Kimchi Pancake","6000","kimchijeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("2","Seafood and Green Onin Pancake","9000","hemulpajeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Fried Boneless Chicken Plate","15000","tongsalpeulleiteu", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Stir-fried Beef Brisket with Mung Bean Sprouts","13000","sukjubokkeum", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
+        ("3","Korean-style Raw Beef for Freshman","13000","saenaegi-yukoe", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam");
 
 
 
