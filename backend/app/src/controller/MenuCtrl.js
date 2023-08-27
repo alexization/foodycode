@@ -2,6 +2,15 @@ const MenuStorage = require('../models/MenuStroage');
 const AlgStorage = require('../models/UserAlgStorage');
 
 class MenuCtrl {
+
+  static async sendMymenuInfo(req,res){
+    
+    const rest_uid = req.session.rest_uid;
+    
+    const response = await MenuStorage.getMenuInfoByID(rest_uid);
+    return res.send(response);
+  }
+
   static async sendMenuInfo(req, res) {
     const rest_name = req.params.rest_name;
 
