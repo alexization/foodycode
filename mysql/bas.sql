@@ -121,9 +121,9 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
-    values("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","restaurant_init"),
-("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-3242","restaurant_init"),
-("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","restaurant_init");
+    values("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","teol-bone"),
+("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-3242","jeonseonseng"),
+("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon");
 
 
 
