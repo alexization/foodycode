@@ -19,7 +19,7 @@
       </div>
       <div class="edit-box">
         <div class="image-box">
-          <img src="@/assets/restaurant/Hot-Pot-Stew.png" />
+          <img src="@/assets/restaurant/restaurant_init.png" />
           <div v-if="this.edit_status === false">
             <div class="input-box">
               <span>Name</span>
@@ -73,12 +73,11 @@ export default {
       list: "",
     };
   },
-    async created() {
-      axios.get("/api/restuser").then((response) => {
-        console.log(response.data);
-   
-      });
-    },
+  async created() {
+    axios.get("/api/restuser").then((response) => {
+      console.log(response.data);
+    });
+  },
   methods: {
     status() {
       this.edit_status = !this.edit_status;
