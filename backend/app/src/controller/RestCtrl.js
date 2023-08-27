@@ -15,10 +15,10 @@ class RestCtrl {
     const response = await user.login();
 
 
-    // if(response.success){
-    //   req.session.is_logined = true;
-    //   req.session.userid = req.body.rest_id;
-    // }
+    if(response.success){
+      req.session.is_logined = true;
+      req.session.rest_uid = req.body.uid;
+    }
 
     return res.json(response);
   }
@@ -30,6 +30,16 @@ class RestCtrl {
     return res.json(response);
   }
 
+  static async sendMyRestInfo(req,res){
+    
+    const uid = req.session.rest_uid;
+
+    const response = await RestStorage.getMyUserInfo(uid);
+    console.log(response);
+    
+    
+    return res.json(response);
+  }
   
 
 }

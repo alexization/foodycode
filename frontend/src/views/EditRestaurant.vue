@@ -73,13 +73,12 @@ export default {
       list: "",
     };
   },
-  //   async created() {
-  //     axios.get("/api/main").then((response) => {
-  //       console.log(response.data);
-  //       const restaurant_list = response.data;
-  //       this.list = restaurant_list;
-  //     });
-  //   },
+    async created() {
+      axios.get("/api/restuser").then((response) => {
+        console.log(response.data);
+   
+      });
+    },
   methods: {
     status() {
       this.edit_status = !this.edit_status;

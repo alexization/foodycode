@@ -22,6 +22,18 @@ class RestStorage {
 
   }
 
+  
+  static getMyUserInfo(id){
+    return new Promise((resolve, reject)=>{
+      const query = `SELECT uid,rest_name,address,ceo_name,tel,img_url from restaurant where uid = ?;`;
+      db.query(query,[id],(err,data)=>{
+        if(err) throw reject(`${err}`);
+        resolve(data[0]);
+      })
+    })
+
+  }
+
 //async뺴도되나?
   static async save(restInfo){
     return new Promise((resolve,reject)=>{
