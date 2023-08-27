@@ -5,7 +5,7 @@ class MenuCtrl {
 
   static async sendMymenuInfo(req,res){
     
-    const menu_id = req.params.menu_id;
+    const menu_id = "teol";//req.params.menu_id;
 
     const response = await MenuStorage.getMenuInfoByID(menu_id);
     return res.send(response);

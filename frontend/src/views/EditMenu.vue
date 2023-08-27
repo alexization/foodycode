@@ -72,7 +72,7 @@ export default {
     // const rest_name = this.$route.params.rest_name_url_param;
 
     const rest_name = "Teolbone";
-    axios.get(`/api/menu/${rest_name}`).then((response) => {
+    axios.get(`/api/restuser_menu`).then((response) => {
       this.list = response.data;
       this.rest_title = rest_name;
     });
