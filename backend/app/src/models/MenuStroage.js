@@ -12,6 +12,17 @@ class MenuStorage {
     });
   }
 
+  static getMenuInfoByID(rest_id) {
+    return new Promise((resolve, reject) => {
+      const query =
+        'select menu.id, menu.menu_name,menu.img_url, menu.menu_price, menu.menu_ing FROM menu left join restaurant ON menu.rest_id = restaurant.id where restaurant.uid = ?;';
+      db.query(query, [rest_id], (err, data) => {
+        if (err) throw reject(`${err}`);
+        resolve(data);
+      });
+    });
+  }
+
   static getMenuDetail(menu_id) {
     return new Promise((resolve, reject) => {
       const query =
