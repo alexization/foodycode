@@ -72,7 +72,7 @@ export default {
     axios
       .get("/api/useralg")
       .then((response) => {
-        this.userName = response.data.uname.toUpperCase();
+        this.userName = response.data.uname;
         console.log(this.userName);
         console.log(this.userName.length);
         this.login_status = true;
@@ -86,6 +86,8 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 
 .RestaurantName,
 .RestaurantName * {
@@ -144,7 +146,7 @@ export default {
 .prev-login {
   color: #000000;
   text-align: center;
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px "Nunito", sans-serif;
   width: 100%;
   text-align: center;
   color: black;
@@ -154,18 +156,19 @@ export default {
 .prev-login img {
   width: 20px;
   height: 20px;
+  margin-left: 5px;
 }
 .onlogin-user {
   color: #000000;
   text-align: left;
-  font: 400 20px "Noto Sans", sans-serif;
+  font: 400 20px "Nunito", sans-serif;
   width: 100%;
   text-align: center;
 }
 .user-name {
-  font: 600 20px "Noto Sans", sans-serif;
+  font: 600 20px "Poppins", sans-serif;
   color: white;
-  width: 30%;
+  margin-left: 10px;
 }
 .Order img {
   width: 32px;
