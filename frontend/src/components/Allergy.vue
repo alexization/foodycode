@@ -24,97 +24,105 @@
 </template>
 
 <script>
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
 
 export default {
   data() {
     return {
       allergy_list: [
-        { name: 'Abalone', number: '19' },
+        { name: "Abalone", number: "19" },
         {
-          name: 'Beef',
-          number: '16',
+          name: "Beef",
+          number: "16",
         },
         {
-          name: 'Buckwheat',
-          number: '3',
+          name: "Buckwheat",
+          number: "3",
         },
         {
-          name: 'Chicken',
-          number: '15',
+          name: "Chicken",
+          number: "15",
         },
         {
-          name: 'Crab',
-          number: '8',
+          name: "Crab",
+          number: "8",
         },
         {
-          name: 'Egg',
-          number: '1',
+          name: "Egg",
+          number: "1",
         },
         {
-          name: 'Mackerel',
-          number: '7',
+          name: "Mackerel",
+          number: "7",
         },
         {
-          name: 'Milk',
-          number: '2',
+          name: "Milk",
+          number: "2",
         },
         {
-          name: 'Mussel',
-          number: '18',
+          name: "Mussel",
+          number: "18",
         },
         {
-          name: 'Oyster',
-          number: '20',
+          name: "Oyster",
+          number: "20",
         },
         {
-          name: 'Peach',
-          number: '11',
+          name: "Peach",
+          number: "11",
         },
         {
-          name: 'Peanut',
-          number: '4',
+          name: "Peanut",
+          number: "4",
         },
         {
-          name: 'Pine nut',
-          number: '21',
+          name: "Pine nut",
+          number: "21",
         },
         {
-          name: 'Pork',
-          number: '10',
+          name: "Pork",
+          number: "10",
         },
         {
-          name: 'Shellfish',
-          number: '17',
+          name: "Sesame",
+          number: "23",
         },
         {
-          name: 'Shrimp',
-          number: '9',
+          name: "Shellfish",
+          number: "17",
         },
         {
-          name: 'Soy',
-          number: '5',
+          name: "Shrimp",
+          number: "9",
         },
         {
-          name: 'Squid',
-          number: '22',
+          name: "Soy",
+          number: "5",
         },
         {
-          name: 'Sulfites',
-          number: '13',
+          name: "Squid",
+          number: "22",
         },
         {
-          name: 'Tomato',
-          number: '12',
+          name: "Sulfites",
+          number: "13",
         },
         {
-          name: 'Walnut',
-          number: '14',
+          name: "Tomato",
+          number: "12",
         },
         {
-          name: 'Wheat',
-          number: '6',
+          name: "Walnut",
+          number: "14",
+        },
+        {
+          name: "Wheat",
+          number: "6",
+        },
+        {
+          name: "None",
+          number: "none",
         },
       ],
       arrow_back,
@@ -124,20 +132,20 @@ export default {
   },
   methods: {
     click_back() {
-      location.href = '#/signup';
+      location.href = "#/signup";
     },
     click_next() {
       console.log(this.allergy_list);
-      this.$emit('alg_data', this.allergy);
+      this.$emit("alg_data", this.allergy);
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 
 .selecting-page,
 .selecting-page * {
@@ -160,7 +168,7 @@ export default {
 .Main-Info {
   color: #000000;
   text-align: center;
-  font: 500 20px 'Noto Sans', sans-serif;
+  font: 500 20px "Noto Sans", sans-serif;
   position: absolute;
   width: 90%;
   height: 60px;
@@ -168,7 +176,7 @@ export default {
 .Semi-Info {
   color: #000000;
   text-align: center;
-  font: 300 13px 'Noto Sans', sans-serif;
+  font: 300 13px "Noto Sans", sans-serif;
   position: absolute;
   top: 60px;
   width: 85%;
@@ -192,7 +200,7 @@ export default {
 .allergy-row div label {
   cursor: pointer;
 }
-.allergy-row div label input[type='checkbox'] {
+.allergy-row div label input[type="checkbox"] {
   display: none;
 }
 .allergy-row div label span {
@@ -204,18 +212,18 @@ export default {
   height: 42px;
   color: #000000;
   text-align: center;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   padding-top: 9px;
   transition: 0.5s;
   overflow: hidden;
 }
 .allergy-row div label span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
 }
-.allergy-row div label input[type='checkbox']:checked ~ span {
+.allergy-row div label input[type="checkbox"]:checked ~ span {
   background: #42b2a3;
 }
 .foot {
@@ -231,7 +239,7 @@ export default {
   width: 100%;
   color: #ffffff;
   text-align: center;
-  font: 400 30px 'Jua', sans-serif;
+  font: 400 30px "Jua", sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
