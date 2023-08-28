@@ -7,10 +7,10 @@
         </button>
         <div class="Rest-name" v-text="restaurantName"></div>
         <div class="row-button-position">
-          <div class="Order">
+          <div class="Order" @click="order_confirm">
             <img src="@/assets/icon/assignment.png" />
           </div>
-          <div class="Basket">
+          <div class="Basket" @click="click_basket">
             <img src="@/assets/icon/shopping_cart.png" />
           </div>
         </div>
