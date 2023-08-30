@@ -14,8 +14,8 @@ var usersRouter = require('./src/routes/users');
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
 
-var restuserRouter = require("./src/routes/restuser");
-var restusermenuRouter = require("./src/routes/restuser_menu");
+var restuserRouter = require('./src/routes/restuser');
+var restusermenuRouter = require('./src/routes/restuser_menu');
 
 var restLoginRouter = require('./src/routes/restlogin');
 var restRegisterRouter = require('./src/routes/restregister');
@@ -25,6 +25,8 @@ var menuRouter = require('./src/routes/menu');
 var menuDetailRouter = require('./src/routes/menuDetail');
 
 var useralgRouter = require('./src/routes/useralg');
+
+var confirmRouter = require('./src/routes/confirm');
 
 var app = express();
 
@@ -57,13 +59,15 @@ app.use('/api/signup', registerRouter);
 app.use('/api/restuser', restuserRouter);
 app.use('/api/restuser_menu', restusermenuRouter);
 
-app.use('/api/restlogin',restLoginRouter);
-app.use('/api/restsignup',restRegisterRouter);
+app.use('/api/restlogin', restLoginRouter);
+app.use('/api/restsignup', restRegisterRouter);
 
 app.use('/api/main', mainRouter);
 app.use('/api/menu', menuRouter);
 app.use('/api/useralg', useralgRouter);
 app.use('/api/menuDetail', menuDetailRouter);
+
+app.use('/api/confirm', confirmRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -28,6 +28,13 @@ class UserCtrl {
     console.log(response);
     return res.json(response);
   }
+
+  static async confirmID(req, res) {
+    const user = new User(req.body);
+    const response = await user.ID();
+    console.log(response);
+    return res.json(response);
+  }
 }
 
 module.exports = UserCtrl;
