@@ -30,7 +30,7 @@
     <div class="row-group">
       <div class="find-my-id" @click="find_id">Find my ID</div>
       <div class="find-my-pw" @click="find_pw">Find my PW</div>
-      <RouterLink class="sign-up" to="/signup">Sign Up</RouterLink>
+      <RouterLink class="sign-up" to="/manager-signup">Sign Up</RouterLink>
     </div>
 
     <svg
@@ -64,12 +64,12 @@
 </template>
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import Logo from "@/assets/login/Logo.png";
-import axios from "axios";
-import { RouterLink } from "vue-router";
+import Logo from '@/assets/login/Logo.png';
+import axios from 'axios';
+import { RouterLink } from 'vue-router';
 
 export default {
-  name: "LogInPage",
+  name: 'LogInPage',
   components: {
     RouterLink,
   },
@@ -82,22 +82,22 @@ export default {
   },
   methods: {
     find_id() {
-      alert("Comming Soon..");
+      alert('Comming Soon..');
     },
     find_pw() {
-      alert("Comming Soon..");
+      alert('Comming Soon..');
     },
     click_back() {
-      location.href = "#/";
+      location.href = '#/';
     },
     onLogin: async function () {
-      const uid = document.getElementById("uid");
+      const uid = document.getElementById('uid');
       console.log(uid.value);
-      const psword = document.getElementById("pw");
+      const psword = document.getElementById('pw');
 
       let res = await axios({
-        method: "POST",
-        url: "api/restlogin",
+        method: 'POST',
+        url: 'api/restlogin',
         data: {
           uid: uid.value,
           psword: psword.value,
@@ -106,7 +106,7 @@ export default {
         console.log(res.data);
 
         if (res.data.success) {
-          location.href = "#/manager";
+          location.href = '#/manager';
         } else {
           alert(res.data.msg);
         }
@@ -116,8 +116,8 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 .login-view * {
   box-sizing: border-box;
 }
@@ -131,7 +131,7 @@ export default {
 .login-text {
   color: #143b22;
   text-align: center;
-  font: 700 20px "Roboto", sans-serif;
+  font: 700 20px 'Roboto', sans-serif;
   position: absolute;
   width: 100%;
   top: 350px;
@@ -195,17 +195,17 @@ input:focus::-ms-input-placeholder {
 .find-my-id {
   color: #143b22;
   text-align: left;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
 }
 .find-my-pw {
   color: #143b22;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
 }
 .sign-up {
   color: #143b22;
-  font: 400 14px "Noto Sans", sans-serif;
+  font: 400 14px 'Noto Sans', sans-serif;
   text-decoration: underline;
 }
 .password-img {
