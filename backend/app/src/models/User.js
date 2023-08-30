@@ -10,9 +10,7 @@ class User {
   async login() {
     const client = this.body;
     try {
-      const { psword, uid } = await UserStorage.getUsersInfo(
-        client.uid
-      );
+      const { psword, uid } = await UserStorage.getUsersInfo(client.uid);
 
       if (uid === client.uid && psword === client.password) {
         return { success: true };
@@ -46,6 +44,21 @@ class User {
     } catch (err) {
       const a = { success: false, msg: err };
       return a;
+    }
+  }
+
+  async ID() {
+    const client = this.body;
+    try {
+      const { uid } = await UserStorage.getUsersInfo(client.uid);
+
+      if (uid === client.uid) {
+        return { success: false, msg: 'ID가 중복됩니다.' };
+      } else {
+        return { success: true, msg: '사용가능한 ID입니다.' };
+      }
+    } catch (err) {
+      return { success: true, msg: '사용가능한 ID입니다.' };
     }
   }
 }

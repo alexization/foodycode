@@ -7,6 +7,14 @@
       </div>
 
       <button class="confirm" @click="click_confirm">Confirm</button>
+      <div class="id-confirm-status" v-if="confirm_id_status === true">
+        <img src="@/assets/icon/correct.png" />
+        <span class="available">ID Available</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="confirm_id_status === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">ID Not Available</span>
+      </div>
 
       <div class="password">Password</div>
       <div class="password-input">
@@ -242,6 +250,7 @@
 import { ref } from 'vue';
 import arrow_back from '@/assets/icon/arrow-back.png';
 import line from '@/assets/icon/Line.png';
+import axios from 'axios';
 
 export default {
   setup() {
@@ -256,14 +265,27 @@ export default {
       register_data: {},
       current_status: '',
       status_text: 'Please Input Text',
+      confirm_id_status: '',
     };
   },
   methods: {
     click_back() {
       location.href = '#/signup';
     },
-    click_confirm() {
-      alert('Click Confirm');
+    async click_confirm() {
+      const uid = document.getElementById('uid').value;
+      console.log(uid);
+
+      let res = await axios({
+        method: 'POST',
+        url: '/api/confirm',
+        data: {
+          uid: uid,
+        },
+      }).then((res) => {
+        console.log(res.data.success);
+        this.confirm_id_status = res.data.success;
+      });
     },
     async click_register() {
       this.register_data.id = document.getElementById('uid').value;
@@ -393,7 +415,24 @@ input[type='number'] {
   color: black;
   cursor: pointer;
 }
-
+.id-confirm-status {
+  position: absolute;
+  top: 95px;
+  left: 7.7%;
+}
+.id-confirm-status img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.available {
+  font: 600 14px 'Noto Sans', sans-serif;
+  color: #1c9181;
+}
+.not-available {
+  font: 600 14px 'Noto Sans', sans-serif;
+  color: red;
+}
 .password {
   color: #000000;
   text-align: left;
