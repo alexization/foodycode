@@ -2,21 +2,25 @@
   <Header></Header>
   <div class="manager-page">
     <div class="manager-name" v-text="managerName"></div>
-    <div class="run-toggle">
-      <span class="open-text">가게 오픈하기</span>
-      <div class="manage-toggle"></div>
-    </div>
-    <div class="manage-restaurant">
-      <img src="@/assets/icon/shop.png" />
-      <span>가게 관리</span>
-    </div>
-    <div class="manage-menu">
-      <img src="@/assets/icon/fork_knife.png" />
-      <span>메뉴 관리</span>
-    </div>
-    <div class="order-status">
-      <img src="@/assets/icon/order_white.png" />
-      <span>주문 현황</span>
+    <div class="button-group">
+      <div class="run-toggle">
+        <span class="open-text">가게 오픈하기</span>
+        <div class="manage-toggle"></div>
+      </div>
+      <div class="manage-button-group">
+        <div class="manage-restaurant">
+          <img src="@/assets/icon/shop.png" />
+          <span>가게 관리</span>
+        </div>
+        <div class="manage-menu">
+          <img src="@/assets/icon/fork_knife.png" />
+          <span>메뉴 관리</span>
+        </div>
+      </div>
+      <div class="order-status">
+        <img src="@/assets/icon/order_white.png" />
+        <span>주문 현황</span>
+      </div>
     </div>
   </div>
 </template>
@@ -60,14 +64,28 @@ export default {
   padding-left: 30px;
   width: 100%;
 }
+.button-group {
+  position: absolute;
+  display: flex;
+  top: 70px;
+  height: 440px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.manage-button-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 .run-toggle {
   background: #1c9181;
   border-radius: 18px;
-  width: 85%;
-  left: 30px;
+  width: 90%;
   height: 85px;
-  position: absolute;
-  top: 70px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -80,7 +98,7 @@ export default {
 .manage-toggle {
   background: #fefefe;
   border-radius: 37px;
-  width: 104px;
+  width: 100px;
   height: 33px;
 }
 
@@ -89,9 +107,6 @@ export default {
   border-radius: 18px;
   width: 40%;
   height: 155px;
-  position: absolute;
-  top: 185px;
-  left: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,9 +131,6 @@ export default {
   border-radius: 18px;
   width: 40%;
   height: 155px;
-  position: absolute;
-  top: 185px;
-  right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,11 +153,8 @@ export default {
 .order-status {
   background: #1c9181;
   border-radius: 18px;
-  width: 85%;
+  width: 90%;
   height: 85px;
-  position: absolute;
-  left: 30px;
-  top: 370px;
   display: flex;
   flex-direction: row;
   align-items: center;
