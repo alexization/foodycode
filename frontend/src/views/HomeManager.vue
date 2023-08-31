@@ -123,7 +123,7 @@ export default {
 .open-close-text {
   width: 50%;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   font: 500 20px 'Noto Sans KR', sans-serif;
 }
 .manage-toggle {
