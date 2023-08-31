@@ -8,11 +8,11 @@
         <div class="manage-toggle"></div>
       </div>
       <div class="manage-button-group">
-        <div class="manage-restaurant">
+        <div class="manage-restaurant" @click="edit_restaurant">
           <img src="@/assets/icon/shop.png" />
           <span>가게 관리</span>
         </div>
-        <div class="manage-menu">
+        <div class="manage-menu" @click="edit_menu">
           <img src="@/assets/icon/fork_knife.png" />
           <span>메뉴 관리</span>
         </div>
@@ -39,6 +39,14 @@ export default {
   data() {
     // quickfix to have components available to pass as props
     return {};
+  },
+  methods: {
+    edit_restaurant() {
+      location.href = "#/restedit";
+    },
+    edit_menu() {
+      location.href = "#/menuedit";
+    },
   },
 };
 </script>
@@ -111,6 +119,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .manage-restaurant img {
   width: 50px;
@@ -135,6 +144,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .manage-menu img {
   width: 50px;
@@ -159,6 +169,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .order-status img {
   width: 40px;
