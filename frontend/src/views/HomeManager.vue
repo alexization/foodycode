@@ -4,8 +4,11 @@
     <div class="manager-name" v-text="managerName"></div>
     <div class="button-group">
       <div class="run-toggle">
-        <span class="open-text">가게 오픈하기</span>
-        <input type="checkbox" id="switch" />
+        <span class="open-close-text" v-if="manage_status === false"
+          >가게 오픈하기</span
+        >
+        <span class="open-close-text" v-else>가게 문 닫기</span>
+        <input type="checkbox" id="switch" @click="open_close" />
         <label for="switch"></label>
       </div>
       <div class="manage-button-group">
@@ -18,9 +21,16 @@
           <span>메뉴 관리</span>
         </div>
       </div>
-      <div class="order-status">
+      <div class="order-status" @click="order_status">
         <img src="@/assets/icon/order_white.png" />
         <span>주문 현황</span>
+      </div>
+      <div
+        class="black-box"
+        v-if="manage_status === false"
+        @click="disable_order"
+      >
+        <img src="@/assets/icon/lock.png" />
       </div>
     </div>
   </div>
@@ -38,8 +48,9 @@ export default {
     },
   },
   data() {
-    // quickfix to have components available to pass as props
-    return {};
+    return {
+      manage_status: false,
+    };
   },
   methods: {
     edit_restaurant() {
@@ -47,6 +58,16 @@ export default {
     },
     edit_menu() {
       location.href = "#/menuedit";
+    },
+    open_close() {
+      this.manage_status = !this.manage_status;
+      console.log(this.manage_status);
+    },
+    disable_order() {
+      alert("가게를 오픈해야합니다.");
+    },
+    order_status() {
+      alert("Comming Soon..");
     },
   },
 };
@@ -99,7 +120,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.open-text {
+.open-close-text {
   color: #ffffff;
   text-align: left;
   font: 500 20px "Noto Sans KR", sans-serif;
@@ -191,7 +212,21 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 }
-
+.black-box {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  width: 90%;
+  height: 85px;
+  position: absolute;
+  top: 355px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.black-box img {
+  width: 50px;
+  height: 50px;
+}
 label {
   margin-left: 20px;
   cursor: pointer;
