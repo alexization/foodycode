@@ -36,15 +36,15 @@
   </div>
 </template>
 <script>
-import Header from "@/components/manager/HomeHeader.vue";
+import Header from '@/components/manager/HomeHeader.vue';
 
 export default {
-  name: "LandingPage",
+  name: 'LandingPage',
   components: { Header },
   props: {
     managerName: {
       type: String,
-      default: "Manager " + "님 어서오세요",
+      default: 'Manager ' + '님 어서오세요',
     },
   },
   data() {
@@ -54,20 +54,20 @@ export default {
   },
   methods: {
     edit_restaurant() {
-      location.href = "#/restedit";
+      location.href = '#/restedit';
     },
     edit_menu() {
-      location.href = "#/menuedit";
+      location.href = '#/menuedit';
     },
     open_close() {
       this.manage_status = !this.manage_status;
       console.log(this.manage_status);
     },
     disable_order() {
-      alert("가게를 오픈해야합니다.");
+      alert('가게를 오픈해야합니다.');
     },
     order_status() {
-      alert("Comming Soon..");
+      alert('Comming Soon..');
     },
   },
 };
@@ -88,7 +88,7 @@ export default {
 .manager-name {
   color: #000000;
   text-align: left;
-  font: 500 18px "Noto Sans KR", sans-serif;
+  font: 500 18px 'Noto Sans KR', sans-serif;
   position: absolute;
   top: 30px;
   padding-left: 30px;
@@ -121,9 +121,10 @@ export default {
   justify-content: center;
 }
 .open-close-text {
+  width: 50%;
   color: #ffffff;
   text-align: left;
-  font: 500 20px "Noto Sans KR", sans-serif;
+  font: 500 20px 'Noto Sans KR', sans-serif;
 }
 .manage-toggle {
   background: #fefefe;
@@ -207,7 +208,7 @@ export default {
   letter-spacing: 1.2px;
   margin-left: 20px;
 }
-input[type="checkbox"] {
+input[type='checkbox'] {
   height: 0;
   width: 0;
   visibility: hidden;
@@ -228,7 +229,7 @@ input[type="checkbox"] {
   height: 50px;
 }
 label {
-  margin-left: 20px;
+  width: 50%;
   cursor: pointer;
   text-indent: -9999px;
   width: 100px;
@@ -240,7 +241,7 @@ label {
 }
 
 label:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 5px;
   left: 5px;
