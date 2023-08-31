@@ -5,7 +5,8 @@
     <div class="button-group">
       <div class="run-toggle">
         <span class="open-text">가게 오픈하기</span>
-        <div class="manage-toggle"></div>
+        <input type="checkbox" id="switch" />
+        <label for="switch"></label>
       </div>
       <div class="manage-button-group">
         <div class="manage-restaurant" @click="edit_restaurant">
@@ -96,7 +97,7 @@ export default {
   height: 85px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 .open-text {
   color: #ffffff;
@@ -184,5 +185,48 @@ export default {
   line-height: normal;
   letter-spacing: 1.2px;
   margin-left: 20px;
+}
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  margin-left: 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 34px;
+  background: #6c6c6c;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  background: #d2d2d2;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: white;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+  background: #1c9181;
+}
+
+label:active:after {
+  width: 30px;
 }
 </style>
