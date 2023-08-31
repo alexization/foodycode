@@ -1,7 +1,7 @@
 <template>
   <Header></Header>
   <div class="manager-page">
-    <div class="manager-name" v-text="managerName"></div>
+    <div class="manager-name">{{ this.manager_name }}님 어서오세요</div>
     <div class="button-group">
       <div class="run-toggle">
         <span class="open-close-text" v-if="manage_status === false"
@@ -37,19 +37,16 @@
 </template>
 <script>
 import Header from '@/components/manager/HomeHeader.vue';
+import axios from 'axios';
 
 export default {
   name: 'LandingPage',
   components: { Header },
-  props: {
-    managerName: {
-      type: String,
-      default: 'Manager ' + '님 어서오세요',
-    },
-  },
+  props: {},
   data() {
     return {
       manage_status: false,
+      manager_name: '',
     };
   },
   methods: {
@@ -69,6 +66,11 @@ export default {
     order_status() {
       alert('Comming Soon..');
     },
+  },
+  async created() {
+    axios.get('/api/restuser').then((response) => {
+      this.manager_name = response.data.ceo_name;
+    });
   },
 };
 </script>
