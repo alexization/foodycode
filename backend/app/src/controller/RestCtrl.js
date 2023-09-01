@@ -30,6 +30,13 @@ class RestCtrl {
     return res.json(response);
   }
 
+static async processEdit(req,res){
+  const user = new Rest(req.body);
+  const response = await user.update();
+
+  return res.json(response);
+}
+
   static async sendMyRestInfo(req,res){
     
     const uid = req.session.rest_uid;
