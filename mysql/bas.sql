@@ -302,4 +302,4 @@ select * from users;
 
 UPDATE restaurant 
 SET rest_name = 'test' , address = 'test' , ceo_name = 'test' , tel ='test' 
-where rest_id = 'teol';
+where uid = 'teol';
