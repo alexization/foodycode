@@ -88,6 +88,12 @@ export default {
     },
     available_post() {
       // 여기다가 post 넣으면 됨
+      axios.put("/api/restuser",{
+        test:"hi",
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
     },
   },
 };
