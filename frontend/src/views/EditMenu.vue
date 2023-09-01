@@ -84,7 +84,7 @@ export default {
       this.edit_status = !this.edit_status;
     },
     add_menu() {
-      alert("Click Add Menu Button");
+      location.href = "#/addmenu";
     },
   },
 };
