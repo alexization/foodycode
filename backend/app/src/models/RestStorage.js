@@ -49,12 +49,12 @@ class RestStorage {
 
 
   //id에 where절에 뭐넣을지 고민중
-  static async update(restInfo){
+  static async update(rest_uid,restInfo){
     return new Promise((resolve,reject)=>{
       const query = `UPDATE restaurant 
-      SET rest_psword = ?, rest_name = ? , address = ? , ceo_name = ? , tel =? , img_url = ?
+      SET rest_name = ? , address = ? , ceo_name = ? , tel =? , img_url = ?
       where rest_id = ?;`;
-      db.query(query,[restInfo.password,restInfo.name,restInfo.address,restInfo.ceo_name,restInfo.tel,restInfo.img_url],(err)=>{
+      db.query(query,[restInfo.name,restInfo.address,restInfo.ceo_name,restInfo.tel,restInfo.img_url,rest_uid],(err)=>{
         if(err) throw reject(`${err}`);
         resolve({success:true});
       })

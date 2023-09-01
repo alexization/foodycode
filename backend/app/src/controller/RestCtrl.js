@@ -32,7 +32,7 @@ class RestCtrl {
 
 static async processEdit(req,res){
   const user = new Rest(req.body);
-  const response = await user.update();
+  const response = await user.edit(req.session.rest_uid);
 
   return res.json(response);
 }
