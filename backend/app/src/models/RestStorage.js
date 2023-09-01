@@ -53,7 +53,7 @@ class RestStorage {
     return new Promise((resolve,reject)=>{
       const query = `UPDATE restaurant 
       SET rest_name = ? , address = ? , ceo_name = ? , tel =? 
-      where rest_id = ?;`;
+      where uid = ?;`;
       db.query(query,[restInfo.name,restInfo.address,restInfo.ceo_name,restInfo.tel,rest_uid],(err)=>{
         if(err) throw reject(`${err}`);
         resolve({success:true});
