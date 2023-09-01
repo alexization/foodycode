@@ -41,15 +41,23 @@
           <div v-else>
             <div class="input-box">
               <span>Name</span>
-              <input type="text" :placeholder="restaurantData.rest_name" />
+              <input
+                type="text"
+                id="rest_name"
+                :placeholder="restaurantData.rest_name"
+              />
             </div>
             <div class="input-box">
               <span>Tel.</span>
-              <input type="text" :placeholder="restaurantData.tel" />
+              <input type="text" id="tel" :placeholder="restaurantData.tel" />
             </div>
             <div class="input-box">
               <span>Address</span>
-              <input type="text" :placeholder="restaurantData.address" />
+              <input
+                type="text"
+                id="address"
+                :placeholder="restaurantData.address"
+              />
             </div>
           </div>
         </div>
@@ -75,8 +83,9 @@ export default {
     return {
       edit_status: false,
       post_status: false,
-      list: "",
+      list: ["rest_name", "tel", "address"],
       restaurantData: {},
+      modifyData: {},
     };
   },
   async created() {
@@ -94,6 +103,16 @@ export default {
     },
     available_post() {
       // 여기다가 post 넣으면 됨
+      for (var data in this.restaurantData) {
+        if (this.list.includes(data)) {
+          if (document.getElementById(data).value === "") {
+            this.modifyData[data] = this.restaurantData[data];
+          } else {
+            this.modifyData[data] = document.getElementById(data).value;
+          }
+        }
+      }
+      console.log(this.modifyData);
     },
   },
 };
