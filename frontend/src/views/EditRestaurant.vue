@@ -7,7 +7,11 @@
         <span>Restaurant introduction screen preview</span>
       </div>
       <div class="restaurant-list">
-        <RestaurantCard />
+        <RestaurantCard
+          :restaurantName="restaurantData.img_url"
+          :title="restaurantData.rest_name"
+          :telNum="restaurantData.tel"
+        />
       </div>
       <div class="line"></div>
 
@@ -23,29 +27,37 @@
           <div v-if="this.edit_status === false">
             <div class="input-box">
               <span>Name</span>
-              <input type="text" value="Untitled Restaurant" readonly />
+              <input type="text" :value="restaurantData.rest_name" readonly />
             </div>
             <div class="input-box">
               <span>Tel.</span>
-              <input type="text" value="010-0000-0000" readonly />
+              <input type="text" :value="restaurantData.tel" readonly />
             </div>
             <div class="input-box">
               <span>Address</span>
-              <input type="text" value="Yonsei Univ." readonly />
+              <input type="text" :value="restaurantData.address" readonly />
             </div>
           </div>
           <div v-else>
             <div class="input-box">
               <span>Name</span>
-              <input type="text" placeholder="Untitled Restaurant" />
+              <input
+                type="text"
+                id="rest_name"
+                :placeholder="restaurantData.rest_name"
+              />
             </div>
             <div class="input-box">
               <span>Tel.</span>
-              <input type="text" placeholder="010-0000-0000" />
+              <input type="text" id="tel" :placeholder="restaurantData.tel" />
             </div>
             <div class="input-box">
               <span>Address</span>
-              <input type="text" placeholder="Yonsei Univ." />
+              <input
+                type="text"
+                id="address"
+                :placeholder="restaurantData.address"
+              />
             </div>
           </div>
         </div>
@@ -71,12 +83,15 @@ export default {
     return {
       edit_status: false,
       post_status: false,
-      list: "",
+      list: ["rest_name", "tel", "address"],
+      restaurantData: {},
+      modifyData: {},
     };
   },
   async created() {
     axios.get("/api/restuser").then((response) => {
       console.log(response.data);
+      this.restaurantData = response.data;
     });
   },
   methods: {
@@ -88,6 +103,16 @@ export default {
     },
     available_post() {
       // 여기다가 post 넣으면 됨
+      for (var data in this.restaurantData) {
+        if (this.list.includes(data)) {
+          if (document.getElementById(data).value === "") {
+            this.modifyData[data] = this.restaurantData[data];
+          } else {
+            this.modifyData[data] = document.getElementById(data).value;
+          }
+        }
+      }
+      console.log(this.modifyData);
     },
   },
 };
