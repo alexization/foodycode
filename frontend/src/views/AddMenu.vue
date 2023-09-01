@@ -68,97 +68,97 @@ export default {
   data() {
     return {
       allergy_list: [
-        { name: "Abalone", number: "19" },
+        { name: "전복", number: "19" },
         {
-          name: "Beef",
+          name: "소고기",
           number: "16",
         },
         {
-          name: "Buckwheat",
+          name: "메밀",
           number: "3",
         },
         {
-          name: "Chicken",
+          name: "닭고기",
           number: "15",
         },
         {
-          name: "Crab",
+          name: "게",
           number: "8",
         },
         {
-          name: "Egg",
+          name: "달걀",
           number: "1",
         },
         {
-          name: "Mackerel",
+          name: "고등어",
           number: "7",
         },
         {
-          name: "Milk",
+          name: "우유",
           number: "2",
         },
         {
-          name: "Mussel",
+          name: "홍합",
           number: "18",
         },
         {
-          name: "Oyster",
+          name: "굴",
           number: "20",
         },
         {
-          name: "Peach",
+          name: "복숭아",
           number: "11",
         },
         {
-          name: "Peanut",
+          name: "땅콩",
           number: "4",
         },
         {
-          name: "Pine nut",
+          name: "잣",
           number: "21",
         },
         {
-          name: "Pork",
+          name: "돼지고기",
           number: "10",
         },
         {
-          name: "Sesame",
+          name: "참깨",
           number: "23",
         },
         {
-          name: "Shellfish",
+          name: "조개",
           number: "17",
         },
         {
-          name: "Shrimp",
+          name: "새우",
           number: "9",
         },
         {
-          name: "Soy",
+          name: "간장",
           number: "5",
         },
         {
-          name: "Squid",
+          name: "오징어",
           number: "22",
         },
         {
-          name: "Sulfites",
+          name: "아황산염",
           number: "13",
         },
         {
-          name: "Tomato",
+          name: "토마토",
           number: "12",
         },
         {
-          name: "Walnut",
+          name: "호두",
           number: "14",
         },
         {
-          name: "Wheat",
+          name: "밀",
           number: "6",
         },
         {
-          name: "None",
+          name: "없음",
           number: "none",
         },
       ],
