@@ -89,10 +89,10 @@ export default {
     available_post() {
       // 여기다가 post 넣으면 됨
       axios.put("/api/restuser",{
-        name : "testrest",
-        address : "16, test-gil, test-myeon, test-si",
-        ceo_name : "testname",
-        tel:"010-9999-9999",
+        name : "tesrest",
+        address : "96, testgil, test-myeon, test-si",
+        ceo_name : "testceoname",
+        tel:"999-9999-9999",
 
       })
       .then((res) => {
