@@ -102,8 +102,6 @@ export default {
       alert('Click Image Upload');
     },
     available_post() {
-      // 여기다가 post 넣으면 됨
-
       for (var data in this.restaurantData) {
         if (this.list.includes(data)) {
           if (document.getElementById(data).value === '') {
@@ -125,7 +123,7 @@ export default {
         .then((res) => {
           if (res.data.success) {
             alert('정보 수정 완료!');
-            this.$router.go(this.$router.currentRoute);
+            window.location.reload(true);
           } else {
             alert('오류 발생');
           }
