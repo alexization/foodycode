@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header @change_status="status"></Header>
+    <Header @change_status="status" @post_data="available_post"></Header>
     <div class="edit-page">
       <div class="preview-text">
         <img src="@/assets/icon/visibility.png" />
@@ -70,6 +70,7 @@ export default {
   data() {
     return {
       edit_status: false,
+      post_status: false,
       list: "",
     };
   },
@@ -84,6 +85,9 @@ export default {
     },
     img_upload() {
       alert("Click Image Upload");
+    },
+    available_post() {
+      // 여기다가 post 넣으면 됨
     },
   },
 };
