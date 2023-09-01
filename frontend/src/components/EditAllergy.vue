@@ -23,16 +23,16 @@
         </div>
       </div>
 
-      <button class="Register-button" @click="click_next">Register</button>
+      <button class="Register-button" @click="click_edit">Register</button>
     </div>
   </div>
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
-import line from "@/assets/icon/Line.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
@@ -42,105 +42,105 @@ export default {
       line,
       allergyList: [],
       allergy_list: [
-        { name: "Abalone", number: "19" },
+        { name: 'Abalone', number: '19' },
         {
-          name: "Beef",
-          number: "16",
+          name: 'Beef',
+          number: '16',
         },
         {
-          name: "Buckwheat",
-          number: "3",
+          name: 'Buckwheat',
+          number: '3',
         },
         {
-          name: "Chicken",
-          number: "15",
+          name: 'Chicken',
+          number: '15',
         },
         {
-          name: "Crab",
-          number: "8",
+          name: 'Crab',
+          number: '8',
         },
         {
-          name: "Egg",
-          number: "1",
+          name: 'Egg',
+          number: '1',
         },
         {
-          name: "Mackerel",
-          number: "7",
+          name: 'Mackerel',
+          number: '7',
         },
         {
-          name: "Milk",
-          number: "2",
+          name: 'Milk',
+          number: '2',
         },
         {
-          name: "Mussel",
-          number: "18",
+          name: 'Mussel',
+          number: '18',
         },
         {
-          name: "Oyster",
-          number: "20",
+          name: 'Oyster',
+          number: '20',
         },
         {
-          name: "Peach",
-          number: "11",
+          name: 'Peach',
+          number: '11',
         },
         {
-          name: "Peanut",
-          number: "4",
+          name: 'Peanut',
+          number: '4',
         },
         {
-          name: "Pine nut",
-          number: "21",
+          name: 'Pine nut',
+          number: '21',
         },
         {
-          name: "Pork",
-          number: "10",
+          name: 'Pork',
+          number: '10',
         },
         {
-          name: "Sesame",
-          number: "23",
+          name: 'Sesame',
+          number: '23',
         },
         {
-          name: "Shellfish",
-          number: "17",
+          name: 'Shellfish',
+          number: '17',
         },
         {
-          name: "Shrimp",
-          number: "9",
+          name: 'Shrimp',
+          number: '9',
         },
         {
-          name: "Soy",
-          number: "5",
+          name: 'Soy',
+          number: '5',
         },
         {
-          name: "Squid",
-          number: "22",
+          name: 'Squid',
+          number: '22',
         },
         {
-          name: "Sulfites",
-          number: "13",
+          name: 'Sulfites',
+          number: '13',
         },
         {
-          name: "Tomato",
-          number: "12",
+          name: 'Tomato',
+          number: '12',
         },
         {
-          name: "Walnut",
-          number: "14",
+          name: 'Walnut',
+          number: '14',
         },
         {
-          name: "Wheat",
-          number: "6",
+          name: 'Wheat',
+          number: '6',
         },
         {
-          name: "None",
-          number: "none",
+          name: 'None',
+          number: 'none',
         },
       ],
     };
   },
   async created() {
     axios
-      .get("/api/useralg")
+      .get('/api/useralg')
       .then((response) => {
         response.data.useralgs.sort();
         this.userName = response.data.uname;
@@ -150,16 +150,16 @@ export default {
   },
   methods: {
     click_edit() {
-      console.log("asd");
+      console.log('asd');
 
       axios
-        .put("/api/useralg", {
+        .put('/api/useralg', {
           arr_algid: this.allergy,
         })
         .then((res) => {
           console.log(res.data.success);
           if (res.data.success) {
-            alert("수정 완료!");
+            alert('수정 완료!');
             this.$router.go(this.$router.currentRoute);
           } else {
             alert(res.data);
@@ -171,9 +171,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
 
 .user-alg-box {
   position: relative;
@@ -198,7 +198,7 @@ export default {
   background: rgba(28, 145, 129, 0.1);
   color: rgba(28, 145, 129, 1);
   letter-spacing: 1.2px;
-  font: 400 16px "Noto Sans", sans-serif;
+  font: 400 16px 'Noto Sans', sans-serif;
   text-align: center;
 }
 
@@ -228,7 +228,7 @@ export default {
 .Main-Info {
   color: #000000;
   text-align: center;
-  font: 500 20px "Noto Sans", sans-serif;
+  font: 500 20px 'Noto Sans', sans-serif;
   position: absolute;
   width: 90%;
   height: 60px;
@@ -236,7 +236,7 @@ export default {
 .Semi-Info {
   color: #000000;
   text-align: center;
-  font: 300 13px "Noto Sans", sans-serif;
+  font: 300 13px 'Noto Sans', sans-serif;
   position: absolute;
   top: 60px;
   width: 85%;
@@ -260,7 +260,7 @@ export default {
 .allergy-row div label {
   cursor: pointer;
 }
-.allergy-row div label input[type="checkbox"] {
+.allergy-row div label input[type='checkbox'] {
   display: none;
 }
 .allergy-row div label span {
@@ -272,18 +272,18 @@ export default {
   height: 42px;
   color: #000000;
   text-align: center;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px 'Noto Sans', sans-serif;
   padding-top: 9px;
   transition: 0.5s;
   overflow: hidden;
 }
 .allergy-row div label span::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
 }
-.allergy-row div label input[type="checkbox"]:checked ~ span {
+.allergy-row div label input[type='checkbox']:checked ~ span {
   background: #42b2a3;
 }
 .Register-button {
@@ -292,7 +292,7 @@ export default {
   height: 60px;
   color: #ffffff;
   text-align: center;
-  font: 400 30px "Jua", sans-serif;
+  font: 400 30px 'Jua', sans-serif;
   letter-spacing: 1.8px;
   border: none;
   cursor: pointer;
