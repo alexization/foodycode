@@ -7,7 +7,11 @@
         <span>Restaurant introduction screen preview</span>
       </div>
       <div class="restaurant-list">
-        <RestaurantCard />
+        <RestaurantCard
+          :restaurantName="restaurantData.img_url"
+          :title="restaurantData.rest_name"
+          :telNum="restaurantData.tel"
+        />
       </div>
       <div class="line"></div>
 
@@ -23,29 +27,29 @@
           <div v-if="this.edit_status === false">
             <div class="input-box">
               <span>Name</span>
-              <input type="text" value="Untitled Restaurant" readonly />
+              <input type="text" :value="restaurantData.rest_name" readonly />
             </div>
             <div class="input-box">
               <span>Tel.</span>
-              <input type="text" value="010-0000-0000" readonly />
+              <input type="text" :value="restaurantData.tel" readonly />
             </div>
             <div class="input-box">
               <span>Address</span>
-              <input type="text" value="Yonsei Univ." readonly />
+              <input type="text" :value="restaurantData.address" readonly />
             </div>
           </div>
           <div v-else>
             <div class="input-box">
               <span>Name</span>
-              <input type="text" placeholder="Untitled Restaurant" />
+              <input type="text" :placeholder="restaurantData.rest_name" />
             </div>
             <div class="input-box">
               <span>Tel.</span>
-              <input type="text" placeholder="010-0000-0000" />
+              <input type="text" :placeholder="restaurantData.tel" />
             </div>
             <div class="input-box">
               <span>Address</span>
-              <input type="text" placeholder="Yonsei Univ." />
+              <input type="text" :placeholder="restaurantData.address" />
             </div>
           </div>
         </div>
@@ -72,11 +76,13 @@ export default {
       edit_status: false,
       post_status: false,
       list: "",
+      restaurantData: {},
     };
   },
   async created() {
     axios.get("/api/restuser").then((response) => {
       console.log(response.data);
+      this.restaurantData = response.data;
     });
   },
   methods: {
