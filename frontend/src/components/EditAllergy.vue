@@ -160,7 +160,7 @@ export default {
           console.log(res.data.success);
           if (res.data.success) {
             alert('수정 완료!');
-            this.$router.go(this.$router.currentRoute);
+            window.location.reload(true);
           } else {
             alert(res.data);
           }

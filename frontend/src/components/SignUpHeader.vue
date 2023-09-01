@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import arrow_back from "@/assets/icon/arrow-back.png";
-import line from "@/assets/icon/Line.png";
+import arrow_back from '@/assets/icon/arrow-back.png';
+import line from '@/assets/icon/Line.png';
 
 export default {
   components: {},
-  props: ["now_page"],
+  props: ['now_page'],
   data() {
     return {
       line,
@@ -26,14 +26,14 @@ export default {
   },
   methods: {
     click_back() {
-      const url = window.location.href.split("/");
+      const url = window.location.href.split('/');
       const url_href = url[url.length - 1];
-      if (url_href === "signup") {
-        location.href = "#/login";
+      if (url_href === 'signup') {
+        location.href = '#/login';
       } else if (this.now_page === true) {
-        location.href = "#/signup";
+        location.href = '#/signup';
       } else {
-        this.$router.go(this.$router.currentRoute);
+        window.location.reload(true);
       }
     },
   },
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
 .SignUp-Head,
 .SignUp-Head * {
   box-sizing: border-box;
@@ -69,7 +69,7 @@ export default {
   margin-left: -50px;
   width: 100px;
   height: 40px;
-  font-family: "Dangrek", cursive;
+  font-family: 'Dangrek', cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
