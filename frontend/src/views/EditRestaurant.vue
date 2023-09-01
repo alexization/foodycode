@@ -67,13 +67,13 @@
 </template>
 
 <script>
-import Header from "../components/manager/EditRestHeader.vue";
-import RestaurantCard from "../components/RestaurantCard.vue";
+import Header from '../components/manager/EditRestHeader.vue';
+import RestaurantCard from '../components/RestaurantCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     Header,
     RestaurantCard,
@@ -83,13 +83,13 @@ export default {
     return {
       edit_status: false,
       post_status: false,
-      list: ["rest_name", "tel", "address"],
+      list: ['rest_name', 'tel', 'address'],
       restaurantData: {},
       modifyData: {},
     };
   },
   async created() {
-    axios.get("/api/restuser").then((response) => {
+    axios.get('/api/restuser').then((response) => {
       console.log(response.data);
       this.restaurantData = response.data;
     });
@@ -99,14 +99,14 @@ export default {
       this.edit_status = !this.edit_status;
     },
     img_upload() {
-      alert("Click Image Upload");
+      alert('Click Image Upload');
     },
     available_post() {
       // 여기다가 post 넣으면 됨
 
       for (var data in this.restaurantData) {
         if (this.list.includes(data)) {
-          if (document.getElementById(data).value === "") {
+          if (document.getElementById(data).value === '') {
             this.modifyData[data] = this.restaurantData[data];
           } else {
             this.modifyData[data] = document.getElementById(data).value;
@@ -115,31 +115,28 @@ export default {
       }
       console.log(this.modifyData);
 
-
-      axios.put("/api/restuser",{
-        name : this.modifyData.rest_name,
-        address : this.modifyData.address,
-        ceo_name : "testceoname",
-        tel:this.modifyData.tel,
-
-      })
-      .then((res) => {
-        if(res.data.success){
-          alert("정보 수정 완료!");
-          location.href = "#/restedit";
-        }
-        else{
-          alert("오류 발생");
-        }
-      })
-      
+      axios
+        .put('/api/restuser', {
+          name: this.modifyData.rest_name,
+          address: this.modifyData.address,
+          ceo_name: 'testceoname',
+          tel: this.modifyData.tel,
+        })
+        .then((res) => {
+          if (res.data.success) {
+            alert('정보 수정 완료!');
+            this.$router.go(this.$router.currentRoute);
+          } else {
+            alert('오류 발생');
+          }
+        });
     },
   },
 };
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
 .edit-page {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -158,7 +155,7 @@ export default {
   vertical-align: middle;
 }
 .preview-text span {
-  font: 500 15px "Noto Sans", sans-serif;
+  font: 500 15px 'Noto Sans', sans-serif;
   text-align: center;
   color: #1c9181;
   margin-left: 8px;
@@ -184,7 +181,7 @@ export default {
   position: absolute;
 }
 .edit-text span {
-  font: 500 15px "Noto Sans", sans-serif;
+  font: 500 15px 'Noto Sans', sans-serif;
   text-align: left;
   color: #15675c;
   margin-left: 20px;
@@ -228,7 +225,7 @@ export default {
 }
 .input-box span {
   margin-left: 20px;
-  font: 500 16px "Noto Sans", sans-serif;
+  font: 500 16px 'Noto Sans', sans-serif;
   margin-top: 5px;
 }
 .input-box input {
