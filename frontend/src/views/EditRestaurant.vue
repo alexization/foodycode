@@ -96,7 +96,12 @@ export default {
 
       })
       .then((res) => {
-        console.log(res.data);
+        if(res.data.success){
+          alert("정보 수정 완료!");
+        }
+        else{
+          alert("오류 발생");
+        }
       })
     },
   },
