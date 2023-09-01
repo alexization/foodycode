@@ -31,7 +31,7 @@ export default {
   methods: {
     click_edit() {
       if (this.edit_status === true) {
-        console.log("Post Data");
+        this.$emit("post_data");
       }
       this.edit_status = !this.edit_status;
       this.$emit("change_status");
