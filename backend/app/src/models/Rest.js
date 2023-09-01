@@ -37,10 +37,11 @@ class Rest{
         }
     }
 
-    async edit(){
+    async edit(rest_uid){
         const client = this.body;
+        console.log(client);
         try{
-            const response = await RestStorage.update(client);
+            const response = await RestStorage.update(rest_uid,client);
             return response;
         }catch(err){
             const b= {success:false,msg:err};

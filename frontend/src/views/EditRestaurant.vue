@@ -103,6 +103,7 @@ export default {
     },
     available_post() {
       // 여기다가 post 넣으면 됨
+
       for (var data in this.restaurantData) {
         if (this.list.includes(data)) {
           if (document.getElementById(data).value === "") {
@@ -113,6 +114,25 @@ export default {
         }
       }
       console.log(this.modifyData);
+
+
+      axios.put("/api/restuser",{
+        name : this.modifyData.rest_name,
+        address : this.modifyData.address,
+        ceo_name : "testceoname",
+        tel:this.modifyData.tel,
+
+      })
+      .then((res) => {
+        if(res.data.success){
+          alert("정보 수정 완료!");
+          location.href = "#/restedit";
+        }
+        else{
+          alert("오류 발생");
+        }
+      })
+      
     },
   },
 };

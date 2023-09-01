@@ -298,3 +298,8 @@ select * from users;
 -- ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '변경할 비밀번호';
 -- -- 변경사항 저장 (안해도 동작하긴 함)
 -- FLUSH PRIVILEGES;
+
+
+UPDATE restaurant 
+SET rest_name = 'test' , address = 'test' , ceo_name = 'test' , tel ='test' 
+where uid = 'teol';
