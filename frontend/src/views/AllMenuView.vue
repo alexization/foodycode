@@ -34,14 +34,14 @@
 
 <script>
 /* Code generated with AutoHTML Plugin for Figma */
-import RestaurantName from '../components/RestaurantName.vue';
-import MenuCard from '../components/MenuCard.vue';
-import AlgMenuCard from '../components/AlgMenuCard.vue';
+import RestaurantName from "../components/RestaurantName.vue";
+import MenuCard from "../components/MenuCard.vue";
+import AlgMenuCard from "../components/AlgMenuCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'LandingPage',
+  name: "LandingPage",
   components: {
     RestaurantName,
     MenuCard,
@@ -53,14 +53,14 @@ export default {
     return {
       list: [],
       alg_list: [],
-      url_href: '',
-      rest_title: '',
-      user_name: '',
+      url_href: "",
+      rest_title: "",
+      user_name: "",
     };
   },
 
   async created() {
-    this.url = window.location.href.split('#');
+    this.url = window.location.href.split("#");
     this.url_href = this.url[1];
     //URL에서 전달받는 parmeter = rest_name_url_param
     //요청할 API경로에 해당 값을 붙여 get요청
@@ -73,7 +73,7 @@ export default {
           menu_list.push(response.data[i]);
         } else {
           response.data[i].menu_alg.sort();
-          let str = response.data[i].menu_alg.join(', ');
+          let str = response.data[i].menu_alg.join(", ");
           response.data[i].menu_alg = [];
           response.data[i].menu_alg.push(str);
           alg_menu.push(response.data[i]);

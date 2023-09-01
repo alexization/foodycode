@@ -113,6 +113,14 @@ const routes = [
       title: "Home FOODY",
     },
   },
+  {
+    path: "/addmenu",
+    name: "add-menu",
+    component: () => import("../views/AddMenu.vue"),
+    meta: {
+      title: "Home FOODY",
+    },
+  },
 ];
 
 const router = createRouter({
