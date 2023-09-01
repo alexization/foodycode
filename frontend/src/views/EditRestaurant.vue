@@ -103,23 +103,7 @@ export default {
     },
     available_post() {
       // 여기다가 post 넣으면 됨
-<<<<<<< HEAD
-      axios.put("/api/restuser",{
-        name : "tesrest",
-        address : "96, testgil, test-myeon, test-si",
-        ceo_name : "testceoname",
-        tel:"999-9999-9999",
 
-      })
-      .then((res) => {
-        if(res.data.success){
-          alert("정보 수정 완료!");
-        }
-        else{
-          alert("오류 발생");
-        }
-      })
-=======
       for (var data in this.restaurantData) {
         if (this.list.includes(data)) {
           if (document.getElementById(data).value === "") {
@@ -130,7 +114,25 @@ export default {
         }
       }
       console.log(this.modifyData);
->>>>>>> 095476e3c76e0cfcbda07f1f0d3cb04712fea9e4
+
+
+      axios.put("/api/restuser",{
+        name : this.modifyData.rest_name,
+        address : this.modifyData.address,
+        ceo_name : "testceoname",
+        tel:this.modifyData.tel,
+
+      })
+      .then((res) => {
+        if(res.data.success){
+          alert("정보 수정 완료!");
+          location.href = "#/restedit";
+        }
+        else{
+          alert("오류 발생");
+        }
+      })
+      
     },
   },
 };
