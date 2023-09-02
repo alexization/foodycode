@@ -1,12 +1,10 @@
-const MenuStorage = require('../models/MenuStroage');
-const AlgStorage = require('../models/UserAlgStorage');
+const MenuStorage = require("../models/MenuStroage");
+const AlgStorage = require("../models/UserAlgStorage");
 
 class MenuCtrl {
-
-  static async sendMymenuInfo(req,res){
-    
+  static async sendMymenuInfo(req, res) {
     const rest_uid = req.session.rest_uid;
-    
+
     const response = await MenuStorage.getMenuInfoByID(rest_uid);
     return res.send(response);
   }
@@ -17,9 +15,9 @@ class MenuCtrl {
     //유지된 세션의 유저ID
     const uid = req.session.userid;
 
-    console.log('-------');
+    console.log("-------");
     console.log(rest_name);
-    console.log('-------');
+    console.log("-------");
     //메뉴의 알러지 배열
     const arr_menuAlg = await AlgStorage.getMenuAlgInfo(rest_name);
     //유저의 알러지 배열
@@ -34,7 +32,9 @@ class MenuCtrl {
         if (arr_menuInfo[i].menu_name === arr_menuAlg[j].menu_name) {
           // arr_menuAlg의 algname이 arr_userAlg에 있는지 확인하고, 있으면 menu_alg에 추가
           if (
-            arr_userAlg.some((alg) => alg.algname === arr_menuAlg[j].algname)
+            arr_userAlg.algname.some(
+              (alg) => alg.algname === arr_menuAlg[j].algname
+            )
           ) {
             arr_menuInfo[i].menu_alg.push(arr_menuAlg[j].algname);
           }
@@ -54,7 +54,7 @@ class MenuCtrl {
     res.send(arr_menuDetail);
   }
 
-  static async addMenu(req,res){
+  static async addMenu(req, res) {
     const response = await MenuStorage.save(req.body);
     return res.send(response);
   }

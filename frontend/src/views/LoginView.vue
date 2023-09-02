@@ -27,7 +27,7 @@
     />
     <button type="button" class="login-button" @click="onLogin">LOGIN</button>
 
-    <div class="row-group">
+    <div class="login-row-group">
       <div class="find-my-id" @click="find_id">Find my ID</div>
       <div class="find-my-pw" @click="find_pw">Find my PW</div>
       <RouterLink class="sign-up" to="/signup">Sign Up</RouterLink>
@@ -187,7 +187,7 @@ input:focus::placeholder {
 input:focus::-ms-input-placeholder {
   color: transparent;
 }
-.row-group {
+.login-row-group {
   top: 585px;
   position: absolute;
   display: flex;

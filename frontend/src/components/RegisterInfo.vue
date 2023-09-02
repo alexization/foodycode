@@ -247,10 +247,10 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import arrow_back from '@/assets/icon/arrow-back.png';
-import line from '@/assets/icon/Line.png';
-import axios from 'axios';
+import { ref } from "vue";
+import arrow_back from "@/assets/icon/arrow-back.png";
+import line from "@/assets/icon/Line.png";
+import axios from "axios";
 
 export default {
   setup() {
@@ -263,22 +263,22 @@ export default {
       arrow_back,
       line,
       register_data: {},
-      current_status: '',
-      status_text: 'Please Input Text',
-      confirm_id_status: '',
+      current_status: "",
+      status_text: "Please Input Text",
+      confirm_id_status: "",
     };
   },
   methods: {
     click_back() {
-      location.href = '#/signup';
+      location.href = "#/signup";
     },
     async click_confirm() {
-      const uid = document.getElementById('uid').value;
+      const uid = document.getElementById("uid").value;
       console.log(uid);
 
       let res = await axios({
-        method: 'POST',
-        url: '/api/confirm',
+        method: "POST",
+        url: "/api/confirm",
         data: {
           uid: uid,
         },
@@ -288,25 +288,25 @@ export default {
       });
     },
     async click_register() {
-      this.register_data.id = document.getElementById('uid').value;
-      this.register_data.pw = document.getElementById('pw').value;
-      this.register_data.name = document.getElementById('name').value;
-      var radios = document.getElementsByName('gender');
+      this.register_data.id = document.getElementById("uid").value;
+      this.register_data.pw = document.getElementById("pw").value;
+      this.register_data.name = document.getElementById("name").value;
+      var radios = document.getElementsByName("gender");
 
       radios.forEach((elem) => {
         if (elem.checked) {
           this.register_data.gender = elem.value;
         }
       });
-      this.register_data.age = document.getElementById('age').value;
-      this.register_data.country = document.getElementById('country').value;
+      this.register_data.age = document.getElementById("age").value;
+      this.register_data.country = document.getElementById("country").value;
 
-      this.$emit('register_value', this.register_data);
-      this.$emit('change_page');
+      this.$emit("register_value", this.register_data);
+      this.$emit("change_page");
     },
     checkPW() {
-      this.user_password = document.getElementById('pw').value;
-      this.confirm_password = document.getElementById('pw_confirm').value;
+      this.user_password = document.getElementById("pw").value;
+      this.confirm_password = document.getElementById("pw_confirm").value;
       if (this.user_password != this.confirm_password) {
         this.current_status = false;
       } else {
@@ -323,8 +323,8 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
 .sign-up-page-register,
 .sign-up-page-register * {
@@ -346,49 +346,54 @@ export default {
 .uid {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 29.8px;
 }
 
-input[type='text'] {
+input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   width: 65.9%;
   height: 30.4px;
   outline: none;
 }
-input[type][id='user_name'] {
+input[type][id="user_name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
   outline: none;
 }
-input[type][id='country'] {
+input[type][id="country"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   width: 52.6%;
   height: 30.4px;
   outline: none;
 }
 
-input[type='password'] {
+input[type="password"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
   outline: none;
 }
-input[type='number'] {
+input[type="number"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   width: 21.8%;
   height: 30.4px;
   outline: none;
@@ -411,7 +416,7 @@ input[type='number'] {
   left: 73.1%;
   top: 61.9px;
   text-align: center;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -426,17 +431,17 @@ input[type='number'] {
   vertical-align: middle;
 }
 .available {
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   color: #1c9181;
 }
 .not-available {
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
   color: red;
 }
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 131.9px;
@@ -450,7 +455,7 @@ input[type='number'] {
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 210.4px;
@@ -473,16 +478,16 @@ input[type='number'] {
 }
 .not_match {
   color: red;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
 }
 .match {
   color: #1c9181;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 600 14px "Noto Sans", sans-serif;
 }
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 313.4px;
@@ -496,7 +501,7 @@ input[type='number'] {
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 468.7px;
@@ -507,28 +512,29 @@ input[type='number'] {
   top: 502px;
   width: 100%;
   height: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
+  display: flex;
+  justify-content: space-evenly;
 }
-.select-gender input[type='radio'] {
+.select-gender input[type="radio"] {
   display: none;
 }
-.select-gender input[type='radio'] + label {
+.select-gender input[type="radio"] + label {
   display: inline-block;
   cursor: pointer;
-  height: 30px;
-  width: 50%;
+  height: 100%;
+  width: 45%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
+  border-radius: 5px;
   text-align: center;
-  font: 400 16px 'Noto Sans', sans-serif;
+  font: 400 16px "Noto Sans", sans-serif;
 }
-.select-gender input[type='radio'] + label {
+.select-gender input[type="radio"] + label {
   background-color: #fff;
   color: black;
 }
-.select-gender input[type='radio']:checked + label {
+.select-gender input[type="radio"]:checked + label {
   transition: 0.5s;
   background-color: #1c9181;
   color: #fff;
@@ -536,7 +542,7 @@ input[type='number'] {
 .Age {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 391px;
@@ -544,7 +550,7 @@ input[type='number'] {
 .Country {
   color: #000000;
   text-align: left;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   position: absolute;
   left: 38.5%;
   top: 391px;
@@ -570,7 +576,7 @@ input[type='number'] {
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
-  font: 500 14px 'Noto Sans', sans-serif;
+  font: 500 14px "Noto Sans", sans-serif;
   color: black;
   background: white;
   outline: none;
@@ -587,7 +593,7 @@ input[type='number'] {
   height: 60px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px 'Noto Sans', sans-serif;
+  font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
