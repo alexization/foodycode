@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 
 .row-group {
   position: absolute;
@@ -30,7 +30,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0;
   z-index: 1;
 }
 .nav-bar {
@@ -57,7 +56,7 @@ export default {
   height: 40px;
   margin-right: 30px;
   margin-bottom: 10px;
-  font-family: 'Dangrek', cursive;
+  font-family: "Dangrek", cursive;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
