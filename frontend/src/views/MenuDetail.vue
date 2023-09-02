@@ -42,6 +42,7 @@ export default {
       menu_count: 1,
       detail_list: [],
       img_url: "loading",
+      price: 0,
     };
   },
   methods: {
@@ -50,10 +51,14 @@ export default {
         alert("최소주문 개수입니다");
       } else {
         this.menu_count -= 1;
+        this.detail_list.menu_price =
+          parseInt(this.detail_list.menu_price) - this.price;
       }
     },
     click_add() {
       this.menu_count += 1;
+      this.detail_list.menu_price =
+        parseInt(this.detail_list.menu_price) + this.price;
     },
     click_back() {
       this.prev_url = "#/allmenu/" + this.prev_rest;
@@ -71,6 +76,7 @@ export default {
     axios.get(`/api/menuDetail/${menu_id}`).then((response) => {
       this.detail_list = response.data[0];
       this.img_url = this.detail_list.img_url;
+      this.price = parseInt(this.detail_list.menu_price);
     });
   },
 };
