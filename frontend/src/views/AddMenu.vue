@@ -2,7 +2,7 @@
   <div>
     <div class="AddMenu-Header">
       <div class="back-button">
-        <button class="back">
+        <button class="back" @click="click_back">
           <img src="@/assets/icon/arrow_back_iOS.png" />
         </button>
       </div>
@@ -167,6 +167,10 @@ export default {
     };
   },
   methods: {
+    click_back() {
+      //나중에 수정 필요
+      location.href = "#/menuedit";
+    },
     add_menu() {
       this.menuData.allergyID = this.allergy;
       this.menuData.menuName = document.getElementById("menu_name").value;
