@@ -40,7 +40,7 @@
           </div>
           <div v-else>
             <div class="input-box">
-              <span>Name</span>
+              <span>식당이름</span>
               <input
                 type="text"
                 id="rest_name"
@@ -48,11 +48,11 @@
               />
             </div>
             <div class="input-box">
-              <span>Tel.</span>
+              <span>전화번호</span>
               <input type="text" id="tel" :placeholder="restaurantData.tel" />
             </div>
             <div class="input-box">
-              <span>Address</span>
+              <span>식당주소</span>
               <input
                 type="text"
                 id="address"
