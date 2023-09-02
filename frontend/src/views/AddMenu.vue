@@ -2,7 +2,7 @@
   <div>
     <div class="AddMenu-Header">
       <div class="back-button">
-        <button class="back">
+        <button class="back" @click="click_back">
           <img src="@/assets/icon/arrow_back_iOS.png" />
         </button>
       </div>
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="foot">
-      <button>추가하기</button>
+      <button @click="add_menu">추가하기</button>
     </div>
   </div>
 </template>
@@ -67,6 +67,8 @@ export default {
   props: {},
   data() {
     return {
+      menuData: {},
+      allergy: [],
       allergy_list: [
         { name: "전복", number: "19" },
         {
@@ -163,6 +165,20 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    click_back() {
+      //나중에 수정 필요
+      location.href = "#/menuedit";
+    },
+    add_menu() {
+      this.menuData.allergyID = this.allergy;
+      this.menuData.menuName = document.getElementById("menu_name").value;
+      this.menuData.menuPrice = document.getElementById("menu_price").value;
+      this.menuData.menuDetail = document.getElementById("menu_detail").value;
+      // menuData가 POST 할 데이터
+      console.log(this.menuData);
+    },
   },
 };
 </script>

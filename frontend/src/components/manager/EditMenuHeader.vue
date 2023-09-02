@@ -1,22 +1,26 @@
 <template>
   <div class="RestaurantName">
-    <div class="Rectangle"></div>
+    <div class="Rectangle">
+      <div class="arrow-back">
+        <button>
+          <img :src="arrow_back" width="25" @click="click_back" />
+        </button>
+      </div>
 
-    <button class="arrow-back">
-      <img :src="arrow_back" width="25" @click="click_back" />
-    </button>
+      <div class="Rest-name">
+        <span v-text="restaurantName"></span>
+      </div>
 
-    <div class="Rest-name" v-text="restaurantName"></div>
-
-    <div class="edit_button" v-if="this.edit_status === false">
-      <button @click="change_status">
-        <img src="@/assets/icon/edit.png" />
-      </button>
-    </div>
-    <div class="edit_button" v-else>
-      <button @click="change_status">
-        <img src="@/assets/icon/save.png" />
-      </button>
+      <div class="edit" v-if="this.edit_status === false">
+        <button class="edit_button" @click="change_status">
+          <img src="@/assets/icon/edit.png" />
+        </button>
+      </div>
+      <div class="edit" v-else>
+        <button class="edit_button" @click="change_status">
+          <img src="@/assets/icon/save.png" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -62,77 +66,49 @@ export default {
   width: 100%;
   height: 120px;
   position: absolute;
-}
-.Rectangle {
   background: #42b2a3;
-  width: 100%;
-  height: 120px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.Rectangle {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
 .arrow-back {
-  position: absolute;
-  left: 7.7%;
-  top: 14px;
-  width: 6.4%;
-  height: 25.3px;
-  border: none;
-  background-color: #42b2a3;
-  cursor: pointer;
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
-
-.Rest-name {
-  color: #000000;
-  text-align: center;
-  font: 600 20px "Noto Sans", sans-serif;
-  position: absolute;
-  left: 25.9%;
-  top: 14px;
-  width: 48.2%;
-  height: 87px;
-}
-.prev-login {
-  color: #000000;
-  text-align: center;
-  font: 600 20px "Noto Sans", sans-serif;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 85px;
-  color: black;
-  cursor: pointer;
-}
-
-.prev-login img {
-  margin-left: 5px;
-  margin-bottom: -3px;
-  width: 20px;
-  height: 20px;
-}
-.onlogin-user {
-  color: #000000;
-  text-align: left;
-  font: 400 20px "Noto Sans", sans-serif;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 85px;
-}
-.user-name {
-  font: 600 20px "Noto Sans", sans-serif;
-  color: white;
-}
-.edit_button {
-  position: absolute;
-  top: 14px;
-  right: 35px;
+.arrow-back button {
   width: 32px;
   height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
-.edit_button button {
+.arrow-back img {
+  width: 100%;
+  height: 100%;
+}
+.Rest-name {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.Rest-name span {
+  color: #000000;
+  text-align: center;
+  font: 600 20px "Noto Sans", sans-serif;
+}
+.edit {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.edit_button {
   border: none;
   background: none;
 }

@@ -145,6 +145,7 @@ export default {
         response.data.useralgs.sort();
         this.userName = response.data.uname;
         this.allergyList = response.data.useralgs;
+        this.allergy = response.data.userId;
       })
       .catch((error) => {});
   },
