@@ -60,10 +60,13 @@ class MenuStorage {
         )
         .join(', ');
 
+        console.log(`insert val : ${insertValues}`);
+
       const algquery = insertValues 
       ? `INSERT INTO menualgs(alg_id,menu_id)
       VALUES ${insertValues})`
       : '';
+        console.log(`alg query : ${algquery}`);
 
       db.query(algquery,[menu_info.name],(err)=>{
         if(err) throw reject(`${err}`);
