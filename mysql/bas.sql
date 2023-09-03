@@ -186,7 +186,7 @@ INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
     values ("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
         ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
         ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
-    ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
+        ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
         ("2","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
         ("2","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
         ("3","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
