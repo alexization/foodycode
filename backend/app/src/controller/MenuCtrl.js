@@ -55,7 +55,9 @@ class MenuCtrl {
   }
 
   static async addMenu(req, res) {
-    const response = await MenuStorage.save(req.body);
+    const rest_uid = req.session.rest_uid;
+    const menu_data = req.body;
+    const response = await MenuStorage.save(menu_data,rest_uid);
     return res.send(response);
   }
 }
