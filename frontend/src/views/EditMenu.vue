@@ -41,10 +41,10 @@
 </template>
 
 <script>
-import RestaurantName from "../components/manager/EditMenuHeader.vue";
-import MenuCard from "../components/MenuCard.vue";
+import RestaurantName from '../components/manager/EditMenuHeader.vue';
+import MenuCard from '../components/MenuCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   components: {
@@ -56,15 +56,15 @@ export default {
     // quickfix to have components available to pass as props
     return {
       list: [],
-      url_href: "",
-      rest_title: "",
-      user_name: "",
+      url_href: '',
+      rest_title: '',
+      user_name: '',
       edit_status: false,
     };
   },
 
   async created() {
-    this.url = window.location.href.split("#");
+    this.url = window.location.href.split('#');
     this.url_href = this.url[1];
     //URL에서 전달받는 parmeter = rest_name_url_param
     //요청할 API경로에 해당 값을 붙여 get요청
@@ -72,11 +72,13 @@ export default {
     // const rest_name = this.$route.params.rest_name_url_param;
 
     // 여기는 고정인데 식당이름을 따로 가져오게 할지 고민좀 해보야할듯
-    const rest_name = "Teolbone";
     axios.get(`/api/restuser_menu`).then((response) => {
       this.list = response.data;
       console.log(response.data);
-      this.rest_title = rest_name;
+    });
+    axios.get('/api/restuser').then((response) => {
+      console.log(response.data);
+      this.rest_title = response.data.rest_name;
     });
   },
   methods: {
@@ -84,7 +86,7 @@ export default {
       this.edit_status = !this.edit_status;
     },
     add_menu() {
-      location.href = "#/addmenu";
+      location.href = '#/addmenu';
     },
   },
 };
