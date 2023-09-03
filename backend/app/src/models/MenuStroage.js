@@ -46,13 +46,17 @@ class MenuStorage {
         { 
           resolve({success:true});
         }
-    })
+    });
 
     let insertValues = "";
 
 
     //이거 join이 , 로 끝나는데도 쿼리가 잘 완성이됨 (신기하네;)
     if(menu_info.arr_algid.length > 0){
+
+      const menuidArr = new Array(menu_info.arr_algid.length).fill(menu_info.name);
+
+
       insertValues = menu_info.arr_algid
         .map(
           (algid)=>
@@ -63,18 +67,17 @@ class MenuStorage {
         console.log(`insert val : ${insertValues}`);
 
       const algquery = insertValues 
-      ? `INSERT INTO menualgs(alg_id,menu_id)
-      VALUES ${insertValues})`
+      ? `INSERT INTO menualgs(alg_id,menu_id) VALUES ${insertValues};`
       : '';
         console.log(`alg query : ${algquery}`);
-
-      db.query(algquery,[menu_info.name],(err)=>{
+          console.log(typeof menu_info.name);
+      db.query(algquery,menuidArr,(err)=>{
         if(err) throw reject(`${err}`);
         resolve({success:true});
-      })
+      });
     }
 
-  })
+  });
  }
 
 
