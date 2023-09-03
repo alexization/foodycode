@@ -23,7 +23,7 @@
       </div>
       <div class="edit-box">
         <div class="image-box">
-          <img src="@/assets/restaurant/restaurant_init.png" />
+          <img :src="require(`@/assets/restaurant/${img_url}.png`)" />
           <div v-if="this.edit_status === false">
             <div class="input-box">
               <span>식당이름</span>
@@ -83,6 +83,7 @@ export default {
     return {
       edit_status: false,
       post_status: false,
+      img_url: 'loading',
       list: ['rest_name', 'tel', 'address'],
       restaurantData: {},
       modifyData: {},
@@ -92,6 +93,7 @@ export default {
     axios.get('/api/restuser').then((response) => {
       console.log(response.data);
       this.restaurantData = response.data;
+      this.img_url = this.restaurantData.img_url;
     });
   },
   methods: {

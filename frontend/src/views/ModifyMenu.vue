@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="title">
-        <span>메뉴 추가</span>
+        <span>메뉴 정보 변경</span>
       </div>
       <div class="empty"></div>
     </div>
@@ -23,21 +23,21 @@
       </div>
       <div class="menu-img">
         <div class="menu-rect">
-          <img src="@/assets/menu/menu_init.png" />
+          <img :src="require(`@/assets/menu/${img_url}.png`)" />
         </div>
       </div>
       <div class="input-group">
         <div class="input-row">
           <span>메뉴이름</span>
-          <input type="text" id="menu_name" />
+          <input type="text" id="menu_name" :value="detail_list.menu_name" />
         </div>
         <div class="input-row">
           <span>가격</span>
-          <input type="text" id="menu_price" />
+          <input type="text" id="menu_price" :value="detail_list.menu_price" />
         </div>
         <div class="input-row">
           <span>메뉴설명</span>
-          <textarea id="menu_detail"></textarea>
+          <textarea id="menu_detail" :value="detail_list.menu_ing"></textarea>
         </div>
       </div>
       <div class="allergy-text">
@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="foot">
-      <button @click="add_menu">추가하기</button>
+      <button @click="modify_menu">수정하기</button>
     </div>
   </div>
 </template>
@@ -70,6 +70,8 @@ export default {
     return {
       menuData: {},
       allergy: [],
+      detail_list: [],
+      img_url: 'loading',
       allergy_list: [
         { name: '전복', number: '19' },
         {
@@ -172,28 +174,43 @@ export default {
       //나중에 수정 필요
       location.href = '#/menuedit';
     },
-    add_menu() {
+    modify_menu() {
       this.menuData.allergyID = this.allergy;
       this.menuData.menuName = document.getElementById('menu_name').value;
       this.menuData.menuPrice = document.getElementById('menu_price').value;
       this.menuData.menuDetail = document.getElementById('menu_detail').value;
-      // menuData가 POST 할 데이터
-      axios
-        .post('/api/menu', {
-          name: this.menuData.menuName,
-          price: this.menuData.menuPrice,
-          ing: this.menuData.menuDetail,
-          arr_algid: this.menuData.allergyID,
-        })
-        .then((res) => {
-          if (res.data.success) {
-            alert('메뉴 추가 완료!');
-            location.href = '#/menuedit';
-          } else {
-            alert('오류 발생');
-          }
-        });
+      console.log(this.menuData);
+      // menuData가 PUT 할 데이터
+      //   axios
+      //     .post('/api/menu', {
+      //       name: this.menuData.menuName,
+      //       price: this.menuData.menuPrice,
+      //       ing: this.menuData.menuDetail,
+      //       arr_algid: this.menuData.allergyID,
+      //     })
+      //     .then((res) => {
+      //       if (res.data.success) {
+      //         alert('메뉴 추가 완료!');
+      //         location.href = '#/menuedit';
+      //       } else {
+      //         alert('오류 발생');
+      //       }
+      //     });
     },
+  },
+  created() {
+    const menu_id = this.$route.params.menu_id_url_param;
+
+    axios.get(`/api/menuDetail/${menu_id}`).then((response) => {
+      this.detail_list = response.data[0];
+      this.img_url = this.detail_list.img_url;
+      console.log(response.data);
+    });
+
+    axios.get(`/api/menuedit/${menu_id}`).then((response) => {
+      console.log(response.data);
+      this.allergy = response.data;
+    });
   },
 };
 </script>

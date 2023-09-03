@@ -23,6 +23,7 @@ var restRegisterRouter = require('./src/routes/restregister');
 var mainRouter = require('./src/routes/main');
 var menuRouter = require('./src/routes/menu');
 var menuDetailRouter = require('./src/routes/menuDetail');
+var menuEditRouter = require('./src/routes/menuedit');
 
 var useralgRouter = require('./src/routes/useralg');
 
@@ -66,6 +67,7 @@ app.use('/api/main', mainRouter);
 app.use('/api/menu', menuRouter);
 app.use('/api/useralg', useralgRouter);
 app.use('/api/menuDetail', menuDetailRouter);
+app.use('/api/menuedit', menuEditRouter);
 
 app.use('/api/confirm', confirmRouter);
 
