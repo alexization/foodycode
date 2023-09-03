@@ -186,7 +186,13 @@ export default {
         arr_algid:this.menuData.allergyID,
       })
       .then((res)=>{
-        console.log(res);
+        if(res.data.success){
+          alert("메뉴 추가 완료!");
+          location.href = "#/menuedit";
+        }
+        else{
+          alert("오류 발생");
+        }
       });
 
     },
