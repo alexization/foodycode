@@ -56,6 +56,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 .AlgMenuCard,
 .AlgMenuCard * {
   box-sizing: border-box;
@@ -112,7 +114,7 @@ export default {
 }
 .AlgMenu-name {
   color: rgba(0, 0, 0, 0.3);
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 500 16px 'Rubik', sans-serif;
   width: 100%;
   height: 40%;
   display: flex;
@@ -120,14 +122,20 @@ export default {
   margin-left: 10px;
 }
 .AlgMenu-Ing {
-  font: 300 12px 'Noto Sans', sans-serif;
+  font: 400 12px 'Rubik', sans-serif;
   width: 95%;
-  height: 95%;
   color: rgba(0, 0, 0, 0.3);
+  height: 60%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .Alg-Price {
   color: #6060603e;
-  font: 600 14px 'Noto Sans', sans-serif;
+  font: 400 14px 'Rubik', sans-serif;
   width: 100%;
   height: 20%;
   display: flex;
@@ -146,7 +154,7 @@ export default {
   height: 18px;
 }
 .alg div {
-  font: 600 15px 'Noto Sans', sans-serif;
+  font: 400 16px 'Rubik', sans-serif;
   color: red;
   margin-left: 3px;
 }
