@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   components: {},
 };
 </script>
@@ -25,5 +25,9 @@ body {
   min-height: 100dvh;
   height: calc(var(--vh, 1vh) * 100);
   background: #ffffff;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

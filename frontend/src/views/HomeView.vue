@@ -183,27 +183,4 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
-
-/* Transition navigation bar slide */
-.slide-enter-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.slide-leave-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.slide-enter-from {
-  opacity: 0;
-  transform: translateX(-25%);
-}
-.slide-enter-to {
-  opacity: 1;
-}
-.slide-leave-from {
-  opacity: 1;
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-25%);
-}
 </style>
