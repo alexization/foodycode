@@ -61,6 +61,8 @@
 </template>
 
 <script>
+
+import axios from "axios";
 export default {
   name: "DescriptionPage",
   components: {},
@@ -177,7 +179,22 @@ export default {
       this.menuData.menuPrice = document.getElementById("menu_price").value;
       this.menuData.menuDetail = document.getElementById("menu_detail").value;
       // menuData가 POST 할 데이터
-      console.log(this.menuData);
+      axios.post("/api/menu",{
+        name:this.menuData.menuName,
+        price:this.menuData.menuPrice,
+        ing:this.menuData.menuDetail,
+        arr_algid:this.menuData.allergyID,
+      })
+      .then((res)=>{
+        if(res.data.success){
+          alert("메뉴 추가 완료!");
+          location.href = "#/menuedit";
+        }
+        else{
+          alert("오류 발생");
+        }
+      });
+
     },
   },
 };
