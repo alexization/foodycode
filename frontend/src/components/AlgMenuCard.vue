@@ -120,6 +120,7 @@ export default {
   display: flex;
   align-items: center;
   margin-left: 10px;
+  letter-spacing: 0.4px;
 }
 .AlgMenu-Ing {
   font: 400 12px 'Rubik', sans-serif;
