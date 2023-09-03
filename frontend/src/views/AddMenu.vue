@@ -187,7 +187,7 @@ export default {
       })
       .then((res)=>{
         console.log(res);
-      })
+      });
 
     },
   },
