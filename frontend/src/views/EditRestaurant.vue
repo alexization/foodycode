@@ -67,13 +67,13 @@
 </template>
 
 <script>
-import Header from '../components/manager/EditRestHeader.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
+import Header from "../components/manager/EditRestHeader.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     RestaurantCard,
@@ -83,14 +83,14 @@ export default {
     return {
       edit_status: false,
       post_status: false,
-      img_url: 'loading',
-      list: ['rest_name', 'tel', 'address'],
+      img_url: "loading",
+      list: ["rest_name", "tel", "address"],
       restaurantData: {},
       modifyData: {},
     };
   },
   async created() {
-    axios.get('/api/restuser').then((response) => {
+    axios.get("/api/restuser").then((response) => {
       console.log(response.data);
       this.restaurantData = response.data;
       this.img_url = this.restaurantData.img_url;
@@ -101,12 +101,12 @@ export default {
       this.edit_status = !this.edit_status;
     },
     img_upload() {
-      alert('Click Image Upload');
+      alert("Click Image Upload");
     },
     available_post() {
       for (var data in this.restaurantData) {
         if (this.list.includes(data)) {
-          if (document.getElementById(data).value === '') {
+          if (document.getElementById(data).value === "") {
             this.modifyData[data] = this.restaurantData[data];
           } else {
             this.modifyData[data] = document.getElementById(data).value;
@@ -116,18 +116,18 @@ export default {
       console.log(this.modifyData);
 
       axios
-        .put('/api/restuser', {
+        .put("/api/restuser", {
           name: this.modifyData.rest_name,
           address: this.modifyData.address,
-          ceo_name: 'testceoname',
+          ceo_name: "testceoname",
           tel: this.modifyData.tel,
         })
         .then((res) => {
           if (res.data.success) {
-            alert('정보 수정 완료!');
+            alert("정보 수정 완료!");
             window.location.reload(true);
           } else {
-            alert('오류 발생');
+            alert("오류 발생");
           }
         });
     },
@@ -136,18 +136,20 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 .edit-page {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
+  box-sizing: border-box;
   width: 100%;
-  top: 80px;
-  height: calc(var(--vh, 1vh) * 100 - 80px);
+  top: 70px;
+  height: calc(var(--vh, 1vh) * 100 - 70px);
 }
 .preview-text {
   position: absolute;
   left: 30px;
+  top: 10px;
 }
 .preview-text img {
   width: 30px;
@@ -155,14 +157,14 @@ export default {
   vertical-align: middle;
 }
 .preview-text span {
-  font: 500 15px 'Noto Sans', sans-serif;
+  font: 500 15px "Noto Sans", sans-serif;
   text-align: center;
   color: #1c9181;
   margin-left: 8px;
 }
 .restaurant-list {
   position: absolute;
-  top: 20px;
+  top: 30px;
   box-sizing: border-box;
   width: 100%;
   height: 260px;
@@ -172,16 +174,16 @@ export default {
   width: 100%;
   height: 2px;
   position: absolute;
-  top: 290px;
+  top: 300px;
   background: #a8a8a8;
 }
 .edit-text {
   width: 100%;
-  top: 310px;
+  top: 320px;
   position: absolute;
 }
 .edit-text span {
-  font: 500 15px 'Noto Sans', sans-serif;
+  font: 500 15px "Noto Sans", sans-serif;
   text-align: left;
   color: #15675c;
   margin-left: 20px;
@@ -198,8 +200,9 @@ export default {
   color: white;
 }
 .edit-box {
-  top: 340px;
+  top: 350px;
   width: 100%;
+  height: 350px;
   position: absolute;
   display: block;
   padding: 10px 0px;
@@ -225,7 +228,7 @@ export default {
 }
 .input-box span {
   margin-left: 20px;
-  font: 500 16px 'Noto Sans', sans-serif;
+  font: 500 16px "Noto Sans", sans-serif;
   margin-top: 5px;
 }
 .input-box input {
@@ -246,49 +249,5 @@ export default {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* Transition navigation bar fade */
-.fade-enter-active {
-  transition: opacity 0.25s ease;
-}
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-}
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Transition navigation bar slide */
-.slide-enter-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.slide-leave-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.slide-enter-from {
-  opacity: 0;
-  transform: translateX(-25%);
-}
-.slide-enter-to {
-  opacity: 1;
-}
-.slide-leave-from {
-  opacity: 1;
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-25%);
 }
 </style>

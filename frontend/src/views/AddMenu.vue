@@ -61,9 +61,9 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
-  name: 'DescriptionPage',
+  name: "DescriptionPage",
   components: {},
   props: {},
   data() {
@@ -71,98 +71,98 @@ export default {
       menuData: {},
       allergy: [],
       allergy_list: [
-        { name: '전복', number: '19' },
+        { name: "전복", number: "19" },
         {
-          name: '소고기',
-          number: '16',
+          name: "소고기",
+          number: "16",
         },
         {
-          name: '메밀',
-          number: '3',
+          name: "메밀",
+          number: "3",
         },
         {
-          name: '닭고기',
-          number: '15',
+          name: "닭고기",
+          number: "15",
         },
         {
-          name: '게',
-          number: '8',
+          name: "게",
+          number: "8",
         },
         {
-          name: '달걀',
-          number: '1',
+          name: "달걀",
+          number: "1",
         },
         {
-          name: '고등어',
-          number: '7',
+          name: "고등어",
+          number: "7",
         },
         {
-          name: '우유',
-          number: '2',
+          name: "우유",
+          number: "2",
         },
         {
-          name: '홍합',
-          number: '18',
+          name: "홍합",
+          number: "18",
         },
         {
-          name: '굴',
-          number: '20',
+          name: "굴",
+          number: "20",
         },
         {
-          name: '복숭아',
-          number: '11',
+          name: "복숭아",
+          number: "11",
         },
         {
-          name: '땅콩',
-          number: '4',
+          name: "땅콩",
+          number: "4",
         },
         {
-          name: '잣',
-          number: '21',
+          name: "잣",
+          number: "21",
         },
         {
-          name: '돼지고기',
-          number: '10',
+          name: "돼지고기",
+          number: "10",
         },
         {
-          name: '참깨',
-          number: '23',
+          name: "참깨",
+          number: "23",
         },
         {
-          name: '조개',
-          number: '17',
+          name: "조개",
+          number: "17",
         },
         {
-          name: '새우',
-          number: '9',
+          name: "새우",
+          number: "9",
         },
         {
-          name: '간장',
-          number: '5',
+          name: "간장",
+          number: "5",
         },
         {
-          name: '오징어',
-          number: '22',
+          name: "오징어",
+          number: "22",
         },
         {
-          name: '아황산염',
-          number: '13',
+          name: "아황산염",
+          number: "13",
         },
         {
-          name: '토마토',
-          number: '12',
+          name: "토마토",
+          number: "12",
         },
         {
-          name: '호두',
-          number: '14',
+          name: "호두",
+          number: "14",
         },
         {
-          name: '밀',
-          number: '6',
+          name: "밀",
+          number: "6",
         },
         {
-          name: '없음',
-          number: 'none',
+          name: "없음",
+          number: "none",
         },
       ],
     };
@@ -170,16 +170,16 @@ export default {
   methods: {
     click_back() {
       //나중에 수정 필요
-      location.href = '#/menuedit';
+      location.href = "#/menuedit";
     },
     add_menu() {
       this.menuData.allergyID = this.allergy;
-      this.menuData.menuName = document.getElementById('menu_name').value;
-      this.menuData.menuPrice = document.getElementById('menu_price').value;
-      this.menuData.menuDetail = document.getElementById('menu_detail').value;
+      this.menuData.menuName = document.getElementById("menu_name").value;
+      this.menuData.menuPrice = document.getElementById("menu_price").value;
+      this.menuData.menuDetail = document.getElementById("menu_detail").value;
       // menuData가 POST 할 데이터
       axios
-        .post('/api/menu', {
+        .post("/api/menu", {
           name: this.menuData.menuName,
           price: this.menuData.menuPrice,
           ing: this.menuData.menuDetail,
@@ -187,10 +187,10 @@ export default {
         })
         .then((res) => {
           if (res.data.success) {
-            alert('메뉴 추가 완료!');
-            location.href = '#/menuedit';
+            alert("메뉴 추가 완료!");
+            location.href = "#/menuedit";
           } else {
-            alert('오류 발생');
+            alert("오류 발생");
           }
         });
     },
@@ -209,6 +209,8 @@ export default {
   height: 70px;
   display: flex;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0;
+  z-index: 20;
 }
 .back-button {
   width: 20%;
@@ -241,9 +243,10 @@ export default {
 .description-page {
   background: #ffffff;
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100 - 70px);
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -312,14 +315,14 @@ export default {
   width: 20%;
   text-align: center;
 }
-.input-row input[type='text'][id='menu_name'] {
+.input-row input[type="text"][id="menu_name"] {
   width: 60%;
   height: 25px;
   border-radius: 5px;
   border: 1px solid #1c9181;
   padding-left: 10px;
 }
-.input-row input[type='text'][id='menu_price'] {
+.input-row input[type="text"][id="menu_price"] {
   width: 60%;
   height: 25px;
   border-radius: 5px;
@@ -359,7 +362,7 @@ export default {
 .allergy-row div label {
   cursor: pointer;
 }
-.allergy-row div label input[type='checkbox'] {
+.allergy-row div label input[type="checkbox"] {
   display: none;
 }
 .allergy-row div label span {
@@ -371,18 +374,18 @@ export default {
   height: 30px;
   color: #000000;
   text-align: center;
-  font: 400 17px 'Noto Sans', sans-serif;
+  font: 400 17px "Noto Sans", sans-serif;
   padding-top: 4px;
   transition: 0.5s;
   overflow: hidden;
 }
 .allergy-row div label span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
 }
-.allergy-row div label input[type='checkbox']:checked ~ span {
+.allergy-row div label input[type="checkbox"]:checked ~ span {
   background: #42b2a3;
 }
 .foot {

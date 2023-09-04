@@ -1,5 +1,6 @@
 <template>
-  <div class="MenuView">
+  <div>
+    <RestaurantName :restaurantName="this.rest_title"></RestaurantName>
     <div class="MenuList">
       <div class="menu">
         <div v-for="item in list" :key="item">
@@ -12,8 +13,8 @@
             />
           </router-link>
         </div>
+        <div class="line"></div>
       </div>
-      <div class="line"></div>
       <div class="alg-menu">
         <div v-for="item in alg_list" :key="item">
           <router-link :to="`${this.url_href}/${item.id}`">
@@ -28,7 +29,6 @@
         </div>
       </div>
     </div>
-    <RestaurantName :restaurantName="this.rest_title"></RestaurantName>
   </div>
 </template>
 
@@ -88,48 +88,38 @@ export default {
 </script>
 
 <style scoped>
-.MenuView,
-.MenuView * {
-  box-sizing: border-box;
-}
-.MenuView {
-  background: #ffffff;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow-y: auto;
-}
 .MenuList {
-  width: 98.7%;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 140px);
+  top: 140px;
   display: flex;
   flex-direction: column;
   gap: 0px;
   align-items: flex-start;
   justify-content: flex-start;
-  position: absolute;
-  left: 1.3%;
-  top: 140px;
-  padding-top: 10.1px;
+  margin-left: 1.3%;
+  padding-top: 20px;
 }
 .menu {
   width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 .alg-menu {
   width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 .line {
   width: 94%;
-  height: 3.4px;
+  height: 3px;
   left: 1.5%;
   border-radius: 100px;
   background: #42b2a36b;
   position: relative;
-  margin-top: 5px;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 </style>
