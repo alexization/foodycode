@@ -52,7 +52,7 @@ export default {
 }
 
 .header {
-  position: sticky;
+  position: absolute;
   top: 0px;
   display: inline-flex;
   justify-content: flex-start;

@@ -98,7 +98,7 @@ export default {
   overflow-x: hidden;
   box-sizing: border-box;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 140px);
+  height: calc(var(--vh, 1vh) * 100 - 120px);
   top: 120px;
   display: flex;
   flex-direction: column;
@@ -129,6 +129,7 @@ export default {
 }
 .add-menu {
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 .add-menu button {
   border: none;
