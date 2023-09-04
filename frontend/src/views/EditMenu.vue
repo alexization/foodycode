@@ -1,5 +1,9 @@
 <template>
-  <div class="MenuView">
+  <div>
+    <RestaurantName
+      :restaurantName="this.rest_title"
+      @edit_status="change_status"
+    ></RestaurantName>
     <div class="MenuList">
       <div class="menu" v-if="this.edit_status === false">
         <div v-for="item in list" :key="item">
@@ -13,7 +17,6 @@
       </div>
       <div class="menu" v-else>
         <div v-for="item in list" :key="item">
-          <!-- 추후에 메뉴 편집 페이지로 link 변경해주면 됨 -->
           <router-link :to="`${url_href}/${item.id}`">
             <MenuCard
               :menuName="item.menu_name"
@@ -33,18 +36,14 @@
         </button>
       </div>
     </div>
-    <RestaurantName
-      :restaurantName="this.rest_title"
-      @edit_status="change_status"
-    ></RestaurantName>
   </div>
 </template>
 
 <script>
-import RestaurantName from '../components/manager/EditMenuHeader.vue';
-import MenuCard from '../components/MenuCard.vue';
+import RestaurantName from "../components/manager/EditMenuHeader.vue";
+import MenuCard from "../components/MenuCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   components: {
@@ -56,15 +55,15 @@ export default {
     // quickfix to have components available to pass as props
     return {
       list: [],
-      url_href: '',
-      rest_title: '',
-      user_name: '',
+      url_href: "",
+      rest_title: "",
+      user_name: "",
       edit_status: false,
     };
   },
 
   async created() {
-    this.url = window.location.href.split('#');
+    this.url = window.location.href.split("#");
     this.url_href = this.url[1];
     //URL에서 전달받는 parmeter = rest_name_url_param
     //요청할 API경로에 해당 값을 붙여 get요청
@@ -76,7 +75,7 @@ export default {
       this.list = response.data;
       console.log(response.data);
     });
-    axios.get('/api/restuser').then((response) => {
+    axios.get("/api/restuser").then((response) => {
       console.log(response.data);
       this.rest_title = response.data.rest_name;
     });
@@ -86,36 +85,28 @@ export default {
       this.edit_status = !this.edit_status;
     },
     add_menu() {
-      location.href = '#/addmenu';
+      location.href = "#/addmenu";
     },
   },
 };
 </script>
 
 <style scoped>
-.MenuView,
-.MenuView * {
-  box-sizing: border-box;
-}
-.MenuView {
-  background: #ffffff;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow-y: auto;
-}
 .MenuList {
-  width: 98.7%;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 140px);
+  top: 120px;
   display: flex;
   flex-direction: column;
   gap: 0px;
   align-items: center;
   justify-content: flex-start;
-  position: absolute;
-  left: 1.3%;
-  top: 140px;
-  padding-top: 10.1px;
+  margin-left: 1.3%;
+  padding-top: 20px;
 }
 .menu {
   width: 100%;

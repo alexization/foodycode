@@ -241,8 +241,10 @@ export default {
 .description-page {
   background: #ffffff;
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100 - 70px);
   position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
