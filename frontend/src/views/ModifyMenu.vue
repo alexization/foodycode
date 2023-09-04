@@ -226,6 +226,8 @@ export default {
   height: 70px;
   display: flex;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0;
+  z-index: 20;
 }
 .back-button {
   width: 20%;

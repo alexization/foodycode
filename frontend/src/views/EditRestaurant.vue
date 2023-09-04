@@ -149,6 +149,7 @@ export default {
 .preview-text {
   position: absolute;
   left: 30px;
+  top: 10px;
 }
 .preview-text img {
   width: 30px;
@@ -163,7 +164,7 @@ export default {
 }
 .restaurant-list {
   position: absolute;
-  top: 20px;
+  top: 30px;
   box-sizing: border-box;
   width: 100%;
   height: 260px;
@@ -173,12 +174,12 @@ export default {
   width: 100%;
   height: 2px;
   position: absolute;
-  top: 290px;
+  top: 300px;
   background: #a8a8a8;
 }
 .edit-text {
   width: 100%;
-  top: 310px;
+  top: 320px;
   position: absolute;
 }
 .edit-text span {
@@ -199,7 +200,7 @@ export default {
   color: white;
 }
 .edit-box {
-  top: 340px;
+  top: 350px;
   width: 100%;
   height: 350px;
   position: absolute;
@@ -248,49 +249,5 @@ export default {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* Transition navigation bar fade */
-.fade-enter-active {
-  transition: opacity 0.25s ease;
-}
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-}
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Transition navigation bar slide */
-.slide-enter-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.slide-leave-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.slide-enter-from {
-  opacity: 0;
-  transform: translateX(-25%);
-}
-.slide-enter-to {
-  opacity: 1;
-}
-.slide-leave-from {
-  opacity: 1;
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-25%);
 }
 </style>
