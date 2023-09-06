@@ -3,6 +3,6 @@ var router = express.Router();
 
 const TransCtrl = require('../controller/TransCtrl');
 
-router.get('/', TransCtrl.TranslateMenu);
+router.get('/:menu_name', TransCtrl.TranslateMenu);
 
 module.exports = router;

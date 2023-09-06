@@ -3,6 +3,8 @@ const cheerio = require('cheerio');
 
 class TransCtrl {
   static async TranslateMenu(req, res) {
+    const keyword = req.params.menu_name;
+
     async function crawler() {
       const browser = await puppeteer.launch({
         headless: false,

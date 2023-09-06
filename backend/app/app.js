@@ -28,7 +28,7 @@ var useralgRouter = require('./src/routes/useralg');
 
 var confirmRouter = require('./src/routes/confirm');
 
-var translateRouter = require('./src/routes/Translate');
+var translateRouter = require('./src/routes/translate');
 
 var app = express();
 

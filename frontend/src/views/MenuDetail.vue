@@ -67,7 +67,7 @@ export default {
     async add_cart() {
       let res = await axios({
         method: 'GET',
-        url: 'api/translate/:석쇠불고기',
+        url: 'api/translate/석쇠불고기',
         data: {},
       }).then((res) => {
         console.log(res.data);
