@@ -47,7 +47,7 @@ export default {
   background: white;
   max-width: 400px;
   width: 100%;
-  height: 400px;
+  height: 650px;
   padding: 20px;
   border-radius: 10px;
   margin-left: 20px;

@@ -86,7 +86,7 @@ export default {
   },
   setup() {
     const modal = ref(null);
-    const modalContent = ref(["First Text", "Second Text", "Third Text"]);
+    const modalContent = ref([]);
     const result = ref("");
 
     const handleClick = async () => {
@@ -240,6 +240,7 @@ export default {
       console.log(ingdName);
       axios.get(`/api/igd/${ingdName}`).then((response) => {
         console.log(response.data);
+        this.modalContent = response.data;
       });
     },
   },
