@@ -18,11 +18,17 @@ class TransCtrl {
       await page.click('div.search_bar > form > button');
 
       // Wait for the search results to load
-      await page.waitForSelector('div.table_list > table > tbody > tr');
+      // await page.waitForSelector('div.table_list > table > tbody > tr');
 
       const content = await page.content();
       const $ = cheerio.load(content);
       const result = [];
+
+      if ($('div.table_list > table > tbody').length === 0) {
+        await browser.close();
+        return [];
+      }
+
       $('div.table_list > table > tbody > tr').each(function (idx, element) {
         const $data = cheerio.load(element);
         const tdElements = $data('td'); // Select all td elements in the current row
@@ -49,6 +55,7 @@ class TransCtrl {
     }
 
     const tran = await crawler();
+
     console.log(tran);
     return res.send(tran);
   }
