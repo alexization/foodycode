@@ -239,6 +239,26 @@ INSERT INTO visithistory(uid)
     values("lls");
 
 
+CREATE TABLE igd(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+
+CREATE TABLE igdAlgs(
+    id int NOT NULL AUTO_INCREMENT,
+    alg_id int NOT NULL,
+    igd_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (alg_id) REFERENCES allergies(id),
+    FOREIGN KEY (igd_id) REFERENCES igd(id)
+);
+
+
+
+
 
 
 -- select *
