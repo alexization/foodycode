@@ -1,5 +1,4 @@
 const mysql = require("mysql2");
-const { search } = require("../routes/restuser");
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -9,9 +8,6 @@ const db = mysql.createConnection({
 });
 
 db.connect();
-
-
-
 
 // db.query("SELECT * FROM users",(err,data)=>{
 //     if(err)throw err;

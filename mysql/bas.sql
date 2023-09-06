@@ -241,10 +241,17 @@ INSERT INTO visithistory(uid)
 
 CREATE TABLE igd(
     id int NOT NULL AUTO_INCREMENT,
-    name varchar NOT NULL,
+    name varchar(200) NOT NULL,
     PRIMARY KEY (id)
 );
 
+INSERT INTO igd (name) values
+    ("간장"),
+    ("고추장"),
+    ("된장"),
+    ("청정원 바베큐 간장양념"),
+    ("양조간장"),
+    ("태양초 고추장");
 
 
 CREATE TABLE igdAlgs(
@@ -256,7 +263,21 @@ CREATE TABLE igdAlgs(
     FOREIGN KEY (igd_id) REFERENCES igd(id)
 );
 
-
+INSERT INTO igdAlgs (igd_id, alg_id) values
+    (1, 5),
+    (1, 6),
+    (2, 5),
+    (2, 6),
+    (3, 5),
+    (4, 2),
+    (4, 5),
+    (4, 6),
+    (4, 10),
+    (4, 12),
+    (5, 5),
+    (5, 6),
+    (6, 5),
+    (6, 6);
 
 
 

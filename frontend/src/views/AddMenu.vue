@@ -46,8 +46,8 @@
       <div class="ingd-group">
         <div class="ingd-search">
           <img src="@/assets/icon/search.png" />
-          <input type="text" />
-          <button @click="handleClick">검색</button>
+          <input type="text" id="ingd_name" />
+          <button @click="[handleClick(), get_alg()]">검색</button>
         </div>
       </div>
       <div class="allergy-text">
@@ -93,8 +93,10 @@ export default {
       const ok = await modal.value.show();
       if (ok) {
         result.value = "Click Confirm";
+        console.log(result.value);
       } else {
         result.value = "Click Cancel";
+        console.log(result.value);
       }
     };
     return {
@@ -232,6 +234,13 @@ export default {
             alert("오류 발생");
           }
         });
+    },
+    get_alg() {
+      const ingdName = document.getElementById("ingd_name").value;
+      console.log(ingdName);
+      axios.get(`/api/igd/${ingdName}`).then((response) => {
+        console.log(response.data);
+      });
     },
   },
 };

@@ -1,13 +1,15 @@
 <template>
   <searchModal ref="searchBaseModal">
-    <div class="content-container">
-      <p v-for="text in content" :key="text">
-        {{ text }}
-      </p>
-    </div>
-    <div class="buttons-container">
-      <button class="btn-confirm" @click="confirm">확인</button>
-      <button class="btn-cancel" @click="cancel">취소</button>
+    <div class="row-group">
+      <div class="content-container">
+        <p v-for="text in content" :key="text">
+          {{ text }}
+        </p>
+      </div>
+      <div class="buttons-container">
+        <button class="btn-confirm" @click="confirm">확인</button>
+        <button class="btn-cancel" @click="cancel">취소</button>
+      </div>
     </div>
   </searchModal>
 </template>
@@ -29,6 +31,7 @@ export default {
       searchBaseModal.value.open();
       return new Promise((resolve, _) => {
         resolvePromise.value = resolve;
+        console.log(resolve);
       });
     };
     const confirm = () => {
@@ -44,4 +47,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.row-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
