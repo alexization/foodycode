@@ -107,7 +107,7 @@ export default {
       this.input_data.username = document.getElementById("name").value;
       if (this.isUsernameCorrect(this.input_data).success) {
         console.log(this.input_data);
-        this.$router.push({ path: "/myfoody" });
+        this.$router.push({ path: "/" });
       } else {
         alert("error");
       }

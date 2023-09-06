@@ -16,10 +16,17 @@
       <div class="line"></div>
 
       <div class="edit-text">
-        <span>가게 대표 사진</span>
-        <button v-if="this.edit_status === true" @click="img_upload">
-          이미지 업로드
-        </button>
+        <div class="title">가게 대표 사진</div>
+        <div v-if="this.edit_status === true" class="image-upload">
+          <label for="file">이미지 업로드</label>
+          <input
+            type="file"
+            ref="images"
+            id="file"
+            accept="image/png, image/jpeg, image/jpg"
+            @change="img_upload"
+          />
+        </div>
       </div>
       <div class="edit-box">
         <div class="image-box">
@@ -73,7 +80,7 @@ import RestaurantCard from "../components/RestaurantCard.vue";
 import axios from "axios";
 
 export default {
-  name: "HomeView",
+  name: "EditRestaurant",
   components: {
     Header,
     RestaurantCard,
@@ -83,6 +90,7 @@ export default {
     return {
       edit_status: false,
       post_status: false,
+      image: "",
       img_url: "loading",
       list: ["rest_name", "tel", "address"],
       restaurantData: {},
@@ -101,6 +109,7 @@ export default {
       this.edit_status = !this.edit_status;
     },
     img_upload() {
+      this.image = this.$refs.images.files;
       alert("Click Image Upload");
     },
     available_post() {
@@ -178,26 +187,43 @@ export default {
   background: #a8a8a8;
 }
 .edit-text {
+  display: flex;
   width: 100%;
   top: 320px;
   position: absolute;
 }
-.edit-text span {
+.title {
+  position: relative;
+  width: 50%;
   font: 500 15px "Noto Sans", sans-serif;
   text-align: left;
   color: #15675c;
   margin-left: 20px;
 }
-.edit-text button {
+.image-upload {
+  position: relative;
+  width: 50%;
+}
+.image-upload label {
   position: absolute;
   right: 20px;
   border-radius: 10px;
   border: 1px solid #1c9181;
   background: #1c9181;
-  width: 28%;
+  width: 70%;
   height: 26px;
   flex-shrink: 0;
   color: white;
+  padding-top: 4px;
+  text-align: center;
+}
+.image-upload input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
 }
 .edit-box {
   top: 350px;
