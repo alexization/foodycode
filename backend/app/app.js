@@ -7,8 +7,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
-
-
 // var indexRouter = require("./src/routes/index");
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
@@ -30,6 +28,8 @@ var useralgRouter = require('./src/routes/useralg');
 
 var confirmRouter = require('./src/routes/confirm');
 
+var translateRouter = require('./src/routes/Translate');
+
 var app = express();
 
 // view engine setup
@@ -48,7 +48,7 @@ app.use(
     secret: 'sessionkey_mustchanged',
     resave: false,
     saveUninitialized: false,
-  })
+  }),
 );
 
 // app.use("/", indexRouter);
@@ -70,6 +70,8 @@ app.use('/api/useralg', useralgRouter);
 app.use('/api/menuDetail', menuDetailRouter);
 
 app.use('/api/confirm', confirmRouter);
+
+app.use('/api/translate', translateRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
