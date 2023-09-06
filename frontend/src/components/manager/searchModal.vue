@@ -47,6 +47,10 @@ export default {
   background: white;
   max-width: 400px;
   width: 100%;
+  height: 400px;
   padding: 20px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 </style>

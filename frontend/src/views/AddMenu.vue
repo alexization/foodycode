@@ -93,8 +93,10 @@ export default {
       const ok = await modal.value.show();
       if (ok) {
         result.value = "Click Confirm";
+        console.log(result.value);
       } else {
         result.value = "Click Cancel";
+        console.log(result.value);
       }
     };
     return {
