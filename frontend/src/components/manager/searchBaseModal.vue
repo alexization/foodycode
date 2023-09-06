@@ -18,19 +18,33 @@
             <div v-for="Ingd in content" :key="Ingd">
               <IngdCard
                 :IngdName="Ingd.igd_name"
+                :IngdInfo="Ingd"
                 @add_ingd="get_ingdInfo"
               ></IngdCard>
             </div>
           </div>
           <div class="content-container" v-else>
             <div v-for="Ingd in update_content" :key="Ingd">
-              <IngdCard :IngdName="Ingd.igd_name"></IngdCard>
+              <IngdCard
+                :IngdName="Ingd.igd_name"
+                :IngdInfo="Ingd"
+                @add_ingd="get_ingdInfo"
+              ></IngdCard>
             </div>
           </div>
         </div>
       </div>
       <div class="ingd-row">
-        <div class="ingd-row-line"></div>
+        <div class="ingd-row-line">
+          <div class="Ingd-box">
+            <div v-for="Ingd in ingd_list" :key="Ingd">
+              <IngredientsInfoVue
+                :IngdArray="Ingd"
+                @click="delete_info(Ingd[0], $event)"
+              ></IngredientsInfoVue>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="add-button">
         <button>추가하기</button>
@@ -42,6 +56,7 @@
 <script>
 import searchModal from "@/components/manager/searchModal.vue";
 import IngdCard from "@/components/manager/IngdAllergy.vue";
+import IngredientsInfoVue from "@/components/manager/IngredientsInfo.vue";
 import axios from "axios";
 
 import { ref } from "vue";
@@ -49,6 +64,7 @@ export default {
   components: {
     searchModal,
     IngdCard,
+    IngredientsInfoVue,
   },
   props: {
     content: Array,
@@ -57,7 +73,7 @@ export default {
     return {
       update_content: Array,
       update_status: false,
-      ingd_list: Array,
+      ingd_list: [],
     };
   },
   setup() {
@@ -96,7 +112,20 @@ export default {
       });
     },
     get_ingdInfo(data) {
-      console.log(data);
+      const temp = [];
+      temp.push(data.igd_name);
+      temp.push(data.arr_algid);
+      this.ingd_list.unshift(temp);
+      console.log(this.ingd_list);
+    },
+    delete_info(name) {
+      for (let i = 0; i < this.ingd_list.length; i++) {
+        if (this.ingd_list[i][0] === name) {
+          this.ingd_list.splice(i, 1);
+          i--;
+        }
+        console.log(this.ingd_list);
+      }
     },
   },
 };
@@ -176,16 +205,22 @@ export default {
 }
 .ingd-row {
   height: 100px;
-  width: 100%;
   overflow-x: auto;
   display: flex;
   align-items: center;
 }
 .ingd-row-line {
-  width: 100%;
   height: 60px;
-  background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+}
+.Ingd-box {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  width: 200%;
+  height: 55px;
+  margin: 0px auto;
+  align-items: center;
 }
 .add-button {
   width: 100%;

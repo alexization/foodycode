@@ -15,7 +15,7 @@ export default {
       default: "Default Menu Name",
     },
     IngdInfo: {
-      type: Array,
+      type: Object,
     },
   },
   methods: {
