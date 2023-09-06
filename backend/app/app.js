@@ -11,8 +11,11 @@ var session = require('express-session');
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
 
+
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
+
+var useralgRouter = require('./src/routes/useralg');
 
 var restuserRouter = require('./src/routes/restuser');
 var restusermenuRouter = require('./src/routes/restuser_menu');
@@ -25,9 +28,9 @@ var menuRouter = require('./src/routes/menu');
 var menuDetailRouter = require('./src/routes/menuDetail');
 var menuEditRouter = require('./src/routes/menuedit');
 
-var useralgRouter = require('./src/routes/useralg');
-
 var confirmRouter = require('./src/routes/confirm');
+
+var igdRouter = require('./src/routes/igd');
 
 var app = express();
 
@@ -70,6 +73,8 @@ app.use('/api/menuDetail', menuDetailRouter);
 app.use('/api/menuedit', menuEditRouter);
 
 app.use('/api/confirm', confirmRouter);
+
+app.use('/api/igd',igdRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
