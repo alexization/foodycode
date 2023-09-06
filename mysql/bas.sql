@@ -46,7 +46,7 @@ VALUES
     ("milk"),
     ("buckwheat"),
     ("peanut"),
-    ("soy"),
+    ("soy bean"),
     ("wheat"),
     ("mackerel"),
     ("crab"),
@@ -62,9 +62,10 @@ VALUES
     ("mussel"),
     ("abalone"),
     ("oyster"),
-    ("Pine nut"),
-    ("Squid"),
-    ("Sesame");
+    ("pine nut"),
+    ("squid"),
+    ("sesame"),
+    ("almond");
 
 drop table userAlgs;
 
