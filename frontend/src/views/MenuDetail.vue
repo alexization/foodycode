@@ -65,7 +65,7 @@ export default {
       location.href = this.prev_url;
     },
     add_cart() {
-      alert("Comming Soon..");
+
     },
   },
   created() {
