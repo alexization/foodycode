@@ -26,29 +26,29 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 /* Code generated with AutoHTML Plugin for Figma */
 
 export default {
-  name: "DescriptionPage",
+  name: 'DescriptionPage',
   components: {},
   props: {},
   data() {
     // quickfix to have components available to pass as props
     return {
-      prev_rest: "",
-      prev_url: "",
+      prev_rest: '',
+      prev_url: '',
       menu_count: 1,
       detail_list: [],
-      img_url: "loading",
+      img_url: 'loading',
       price: 0,
     };
   },
   methods: {
     click_remove() {
       if (this.menu_count < 2) {
-        alert("최소주문 개수입니다");
+        alert('최소주문 개수입니다');
       } else {
         this.menu_count -= 1;
         this.detail_list.menu_price =
@@ -61,11 +61,17 @@ export default {
         parseInt(this.detail_list.menu_price) + this.price;
     },
     click_back() {
-      this.prev_url = "#/allmenu/" + this.prev_rest;
+      this.prev_url = '#/allmenu/' + this.prev_rest;
       location.href = this.prev_url;
     },
-    add_cart() {
-      alert("comming soon...");
+    async add_cart() {
+      let res = await axios({
+        method: 'GET',
+        url: 'api/translate/:석쇠불고기',
+        data: {},
+      }).then((res) => {
+        console.log(res.data);
+      });
     },
   },
   created() {
@@ -82,7 +88,7 @@ export default {
 };
 </script>
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
 
 .detail-page,
 .detail-page * {
@@ -130,7 +136,7 @@ export default {
 .menu-name {
   color: #000000;
   text-align: left;
-  font: 600 16px "Noto Sans", sans-serif;
+  font: 600 16px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 310px;
@@ -139,7 +145,7 @@ export default {
 .details {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 362px;
@@ -152,7 +158,7 @@ export default {
     rgba(0, 0, 0, 0) 100%
   );
   text-align: left;
-  font: 400 10px "Noto Sans", sans-serif;
+  font: 400 10px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 391px;
@@ -162,7 +168,7 @@ export default {
 .allergy-tag {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 522px;
@@ -170,7 +176,7 @@ export default {
 .price {
   color: #000000;
   text-align: right;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 662px;
@@ -179,7 +185,7 @@ export default {
 .menu-price {
   color: #1c9181;
   text-align: left;
-  font: 400 19px "Noto Sans", sans-serif;
+  font: 400 19px 'Noto Sans', sans-serif;
   position: absolute;
   left: 5.1%;
   top: 691px;
@@ -218,7 +224,7 @@ export default {
 .count {
   color: #000000;
   text-align: left;
-  font: 400 18px "Noto Sans", sans-serif;
+  font: 400 18px 'Noto Sans', sans-serif;
   position: absolute;
   left: 80%;
   top: 691px;

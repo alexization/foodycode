@@ -3,8 +3,6 @@ const cheerio = require('cheerio');
 
 class TransCtrl {
   static async TranslateMenu(req, res) {
-    const keyword = '된장';
-
     async function crawler() {
       const browser = await puppeteer.launch({
         headless: false,
@@ -23,23 +21,34 @@ class TransCtrl {
       const content = await page.content();
       const $ = cheerio.load(content);
       const result = [];
-
       $('div.table_list > table > tbody > tr').each(function (idx, element) {
         const $data = cheerio.load(element);
         const tdElements = $data('td'); // Select all td elements in the current row
 
         // Loop through and print the text content of each td element
+        const keys = ['Kor', 'Rom', 'Eng', 'Jap', 'Chn', 'Gan'];
+        var obj = {};
         tdElements.each(function (index, item) {
           const tdText = $(item).text();
-          result.push(`TD ${index}: ${tdText}`);
+          const key = keys[index % 6]; // 순환하면서 키 선택
+
+          obj[key] = tdText;
+
+          // 한 항목이 모두 처리되면 오브젝트를 배열에 추가하고 다시 초기화
+          if ((index + 1) % 6 === 0) {
+            result.push(obj);
+            obj = {}; // 오브젝트 초기화
+          }
         });
       });
 
       await browser.close();
+      return result;
     }
 
-    crawler();
-    return res.send(result);
+    const tran = await crawler();
+    console.log(tran);
+    return res.send(tran);
   }
 }
 
