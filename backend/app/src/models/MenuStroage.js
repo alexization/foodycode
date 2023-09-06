@@ -67,7 +67,7 @@ class MenuStorage {
         console.log(`insert val : ${insertValues}`);
 
       const algquery = insertValues 
-      ? `INSERT INTO menualgs(alg_id,menu_id) VALUES ${insertValues};`
+      ?  `INSERT INTO menualgs(alg_id,menu_id) VALUES ${insertValues};`
       : '';
         console.log(`alg query : ${algquery}`);
           console.log(typeof menu_info.name);
