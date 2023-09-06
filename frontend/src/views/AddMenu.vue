@@ -67,10 +67,13 @@
     <div class="foot">
       <button @click="add_menu">추가하기</button>
     </div>
-    <searchBaseModalVue
-      ref="modal"
-      :content="modalContent"
-    ></searchBaseModalVue>
+    <div>
+      <searchBaseModalVue
+        ref="modal"
+        :content="modalContent"
+        @get_allergy="allergy_info"
+      ></searchBaseModalVue>
+    </div>
   </div>
 </template>
 
@@ -90,14 +93,7 @@ export default {
     const result = ref("");
 
     const handleClick = async () => {
-      const ok = await modal.value.show();
-      if (ok) {
-        result.value = "Click Confirm";
-        console.log(result.value);
-      } else {
-        result.value = "Click Cancel";
-        console.log(result.value);
-      }
+      console.log(await modal.value.show());
     };
     return {
       modal,
@@ -242,6 +238,11 @@ export default {
         console.log(response.data);
         this.modalContent = response.data;
       });
+    },
+    allergy_info(data) {
+      console.log(data);
+      this.allergy = data[0];
+      console.log(this.allergy);
     },
   },
 };

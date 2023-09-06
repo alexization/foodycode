@@ -2,7 +2,7 @@
   <searchModal ref="searchBaseModal">
     <div class="back">
       <span>식재료 추가</span>
-      <button @click="close">
+      <button @click="cancel">
         <img src="@/assets/icon/close.png" />
       </button>
     </div>
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="add-button">
-        <button>추가하기</button>
+        <button @click="[add(), close()]">추가하기</button>
       </div>
     </div>
   </searchModal>
@@ -74,6 +74,7 @@ export default {
       update_content: Array,
       update_status: false,
       ingd_list: [],
+      temp_list: [],
     };
   },
   setup() {
@@ -86,18 +87,13 @@ export default {
         console.log(resolve);
       });
     };
-    const confirm = () => {
-      searchBaseModal.value.close();
-      resolvePromise.value(true);
-    };
     const cancel = () => {
       searchBaseModal.value.close();
-      resolvePromise.value(false);
     };
     const close = () => {
       searchBaseModal.value.close();
     };
-    return { searchBaseModal, show, confirm, cancel, close };
+    return { searchBaseModal, show, cancel, close };
   },
   methods: {
     get_alg() {
@@ -126,6 +122,17 @@ export default {
         }
         console.log(this.ingd_list);
       }
+    },
+    add() {
+      const temp_data = [];
+      for (let i = 0; i < this.ingd_list.length; i++) {
+        temp_data.push(this.ingd_list[i][1]);
+      }
+      this.temp_list.push(temp_data.join().split(","));
+      console.log(this.temp_list);
+      // const alg_data = new Set(temp);
+      // console.log(alg_data);
+      this.$emit("get_allergy", this.temp_list);
     },
   },
 };
