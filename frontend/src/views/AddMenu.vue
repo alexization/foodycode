@@ -47,7 +47,7 @@
         <div class="ingd-search">
           <img src="@/assets/icon/search.png" />
           <input type="text" />
-          <button>검색</button>
+          <button @click="handleClick">검색</button>
         </div>
       </div>
       <div class="allergy-text">
@@ -67,14 +67,43 @@
     <div class="foot">
       <button @click="add_menu">추가하기</button>
     </div>
+    <searchBaseModalVue
+      ref="modal"
+      :content="modalContent"
+    ></searchBaseModalVue>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import { ref } from "vue";
+import searchBaseModalVue from "../components/manager/searchBaseModal.vue";
+
 export default {
   name: "DescriptionPage",
-  components: {},
+  components: {
+    searchBaseModalVue,
+  },
+  setup() {
+    const modal = ref(null);
+    const modalContent = ref(["First Text", "Second Text", "Third Text"]);
+    const result = ref("");
+
+    const handleClick = async () => {
+      const ok = await modal.value.show();
+      if (ok) {
+        result.value = "Click Confirm";
+      } else {
+        result.value = "Click Cancel";
+      }
+    };
+    return {
+      modal,
+      modalContent,
+      result,
+      handleClick,
+    };
+  },
   props: {},
   data() {
     return {
