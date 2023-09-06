@@ -9,9 +9,10 @@
           class="input-user-name"
           :placeholder="userName"
           @blur="onChange"
+          maxlength="32"  
         />
-        <div class="user-instruction">
-          {{ username_instruction[info_number] }}
+        <div class="user-instruction" v-show="showInstruction === true">
+          {{ info }}
         </div>
       </div>
       <hr class="line" />
@@ -39,7 +40,7 @@ export default {
         "Please enter your username in 2~20 characters.",
         "Username is available",
       ],
-      info_number: 0, // username_instruction 배열 index
+      info: "",
       showInstruction: false, // 처음에는 username_instruction이 안보이도록 설정
       input_data: {}, // input 태그 value data
     };
@@ -66,21 +67,9 @@ export default {
     },
     async onChange() {
       this.input_data.username = document.getElementById("name").value;
-      const result = this.isUsernameCorrect(this.input_data);
-
-      if (result.success) {
-        this.cssStyle(result.success);
-        this.info_number = 3;
-      } else {
-        this.cssStyle(result.success);
-        if (result.case === 0) {
-          this.info_number = 0;
-        } else if (result.case === 1) {
-          this.info_number = 1;
-        } else if (result.case === 2) {
-          this.info_number = 2;
-        }
-      }
+      const result = this.isUsernameCorrect(this.input_data);      
+      this.cssStyle(result.success);
+      this.info = result.info;
     },
     cssStyle(res) {
       var button = document.querySelector(".edit-btn");
@@ -103,7 +92,7 @@ export default {
         user_instruction.style.display = "flex";
       }
     },
-    async edit_username() {
+    edit_username() {
       this.input_data.username = document.getElementById("name").value;
       if (this.isUsernameCorrect(this.input_data).success) {
         console.log(this.input_data);
@@ -112,7 +101,7 @@ export default {
         alert("error");
       }
     },
-  },
+  }, 
 };
 </script>
 
@@ -214,7 +203,6 @@ input:focus::-ms-input-placeholder {
 
 .user-instruction {
   position: relative;
-  display: none;
   align-items: center;
   width: 100%;
   height: 30px;
