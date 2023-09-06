@@ -40,6 +40,16 @@
           <textarea id="menu_detail"></textarea>
         </div>
       </div>
+      <div class="ingd-text">
+        <span>식재료 검색</span>
+      </div>
+      <div class="ingd-group">
+        <div class="ingd-search">
+          <img src="@/assets/icon/search.png" />
+          <input type="text" />
+          <button>검색</button>
+        </div>
+      </div>
       <div class="allergy-text">
         <span>알러지 유발 성분 선택</span>
       </div>
@@ -336,9 +346,54 @@ export default {
   border: 1px solid #1c9181;
   padding: 10px;
 }
+.ingd-text {
+  position: relative;
+  top: 80px;
+  width: 100%;
+}
+.ingd-text span {
+  margin-left: 20px;
+}
+.ingd-group {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  top: 100px;
+  position: relative;
+  justify-content: center;
+}
+.ingd-search {
+  width: 80%;
+  height: 50px;
+  border: 1px solid #1c9181;
+  border-radius: 20px;
+  border-width: 2px;
+  display: flex;
+  align-items: center;
+}
+.ingd-search img {
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+}
+.ingd-search input[type="text"] {
+  border: none;
+  width: 100%;
+  margin: 5px;
+  height: 30px;
+}
+.ingd-search button {
+  width: 30%;
+  height: 30px;
+  margin-right: 5px;
+  border: none;
+  background: #1c9181;
+  color: white;
+  border-radius: 13px;
+}
 .allergy-text {
   position: relative;
-  top: 60px;
+  top: 140px;
   width: 100%;
 }
 .allergy-text span {
@@ -346,7 +401,7 @@ export default {
 }
 .allergy-row {
   position: relative;
-  top: 80px;
+  top: 160px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
