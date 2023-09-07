@@ -12,7 +12,7 @@
       <div class="empty"></div>
     </div>
 
-    <div class="description-page">
+    <div class="description-page" id="scroll-page">
       <div class="first-row">
         <div>
           <span>음식 소개 사진</span>
@@ -238,6 +238,8 @@ export default {
         console.log(response.data);
         this.modalContent = response.data;
       });
+      document.getElementById("scroll-page").scrollTop =
+        document.getElementById("scroll-page").scrollHeight;
     },
     allergy_info(data) {
       console.log(data);
