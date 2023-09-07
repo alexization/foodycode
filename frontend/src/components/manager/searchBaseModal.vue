@@ -133,6 +133,7 @@ export default {
       // const alg_data = new Set(temp);
       // console.log(alg_data);
       this.$emit("get_allergy", this.temp_list);
+      this.temp_list = [];
     },
   },
 };
