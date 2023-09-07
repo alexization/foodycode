@@ -204,7 +204,7 @@ INSERT INTO menu(rest_id,menu_name, kor_name, roman_name, menu_price,img_url,men
 ("4", "Stir-fried Beef Brisket with Mung Bean Sprouts", "차돌박이 숙주볶음","Chadolbagi sukjubokkeum", "13,000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
 ("4", "Korean-style Raw Beef for Freshman", "새내기 육회","Saenaegi yukoe", "13,000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
 
-("5", "Beef Loin and Sausage Jjigae", "우삽겹부대찌개","Usapgyeopbudaejjigae", "24,000", "usapgyeopbudaejjigae","beef, enoki mushroom, udon noodles, soy bean, rice cake, dumpling, egg, kimchi, chives, mugwort"),
+("5", "Beef Loin and Sausage Jjigae", "우삽겹부대찌개","Usapgyeopbudaejjigae", "24,000", "usapgyeopbudaejjigae","beef, enoki mushroom, udon noodles, soy bean, rice cake, dumpling, kimchi, chives, mugwort"),
 ("5", "Whole Shrimp and Sausage Jjigae", "통새우부대찌개","Tongsaeubudaejjigae", "22,000", "tongsaeubudaejjigae","shrimp, dumpling, cheeze, green onion, mushroom, rice cake, soy bean, kimchi");
 
 
@@ -287,7 +287,6 @@ values
 (14, 6),
 (14, 10),
 (14, 5),
-(14, 1),
 (15, 2),
 (15, 9),
 (15, 10),
