@@ -12,7 +12,7 @@
       <div class="empty"></div>
     </div>
 
-    <div class="description-page">
+    <div class="description-page" id="scroll-page">
       <div class="first-row">
         <div>
           <span>음식 소개 사진</span>
@@ -67,10 +67,13 @@
     <div class="foot">
       <button @click="add_menu">추가하기</button>
     </div>
-    <searchBaseModalVue
-      ref="modal"
-      :content="modalContent"
-    ></searchBaseModalVue>
+    <div>
+      <searchBaseModalVue
+        ref="modal"
+        :content="modalContent"
+        @get_allergy="allergy_info"
+      ></searchBaseModalVue>
+    </div>
   </div>
 </template>
 
@@ -86,18 +89,11 @@ export default {
   },
   setup() {
     const modal = ref(null);
-    const modalContent = ref(["First Text", "Second Text", "Third Text"]);
+    const modalContent = ref([]);
     const result = ref("");
 
     const handleClick = async () => {
-      const ok = await modal.value.show();
-      if (ok) {
-        result.value = "Click Confirm";
-        console.log(result.value);
-      } else {
-        result.value = "Click Cancel";
-        console.log(result.value);
-      }
+      console.log(await modal.value.show());
     };
     return {
       modal,
@@ -240,7 +236,15 @@ export default {
       console.log(ingdName);
       axios.get(`/api/igd/${ingdName}`).then((response) => {
         console.log(response.data);
+        this.modalContent = response.data;
       });
+      document.getElementById("scroll-page").scrollTop =
+        document.getElementById("scroll-page").scrollHeight;
+    },
+    allergy_info(data) {
+      console.log(data);
+      this.allergy = data[0];
+      console.log(this.allergy);
     },
   },
 };
@@ -264,7 +268,7 @@ export default {
   width: 20%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 .back {
