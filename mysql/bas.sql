@@ -126,7 +126,8 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
        ("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","park","033-762-6786","teol-bone"),
        ("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","choi","033-760-3242","jeonseonseng"),
        ("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon"),
-       ("qwe","123","MyeonggaBudaejjigae","20, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","lee","033-764-1024","myeongga");
+       ("qwe","123","Myeongga","20, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","lee","033-764-1024","myeongga");
+
 
 
 -- CREAT TABLE ingredients(
