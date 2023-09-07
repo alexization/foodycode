@@ -17,13 +17,21 @@
         <div>
           <span>음식 소개 사진</span>
         </div>
-        <div>
-          <button>이미지 업로드</button>
+        <div class="image-upload">
+          <label for="file">이미지 업로드</label>
+          <input
+            type="file"
+            ref="image"
+            id="file"
+            accept="image/png, image/jpeg, image/jpg"
+            @change="img_uploaded"
+          />
         </div>
       </div>
       <div class="menu-img">
         <div class="menu-rect">
-          <img src="@/assets/menu/menu_init.png" />
+          <img v-show="isPreview === false" src="@/assets/menu/menu_init.png" />
+          <img v-show="isPreview === true" :src="imageUploaded" />
         </div>
       </div>
       <div class="input-group" id="input-group-id">
@@ -165,6 +173,9 @@ export default {
       recommend_list: Array,
       recommend_status: false,
       recommend_detail_status: false,
+      image: "",
+      imageUploaded: "",
+      isPreview: false,
       menuData: {},
       allergy: [],
       allergy_list: [
@@ -263,7 +274,7 @@ export default {
         },
       ],
     };
-  },
+  },  
   methods: {
     click_back() {
       //나중에 수정 필요
@@ -341,6 +352,11 @@ export default {
       document.getElementById("menu_name").value = this.current_data.Eng;
       this.recommend_detail_status = false;
     },
+    img_uploaded() {
+      this.image = this.$refs.image.files[0];
+      this.imageUploaded = URL.createObjectURL(this.image)
+      this.isPreview = true;
+    },
   },
 };
 </script>
@@ -405,9 +421,36 @@ export default {
   top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: relative;
 }
+.image-upload {
+  position: relative;
+  top: -13px;
+  left: 60px;
+  width: 50%;
+}
+.image-upload label {
+  position: absolute;
+  right: 20px;
+  border-radius: 10px;
+  border: 1px solid #1c9181;
+  background: #1c9181;
+  width: 70%;
+  height: 26px;
+  flex-shrink: 0;
+  color: white;
+  padding-top: 2px;
+  text-align: center;
+}
+.image-upload input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
 .first-row span {
   margin-left: 30px;
 }
