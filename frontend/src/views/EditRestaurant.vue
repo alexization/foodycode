@@ -16,14 +16,21 @@
       <div class="line"></div>
 
       <div class="edit-text">
-        <span>가게 대표 사진</span>
-        <button v-if="this.edit_status === true" @click="img_upload">
-          Image Upload
-        </button>
+        <div class="title">가게 대표 사진</div>
+        <div v-if="this.edit_status === true" class="image-upload">
+          <label for="file">이미지 업로드</label>
+          <input
+            type="file"
+            ref="images"
+            id="file"
+            accept="image/png, image/jpeg, image/jpg"
+            @change="img_upload"
+          />
+        </div>
       </div>
       <div class="edit-box">
         <div class="image-box">
-          <img src="@/assets/restaurant/restaurant_init.png" />
+          <img :src="require(`@/assets/restaurant/${img_url}.png`)" />
           <div v-if="this.edit_status === false">
             <div class="input-box">
               <span>식당이름</span>
@@ -73,7 +80,7 @@ import RestaurantCard from "../components/RestaurantCard.vue";
 import axios from "axios";
 
 export default {
-  name: "HomeView",
+  name: "EditRestaurant",
   components: {
     Header,
     RestaurantCard,
@@ -83,6 +90,8 @@ export default {
     return {
       edit_status: false,
       post_status: false,
+      image: "",
+      img_url: "loading",
       list: ["rest_name", "tel", "address"],
       restaurantData: {},
       modifyData: {},
@@ -92,6 +101,7 @@ export default {
     axios.get("/api/restuser").then((response) => {
       console.log(response.data);
       this.restaurantData = response.data;
+      this.img_url = this.restaurantData.img_url;
     });
   },
   methods: {
@@ -99,6 +109,7 @@ export default {
       this.edit_status = !this.edit_status;
     },
     img_upload() {
+      this.image = this.$refs.images.files;
       alert("Click Image Upload");
     },
     available_post() {
@@ -136,16 +147,18 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 .edit-page {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   position: absolute;
+  box-sizing: border-box;
   width: 100%;
-  top: 80px;
-  height: calc(var(--vh, 1vh) * 100 - 80px);
+  top: 70px;
+  height: calc(var(--vh, 1vh) * 100 - 70px);
 }
 .preview-text {
   position: absolute;
   left: 30px;
+  top: 10px;
 }
 .preview-text img {
   width: 30px;
@@ -160,7 +173,7 @@ export default {
 }
 .restaurant-list {
   position: absolute;
-  top: 20px;
+  top: 30px;
   box-sizing: border-box;
   width: 100%;
   height: 260px;
@@ -170,34 +183,52 @@ export default {
   width: 100%;
   height: 2px;
   position: absolute;
-  top: 290px;
+  top: 300px;
   background: #a8a8a8;
 }
 .edit-text {
+  display: flex;
   width: 100%;
-  top: 310px;
+  top: 320px;
   position: absolute;
 }
-.edit-text span {
+.title {
+  position: relative;
+  width: 50%;
   font: 500 15px "Noto Sans", sans-serif;
   text-align: left;
   color: #15675c;
   margin-left: 20px;
 }
-.edit-text button {
+.image-upload {
+  position: relative;
+  width: 50%;
+}
+.image-upload label {
   position: absolute;
   right: 20px;
   border-radius: 10px;
   border: 1px solid #1c9181;
   background: #1c9181;
-  width: 28%;
+  width: 70%;
   height: 26px;
   flex-shrink: 0;
   color: white;
+  padding-top: 4px;
+  text-align: center;
+}
+.image-upload input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
 }
 .edit-box {
-  top: 340px;
+  top: 350px;
   width: 100%;
+  height: 350px;
   position: absolute;
   display: block;
   padding: 10px 0px;
@@ -244,49 +275,5 @@ export default {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* Transition navigation bar fade */
-.fade-enter-active {
-  transition: opacity 0.25s ease;
-}
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-}
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Transition navigation bar slide */
-.slide-enter-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.slide-leave-active {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.slide-enter-from {
-  opacity: 0;
-  transform: translateX(-25%);
-}
-.slide-enter-to {
-  opacity: 1;
-}
-.slide-leave-from {
-  opacity: 1;
-}
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-25%);
 }
 </style>

@@ -97,6 +97,7 @@ export default {
   width: 100%;
   height: 140px;
   position: absolute;
+  top: 0;
 }
 .Rectangle {
   background: #42b2a3;

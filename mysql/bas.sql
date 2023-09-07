@@ -46,7 +46,7 @@ VALUES
     ("milk"),
     ("buckwheat"),
     ("peanut"),
-    ("soy"),
+    ("soy bean"),
     ("wheat"),
     ("mackerel"),
     ("crab"),
@@ -62,9 +62,10 @@ VALUES
     ("mussel"),
     ("abalone"),
     ("oyster"),
-    ("Pine nut"),
-    ("Squid"),
-    ("Sesame");
+    ("pine nut"),
+    ("squid"),
+    ("sesame"),
+    ("almond");
 
 drop table userAlgs;
 
@@ -186,7 +187,7 @@ INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
     values ("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
         ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
         ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
-    ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
+        ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
         ("2","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
         ("2","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
         ("3","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
@@ -236,6 +237,47 @@ CREATE TABLE visithistory(
 
 INSERT INTO visithistory(uid)
     values("lls");
+
+
+CREATE TABLE igd(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(200) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO igd (name) values
+    ("간장"),
+    ("고추장"),
+    ("된장"),
+    ("청정원 바베큐 간장양념"),
+    ("양조간장"),
+    ("태양초 고추장");
+
+
+CREATE TABLE igdAlgs(
+    id int NOT NULL AUTO_INCREMENT,
+    alg_id int NOT NULL,
+    igd_id int NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (alg_id) REFERENCES allergies(id),
+    FOREIGN KEY (igd_id) REFERENCES igd(id)
+);
+
+INSERT INTO igdAlgs (igd_id, alg_id) values
+    (1, 5),
+    (1, 6),
+    (2, 5),
+    (2, 6),
+    (3, 5),
+    (4, 2),
+    (4, 5),
+    (4, 6),
+    (4, 10),
+    (4, 12),
+    (5, 5),
+    (5, 6),
+    (6, 5),
+    (6, 6);
 
 
 

@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="title">
-        <span>메뉴 추가</span>
+        <span>메뉴 정보 변경</span>
       </div>
       <div class="empty"></div>
     </div>
@@ -23,31 +23,21 @@
       </div>
       <div class="menu-img">
         <div class="menu-rect">
-          <img src="@/assets/menu/menu_init.png" />
+          <img :src="require(`@/assets/menu/${img_url}.png`)" />
         </div>
       </div>
       <div class="input-group">
         <div class="input-row">
           <span>메뉴이름</span>
-          <input type="text" id="menu_name" />
+          <input type="text" id="menu_name" :value="detail_list.menu_name" />
         </div>
         <div class="input-row">
           <span>가격</span>
-          <input type="text" id="menu_price" />
+          <input type="text" id="menu_price" :value="detail_list.menu_price" />
         </div>
         <div class="input-row">
           <span>메뉴설명</span>
-          <textarea id="menu_detail"></textarea>
-        </div>
-      </div>
-      <div class="ingd-text">
-        <span>식재료 검색</span>
-      </div>
-      <div class="ingd-group">
-        <div class="ingd-search">
-          <img src="@/assets/icon/search.png" />
-          <input type="text" id="ingd_name" />
-          <button @click="[handleClick(), get_alg()]">검색</button>
+          <textarea id="menu_detail" :value="detail_list.menu_ing"></textarea>
         </div>
       </div>
       <div class="allergy-text">
@@ -65,52 +55,23 @@
       </div>
     </div>
     <div class="foot">
-      <button @click="add_menu">추가하기</button>
+      <button @click="modify_menu">수정하기</button>
     </div>
-    <searchBaseModalVue
-      ref="modal"
-      :content="modalContent"
-    ></searchBaseModalVue>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { ref } from "vue";
-import searchBaseModalVue from "../components/manager/searchBaseModal.vue";
-
 export default {
   name: "DescriptionPage",
-  components: {
-    searchBaseModalVue,
-  },
-  setup() {
-    const modal = ref(null);
-    const modalContent = ref(["First Text", "Second Text", "Third Text"]);
-    const result = ref("");
-
-    const handleClick = async () => {
-      const ok = await modal.value.show();
-      if (ok) {
-        result.value = "Click Confirm";
-        console.log(result.value);
-      } else {
-        result.value = "Click Cancel";
-        console.log(result.value);
-      }
-    };
-    return {
-      modal,
-      modalContent,
-      result,
-      handleClick,
-    };
-  },
+  components: {},
   props: {},
   data() {
     return {
       menuData: {},
       allergy: [],
+      detail_list: [],
+      img_url: "loading",
       allergy_list: [
         { name: "전복", number: "19" },
         {
@@ -213,35 +174,43 @@ export default {
       //나중에 수정 필요
       location.href = "#/menuedit";
     },
-    add_menu() {
+    modify_menu() {
       this.menuData.allergyID = this.allergy;
       this.menuData.menuName = document.getElementById("menu_name").value;
       this.menuData.menuPrice = document.getElementById("menu_price").value;
       this.menuData.menuDetail = document.getElementById("menu_detail").value;
-      // menuData가 POST 할 데이터
-      axios
-        .post("/api/menu", {
-          name: this.menuData.menuName,
-          price: this.menuData.menuPrice,
-          ing: this.menuData.menuDetail,
-          arr_algid: this.menuData.allergyID,
-        })
-        .then((res) => {
-          if (res.data.success) {
-            alert("메뉴 추가 완료!");
-            location.href = "#/menuedit";
-          } else {
-            alert("오류 발생");
-          }
-        });
+      console.log(this.menuData);
+      // menuData가 PUT 할 데이터
+      //   axios
+      //     .post('/api/menu', {
+      //       name: this.menuData.menuName,
+      //       price: this.menuData.menuPrice,
+      //       ing: this.menuData.menuDetail,
+      //       arr_algid: this.menuData.allergyID,
+      //     })
+      //     .then((res) => {
+      //       if (res.data.success) {
+      //         alert('메뉴 추가 완료!');
+      //         location.href = '#/menuedit';
+      //       } else {
+      //         alert('오류 발생');
+      //       }
+      //     });
     },
-    get_alg() {
-      const ingdName = document.getElementById("ingd_name").value;
-      console.log(ingdName);
-      axios.get(`/api/igd/${ingdName}`).then((response) => {
-        console.log(response.data);
-      });
-    },
+  },
+  created() {
+    const menu_id = this.$route.params.menu_id_url_param;
+
+    axios.get(`/api/menuDetail/${menu_id}`).then((response) => {
+      this.detail_list = response.data[0];
+      this.img_url = this.detail_list.img_url;
+      console.log(response.data);
+    });
+
+    axios.get(`/api/menuedit/${menu_id}`).then((response) => {
+      console.log(response.data);
+      this.allergy = response.data;
+    });
   },
 };
 </script>
@@ -292,9 +261,9 @@ export default {
   background: #ffffff;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100 - 70px);
+  overflow-x: hidden;
   position: relative;
   overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -384,54 +353,9 @@ export default {
   border: 1px solid #1c9181;
   padding: 10px;
 }
-.ingd-text {
-  position: relative;
-  top: 80px;
-  width: 100%;
-}
-.ingd-text span {
-  margin-left: 20px;
-}
-.ingd-group {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  top: 100px;
-  position: relative;
-  justify-content: center;
-}
-.ingd-search {
-  width: 80%;
-  height: 50px;
-  border: 1px solid #1c9181;
-  border-radius: 20px;
-  border-width: 2px;
-  display: flex;
-  align-items: center;
-}
-.ingd-search img {
-  width: 32px;
-  height: 32px;
-  margin-left: 8px;
-}
-.ingd-search input[type="text"] {
-  border: none;
-  width: 100%;
-  margin: 5px;
-  height: 30px;
-}
-.ingd-search button {
-  width: 30%;
-  height: 30px;
-  margin-right: 5px;
-  border: none;
-  background: #1c9181;
-  color: white;
-  border-radius: 13px;
-}
 .allergy-text {
   position: relative;
-  top: 140px;
+  top: 60px;
   width: 100%;
 }
 .allergy-text span {
@@ -439,7 +363,7 @@ export default {
 }
 .allergy-row {
   position: relative;
-  top: 160px;
+  top: 80px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;

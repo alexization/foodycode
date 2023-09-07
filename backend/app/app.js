@@ -11,8 +11,11 @@ var session = require('express-session');
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
 
+
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
+
+var useralgRouter = require('./src/routes/useralg');
 
 var restuserRouter = require('./src/routes/restuser');
 var restusermenuRouter = require('./src/routes/restuser_menu');
@@ -23,12 +26,14 @@ var restRegisterRouter = require('./src/routes/restregister');
 var mainRouter = require('./src/routes/main');
 var menuRouter = require('./src/routes/menu');
 var menuDetailRouter = require('./src/routes/menuDetail');
-
-var useralgRouter = require('./src/routes/useralg');
+var menuEditRouter = require('./src/routes/menuedit');
 
 var confirmRouter = require('./src/routes/confirm');
 
 var translateRouter = require('./src/routes/translate');
+
+var igdRouter = require('./src/routes/igd');
+
 
 var app = express();
 
@@ -68,10 +73,15 @@ app.use('/api/main', mainRouter);
 app.use('/api/menu', menuRouter);
 app.use('/api/useralg', useralgRouter);
 app.use('/api/menuDetail', menuDetailRouter);
+app.use('/api/menuedit', menuEditRouter);
 
 app.use('/api/confirm', confirmRouter);
 
+
 app.use('/api/translate', translateRouter);
+
+app.use('/api/igd',igdRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

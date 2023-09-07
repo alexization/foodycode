@@ -1,5 +1,9 @@
 <template>
-  <div class="MenuView">
+  <div>
+    <RestaurantName
+      :restaurantName="this.rest_title"
+      @edit_status="change_status"
+    ></RestaurantName>
     <div class="MenuList">
       <div class="menu" v-if="this.edit_status === false">
         <div v-for="item in list" :key="item">
@@ -13,7 +17,6 @@
       </div>
       <div class="menu" v-else>
         <div v-for="item in list" :key="item">
-          <!-- 추후에 메뉴 편집 페이지로 link 변경해주면 됨 -->
           <router-link :to="`${url_href}/${item.id}`">
             <MenuCard
               :menuName="item.menu_name"
@@ -33,10 +36,6 @@
         </button>
       </div>
     </div>
-    <RestaurantName
-      :restaurantName="this.rest_title"
-      @edit_status="change_status"
-    ></RestaurantName>
   </div>
 </template>
 
@@ -72,11 +71,13 @@ export default {
     // const rest_name = this.$route.params.rest_name_url_param;
 
     // 여기는 고정인데 식당이름을 따로 가져오게 할지 고민좀 해보야할듯
-    const rest_name = "Teolbone";
     axios.get(`/api/restuser_menu`).then((response) => {
       this.list = response.data;
       console.log(response.data);
-      this.rest_title = rest_name;
+    });
+    axios.get("/api/restuser").then((response) => {
+      console.log(response.data);
+      this.rest_title = response.data.rest_name;
     });
   },
   methods: {
@@ -91,29 +92,21 @@ export default {
 </script>
 
 <style scoped>
-.MenuView,
-.MenuView * {
-  box-sizing: border-box;
-}
-.MenuView {
-  background: #ffffff;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow-y: auto;
-}
 .MenuList {
-  width: 98.7%;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 120px);
+  top: 120px;
   display: flex;
   flex-direction: column;
   gap: 0px;
   align-items: center;
   justify-content: flex-start;
-  position: absolute;
-  left: 1.3%;
-  top: 140px;
-  padding-top: 10.1px;
+  margin-left: 1.3%;
+  padding-top: 20px;
 }
 .menu {
   width: 100%;
@@ -136,6 +129,7 @@ export default {
 }
 .add-menu {
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 .add-menu button {
   border: none;

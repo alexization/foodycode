@@ -1,15 +1,19 @@
 <template>
   <div class="MenuCard">
-    <div class="Card-Rectangle"></div>
-
-    <div class="Img-Box">
-      <img :src="require(`@/assets/menu/${menuImg}.png`)" />
+    <div class="Card-Rectangle">
+      <div class="first-row">
+        <div class="first-column">
+          <div class="Menu-name" v-text="menuName"></div>
+          <div class="Price" v-text="menuPrice + ' KRW'"></div>
+        </div>
+        <div class="Img-Box">
+          <img :src="require(`@/assets/menu/${menuImg}.png`)" />
+        </div>
+      </div>
+      <div class="second-row">
+        <div class="Menu-Ing" v-text="menuIng"></div>
+      </div>
     </div>
-
-    <div class="Menu-name" v-text="menuName"></div>
-
-    <div class="Menu-Ing" v-text="menuIng"></div>
-    <div class="Price" v-text="menuPrice + ' KRW'"></div>
   </div>
 </template>
 
@@ -18,34 +22,35 @@ export default {
   props: {
     menuName: {
       type: String,
-      default: 'Soy Sauce Bulgogi',
+      default: 'Default Menu Name',
     },
     menuImg: {
       type: String,
-      default: 'soy-sauce-bulgogi',
+      default: 'menu_init',
     },
     menuIng: {
       type: String,
-      default:
-        'Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion',
+      default: 'Default Menu Ingredient',
     },
     menuPrice: {
       type: String,
-      default: '9000',
+      default: '0000',
     },
   },
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 .MenuCard,
 .MenuCard * {
   box-sizing: border-box;
 }
 .MenuCard {
   width: 98%;
-  height: 169.6px;
-  margin-bottom: 8.4px;
+  height: 170px;
+  margin-bottom: 8px;
   position: relative;
 }
 .Card-Rectangle {
@@ -55,19 +60,35 @@ export default {
   border-radius: 10px;
   border-width: 1px;
   width: 100%;
-  height: 169.6px;
+  height: 170px;
   position: absolute;
   cursor: pointer;
-  padding-top: 10.1px;
+  display: flex;
+  flex-direction: column;
+}
+.first-row {
+  display: flex;
+  width: 100%;
+  height: 70%;
+}
+.second-row {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  justify-content: space-around;
+}
+.first-column {
+  display: flex;
+  width: 60%;
+  height: 100%;
+  flex-direction: column;
 }
 .Img-Box {
   background: rgba(0, 0, 0, 0.3);
-  width: 32.8%;
-  height: 86px;
+  width: 35%;
+  height: 75%;
   border-radius: 10px;
-  position: absolute;
-  left: 65%;
-  top: 10.1px;
+  margin: 10px;
 }
 .Img-Box img {
   width: 100%;
@@ -76,31 +97,32 @@ export default {
 }
 .Menu-name {
   color: #000000;
-  text-align: left;
-  font: 600 15px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 3.8%;
-  top: 20.3px;
-  width: 56.9%;
-  height: 22px;
+  font: 500 16px 'Rubik', sans-serif;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  letter-spacing: 0.4px;
 }
 .Menu-Ing {
-  text-align: left;
-  font: 300 12px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 3.8%;
-  top: 102.1px;
-  width: 89.7%;
-  height: 49px;
+  font: 400 12px 'Rubik', sans-serif;
+  width: 95%;
+  height: 60%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .Price {
   color: #606060;
-  text-align: right;
-  font: 600 14px 'Noto Sans', sans-serif;
-  position: absolute;
-  left: 29.7%;
-  top: 52.3px;
-  width: 31%;
-  height: 16.9px;
+  font: 400 14px 'Rubik', sans-serif;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 </style>
