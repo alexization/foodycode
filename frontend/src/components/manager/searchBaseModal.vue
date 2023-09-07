@@ -129,9 +129,8 @@ export default {
         temp_data.push(this.ingd_list[i][1]);
       }
       this.temp_list.push(temp_data.join().split(","));
-      console.log(this.temp_list);
-      // const alg_data = new Set(temp);
-      // console.log(alg_data);
+      let result = [new Set(this.temp_list[0].join().split(","))];
+      this.temp_list = Array.from(result);
       this.$emit("get_allergy", this.temp_list);
       this.temp_list = [];
     },
