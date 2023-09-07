@@ -174,6 +174,8 @@ CREATE TABLE menu(
     id int NOT NULL AUTO_INCREMENT,
     rest_id int NOT NULL,
     menu_name varchar(100) NOT NULL,
+    kor_name varchar(100) NOT NULL,
+    roman_name varchar(100) NOT NULL,
     menu_price varchar(50) NOT NULL,
     img_url varchar(50) NOT NULL,
     menu_ing varchar(200) NOT NULL,
@@ -183,7 +185,7 @@ CREATE TABLE menu(
 );
 
 
-INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
+INSERT INTO menu(rest_id,menu_name, kor_name, roman_name, menu_price,img_url,menu_ing)
     values ("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
         ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
         ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),

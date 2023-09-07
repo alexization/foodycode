@@ -26,10 +26,66 @@
           <img src="@/assets/menu/menu_init.png" />
         </div>
       </div>
-      <div class="input-group">
+      <div class="input-group" id="input-group-id">
         <div class="input-row">
           <span>메뉴이름</span>
-          <input type="text" id="menu_name" />
+          <div>
+            <input type="text" id="menu_name" />
+            <button @click="recommend">추천받기</button>
+          </div>
+        </div>
+        <div class="recommend-kor" v-if="recommend_status === true">
+          <div class="first-div">
+            <div class="close-button">
+              <button @click="close_recommend">
+                <img src="@/assets/icon/close.png" />
+              </button>
+            </div>
+            <div class="info-group">
+              <div v-for="item in recommend_list" :key="item">
+                <div
+                  class="text-button"
+                  @click="recommend_detail(item, $event)"
+                >
+                  <div class="recommend-text">{{ item.Kor }}</div>
+                  <div class="select-button">
+                    <button>
+                      <img src="@/assets/icon/right-arrow.png" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="recommend-detail" v-if="recommend_detail_status === true">
+          <div class="second-div">
+            <div class="close-button-detail">
+              <button @click="close_recommend_detail">
+                <img src="@/assets/icon/close.png" />
+              </button>
+            </div>
+            <div class="info-group-detail">
+              <div class="text-button-detail">
+                <div class="text-detail">
+                  <div class="korea">
+                    <img src="@/assets/icon/korea.png" />
+                    <div class="text-div">
+                      <div class="korea-text">{{ this.current_data.Kor }}</div>
+                      <div class="roman-text">{{ this.current_data.Rom }}</div>
+                    </div>
+                  </div>
+                  <div class="english">
+                    <img src="@/assets/icon/usa.png" />
+                    <div class="english-text">{{ this.current_data.Eng }}</div>
+                  </div>
+                </div>
+                <div class="button-detail">
+                  <button @click="confirm_menu">적용</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="input-row">
           <span>가격</span>
@@ -105,6 +161,10 @@ export default {
   props: {},
   data() {
     return {
+      current_data: Array,
+      recommend_list: Array,
+      recommend_status: false,
+      recommend_detail_status: false,
       menuData: {},
       allergy: [],
       allergy_list: [
@@ -214,6 +274,8 @@ export default {
       this.menuData.menuName = document.getElementById("menu_name").value;
       this.menuData.menuPrice = document.getElementById("menu_price").value;
       this.menuData.menuDetail = document.getElementById("menu_detail").value;
+      this.menuData.menuKorName = this.current_data.Kor;
+      this.menuData.menuRomanName = this.current_data.Rom;
       // menuData가 POST 할 데이터
       axios
         .post("/api/menu", {
@@ -221,6 +283,8 @@ export default {
           price: this.menuData.menuPrice,
           ing: this.menuData.menuDetail,
           arr_algid: this.menuData.allergyID,
+          korName: this.menuData.menuKorName,
+          RomName: this.menuData.menuRomanName,
         })
         .then((res) => {
           if (res.data.success) {
@@ -242,14 +306,47 @@ export default {
         document.getElementById("scroll-page").scrollHeight;
     },
     allergy_info(data) {
-      console.log(data);
-      this.allergy = data[0];
+      this.allergy = Array.from(data[0]);
       console.log(this.allergy);
+    },
+    async recommend() {
+      this.recommend_status = true;
+      const input_text = document.getElementById("menu_name").value;
+      document.getElementById("input-group-id").style.height = "680px";
+      let res = await axios({
+        method: "GET",
+        url: `api/translate/${input_text}`,
+        data: {},
+      }).then((res) => {
+        console.log(res.data);
+        this.recommend_list = res.data;
+      });
+    },
+    close_recommend() {
+      this.recommend_status = false;
+    },
+    recommend_detail(data) {
+      this.recommend_status = false;
+      this.recommend_detail_status = true;
+      document.getElementById("input-group-id").style.height = "370px";
+      console.log(data);
+      this.current_data = data;
+    },
+    close_recommend_detail() {
+      this.recommend_detail_status = false;
+      this.recommend_status = true;
+      document.getElementById("input-group-id").style.height = "680px";
+    },
+    confirm_menu() {
+      document.getElementById("menu_name").value = this.current_data.Eng;
+      this.recommend_detail_status = false;
     },
   },
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&display=swap");
+
 .description-page,
 .description-page * {
   box-sizing: border-box;
@@ -367,12 +464,203 @@ export default {
   width: 20%;
   text-align: center;
 }
-.input-row input[type="text"][id="menu_name"] {
+.input-row div {
   width: 60%;
+}
+.input-row input[type="text"][id="menu_name"] {
+  width: 70%;
   height: 25px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border: 1px solid #1c9181;
   padding-left: 10px;
+}
+.input-row button {
+  width: 30%;
+  height: 25px;
+  border: none;
+  background: #1c9181;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.recommend-kor {
+  width: 70%;
+  margin: auto;
+  height: 450px;
+  border: 1px solid #1c9181;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: flex;
+}
+.first-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.close-button {
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+}
+.close-button button {
+  height: 15px;
+  width: 15px;
+  border: none;
+  background: none;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+.close-button img {
+  width: 100%;
+  height: 100%;
+}
+.info-group {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-button {
+  height: 35px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #42b7a8;
+  margin-bottom: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.recommend-text {
+  margin-left: 5px;
+}
+.select-button {
+  margin-right: 5px;
+}
+.select-button button {
+  border: none;
+  background: none;
+  width: 25px;
+  height: 25px;
+}
+.select-button img {
+  width: 100%;
+  height: 100%;
+}
+.recommend-detail {
+  width: 70%;
+  margin: auto;
+  height: 140px;
+  border: 1px solid #1c9181;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: flex;
+}
+.second-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.close-button-detail {
+  height: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+.close-button-detail button {
+  height: 15px;
+  width: 15px;
+  border: none;
+  background: none;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+.close-button-detail img {
+  width: 100%;
+  height: 100%;
+}
+.info-group-detail {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.text-button-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.text-detail {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.korea {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+}
+.korea img {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+}
+.text-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.korea-text {
+  width: 100%;
+  font: 500 16px "Noto Sans KR", sans-serif;
+}
+.roman-text {
+  font: 300 14px "Noto Sans KR", sans-serif;
+  color: #2e2e2e;
+}
+.english {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.english img {
+  width: 32px;
+  height: 32px;
+  align-items: center;
+}
+
+.english-text {
+  margin-left: 10px;
+  width: 100%;
+  font: 500 16px "Noto Sans KR", sans-serif;
+}
+.button-detail {
+  width: 20%;
+  display: flex;
+}
+.button-detail button {
+  border: none;
+  background: #42b2a3;
+  color: white;
+  width: 90%;
+  height: 30%;
+  border-radius: 10px;
+  margin: auto;
 }
 .input-row input[type="text"][id="menu_price"] {
   width: 60%;
