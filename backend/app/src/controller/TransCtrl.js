@@ -7,7 +7,7 @@ class TransCtrl {
 
     async function crawler() {
       const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
       });
 
       const page = await browser.newPage();
@@ -18,7 +18,7 @@ class TransCtrl {
       await page.click('div.search_bar > form > button');
 
       // Wait for the search results to load
-      // await page.waitForSelector('div.table_list > table > tbody > tr');
+      await page.waitForSelector('div.table_list > table > tbody > tr');
 
       const content = await page.content();
       const $ = cheerio.load(content);
@@ -26,6 +26,7 @@ class TransCtrl {
 
       if ($('div.table_list > table > tbody').length === 0) {
         await browser.close();
+        console.log('사람안와서닫음');
         return [];
       }
 
