@@ -60,6 +60,9 @@
         fill="#146330"
       />
     </svg>
+    <RouterLink class="click-here-if-you-are-user" to="/login">
+      Click Here If You Are User
+    </RouterLink>
   </div>
 </template>
 <script>
@@ -207,6 +210,15 @@ input:focus::-ms-input-placeholder {
   color: #143b22;
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
+}
+.click-here-if-you-are-user {
+  color: #143b22;
+  font: 400 14px "Noto Sans", sans-serif;
+  text-decoration: underline;
+  position: absolute;
+  left: 42%;
+  top: 645px;
+  cursor: pointer;
 }
 .password-img {
   position: absolute;
