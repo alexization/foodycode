@@ -30,7 +30,10 @@ var menuEditRouter = require('./src/routes/menuedit');
 
 var confirmRouter = require('./src/routes/confirm');
 
+var translateRouter = require('./src/routes/translate');
+
 var igdRouter = require('./src/routes/igd');
+
 
 var app = express();
 
@@ -50,7 +53,7 @@ app.use(
     secret: 'sessionkey_mustchanged',
     resave: false,
     saveUninitialized: false,
-  })
+  }),
 );
 
 // app.use("/", indexRouter);
@@ -74,7 +77,11 @@ app.use('/api/menuedit', menuEditRouter);
 
 app.use('/api/confirm', confirmRouter);
 
+
+app.use('/api/translate', translateRouter);
+
 app.use('/api/igd',igdRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

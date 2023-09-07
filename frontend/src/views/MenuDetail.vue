@@ -64,8 +64,16 @@ export default {
       this.prev_url = '#/allmenu/' + this.prev_rest;
       location.href = this.prev_url;
     },
-    add_cart() {
-      alert('Comming Soon..');
+
+    async add_cart() {
+      let res = await axios({
+        method: 'GET',
+        url: 'api/translate/석쇠불고기',
+        data: {},
+      }).then((res) => {
+        console.log(res.data);
+      });
+
     },
   },
   created() {
@@ -83,7 +91,9 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 
 .detail-page,
 .detail-page * {
@@ -131,7 +141,9 @@ export default {
 .menu-name {
   color: #000000;
   text-align: left;
+
   font: 500 16px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 310px;
@@ -140,7 +152,9 @@ export default {
 .details {
   color: #000000;
   text-align: right;
+
   font: 500 14px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 362px;
@@ -153,7 +167,9 @@ export default {
     rgba(0, 0, 0, 0) 100%
   );
   text-align: left;
+
   font: 400 10px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 391px;
@@ -163,7 +179,9 @@ export default {
 .allergy-tag {
   color: #000000;
   text-align: right;
+
   font: 500 14px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 522px;
@@ -171,7 +189,9 @@ export default {
 .price {
   color: #000000;
   text-align: right;
+
   font: 500 14px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 662px;
@@ -180,7 +200,9 @@ export default {
 .menu-price {
   color: #1c9181;
   text-align: left;
+
   font: 400 19px 'Rubik', sans-serif;
+
   position: absolute;
   left: 5.1%;
   top: 691px;
@@ -219,7 +241,9 @@ export default {
 .count {
   color: #000000;
   text-align: left;
+
   font: 400 18px 'Rubik', sans-serif;
+
   position: absolute;
   left: 80%;
   top: 691px;

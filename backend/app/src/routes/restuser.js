@@ -1,10 +1,10 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
 
-const RestCtrl = require("../controller/RestCtrl");
+const RestCtrl = require('../controller/RestCtrl');
 
-router.get("/",RestCtrl.sendMyRestInfo);
+router.get('/', RestCtrl.sendMyRestInfo);
 
-router.put("/",RestCtrl.processEdit);
+router.put('/', RestCtrl.processEdit);
 
-module.exports=router;
+module.exports = router;
