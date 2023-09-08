@@ -517,6 +517,7 @@ export default {
   border-bottom-left-radius: 5px;
   border: 1px solid #1c9181;
   padding-left: 10px;
+  outline: none;
 }
 .input-row button {
   width: 30%;
@@ -711,6 +712,7 @@ export default {
   border-radius: 5px;
   border: 1px solid #1c9181;
   padding-left: 10px;
+  outline: none;
 }
 .input-row textarea {
   width: 60%;
@@ -754,6 +756,7 @@ export default {
   width: 100%;
   margin: 5px;
   height: 30px;
+  outline: none;
 }
 .ingd-search button {
   width: 30%;
