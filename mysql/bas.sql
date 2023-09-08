@@ -204,8 +204,10 @@ INSERT INTO menu(rest_id,menu_name, kor_name, roman_name, menu_price,img_url,men
 ("4", "Stir-fried Beef Brisket with Mung Bean Sprouts", "차돌박이 숙주볶음","Chadolbagi sukjubokkeum", "13,000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
 ("4", "Korean-style Raw Beef for Freshman", "새내기 육회","Saenaegi yukoe", "13,000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
 
-("5", "Beef Loin and Sausage Jjigae", "우삽겹부대찌개","Usapgyeopbudaejjigae", "24,000", "usapgyeopbudaejjigae","beef, enoki mushroom, udon noodles, soy bean, rice cake, dumpling, kimchi, chives, mugwort"),
-("5", "Whole Shrimp and Sausage Jjigae", "통새우부대찌개","Tongsaeubudaejjigae", "22,000", "tongsaeubudaejjigae","shrimp, dumpling, cheeze, green onion, mushroom, rice cake, soy bean, kimchi");
+("5", "Beef Loin and Sausage Jjigae", "우삽겹부대찌개","Usapgyeopbudaejjigae", "24,000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Whole Shrimp and Sausage Jjigae", "통새우부대찌개","Tongsaeubudaejjigae", "22,000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Kimchi and Sausage Jjigae", "김치부대찌개","Kimchibudaejjige", "20,000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Soft Bean Curd Sausage Jjigae", "순두부부대찌개","Sundububudaejjigae", "21,000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
 
 
 
@@ -292,6 +294,14 @@ values
 (15, 10),
 (15, 16),
 (15, 5);
+(16, 5),
+(16, 10),
+(16, 16),
+(17, 5),
+(17, 10),
+(17, 16),
+(17, 2),
+(17, 1);
 
 
 
