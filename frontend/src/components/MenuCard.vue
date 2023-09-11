@@ -4,7 +4,7 @@
       <div class="first-row">
         <div class="first-column">
           <div class="Menu-name" v-text="menuName"></div>
-          <div class="Price" v-text="menuPrice + ' KRW'"></div>
+          <div class="Price" v-text="menuPrice + ' WON'"></div>
         </div>
         <div class="Img-Box">
           <img :src="require(`@/assets/menu/${menuImg}.png`)" />
@@ -22,26 +22,26 @@ export default {
   props: {
     menuName: {
       type: String,
-      default: 'Default Menu Name',
+      default: "Default Menu Name",
     },
     menuImg: {
       type: String,
-      default: 'menu_init',
+      default: "menu_init",
     },
     menuIng: {
       type: String,
-      default: 'Default Menu Ingredient',
+      default: "Default Menu Ingredient",
     },
     menuPrice: {
       type: String,
-      default: '0000',
+      default: "0000",
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 .MenuCard,
 .MenuCard * {
@@ -97,7 +97,7 @@ export default {
 }
 .Menu-name {
   color: #000000;
-  font: 500 16px 'Rubik', sans-serif;
+  font: 500 16px "Rubik", sans-serif;
   width: 100%;
   height: 40%;
   display: flex;
@@ -106,7 +106,7 @@ export default {
   letter-spacing: 0.4px;
 }
 .Menu-Ing {
-  font: 400 12px 'Rubik', sans-serif;
+  font: 400 12px "Rubik", sans-serif;
   width: 95%;
   height: 60%;
   white-space: normal;
@@ -118,11 +118,11 @@ export default {
 }
 .Price {
   color: #606060;
-  font: 400 14px 'Rubik', sans-serif;
+  font: 400 14px "Rubik", sans-serif;
   width: 100%;
   height: 20%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  margin-left: 10px;
 }
 </style>
