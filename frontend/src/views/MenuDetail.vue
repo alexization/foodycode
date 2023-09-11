@@ -193,7 +193,7 @@ export default {
   color: #575757;
   font: 400 12px "Rubik", sans-serif;
   width: 90%;
-  height: 101px;
+  height: 80%;
 }
 .allergy-group {
   width: 100%;
@@ -203,6 +203,12 @@ export default {
 .allergy {
   color: #000000;
   font: 500 18px "Rubik", sans-serif;
+  width: 100%;
+  height: 20%;
+}
+.allergy-list {
+  width: 90%;
+  height: 80%;
 }
 .detail-footer {
   width: 100%;
