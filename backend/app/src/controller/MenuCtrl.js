@@ -1,5 +1,5 @@
-const MenuStorage = require('../models/MenuStroage');
-const AlgStorage = require('../models/UserAlgStorage');
+const MenuStorage = require("../models/MenuStroage");
+const AlgStorage = require("../models/UserAlgStorage");
 
 class MenuCtrl {
   static async sendMymenuInfo(req, res) {
@@ -15,9 +15,9 @@ class MenuCtrl {
     //유지된 세션의 유저ID
     const uid = req.session.userid;
 
-    console.log('-------');
+    console.log("-------");
     console.log(rest_name);
-    console.log('-------');
+    console.log("-------");
     //메뉴의 알러지 배열
     const arr_menuAlg = await AlgStorage.getMenuAlgInfo(rest_name);
     //유저의 알러지 배열
@@ -47,10 +47,33 @@ class MenuCtrl {
     res.send(arr_menuInfo);
   }
 
+  // static async sendMenuDetail(req, res) {
+  //   const menu_id = req.params.menu_id;
+  //   const arr_menuDetail = await MenuStorage.getMenuDetail(menu_id);
+
+  //   res.send(arr_menuDetail);
+  // }
+
+  // MenuDetail에 추가적인 정보를 가져오기 위한 코드 변형 작품
   static async sendMenuDetail(req, res) {
     const menu_id = req.params.menu_id;
+    const uid = req.session.userid;
+    const menuAlg = [];
+    const userAlg = [];
 
     const arr_menuDetail = await MenuStorage.getMenuDetail(menu_id);
+    const arr_menuAlg = await AlgStorage.getMenuAlgName(menu_id);
+    const arr_userAlg = await AlgStorage.getUsersAlgName(uid);
+    console.log(arr_userAlg);
+    for (let i = 0; i < arr_menuAlg.length; i++) {
+      menuAlg[i] = arr_menuAlg[i].algname;
+    }
+    for (let i = 0; i < arr_userAlg.algname.length; i++) {
+      userAlg[i] = arr_userAlg.algname[i].algname;
+    }
+    arr_menuDetail[0].menuAlg = menuAlg;
+    arr_menuDetail[0].userAlg = userAlg;
+    console.log(arr_menuDetail);
     res.send(arr_menuDetail);
   }
 
