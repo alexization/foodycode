@@ -20,7 +20,20 @@
         </div>
         <div class="allergy-group">
           <div class="allergy">Allergy</div>
-          <div class="allergy-list"></div>
+          <div class="allergy-list">
+            <div v-for="allergy in detail_list.menuAlg" :key="allergy">
+              <div v-if="detail_list.userAlg.includes(allergy)">
+                <div class="alg-tag-impossible">
+                  <span>{{ allergy }}</span>
+                </div>
+              </div>
+              <div v-else>
+                <div class="alg-tag-possible">
+                  <span>{{ allergy }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -120,7 +133,7 @@ export default {
   width: 60px;
   height: 60px;
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 30px;
   border: none;
   top: 25px;
@@ -136,8 +149,9 @@ export default {
 .detail-page {
   background: #ffffff;
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100 - 120px);
   position: absolute;
+  overflow-y: auto;
 }
 .description-page {
   width: 100%;
@@ -152,17 +166,15 @@ export default {
 }
 .description-group {
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 140px);
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
   overflow-x: clip;
   position: absolute;
   top: 200px;
 }
 .menu-name-group {
   width: 100%;
-  height: 20%;
+  height: 100px;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -180,7 +192,7 @@ export default {
 }
 .detail-group {
   width: 100%;
-  height: 30%;
+  height: 200px;
   margin-left: 10px;
 }
 .details {
@@ -197,8 +209,8 @@ export default {
 }
 .allergy-group {
   width: 100%;
-  height: 30%;
   margin-left: 10px;
+  margin-bottom: 20px;
 }
 .allergy {
   color: #000000;
@@ -207,12 +219,45 @@ export default {
   height: 20%;
 }
 .allergy-list {
-  width: 90%;
-  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.alg-tag-possible {
+  width: 110px;
+  height: 35px;
+  background: #1c9181;
+  box-shadow: 2px 2px 2px 1px rgba(39, 149, 114, 0.3);
+  display: flex;
+  border-radius: 20px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.alg-tag-impossible {
+  width: 110px;
+  height: 35px;
+  background: rgb(255, 73, 73);
+  box-shadow: 2px 2px 2px 1px rgba(255, 73, 73, 0.3);
+  display: flex;
+  border-radius: 20px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.alg-tag-impossible span {
+  color: white;
+  font: 400 16px "Rubik", sans-serif;
+}
+.alg-tag-possible span {
+  color: white;
+  font: 400 16px "Rubik", sans-serif;
 }
 .detail-footer {
   width: 100%;
-  height: 140px;
+  height: 120px;
   position: fixed;
   background: none;
   bottom: 0px;
@@ -226,18 +271,19 @@ export default {
   height: 50%;
   display: flex;
   flex-direction: row;
+  background: white;
 }
 .price-text {
   width: 50%;
   display: flex;
-  align-items: center;
   margin-left: 20px;
+  margin-top: 10px;
 }
 .price-button-group {
   width: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 .price-button-group div {
   width: 30%;
