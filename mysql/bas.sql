@@ -19,11 +19,11 @@ CREATE TABLE users(
 
 
 INSERT INTO users(uid,name,psword,age,gen,country,email)
-    values("lls","steve","$2b$10$H3xm4DbUJRWjIDs1jk.5POuvfgQfTHKLlJ3euQtQ64K1CJCs9NDam",42,"여","uzbekistan","lsdf@google.co.kr"),
-    ("asd","alice","123",33,"여","USA","lvvcdf@google.co.kr"),
-    ("ees","billy","1234",67,"남","korea","lsaaaf@google.co.kr"),
-    ("abv","mike","1w3",19,"여","japan","lsasdsdf@google.co.kr"),
-    ("ewq","andy","12e",25,"남","china","nssf@google.co.kr");
+    values("lls","steve","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",42,"여","uzbekistan","lsdf@google.co.kr"),
+    ("asd","alice","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",33,"여","USA","lvvcdf@google.co.kr"),
+    ("ees","billy","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",67,"남","korea","lsaaaf@google.co.kr"),
+    ("abv","mike","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",19,"여","japan","lsasdsdf@google.co.kr"),
+    ("ewq","andy","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",25,"남","china","nssf@google.co.kr");
 
 
 
