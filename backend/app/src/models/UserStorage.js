@@ -1,6 +1,7 @@
 'use strict';
 
 const db = require('../config/db');
+const bcrypt = require('bcrypt');
 
 //class명은 파일이름과 동일한게 좋음
 class UserStorage {
@@ -25,41 +26,37 @@ class UserStorage {
   }
 
   static async save(userInfo) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const info_query =
         "INSERT INTO users(uid,psword,name,age,gen,country,email) VALUES(?,?,?,?,?,?,'test0820@yonsei.ac.kr');";
+      const saltRoudns = 10; // hash count
 
-      db.query(
-        info_query,
-        [
-          userInfo.uid,
-          userInfo.psword,
-          userInfo.name,
-          userInfo.age,
-          userInfo.gender,
-          userInfo.country,
-        ],
-        (err) => {
-          console.log(info_query);
-          if (err) throw reject(`${err}`);
+      await bcrypt.hash(userInfo.psword, saltRoudns).then((hash) => {
+        console.log(`hash:${hash}`);
+        db.query(
+          info_query,
+          [
+            userInfo.uid,
+            hash,
+            userInfo.name,
+            userInfo.age,
+            userInfo.gender,
+            userInfo.country,
+          ],
+          (err) => {
+            console.log(info_query);
+            if (err) throw reject(`${err}`);
 
-          //알러지 없으면 추가 할필요 없음
-          if (userInfo.arr_algid.length === 0) {
-            console.log('no alg!!!!');
-            console.log('no alg!!!!');
-            console.log('no alg!!!!');
-            console.log('no alg!!!!');
+            //알러지 없으면 추가 할필요 없음
+            if (userInfo.arr_algid.length === 0) {
+              console.log('no alg!!!!\n==================');
+              return resolve({ success: true });
+            }
+          },
+        );
+      });
 
-            console.log('==================');
-            return resolve({ success: true });
-          }
-        },
-      );
-
-      console.log('yes alg!!!!');
-      console.log('yes alg!!!!');
-      console.log('yes alg!!!!');
-      console.log('yes alg!!!!');
+      console.log('yes alg!!!!\n==================');
       //inservalues에 빈문자열 할당, if문 후 쿼리 생성
       let insertValues = '';
 

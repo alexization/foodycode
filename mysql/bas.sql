@@ -5,13 +5,13 @@ drop table users;
 
 CREATE TABLE users(
     id int NOT NULL AUTO_INCREMENT,
-    uid varchar(30) NOT NULL,
-    name varchar(30) NOT NULL,
-    psword varchar(30) NOT NULL,
-    age varchar(30) NOT NULL,
-    gen varchar(30) NOT NULL,
-    country varchar(30) NOT NULL,
-    email varchar(30) NOT NULL,
+    uid varchar(255) NOT NULL,
+    name varchar(255) NOT NULL,
+    psword varchar(255) NOT NULL,
+    age varchar(255) NOT NULL,
+    gen varchar(255) NOT NULL,
+    country varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
     in_date datetime DEFAULT current_timestamp,
 
     PRIMARY KEY (id)
@@ -19,7 +19,7 @@ CREATE TABLE users(
 
 
 INSERT INTO users(uid,name,psword,age,gen,country,email)
-    values("lls","steve","123",42,"여","uzbekistan","lsdf@google.co.kr"),
+    values("lls","steve","$2b$10$H3xm4DbUJRWjIDs1jk.5POuvfgQfTHKLlJ3euQtQ64K1CJCs9NDam",42,"여","uzbekistan","lsdf@google.co.kr"),
     ("asd","alice","123",33,"여","USA","lvvcdf@google.co.kr"),
     ("ees","billy","1234",67,"남","korea","lsaaaf@google.co.kr"),
     ("abv","mike","1w3",19,"여","japan","lsasdsdf@google.co.kr"),
