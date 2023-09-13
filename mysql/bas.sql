@@ -46,7 +46,7 @@ VALUES
     ("milk"),
     ("buckwheat"),
     ("peanut"),
-    ("soy bean"),
+    ("soybean"),
     ("wheat"),
     ("mackerel"),
     ("crab"),
@@ -62,7 +62,7 @@ VALUES
     ("mussel"),
     ("abalone"),
     ("oyster"),
-    ("pine nut"),
+    ("pinenut"),
     ("squid"),
     ("sesame"),
     ("almond");
@@ -122,10 +122,11 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
-    values ("rid","123","Yeon Tan Bulgogi","addr","jhon","033-742-5878","Yeon-Tan-Bulgogi"),
-    ("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-742-5878","teol-bone"),
-("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-3242","jeonseonseng"),
-("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon");
+ values("rid","123","Yeon Tan Bulgogi","1, Maenamdong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-742-5878","Yeon-Tan-Bulgogi"),
+       ("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","park","033-762-6786","teol-bone"),
+       ("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","choi","033-760-3242","jeonseonseng"),
+       ("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon"),
+       ("qwe","123","Myeongga","20, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","lee","033-764-1024","myeongga");
 
 
 
@@ -184,19 +185,27 @@ CREATE TABLE menu(
 
 
 INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
-    values ("1","Soy Sauce Bulgogi","7000","soy-sauce-bulgogi","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
-        ("1","Gochujang Bulgogi","7000","gochujang-bulgogi", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("1","Gochujang Chicken","7500","gochujang-chicken","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
-        ("2","Grilled Marinated Mackerel","10000","gogalbigui","Rich Soybean Paste Soup braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion"),
-        ("2","Chicken Gizzards","9000","dakttongjip", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("2","Sundae","7500","sundae","Chicken Soup braised with ginseng, green onion, garlic, steamed rice"),
-        ("3","Rice Pancake","6000","pabjeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Shred Potato Pancake","6000","gamjachejeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Kimchi Pancake","6000","kimchijeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("3","Seafood and Green Onin Pancake","9000","hemulpajeon", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("4","Fried Boneless Chicken Plate","15000","tongsalpeulleiteu", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("4","Stir-fried Beef Brisket with Mung Bean Sprouts","13000","sukjubokkeum", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam"),
-        ("4","Korean-style Raw Beef for Freshman","13000","saenaegi-yukoe", "Soybean Paste Jjigae braised with dried anchovy, zucchini, onion, potato, garlic, mushroom, tofu, green onion, clam");
+ values("1","Soy Sauce Bulgogi","7,000","soy-sauce-bulgogi","pork, soy bean, egg, sesame, squid, leek, soy sauce, sugar, pepper, cooking wine, garlic, ginger"),
+       ("1","Gochujang Bulgogi", "7,000","gochujang-bulgogi", "pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+       ("1","Gochujang Chicken", "7,500","gochujang-chicken","chicken, pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+
+       ("2","Grilled Marinated Mackerel", "10,000","gogalbigui","mackerel, sesame, soy bean, green onion, soy sauce, sugar, pepper, cooking wine, garlic, ginger, red pepper powder, red pepper paste"),
+       ("2","Chicken Gizzards", "9,000","dakttongjip", "chicken gizzard, sesame, milk, oyster, garlic, green chilli pepper, soju, pepper, oyster sauce"),
+       ("2","Sundae", "7,500","sundae","pork, sesame, green onion, red pepper, napa cabbage, glutinous rice"),
+  
+       ("3","Rice Pancake", "6,000","pabjeon", "rice, egg, pork, crab, milk, wheat, soy bean, carrot, garlic, cabbage, green onion"),
+       ("3","Shred Potato Pancake", "6,000","gamjachejeon", "potato, egg, milk, crab, wheat, soy bean, sugar"),
+       ("3","Kimchi Pancake", "6,000","kimchijeon", "kimchi, egg, squid, shrimp, wheat, soy bean, garlic, pancake powder"),
+       ("3","Seafood and Green Onin Pancake", "9,000","hemulpajeon", "egg, squid, shrimp, wheat, soy bean, mussel, pancake powder, chives"),
+
+       ("4", "Fried Boneless Chicken Plate", "15,000", "tongsalpeulleiteu","chicken, potato, soy bean, milk, peanut, tomato, bean sprouts, parsley, garlic, sugar, salt, katsuobushi, mayonnaise"),
+       ("4", "Stir-fried Beef Brisket with Mung Bean Sprouts", "13,000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
+       ("4", "Korean-style Raw Beef for Freshman", "13,000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
+
+       ("5", "Beef Loin and Sausage Jjigae", "24,000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
+       ("5", "Whole Shrimp and Sausage Jjigae", "22,000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
+       ("5", "Kimchi and Sausage Jjigae", "20,000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
+       ("5", "Soft Bean Curd Sausage Jjigae", "21,000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
 
 
 
@@ -213,13 +222,83 @@ CREATE TABLE menuAlgs(
 );
 
 
-INSERT INTO menuAlgs(menu_id,alg_id)
-    values(1,3),
-    (1,2),
-    (2,2),
-    (2,3),
-    (2,10),
-    (3,6);
+INSERT INTO menuAlgs(menu_id,alg_id) 
+values(1, 5),
+    (1, 10),
+    (1, 1),
+    (1, 23),
+    (1, 22),
+    (2, 10),
+    (2, 1),
+    (2, 23),
+    (2, 22),
+    (3, 15),
+    (3, 10),
+    (3, 1),
+    (3, 23),
+    (3, 22),
+    (4, 7),
+    (4, 5),
+    (4, 23),
+    (5, 15),
+    (5, 23),
+    (5, 2),
+    (5, 20),
+    (6, 10),
+    (6, 23),
+    (7, 1),
+    (7, 10),
+    (7, 8),
+    (7, 2),
+    (7, 6),
+    (7, 5),
+    (8, 1),
+    (8, 2),
+    (8, 8),
+    (8, 6),
+    (8, 5),
+    (9, 1),
+    (9, 2),
+    (9, 8),
+    (9, 6),
+    (9, 5),
+    (10, 1),
+    (10, 2),
+    (10, 8),
+    (10, 6),
+    (10, 5),
+    (10, 18),
+    (11, 15),
+    (11, 5),
+    (11, 2),
+    (11, 4),
+    (11, 12),
+    (12, 16),
+    (12, 4),
+    (12, 5),
+    (12, 11),
+    (12, 20),
+    (13, 16),
+    (13, 23),
+    (13, 1),
+    (13, 5),
+    (14, 16),
+    (14, 6),
+    (14, 10),
+    (14, 5),
+    (15, 2),
+    (15, 9),
+    (15, 10),
+    (15, 16),
+    (15, 5),
+    (16, 5),
+    (16, 10),
+    (16, 16),
+    (17, 5),
+    (17, 10),
+    (17, 16),
+    (17, 2),
+    (17, 1);
 
 
 
