@@ -20,13 +20,14 @@ CREATE TABLE users(
 
 INSERT INTO users(uid,name,psword,age,gen,country,email)
     values("lls","steve","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",42,"여","uzbekistan","lsdf@google.co.kr"),
-    ("asd","alice","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",33,"여","USA","lvvcdf@google.co.kr"),
+    ("asd","alice","$2b$10$wcy51S1TrxwXJBU6LPN9veQnlk.CsyQn.56C8ku6KS9z59yUVAeka",33,"여","USA","lvvcdf@google.co.kr"),
     ("ees","billy","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",67,"남","korea","lsaaaf@google.co.kr"),
     ("abv","mike","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",19,"여","japan","lsasdsdf@google.co.kr"),
     ("ewq","andy","$2b$10$/mskNxMrdNIEXsXxFilGYePfHewwpwoK/lZ7DHw5sHBh6mgJYfRYW",25,"남","china","nssf@google.co.kr");
 
 
-
+-- asd 유저는 비밀번호 1234
+-- lls 유저와 그 외 나머지는 비밀번호 123
 
 
 
