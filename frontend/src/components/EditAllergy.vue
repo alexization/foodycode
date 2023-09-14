@@ -213,7 +213,7 @@ export default {
 .selecting-page {
   background: #ffffff;
   width: 100%;
-  top: 143px;
+  top: 141px;
   height: 100%;
   position: absolute;
 }

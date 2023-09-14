@@ -46,7 +46,6 @@ export default {
       allergyList: [],
       menuList: [
         { name: "Edit User Name", url_name: "user-name" },
-        { name: "Change Password", url_name: "password" },
         { name: "Edit My Allergy", url_name: "my-allergy" },
         { name: "", url_name: "" },
       ],
@@ -120,7 +119,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 283px;
+  height: 212px;
 }
 
 .menu-content {
