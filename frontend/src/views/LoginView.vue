@@ -257,6 +257,6 @@ input:focus::-ms-input-placeholder {
   width: 150px;
   height: 150px;
   position: absolute;
-  top: 40px;
+  top: 100px;
 }
 </style>
