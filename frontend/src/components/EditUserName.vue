@@ -36,7 +36,7 @@ export default {
       username_instruction: [
         "This field is required.",
         "This is your current username.",
-        "Please enter your username in 2~20 characters.",
+        "Please enter your username in 2~15 characters.",
         "Username is available",
       ],
       info_number: 0, // username_instruction 배열 index
@@ -58,7 +58,7 @@ export default {
         return { success: false, case: 0, info: this.username_instruction[0] };
       } else if (res_data.username === this.userName) {
         return { success: false, case: 1, info: this.username_instruction[1] };
-      } else if (res_data.username.length <= 1 || res_data.username.length > 20) {
+      } else if (res_data.username.length <= 1 || res_data.username.length > 15) {
         return { success: false, case: 2, info: this.username_instruction[2] };
       } else {
         return { success: true, case: 3, info: this.username_instruction[3] };

@@ -1,10 +1,10 @@
 <template>
   <div class="background">
     <MyFoodyHeader></MyFoodyHeader>
-    <hr class="line" />
+    <!--<hr class="line" />-->
     <div class="menu-title-box">
       <div class="menu-title">Account Setting</div>
-      <div class="user-name">{{ userName }}</div>
+      <!--<div class="user-name">{{ userName }}</div>-->
     </div>
     <div class="menu-box">
       <div v-for="{name, url_name} in menuList" :key="name">
@@ -20,9 +20,11 @@
               {{ allergy }}
             </div>
           </div>
+          <hr v-show="name !== ''" class="menu-line" />
         </router-link>
       </div>
     </div>
+    <!--<div class="end-menu"></div>-->
   </div>
 </template>
 
@@ -42,11 +44,10 @@ export default {
   data() {
     return {
       arrow,
-      userName: "",
+      //userName: "",
       allergyList: [],
       menuList: [
         { name: "Edit User Name", url_name: "user-name" },
-        { name: "Change Password", url_name: "password" },
         { name: "Edit My Allergy", url_name: "my-allergy" },
         { name: "", url_name: "" },
       ],
@@ -57,7 +58,7 @@ export default {
       .get("/api/useralg")
       .then((response) => {
         response.data.useralgs.sort();
-        this.userName = response.data.uname;
+        //this.userName = response.data.uname;
         this.allergyList = response.data.useralgs;
       })
       .catch((error) => {});
@@ -75,9 +76,10 @@ export default {
 .background {
   width: 100%;
   height: 100%;
-  background: #d9d9d9;
+  background: #ffffff/*#d9d9d9;*/
 }
 
+/*
 .line {
   position: absolute;
   box-sizing: border-box;
@@ -86,16 +88,17 @@ export default {
   border: solid 1px;
   color: #ccc;
 }
+*/
 
 .menu-title-box {
   position: relative;
-  top: 80px;
+  top: 70px;
   display: inline-flex;
   width: 100%;
   height: 70px;
-  background: #ffffff;
+  background: rgba(28, 145, 129, 1);  /*#ffffff;*/
   font: 600 16px "Noto Sans", sans-serif;
-  color: #525252;
+  color: #ffffff;
 }
 
 .menu-title {
@@ -115,12 +118,12 @@ export default {
 
 .menu-box {
   position: absolute;
-  top: 151px;
+  top: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 283px;
+  height: 214px;
 }
 
 .menu-content {
@@ -173,6 +176,26 @@ export default {
   font: 400 16px "Noto Sans", sans-serif;
   text-align: center;
 }
+
+.menu-line {
+  position: absolute;
+  box-sizing: border-box;
+  top: 70px;
+  width: 100%;
+  border: solid 2px;
+  color: #d9d9d9;
+}
+
+/* 
+.end-menu {
+  position: relative;
+  top: 284px;
+  display: inline-flex;
+  width: 100%;
+  height: 70px;
+  background: rgba(28, 145, 129, 1); 
+} */
+
 
 .user-alg-box::-webkit-scrollbar {
   display: none;

@@ -92,7 +92,7 @@
     width: 100%;
     height: 30px;
     font: 600 20px "Noto Sans", sans-serif;
-    color: #000000;
+    color:  #1c9181;  /*#000000;*/
     text-align: center;
   }
   
