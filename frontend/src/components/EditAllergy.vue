@@ -161,7 +161,7 @@ export default {
           console.log(res.data.success);
           if (res.data.success) {
             alert("수정 완료!");
-            window.location.reload(true);
+            this.$router.push({ path: "/" });
           } else {
             alert(res.data);
           }
