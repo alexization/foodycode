@@ -187,27 +187,27 @@ CREATE TABLE menu(
 
 
 INSERT INTO menu(rest_id,menu_name,roman_name, menu_price,img_url,menu_ing)
- values("1","Soy Sauce Bulgogi","Ganjangbulgogi", "7,000","soy-sauce-bulgogi","pork, soy bean, egg, sesame, squid, leek, soy sauce, sugar, pepper, cooking wine, garlic, ginger"),
-("1","Gochujang Bulgogi","Gochujangbulgogi", "7,000","gochujang-bulgogi", "pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
-("1","Gochujang Chicken","Gochujangchikin", "7,500","gochujang-chicken","chicken, pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+ values("1","Soy Sauce Bulgogi","Ganjangbulgogi", "7000","soy-sauce-bulgogi","pork, soy bean, egg, sesame, squid, leek, soy sauce, sugar, pepper, cooking wine, garlic, ginger"),
+("1","Gochujang Bulgogi","Gochujangbulgogi", "7000","gochujang-bulgogi", "pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+("1","Gochujang Chicken","Gochujangchikin", "7500","gochujang-chicken","chicken, pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
 
-("2","Grilled Marinated Mackerel","Gogalbigui", "10,000","gogalbigui","mackerel, sesame, soy bean, green onion, soy sauce, sugar, pepper, cooking wine, garlic, ginger, red pepper powder, red pepper paste"),
-("2","Chicken Gizzards","Dakttongjip", "9,000","dakttongjip", "chicken gizzard, sesame, milk, oyster, garlic, green chilli pepper, soju, pepper, oyster sauce"),
-("2","Sundae","Sundae", "7,500","sundae","pork, sesame, green onion, red pepper, napa cabbage, glutinous rice"),
+("2","Grilled Marinated Mackerel","Gogalbigui", "10000","gogalbigui","mackerel, sesame, soy bean, green onion, soy sauce, sugar, pepper, cooking wine, garlic, ginger, red pepper powder, red pepper paste"),
+("2","Chicken Gizzards","Dakttongjip", "9000","dakttongjip", "chicken gizzard, sesame, milk, oyster, garlic, green chilli pepper, soju, pepper, oyster sauce"),
+("2","Sundae","Sundae", "7500","sundae","pork, sesame, green onion, red pepper, napa cabbage, glutinous rice"),
 
-("3","Rice Pancake","Babjeon", "6,000","pabjeon", "rice, egg, pork, crab, milk, wheat, soy bean, carrot, garlic, cabbage, green onion"),
-("3","Shred Potato Pancake","Gamjachejeon", "6,000","gamjachejeon", "potato, egg, milk, crab, wheat, soy bean, sugar"),
-("3","Kimchi Pancake","Kimchijeon", "6,000","kimchijeon", "kimchi, egg, squid, shrimp, wheat, soy bean, garlic, pancake powder"),
-("3","Seafood and Green Onin Pancake","Hemulpajeon", "9,000","hemulpajeon", "egg, squid, shrimp, wheat, soy bean, mussel, pancake powder, chives"),
+("3","Rice Pancake","Babjeon", "6000","pabjeon", "rice, egg, pork, crab, milk, wheat, soy bean, carrot, garlic, cabbage, green onion"),
+("3","Shred Potato Pancake","Gamjachejeon", "6000","gamjachejeon", "potato, egg, milk, crab, wheat, soy bean, sugar"),
+("3","Kimchi Pancake","Kimchijeon", "6000","kimchijeon", "kimchi, egg, squid, shrimp, wheat, soy bean, garlic, pancake powder"),
+("3","Seafood and Green Onin Pancake","Hemulpajeon", "9000","hemulpajeon", "egg, squid, shrimp, wheat, soy bean, mussel, pancake powder, chives"),
 
-("4", "Fried Boneless Chicken Plate","Tongsalpeulleiteu", "15,000", "tongsalpeulleiteu","chicken, potato, soy bean, milk, peanut, tomato, bean sprouts, parsley, garlic, sugar, salt, katsuobushi, mayonnaise"),
-("4", "Stir-fried Beef Brisket with Mung Bean Sprouts","Chadolbagi sukjubokkeum", "13,000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
-("4", "Korean-style Raw Beef for Freshman","Saenaegi yukoe", "13,000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
+("4", "Fried Boneless Chicken Plate","Tongsalpeulleiteu", "15000", "tongsalpeulleiteu","chicken, potato, soy bean, milk, peanut, tomato, bean sprouts, parsley, garlic, sugar, salt, katsuobushi, mayonnaise"),
+("4", "Stir-fried Beef Brisket with Mung Bean Sprouts","Chadolbagi sukjubokkeum", "13000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
+("4", "Korean-style Raw Beef for Freshman","Saenaegi yukoe", "13000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
 
-("5", "Beef Loin and Sausage Jjigae","Usapgyeopbudaejjigae", "24,000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Whole Shrimp and Sausage Jjigae","Tongsaeubudaejjigae", "22,000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Kimchi and Sausage Jjigae","Kimchibudaejjige", "20,000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Soft Bean Curd Sausage Jjigae","Sundububudaejjigae", "21,000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
+("5", "Beef Loin and Sausage Jjigae","Usapgyeopbudaejjigae", "24000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Whole Shrimp and Sausage Jjigae","Tongsaeubudaejjigae", "22000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Kimchi and Sausage Jjigae","Kimchibudaejjige", "20000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("5", "Soft Bean Curd Sausage Jjigae","Sundububudaejjigae", "21000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
 
 
 
