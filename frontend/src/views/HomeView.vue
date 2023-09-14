@@ -14,6 +14,7 @@
           />
         </router-link>
       </div>
+      <div class="space"></div>
     </div>
 
     <Transition name="fade">
@@ -104,6 +105,12 @@ export default {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100 - 180px);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.space {
+  position: absolute;
+  width: 100%;
+  height: 30px;  
 }
 
 /* 사이드 메뉴 열었을때 배경 흐리게 */
