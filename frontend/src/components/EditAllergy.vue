@@ -204,6 +204,7 @@ export default {
   letter-spacing: 1.2px;
   font: 400 16px "Noto Sans", sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 
 .user-alg-box::-webkit-scrollbar {

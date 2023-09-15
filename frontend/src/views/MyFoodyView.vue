@@ -7,21 +7,21 @@
       <!--<div class="user-name">{{ userName }}</div>-->
     </div>
     <div class="menu-box">
-      <div v-for="{name, url_name} in menuList" :key="name">
+      <div v-for="{ name, url_name } in menuList" :key="name">
         <router-link :to="`/myfoody/${url_name}`" class="menu-content">
-          <div v-show="name !== ''" class="menu-name">
+          <div class="menu-name">
             {{ name }}
           </div>
-          <div v-show="name !== ''" class="arrow-img">
+          <div class="arrow-img">
             <img :src="arrow" width="15" />
           </div>
-          <div v-show="name === ''" class="user-alg-box">
-            <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
-              {{ allergy }}
-            </div>
-          </div>
-          <hr v-show="name !== ''" class="menu-line" />
         </router-link>
+        <hr class="menu-line" />
+      </div>
+    </div>
+    <div class="user-alg-box">
+      <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
+        {{ allergy }}
       </div>
     </div>
     <!--<div class="end-menu"></div>-->
@@ -48,8 +48,7 @@ export default {
       allergyList: [],
       menuList: [
         { name: "Edit User Name", url_name: "user-name" },
-        { name: "Edit My Allergy", url_name: "my-allergy" },
-        { name: "", url_name: "" },
+        { name: "Edit My Allergy", url_name: "my-allergy" },  // 메뉴가 추가되더라도 항상 마지막에 배치
       ],
     };
   },
@@ -76,7 +75,7 @@ export default {
 .background {
   width: 100%;
   height: 100%;
-  background: #ffffff/*#d9d9d9;*/
+  background: #ffffff; /*#d9d9d9;*/
 }
 
 /*
@@ -96,7 +95,7 @@ export default {
   display: inline-flex;
   width: 100%;
   height: 70px;
-  background: rgba(28, 145, 129, 1);  /*#ffffff;*/
+  background: rgba(28, 145, 129, 1); /*#ffffff;*/
   font: 600 16px "Noto Sans", sans-serif;
   color: #ffffff;
 }
@@ -105,7 +104,7 @@ export default {
   position: relative;
   width: 40%;
   margin: auto 0px;
-  margin-left: 35px;
+  margin-left: 9%;
 }
 
 .user-name {
@@ -117,13 +116,13 @@ export default {
 }
 
 .menu-box {
-  position: absolute;
-  top: 140px;
+  position: relative;
+  top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 214px;
+  height: 144px;
 }
 
 .menu-content {
@@ -142,7 +141,7 @@ export default {
   position: relative;
   width: 90%;
   margin: auto 0px;
-  margin-left: 35px;
+  margin-left: 9%;
 }
 
 .arrow-img {
@@ -153,14 +152,25 @@ export default {
   color: #525252;
 }
 
+.menu-line {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  border: solid 1px;
+  color: #d9d9d9;
+}
+
 .user-alg-box {
+  position: relative;
+  top: 70px;
   display: flex;
   justify-content: flex-start;
   overflow-x: auto;
+  box-sizing: border-box;
   width: 100%;
-  height: 55px;
-  margin: auto;
-  padding: 10px 7% 10px;
+  height: 70px;
+  padding: 17px 7%;
+  background: #ffffff;
 }
 
 .alg-tag {
@@ -177,15 +187,6 @@ export default {
   text-align: center;
 }
 
-.menu-line {
-  position: absolute;
-  box-sizing: border-box;
-  top: 70px;
-  width: 100%;
-  border: solid 2px;
-  color: #d9d9d9;
-}
-
 /* 
 .end-menu {
   position: relative;
@@ -195,7 +196,6 @@ export default {
   height: 70px;
   background: rgba(28, 145, 129, 1); 
 } */
-
 
 .user-alg-box::-webkit-scrollbar {
   display: none;
