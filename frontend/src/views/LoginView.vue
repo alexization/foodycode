@@ -60,9 +60,11 @@
         fill="#146330"
       />
     </svg>
+    <!--
     <RouterLink class="click-here-if-you-are-manager" to="/mlogin">
       Click Here If You Are Manager
-    </RouterLink>
+    </RouterLink> 
+    -->
   </div>
 </template>
 <script>
@@ -211,6 +213,8 @@ input:focus::-ms-input-placeholder {
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
 }
+
+/*
 .click-here-if-you-are-manager {
   color: #143b22;
   font: 400 14px "Noto Sans", sans-serif;
@@ -220,6 +224,7 @@ input:focus::-ms-input-placeholder {
   top: 645px;
   cursor: pointer;
 }
+*/
 .password-img {
   position: absolute;
   left: 16%;
