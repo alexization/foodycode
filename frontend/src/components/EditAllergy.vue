@@ -42,7 +42,14 @@ export default {
       line,
       allergyList: [],
       allergy_list: [
-        { name: "Abalone", number: "19" },
+        { 
+          name: "Abalone", 
+          number: "19" 
+        },
+        {
+          name: "Almond",
+          number: "24",
+        },
         {
           name: "Beef",
           number: "16",
@@ -130,10 +137,6 @@ export default {
         {
           name: "Wheat",
           number: "6",
-        },
-        {
-          name: "None",
-          number: "none",
         },
       ],
     };
