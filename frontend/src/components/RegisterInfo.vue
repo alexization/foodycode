@@ -43,13 +43,13 @@
       <div class="user-name">User Name</div>
 
       <div class="name-input">
-        <input type="text" id="name" name="user_name" />
+        <input type="text" id="name" name="user_name" maxlength="15" />
       </div>
       <div class="Age">Age</div>
       <div class="Country">Country</div>
 
       <div class="age-input">
-        <input type="number" id="age" name="age" pattern="\d*" />
+        <input type="number" id="age" name="age" pattern="\d*" min="1" max="150"/>
       </div>
 
       <form>
@@ -359,6 +359,7 @@ input[type="text"] {
   border-radius: 5px;
   width: 65.9%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 input[type][id="user_name"] {
@@ -368,6 +369,7 @@ input[type][id="user_name"] {
   border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 input[type][id="country"] {
@@ -387,6 +389,7 @@ input[type="password"] {
   border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 input[type="number"] {
@@ -396,6 +399,7 @@ input[type="number"] {
   border-radius: 5px;
   width: 21.8%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 .uid-input {
@@ -522,7 +526,7 @@ input[type="number"] {
   display: inline-block;
   cursor: pointer;
   height: 100%;
-  width: 45%;
+  width: 38.45%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -571,15 +575,17 @@ input[type="number"] {
   left: 38.5%;
   height: 30px;
   top: 424px;
-  width: 50%;
+  width: 53.8%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
+  padding-left: 10px;
   font: 500 14px "Noto Sans", sans-serif;
   color: black;
   background: white;
   outline: none;
+  cursor: pointer;
 }
 .foot {
   position: fixed;

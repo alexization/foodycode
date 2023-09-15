@@ -190,7 +190,7 @@ input:focus::-ms-input-placeholder {
   color: transparent;
 }
 .login-row-group {
-  top: 585px;
+  top: 590px;
   position: absolute;
   display: flex;
   width: 100%;
@@ -202,11 +202,13 @@ input:focus::-ms-input-placeholder {
   text-align: left;
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
+  cursor: pointer;
 }
 .find-my-pw {
   color: #143b22;
   font: 400 14px "Noto Sans", sans-serif;
   text-decoration: underline;
+  cursor: pointer;
 }
 .sign-up {
   color: #143b22;

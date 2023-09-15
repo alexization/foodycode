@@ -77,6 +77,7 @@
     height: 30px;
     border: none;
     background: none;
+    cursor: pointer;
   }
   
   .title-box {
