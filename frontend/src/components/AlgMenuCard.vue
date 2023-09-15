@@ -4,7 +4,7 @@
       <div class="first-row">
         <div class="first-column">
           <div class="AlgMenu-name" v-text="menuName"></div>
-          <div class="Alg-Price" v-text="menuPrice + ' KRW'"></div>
+          <div class="Alg-Price" v-text="price_comma + ' won'"></div>
           <div class="alg">
             <img :src="warning" />
             <div class="alg-name" v-text="algName"></div>
@@ -24,11 +24,6 @@
 <script>
 import warning from '../assets/icon/warning.png';
 export default {
-  data() {
-    return {
-      warning,
-    };
-  },
   props: {
     menuName: {
       type: String,
@@ -51,6 +46,15 @@ export default {
       type: String,
       default: 'Fork',
     },
+  },
+  data() {
+    return {      
+      warning,
+      price_comma: "",
+    };
+  },
+  created() {
+    this.price_comma = parseInt(this.menuPrice).toLocaleString();
   },
 };
 </script>
@@ -141,7 +145,7 @@ export default {
   height: 20%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  margin-left: 10px;
 }
 .alg {
   width: 100%;

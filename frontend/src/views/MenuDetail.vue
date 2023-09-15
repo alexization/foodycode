@@ -40,10 +40,7 @@
     <div class="detail-footer">
       <div class="price-group">
         <div class="price-text">
-          <div
-            class="menu-price"
-            v-text="detail_list.menu_price + ' won'"
-          ></div>
+          <div class="menu-price" v-text="price_comma + ' won'"></div>
         </div>
         <div class="price-button-group">
           <div>
@@ -80,6 +77,7 @@ export default {
       detail_list: [],
       img_url: "loading",
       price: 0,
+      price_comma: "",
     };
   },
   methods: {
@@ -90,12 +88,14 @@ export default {
         this.menu_count -= 1;
         this.detail_list.menu_price =
           parseInt(this.detail_list.menu_price) - this.price;
+        this.price_comma = this.detail_list.menu_price.toLocaleString();
       }
     },
     click_add() {
       this.menu_count += 1;
       this.detail_list.menu_price =
         parseInt(this.detail_list.menu_price) + this.price;
+      this.price_comma = this.detail_list.menu_price.toLocaleString();
     },
     click_back() {
       this.prev_url = "#/allmenu/" + this.prev_rest;
@@ -114,6 +114,7 @@ export default {
       this.detail_list = response.data[0];
       this.img_url = this.detail_list.img_url;
       this.price = parseInt(this.detail_list.menu_price);
+      this.price_comma = this.price.toLocaleString();
     });
   },
 };

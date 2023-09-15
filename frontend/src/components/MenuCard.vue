@@ -4,7 +4,7 @@
       <div class="first-row">
         <div class="first-column">
           <div class="Menu-name" v-text="menuName"></div>
-          <div class="Price" v-text="menuPrice + ' WON'"></div>
+          <div class="Price" v-text="price_comma + ' won'"></div>
         </div>
         <div class="Img-Box">
           <img :src="require(`@/assets/menu/${menuImg}.png`)" />
@@ -36,6 +36,14 @@ export default {
       type: String,
       default: "0000",
     },
+  },
+  data() {
+    return {      
+      price_comma: "",
+    };
+  },
+  created() {
+    this.price_comma = parseInt(this.menuPrice).toLocaleString();
   },
 };
 </script>
