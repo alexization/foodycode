@@ -16,7 +16,7 @@
       </div>
       <hr class="line" />
       <div class="button-box">
-        <button id="btn" class="edit-btn" @click.self.prevent="edit_username">
+        <button id="btn" class="edit-btn" @click.self.prevent="edit_username" disabled="true">
           Edit
         </button>
       </div>

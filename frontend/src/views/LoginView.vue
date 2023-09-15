@@ -87,10 +87,10 @@ export default {
   },
   methods: {
     find_id() {
-      alert("Comming Soon..");
+      alert("If you don't remember your ID, please sign up for a new membership.");
     },
     find_pw() {
-      alert("Comming Soon..");
+      alert("If you don't remember the password, please sign up for a new membership.");
     },
 
     click_back() {

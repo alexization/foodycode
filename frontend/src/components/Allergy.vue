@@ -150,16 +150,23 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 
-.selecting-page,
 .selecting-page * {
   box-sizing: border-box;
 }
 .selecting-page {
-  background: #ffffff;
-  width: 100%;
-  top: 130px;
   position: absolute;
+  top: 130px;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 130px);  
+  background: #ffffff;
+ 
 }
+
+.selecting-page::-webkit-scrollbar {
+  display: none;
+}
+
 .Info-Group {
   height: 80px;
   position: absolute;

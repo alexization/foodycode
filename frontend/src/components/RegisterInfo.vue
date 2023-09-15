@@ -238,7 +238,7 @@
           for="female"
           >Female</label
         >
-      </div>
+      </div>           
     </div>
     <div class="foot">
       <button class="Register" @click="click_register">Next</button>
@@ -326,21 +326,22 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
-.sign-up-page-register,
 .sign-up-page-register * {
   box-sizing: border-box;
 }
 .sign-up-page-register {
-  background: #ffffff;
-  width: 100%;
-  height: 100%;
+  position: absolute;
   top: 130px;
-  position: absolute;
-}
-.register-page {
   width: 100%;
   height: 100%;
+  background: #ffffff;
+}
+
+.register-page {
   position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;  
   overflow-x: clip;
 }
 .uid {
@@ -352,7 +353,7 @@ export default {
   top: 29.8px;
 }
 
-input[type="text"] {
+input[type][id="uid"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -362,7 +363,7 @@ input[type="text"] {
   padding: 0px 10px;
   outline: none;
 }
-input[type][id="user_name"] {
+input[type][id="name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -532,6 +533,7 @@ input[type="number"] {
   border-width: 1px;
   border-radius: 5px;
   text-align: center;
+  padding-top: 2px;
   font: 400 16px "Noto Sans", sans-serif;
 }
 .select-gender input[type="radio"] + label {
@@ -587,6 +589,7 @@ input[type="number"] {
   outline: none;
   cursor: pointer;
 }
+
 .foot {
   position: fixed;
   width: 100%;
