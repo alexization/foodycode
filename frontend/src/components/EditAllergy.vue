@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="user-alg-box">
       <div class="alg-tag" v-for="allergy in allergyList" :key="allergy">
         {{ allergy }}
@@ -42,7 +42,14 @@ export default {
       line,
       allergyList: [],
       allergy_list: [
-        { name: "Abalone", number: "19" },
+        { 
+          name: "Abalone", 
+          number: "19" 
+        },
+        {
+          name: "Almond",
+          number: "24",
+        },
         {
           name: "Beef",
           number: "16",
@@ -131,10 +138,6 @@ export default {
           name: "Wheat",
           number: "6",
         },
-        {
-          name: "None",
-          number: "none",
-        },
       ],
     };
   },
@@ -176,9 +179,18 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap");
 
-.user-alg-box {
-  position: relative;
+.wrapper {
+  position: absolute;
   top: 80px;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 80px);
+  background: #ffffff;
+}
+
+.user-alg-box {
+  position: absolute;
+  top: 0px;
   display: flex;
   justify-content: flex-start;
   overflow-x: auto;
@@ -213,8 +225,8 @@ export default {
 .selecting-page {
   background: #ffffff;
   width: 100%;
-  top: 141px;
-  height: 100%;
+  top: 59px;
+  height: calc(var(--vh, 1vh) * 100 - 139px);
   position: absolute;
 }
 .Info-Group {
@@ -300,5 +312,9 @@ export default {
   cursor: pointer;
   position: fixed;
   bottom: 0;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
 }
 </style>

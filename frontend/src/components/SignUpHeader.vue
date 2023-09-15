@@ -94,5 +94,6 @@ button {
   height: 40px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 </style>

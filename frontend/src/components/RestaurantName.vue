@@ -174,9 +174,11 @@ export default {
 .Order img {
   width: 32px;
   height: 34px;
+  cursor: pointer;
 }
 .Basket img {
   width: 32px;
   height: 32px;
+  cursor: pointer;
 }
 </style>

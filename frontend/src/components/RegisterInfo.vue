@@ -43,13 +43,13 @@
       <div class="user-name">User Name</div>
 
       <div class="name-input">
-        <input type="text" id="name" name="user_name" />
+        <input type="text" id="name" name="user_name" maxlength="15" />
       </div>
       <div class="Age">Age</div>
       <div class="Country">Country</div>
 
       <div class="age-input">
-        <input type="number" id="age" name="age" pattern="\d*" />
+        <input type="number" id="age" name="age" pattern="\d*" min="1" max="150"/>
       </div>
 
       <form>
@@ -238,7 +238,7 @@
           for="female"
           >Female</label
         >
-      </div>
+      </div>           
     </div>
     <div class="foot">
       <button class="Register" @click="click_register">Next</button>
@@ -326,21 +326,22 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
 
-.sign-up-page-register,
 .sign-up-page-register * {
   box-sizing: border-box;
 }
 .sign-up-page-register {
-  background: #ffffff;
-  width: 100%;
-  height: 100%;
+  position: absolute;
   top: 130px;
-  position: absolute;
-}
-.register-page {
   width: 100%;
   height: 100%;
+  background: #ffffff;
+}
+
+.register-page {
   position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;  
   overflow-x: clip;
 }
 .uid {
@@ -352,22 +353,24 @@ export default {
   top: 29.8px;
 }
 
-input[type="text"] {
+input[type][id="uid"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
   width: 65.9%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
-input[type][id="user_name"] {
+input[type][id="name"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 input[type][id="country"] {
@@ -387,6 +390,7 @@ input[type="password"] {
   border-radius: 5px;
   width: 84.6%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 input[type="number"] {
@@ -396,6 +400,7 @@ input[type="number"] {
   border-radius: 5px;
   width: 21.8%;
   height: 30.4px;
+  padding: 0px 10px;
   outline: none;
 }
 .uid-input {
@@ -522,12 +527,13 @@ input[type="number"] {
   display: inline-block;
   cursor: pointer;
   height: 100%;
-  width: 45%;
+  width: 38.45%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
   text-align: center;
+  padding-top: 2px;
   font: 400 16px "Noto Sans", sans-serif;
 }
 .select-gender input[type="radio"] + label {
@@ -571,16 +577,19 @@ input[type="number"] {
   left: 38.5%;
   height: 30px;
   top: 424px;
-  width: 50%;
+  width: 53.8%;
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
   border-radius: 5px;
+  padding-left: 10px;
   font: 500 14px "Noto Sans", sans-serif;
   color: black;
   background: white;
   outline: none;
+  cursor: pointer;
 }
+
 .foot {
   position: fixed;
   width: 100%;
