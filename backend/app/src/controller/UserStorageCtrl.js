@@ -2,7 +2,7 @@ const UserStorage = require('../models/UserStorage');
 
 class UserStorageCtrl {
   static async getUserInfo(req, res) {
-    if (req.session.userid) {
+    if (!req.session.userid) {
       return res.json({ is_logined: false, msg: 'no logined' });
     }
 
