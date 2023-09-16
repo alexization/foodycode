@@ -427,6 +427,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Dangrek&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .sign-up-page-register * {
   box-sizing: border-box;
@@ -449,7 +450,7 @@ export default {
 .uid {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 29.8px;
@@ -523,7 +524,7 @@ input[type="number"] {
   left: 73.1%;
   top: 61.9px;
   text-align: center;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px "Roboto", sans-serif;
   color: black;
   cursor: pointer;
 }
@@ -538,17 +539,17 @@ input[type="number"] {
   vertical-align: middle;
 }
 .available {
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px "Roboto", sans-serif;
   color: #1c9181;
 }
 .not-available {
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px "Roboto", sans-serif;
   color: red;
 }
 .password {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 131.9px;
@@ -562,7 +563,7 @@ input[type="number"] {
 .password-confrim {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 210.4px;
@@ -585,16 +586,16 @@ input[type="number"] {
 }
 .not_match {
   color: red;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px "Roboto", sans-serif;
 }
 .match {
   color: #1c9181;
-  font: 600 14px "Noto Sans", sans-serif;
+  font: 600 14px "Roboto", sans-serif;
 }
 .user-name {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 313.4px;
@@ -608,7 +609,7 @@ input[type="number"] {
 .gender {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 468.7px;
@@ -635,8 +636,8 @@ input[type="number"] {
   border-width: 1px;
   border-radius: 5px;
   text-align: center;
-  padding-top: 2px;
-  font: 400 16px "Noto Sans", sans-serif;
+  padding-top: 4px;
+  font: 400 16px "Roboto", sans-serif;
 }
 .select-gender input[type="radio"] + label {
   background-color: #fff;
@@ -650,7 +651,7 @@ input[type="number"] {
 .Age {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 7.7%;
   top: 391px;
@@ -658,7 +659,7 @@ input[type="number"] {
 .Country {
   color: #000000;
   text-align: left;
-  font: 400 17px "Noto Sans", sans-serif;
+  font: 400 17px "Roboto", sans-serif;
   position: absolute;
   left: 38.5%;
   top: 391px;
@@ -685,7 +686,7 @@ input[type="number"] {
   border-width: 1px;
   border-radius: 5px;
   padding-left: 10px;
-  font: 500 14px "Noto Sans", sans-serif;
+  font: 500 14px "Roboto", sans-serif;
   color: black;
   background: white;
   outline: none;
@@ -704,7 +705,7 @@ input[type="number"] {
   height: 60px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px "Noto Sans", sans-serif;
+  font: 800 20px "Roboto", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
@@ -715,7 +716,7 @@ input[type="number"] {
   height: 60px;
   color: #ffffff;
   text-align: center;
-  font: 800 20px "Noto Sans", sans-serif;
+  font: 800 20px "Roboto", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;

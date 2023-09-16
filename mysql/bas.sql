@@ -123,7 +123,10 @@ CREATE TABLE restaurant(
 
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
- values("rid","123","Yeon Tan Bulgogi","1, Maenamdong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-742-5878","Yeon-Tan-Bulgogi"),
+ values
+    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","myeongga"),
+    ("lab","123","Grilled Chicken LAB","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","chicken-lab"),
+    ("rid","123","Yeon Tan Bulgogi","1, Maenamdong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-742-5878","Yeon-Tan-Bulgogi"),
        ("teol","123","TeolBone","16, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","park","033-762-6786","teol-bone"),
        ("jeon","123","JeonSeonSeng","10-5, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","choi","033-760-3242","jeonseonseng"),
        ("zzd","123","Cheongnyeonpocha","23, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","jhon","033-760-7765","cheongnyeon"),
@@ -187,27 +190,44 @@ CREATE TABLE menu(
 
 
 INSERT INTO menu(rest_id,menu_name,roman_name, menu_price,img_url,menu_ing)
- values("1","Soy Sauce Bulgogi","Ganjangbulgogi", "7000","soy-sauce-bulgogi","pork, soy bean, egg, sesame, squid, leek, soy sauce, sugar, pepper, cooking wine, garlic, ginger"),
-("1","Gochujang Bulgogi","Gochujangbulgogi", "7000","gochujang-bulgogi", "pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
-("1","Gochujang Chicken","Gochujangchikin", "7500","gochujang-chicken","chicken, pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+ values
+("1","Boneless Spicy Braised Chicken","ppyeoeomneun dakbokkeumtang", "20000","gomo-dakbokkeumtang","Chicken, potato, onion, green onion, garlic, red pepper paste, soy sauce, sugar, red pepper powder"),
+("1","Sausage Hot Pot","budaejeongol", "20000","usapgyeopbudaejjigae","Sausage, pork, chicken, beef, tteokguk rice cake, cheese rice cake, glass noodles, kimchi, cheese, meat dumplings, bean sprouts, onion, cabbage, green onion"),
+("1","Beef Bulgogi with Rice","sobulgogideopbap", "8000","gomo-sobulgogideopbap","Beef, onion, cabbage, green onion, soy sauce, starch syrup, sesame oil, garlic, sugar, pepper"),
+("1","Bulgogi Fried Rice","bulgogibokkeumbap", "8000","gomo-bulgogibokkeumbap","Beef, carrots, green onions, shiitake mushrooms, starch syrup, sugar, green pepper, salt, garlic, soy sauce, pepper, sesame oil"),
+-- ("1","Spicy Stir-fried Pork","jeyukbokkeum", "","",""),
+-- ("1","Stir-fried Webfoot Octopus and Pork Belly","jjusambokkeum", "","",""),
+-- ("1","Fried Boneless Chicken","sunsal chicken", "","",""),
+-- ("1","Buffalo Wings","Buffalo Wing", "","",""),
+-- ("1","Rolled Omelet with Cheese","cheese gyeranmari", "","",""),
+-- ("1","Seafood and Cheese Tteokbokki","haemul cheese tteokbokki", "","",""),
 
-("2","Grilled Marinated Mackerel","Gogalbigui", "10000","gogalbigui","mackerel, sesame, soy bean, green onion, soy sauce, sugar, pepper, cooking wine, garlic, ginger, red pepper powder, red pepper paste"),
-("2","Chicken Gizzards","Dakttongjip", "9000","dakttongjip", "chicken gizzard, sesame, milk, oyster, garlic, green chilli pepper, soju, pepper, oyster sauce"),
-("2","Sundae","Sundae", "7500","sundae","pork, sesame, green onion, red pepper, napa cabbage, glutinous rice"),
+("2","Soy Sauce Glazed Fried Chicken","ganjang chicken", "17000","lab-ganjang-chicken","This is a soy sauce-based grilled chicken served with soy sauce, chicken, rice cake, and various sauces"),
+("2","Red Chili Paste Chicken","gochujang chicken", "17000","lab-ganjang-chicken","This is a red pepper paste-based grilled chicken served with red pepper paste, chicken, rice cake, and various sauces"),
+("2","Spicy Glazed Fried Chicken","	maeun chicken", "17000","lab-ganjang-chicken","Spicy sauce-based grilled chicken served with red pepper paste, chicken, rice cake, and various sauces"),
+("2","Grilled Salted Chicken","sogeum chicken", "18000","lab-sogeum-chicken","It is the lightest grilled chicken with a salt base and is served with salt, chicken, rice cake, and various sauces"),
 
-("3","Rice Pancake","Babjeon", "6000","pabjeon", "rice, egg, pork, crab, milk, wheat, soy bean, carrot, garlic, cabbage, green onion"),
-("3","Shred Potato Pancake","Gamjachejeon", "6000","gamjachejeon", "potato, egg, milk, crab, wheat, soy bean, sugar"),
-("3","Kimchi Pancake","Kimchijeon", "6000","kimchijeon", "kimchi, egg, squid, shrimp, wheat, soy bean, garlic, pancake powder"),
-("3","Seafood and Green Onin Pancake","Hemulpajeon", "9000","hemulpajeon", "egg, squid, shrimp, wheat, soy bean, mussel, pancake powder, chives"),
+("3","Soy Sauce Bulgogi","Ganjangbulgogi", "7000","soy-sauce-bulgogi","pork, soy bean, egg, sesame, squid, leek, soy sauce, sugar, pepper, cooking wine, garlic, ginger"),
+("3","Gochujang Bulgogi","Gochujangbulgogi", "7000","gochujang-bulgogi", "pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
+("3","Gochujang Chicken","Gochujangchikin", "7500","gochujang-chicken","chicken, pork, egg, sesame, squid, onion, carrot, leek, soy sauce, garlic, red pepper powder, red pepper paste"),
 
-("4", "Fried Boneless Chicken Plate","Tongsalpeulleiteu", "15000", "tongsalpeulleiteu","chicken, potato, soy bean, milk, peanut, tomato, bean sprouts, parsley, garlic, sugar, salt, katsuobushi, mayonnaise"),
-("4", "Stir-fried Beef Brisket with Mung Bean Sprouts","Chadolbagi sukjubokkeum", "13000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
-("4", "Korean-style Raw Beef for Freshman","Saenaegi yukoe", "13000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
+("4","Grilled Marinated Mackerel","Gogalbigui", "10000","gogalbigui","mackerel, sesame, soy bean, green onion, soy sauce, sugar, pepper, cooking wine, garlic, ginger, red pepper powder, red pepper paste"),
+("4","Chicken Gizzards","Dakttongjip", "9000","dakttongjip", "chicken gizzard, sesame, milk, oyster, garlic, green chilli pepper, soju, pepper, oyster sauce"),
+("4","Sundae","Sundae", "7500","sundae","pork, sesame, green onion, red pepper, napa cabbage, glutinous rice"),
 
-("5", "Beef Loin and Sausage Jjigae","Usapgyeopbudaejjigae", "24000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Whole Shrimp and Sausage Jjigae","Tongsaeubudaejjigae", "22000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Kimchi and Sausage Jjigae","Kimchibudaejjige", "20000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
-("5", "Soft Bean Curd Sausage Jjigae","Sundububudaejjigae", "21000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
+("5","Rice Pancake","Babjeon", "6000","pabjeon", "rice, egg, pork, crab, milk, wheat, soy bean, carrot, garlic, cabbage, green onion"),
+("5","Shred Potato Pancake","Gamjachejeon", "6000","gamjachejeon", "potato, egg, milk, crab, wheat, soy bean, sugar"),
+("5","Kimchi Pancake","Kimchijeon", "6000","kimchijeon", "kimchi, egg, squid, shrimp, wheat, soy bean, garlic, pancake powder"),
+("5","Seafood and Green Onin Pancake","Hemulpajeon", "9000","hemulpajeon", "egg, squid, shrimp, wheat, soy bean, mussel, pancake powder, chives"),
+
+("6", "Fried Boneless Chicken Plate","Tongsalpeulleiteu", "15000", "tongsalpeulleiteu","chicken, potato, soy bean, milk, peanut, tomato, bean sprouts, parsley, garlic, sugar, salt, katsuobushi, mayonnaise"),
+("6", "Stir-fried Beef Brisket with Mung Bean Sprouts","Chadolbagi sukjubokkeum", "13000", "sukjubokkeum","beef, peanut, soy bean, peach, bean sprouts, red pepper oil, soy sauce, oyster sauce, garlic, pepper, sugar, chives"),
+("6", "Korean-style Raw Beef for Freshman","Saenaegi yukoe", "13000", "saenaegi-yukoe","beef, sesame, egg, salt, sugar, garlic, pear, plum, soy sauce, soy bean"),
+
+("7", "Beef Loin and Sausage Jjigae","Usapgyeopbudaejjigae", "24000", "usapgyeopbudaejjigae","beef, ham, spam, enoki mushroom, udon noodles, soy bean, rice cake, ramen, dumpling, kimchi, chives, mugwort, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("7", "Whole Shrimp and Sausage Jjigae","Tongsaeubudaejjigae", "22000", "tongsaeubudaejjigae","shrimp, ham, spam, dumpling, cheeze, green onion, mushroom, ramen, rice cake, soy bean, kimchi, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("7", "Kimchi and Sausage Jjigae","Kimchibudaejjige", "20000", "kimchibudaejjige","kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, soy bean, red pepper, ramen, sugar, salt, garlic, red pepper powder, red pepper paste"),
+("7", "Soft Bean Curd Sausage Jjigae","Sundububudaejjigae", "21000", "sundububudaejjigae","soy bean, kimchi, ham, spam, soy bean, green onion, mushroom, rice cake, red pepper, mushroom, ramen, sugar, salt, garlic, red pepper powder, red pepper paste");
 
 
 
@@ -226,27 +246,26 @@ CREATE TABLE menuAlgs(
 
 
 INSERT INTO menuAlgs(menu_id,alg_id) 
-values(1, 5),
-    (1, 10),
-    (1, 1),
+values(1, 4),
     (1, 23),
-    (1, 22),
+    (1, 18),
+    (1, 15),
     (2, 10),
-    (2, 1),
+    (2, 14),
     (2, 23),
     (2, 22),
     (3, 15),
     (3, 10),
-    (3, 1),
+    (3, 2),
     (3, 23),
     (3, 22),
     (4, 7),
     (4, 5),
     (4, 23),
+    (5, 18),
+    (5, 4),
     (5, 15),
     (5, 23),
-    (5, 2),
-    (5, 20),
     (6, 10),
     (6, 23),
     (7, 1),
