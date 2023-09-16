@@ -3,7 +3,14 @@
     <div class="register-page">
       <div class="uid">User ID</div>
       <div class="uid-input">
-        <input type="text" id="uid" name="uid" maxlength="16" />
+        <input
+          type="text"
+          id="uid"
+          name="uid"
+          maxlength="16"
+          placeholder="example@email.com"
+          v-model="user_id"
+        />
       </div>
 
       <button class="confirm" @click="click_confirm">Confirm</button>
@@ -11,14 +18,24 @@
         <img src="@/assets/icon/correct.png" />
         <span class="available">ID Available</span>
       </div>
+      <div class="id-confirm-status" v-else-if="confirm_email === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">Please write in email format</span>
+      </div>
       <div class="id-confirm-status" v-else-if="confirm_id_status === false">
         <img src="@/assets/icon/failed.png" />
-        <span class="not-available">ID Not Available</span>
+        <span class="not-available">There is a duplicate email</span>
       </div>
 
       <div class="password">Password</div>
       <div class="password-input">
-        <input type="password" id="pw" name="password" maxlength="32" />
+        <input
+          type="password"
+          id="pw"
+          name="password"
+          maxlength="32"
+          v-model="user_pw"
+        />
       </div>
 
       <div class="password-confrim">Password Confirm</div>
@@ -28,7 +45,7 @@
           id="pw_confirm"
           name="pw_confirm"
           maxlength="32"
-          v-model="user_pw"
+          v-model="user_pw_confirm"
         />
       </div>
       <div class="confirm_status" v-if="current_status === false">
@@ -43,17 +60,36 @@
       <div class="user-name">User Name</div>
 
       <div class="name-input">
-        <input type="text" id="name" name="user_name" maxlength="15" />
+        <input
+          type="text"
+          id="name"
+          name="user_name"
+          maxlength="15"
+          v-model="user_name"
+        />
       </div>
       <div class="Age">Age</div>
       <div class="Country">Country</div>
 
       <div class="age-input">
-        <input type="number" id="age" name="age" pattern="\d*" min="1" max="150"/>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          pattern="\d*"
+          min="1"
+          max="150"
+          v-model="user_age"
+        />
       </div>
 
       <form>
-        <select class="country-input" name="country" id="country">
+        <select
+          class="country-input"
+          name="country"
+          id="country"
+          v-model="user_country"
+        >
           <option value="" selected>Select Country</option>
           <option value="Afghanistan">Afghanistan</option>
           <option value="Albania">Albania</option>
@@ -230,18 +266,31 @@
 
       <div class="gender">Gender</div>
       <div class="select-gender">
-        <input type="radio" id="male" name="gender" value="남" /><label
-          for="male"
-          >Male</label
-        >
-        <input type="radio" id="female" name="gender" value="여" /><label
-          for="female"
-          >Female</label
-        >
-      </div>           
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="남"
+          v-model="user_gender"
+        /><label for="male">Male</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="여"
+          v-model="user_gender"
+        /><label for="female">Female</label>
+      </div>
     </div>
     <div class="foot">
-      <button class="Register" @click="click_register">Next</button>
+      <button
+        class="Register"
+        @click="click_register"
+        v-if="final_status === true"
+      >
+        Next
+      </button>
+      <button class="Register-else" v-else disabled>Next</button>
     </div>
   </div>
 </template>
@@ -255,7 +304,13 @@ import axios from "axios";
 export default {
   setup() {
     return {
+      user_id: ref(),
       user_pw: ref(),
+      user_pw_confirm: ref(),
+      user_name: ref(),
+      user_age: ref(),
+      user_gender: ref(),
+      user_country: ref(),
     };
   },
   data() {
@@ -266,6 +321,9 @@ export default {
       current_status: "",
       status_text: "Please Input Text",
       confirm_id_status: "",
+      confirm_email: "",
+      final_status: false,
+      overlap: "",
     };
   },
   methods: {
@@ -273,8 +331,7 @@ export default {
       location.href = "#/signup";
     },
     async click_confirm() {
-      const uid = document.getElementById("uid").value;
-      console.log(uid);
+      const uid = this.user_id;
 
       let res = await axios({
         method: "POST",
@@ -284,39 +341,84 @@ export default {
         },
       }).then((res) => {
         console.log(res.data.success);
-        this.confirm_id_status = res.data.success;
+        this.overlap = res.data.success;
       });
+
+      if (this.overlap) {
+        console.log(this.CheckEmail(this.user_id));
+        if (this.CheckEmail(this.user_id)) {
+          this.confirm_id_status = true;
+          this.confirm_email = true;
+        } else {
+          this.confirm_id_status = false;
+          this.confirm_email = false;
+        }
+      } else {
+        this.confirm_id_status = false;
+      }
+    },
+    CheckEmail(id) {
+      var reg_email =
+        /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+      if (!reg_email.test(id)) {
+        return false;
+      } else {
+        return true;
+      }
     },
     async click_register() {
-      this.register_data.id = document.getElementById("uid").value;
-      this.register_data.pw = document.getElementById("pw").value;
-      this.register_data.name = document.getElementById("name").value;
-      var radios = document.getElementsByName("gender");
-
-      radios.forEach((elem) => {
-        if (elem.checked) {
-          this.register_data.gender = elem.value;
-        }
-      });
-      this.register_data.age = document.getElementById("age").value;
-      this.register_data.country = document.getElementById("country").value;
+      this.register_data.id = this.user_id;
+      this.register_data.pw = this.user_pw;
+      this.register_data.name = this.user_name;
+      this.register_data.gender = this.user_gender;
+      this.register_data.age = this.user_age;
+      this.register_data.country = this.user_country;
 
       this.$emit("register_value", this.register_data);
       this.$emit("change_page");
     },
     checkPW() {
-      this.user_password = document.getElementById("pw").value;
-      this.confirm_password = document.getElementById("pw_confirm").value;
-      if (this.user_password != this.confirm_password) {
+      if (this.user_pw != this.user_pw_confirm) {
         this.current_status = false;
       } else {
         this.current_status = true;
       }
     },
+    finalConfirm() {
+      if (
+        this.current_status &&
+        this.confirm_id_status &&
+        this.user_gender &&
+        this.user_name &&
+        this.user_age &&
+        this.user_country
+      ) {
+        this.final_status = true;
+      }
+    },
   },
   watch: {
+    user_id() {
+      this.finalConfirm();
+    },
     user_pw() {
+      this.finalConfirm();
+    },
+    user_pw_confirm() {
       this.checkPW();
+      this.finalConfirm();
+    },
+    user_name() {
+      this.finalConfirm();
+    },
+    user_age() {
+      this.finalConfirm();
+    },
+    user_country() {
+      this.finalConfirm();
+    },
+    user_gender() {
+      this.finalConfirm();
     },
   },
 };
@@ -341,7 +443,7 @@ export default {
   position: absolute;
   top: 0px;
   width: 100%;
-  height: 100%;  
+  height: 100%;
   overflow-x: clip;
 }
 .uid {
@@ -598,6 +700,17 @@ input[type="number"] {
 }
 .Register {
   background: #1c9181;
+  width: 100%;
+  height: 60px;
+  color: #ffffff;
+  text-align: center;
+  font: 800 20px "Noto Sans", sans-serif;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+}
+.Register-else {
+  background: #a5dad3bd;
   width: 100%;
   height: 60px;
   color: #ffffff;
