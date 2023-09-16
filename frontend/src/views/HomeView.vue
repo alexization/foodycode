@@ -73,7 +73,7 @@ export default {
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
-    axios.get('/api/user').then((response) => {
+    axios.get('/api/users').then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
