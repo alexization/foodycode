@@ -73,6 +73,11 @@ export default {
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
+    axios.get('/api/user').then((response) => {
+      console.log(response.data);
+      const restaurant_list = response.data;
+      this.list = restaurant_list;
+    });
   },
   methods: {
     async toggleMenu() {
@@ -110,7 +115,7 @@ export default {
 .space {
   position: absolute;
   width: 100%;
-  height: 30px;  
+  height: 30px;
 }
 
 /* 사이드 메뉴 열었을때 배경 흐리게 */
