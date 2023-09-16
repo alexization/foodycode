@@ -8,7 +8,7 @@ const UserStorageCtrl = require('../controller/UserStorageCtrl');
 //   console.log('hello world');
 // });
 
-router.get('/', UserStorageCtrl.getUserInfo);
+router.get('/', UserStorageCtrl.getUserlogined);
 
 // router.post("/signup", UserCtrl.processLogin);
 
