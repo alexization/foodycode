@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-const UserCtrl = require('../controller/UserCtrl');
+const UserStorageCtrl = require('../controller/UserStorageCtrl');
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  console.log('hello world');
-});
+// router.get('/', function (req, res, next) {
+//   console.log('hello world');
+// });
 
-router.post('/', UserCtrl.processLogin);
+router.get('/', UserStorageCtrl.getUserlogined);
 
 // router.post("/signup", UserCtrl.processLogin);
 

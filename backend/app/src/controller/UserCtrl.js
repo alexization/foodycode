@@ -22,13 +22,6 @@ class UserCtrl {
     return res.json(response);
   }
 
-  static async getUserInfo(req, res) {
-    const user = new User(req.body);
-    const response = await user.getUserInfo();
-    console.log(response);
-    return res.json(response);
-  }
-
   static async confirmID(req, res) {
     const user = new User(req.body);
     const response = await user.ID();
