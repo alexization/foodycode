@@ -8,6 +8,7 @@
           id="uid"
           name="uid"
           maxlength="16"
+          placeholder="example@email.com"
           v-model="user_id"
         />
       </div>
@@ -17,9 +18,13 @@
         <img src="@/assets/icon/correct.png" />
         <span class="available">ID Available</span>
       </div>
+      <div class="id-confirm-status" v-else-if="confirm_email === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">Please write in email format</span>
+      </div>
       <div class="id-confirm-status" v-else-if="confirm_id_status === false">
         <img src="@/assets/icon/failed.png" />
-        <span class="not-available">ID Not Available</span>
+        <span class="not-available">There is a duplicate email</span>
       </div>
 
       <div class="password">Password</div>
@@ -316,7 +321,9 @@ export default {
       current_status: "",
       status_text: "Please Input Text",
       confirm_id_status: "",
+      confirm_email: "",
       final_status: false,
+      overlap: "",
     };
   },
   methods: {
@@ -324,8 +331,7 @@ export default {
       location.href = "#/signup";
     },
     async click_confirm() {
-      const uid = document.getElementById("uid").value;
-      console.log(uid);
+      const uid = this.user_id;
 
       let res = await axios({
         method: "POST",
@@ -335,8 +341,30 @@ export default {
         },
       }).then((res) => {
         console.log(res.data.success);
-        this.confirm_id_status = res.data.success;
+        this.overlap = res.data.success;
       });
+
+      if (this.overlap) {
+        console.log(this.CheckEmail(this.user_id));
+        if (this.CheckEmail(this.user_id)) {
+          this.confirm_id_status = true;
+          this.confirm_email = true;
+        } else {
+          this.confirm_id_status = false;
+          this.confirm_email = false;
+        }
+      } else {
+        this.confirm_id_status = false;
+      }
+    },
+    CheckEmail(id) {
+      var reg_email =
+        /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+      if (!reg_email.test(id)) {
+        return false;
+      } else {
+        return true;
+      }
     },
     async click_register() {
       this.register_data.id = this.user_id;
