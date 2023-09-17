@@ -3,7 +3,7 @@ var router = express.Router();
 
 const UserCtrl = require('../controller/UserCtrl');
 
-router.get('/');
+router.get('/', UserCtrl.processLogout);
 
 module.exports = router;
 

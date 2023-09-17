@@ -47,7 +47,7 @@ app.use(
     secret: 'sessionkey_mustchanged',
     resave: false,
     saveUninitialized: false,
-  })
+  }),
 );
 
 // app.use("/", indexRouter);
