@@ -29,9 +29,12 @@
           </button>
         </div>
         <div v-for="{ name, url } in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{
-            name
-          }}</router-link>
+          <router-link
+            :to="url"
+            @click="callback(), session(name, $event)"
+            class="link"
+            >{{ name }}</router-link
+          >
         </div>
       </nav>
     </Transition>
@@ -89,6 +92,11 @@ export default {
     },
     callback() {
       this.showMenu = false;
+    },
+    session(name) {
+      if (name === "Logout") {
+        console.log("Click Logout");
+      }
     },
   },
 };
