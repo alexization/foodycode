@@ -28,19 +28,10 @@
             <img :src="CloseIcon" width="20" />
           </button>
         </div>
-        <div class="nav-list" v-if="login_status === false">
-          <div v-for="{ name, url } in navList" :key="name">
-            <router-link :to="url" @click="callback" class="link">{{
-              name
-            }}</router-link>
-          </div>
-        </div>
-        <div class="nav-list" v-else>
-          <div v-for="{ name, url } in login_navList" :key="name">
-            <router-link :to="url" @click="callback" class="link">{{
-              name
-            }}</router-link>
-          </div>
+        <div v-for="{ name, url } in navList" :key="name">
+          <router-link :to="url" @click="callback" class="link">{{
+            name
+          }}</router-link>
         </div>
       </nav>
     </Transition>
@@ -70,10 +61,6 @@ export default {
       showMenu: false,
       list: "",
       navList: [{ name: "Login", url: "/login" }],
-      login_navList: [
-        { name: "myFoody", url: "/myfoody" },
-        { name: "Logout", url: "" },
-      ],
       login_status: false,
     };
   },
@@ -85,6 +72,14 @@ export default {
     });
     axios.get("/api/users").then((response) => {
       this.login_status = response.data.is_logined;
+      if (this.login_status === false) {
+        this.navList = [{ name: "Login", url: "/login" }];
+      } else {
+        this.navList = [
+          { name: "myFoody", url: "/myfoody" },
+          { name: "Logout", url: "" },
+        ];
+      }
       console.log(this.login_status);
     });
   },
@@ -161,13 +156,7 @@ export default {
   padding: 12px 0px;
   padding-left: 20px;
 }
-.nav-list {
-  display: flex;
-  flex-direction: column;
-}
-.nav-list div {
-  margin-bottom: 25px;
-}
+
 .link {
   font: 600 16px "Noto Sans", sans-serif;
   color: black;
