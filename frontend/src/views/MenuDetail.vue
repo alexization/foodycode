@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="button-group">
-        <button class="add-cart" @click="add_cart">Add to Cart</button>
+        <button class="add-cart" @click="add_cart">Order</button>
       </div>
     </div>
   </div>
