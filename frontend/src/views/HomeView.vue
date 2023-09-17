@@ -28,10 +28,19 @@
             <img :src="CloseIcon" width="20" />
           </button>
         </div>
-        <div v-for="{ name, url } in navList" :key="name">
-          <router-link :to="url" @click="callback" class="link">{{
-            name
-          }}</router-link>
+        <div class="nav-list" v-if="login_status === false">
+          <div v-for="{ name, url } in navList" :key="name">
+            <router-link :to="url" @click="callback" class="link">{{
+              name
+            }}</router-link>
+          </div>
+        </div>
+        <div class="nav-list" v-else>
+          <div v-for="{ name, url } in login_navList" :key="name">
+            <router-link :to="url" @click="callback" class="link">{{
+              name
+            }}</router-link>
+          </div>
         </div>
       </nav>
     </Transition>
@@ -39,16 +48,16 @@
 </template>
 
 <script>
-import CloseIcon from '@/assets/icon/close.png';
+import CloseIcon from "@/assets/icon/close.png";
 
-import Header from '../components/Header.vue';
-import HomeUserInfo from '../components/HomeUserInfo.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
+import Header from "../components/Header.vue";
+import HomeUserInfo from "../components/HomeUserInfo.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     HomeUserInfo,
@@ -59,22 +68,24 @@ export default {
     return {
       CloseIcon,
       showMenu: false,
-      list: '',
-      navList: [
-        { name: 'myFoody', url: '/myfoody' },
-        { name: 'Login', url: '/login' },
-        { name: 'Logout', url: '' },
+      list: "",
+      navList: [{ name: "Login", url: "/login" }],
+      login_navList: [
+        { name: "myFoody", url: "/myfoody" },
+        { name: "Logout", url: "" },
       ],
+      login_status: false,
     };
   },
   async created() {
-    axios.get('/api/main').then((response) => {
+    axios.get("/api/main").then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
-    axios.get('/api/users').then((response) => {
-      console.log(response.data);
+    axios.get("/api/users").then((response) => {
+      this.login_status = response.data.is_logined;
+      console.log(this.login_status);
     });
   },
   methods: {
@@ -89,7 +100,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
 .user-info-box {
   position: absolute;
@@ -150,9 +161,15 @@ export default {
   padding: 12px 0px;
   padding-left: 20px;
 }
-
+.nav-list {
+  display: flex;
+  flex-direction: column;
+}
+.nav-list div {
+  margin-bottom: 25px;
+}
 .link {
-  font: 600 16px 'Noto Sans', sans-serif;
+  font: 600 16px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
