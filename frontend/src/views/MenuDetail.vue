@@ -349,5 +349,6 @@ export default {
   color: white;
   margin-bottom: 10px;
   font: 400 18px "Rubik", sans-serif;
+  cursor: pointer;
 }
 </style>
