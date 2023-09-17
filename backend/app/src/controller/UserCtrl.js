@@ -28,6 +28,14 @@ class UserCtrl {
     console.log(response);
     return res.json(response);
   }
+
+  static processLogout(req, res) {
+    const session = req.session;
+    if (session.is_logined) {
+      session.destroy();
+      return res.json({ success: true, msg: 'logout success' });
+    } else return res.json({ success: false, msg: 'Not logined' });
+  }
 }
 
 module.exports = UserCtrl;

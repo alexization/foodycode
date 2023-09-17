@@ -11,6 +11,7 @@ var session = require('express-session');
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
 
+var logoutRouter = require('./src/routes/logout');
 var loginRouter = require('./src/routes/login');
 var registerRouter = require('./src/routes/register');
 
@@ -47,13 +48,15 @@ app.use(
     secret: 'sessionkey_mustchanged',
     resave: false,
     saveUninitialized: false,
-  })
+  }),
 );
 
 // app.use("/", indexRouter);
 // 이거 뭔가안쓰는것같은데?
 app.use('/api/users', usersRouter);
 
+//auth
+app.use('/api/logout', logoutRouter);
 app.use('/api/login', loginRouter);
 app.use('/api/signup', registerRouter);
 
