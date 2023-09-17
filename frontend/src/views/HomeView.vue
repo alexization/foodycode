@@ -39,16 +39,16 @@
 </template>
 
 <script>
-import CloseIcon from '@/assets/icon/close.png';
+import CloseIcon from "@/assets/icon/close.png";
 
-import Header from '../components/Header.vue';
-import HomeUserInfo from '../components/HomeUserInfo.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
+import Header from "../components/Header.vue";
+import HomeUserInfo from "../components/HomeUserInfo.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     HomeUserInfo,
@@ -59,22 +59,28 @@ export default {
     return {
       CloseIcon,
       showMenu: false,
-      list: '',
-      navList: [
-        { name: 'myFoody', url: '/myfoody' },
-        { name: 'Login', url: '/login' },
-        { name: 'Logout', url: '' },
-      ],
+      list: "",
+      navList: [{ name: "Login", url: "/login" }],
+      login_status: false,
     };
   },
   async created() {
-    axios.get('/api/main').then((response) => {
+    axios.get("/api/main").then((response) => {
       console.log(response.data);
       const restaurant_list = response.data;
       this.list = restaurant_list;
     });
-    axios.get('/api/users').then((response) => {
-      console.log(response.data);
+    axios.get("/api/users").then((response) => {
+      this.login_status = response.data.is_logined;
+      if (this.login_status === false) {
+        this.navList = [{ name: "Login", url: "/login" }];
+      } else {
+        this.navList = [
+          { name: "myFoody", url: "/myfoody" },
+          { name: "Logout", url: "" },
+        ];
+      }
+      console.log(this.login_status);
     });
   },
   methods: {
@@ -89,7 +95,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
 .user-info-box {
   position: absolute;
@@ -152,7 +158,7 @@ export default {
 }
 
 .link {
-  font: 600 16px 'Noto Sans', sans-serif;
+  font: 600 16px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
