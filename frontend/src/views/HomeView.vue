@@ -96,7 +96,12 @@ export default {
     session(name) {
       if (name === 'Logout') {
         axios.get('/api/logout').then((response) => {
-          console.log(response);
+          if (response.data.success) {
+            window.location.reload(true);
+          } else {
+            alert('error!');
+            window.location.reload(true);
+          }
         });
       }
     },
