@@ -23,6 +23,7 @@ class AlgStorage {
         "select algid FROM useralgs where uid = (SELECT id FROM users WHERE uid = ?);";
       console.log(`query is ${query}`);
       db.query(query, [uid], (err, data) => {
+        console.log(`in db.query before err`);
         if (err) throw reject(`${err}`);
         console.log(`in db.query`);
         resolve(data);
