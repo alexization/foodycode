@@ -32,9 +32,7 @@ class MenuCtrl {
         if (arr_menuInfo[i].menu_name === arr_menuAlg[j].menu_name) {
           // arr_menuAlg의 algname이 arr_userAlg에 있는지 확인하고, 있으면 menu_alg에 추가
           if (
-            arr_userAlg.algname.some(
-              (alg) => alg.algname === arr_menuAlg[j].algname
-            )
+            arr_userAlg.some((alg) => alg.algname === arr_menuAlg[j].algname)
           ) {
             arr_menuInfo[i].menu_alg.push(arr_menuAlg[j].algname);
           }
@@ -68,8 +66,8 @@ class MenuCtrl {
     for (let i = 0; i < arr_menuAlg.length; i++) {
       menuAlg[i] = arr_menuAlg[i].algname;
     }
-    for (let i = 0; i < arr_userAlg.algname.length; i++) {
-      userAlg[i] = arr_userAlg.algname[i].algname;
+    for (let i = 0; i < arr_userAlg.length; i++) {
+      userAlg[i] = arr_userAlg[i].algname;
     }
     arr_menuDetail[0].menuAlg = menuAlg;
     arr_menuDetail[0].userAlg = userAlg;
