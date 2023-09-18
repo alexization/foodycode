@@ -18,11 +18,13 @@ class AlgStorage {
 
   static getUsersAlgid(uid) {
     return new Promise((resolve, reject) => {
+      console.log("before make query");
       const query =
         "select algid FROM useralgs where uid = (SELECT id FROM users WHERE uid = ?);";
+      console.log(`query is ${query}`);
       db.query(query, [uid], (err, data) => {
         if (err) throw reject(`${err}`);
-
+        console.log(`in db.query`);
         resolve(data);
       });
     });
