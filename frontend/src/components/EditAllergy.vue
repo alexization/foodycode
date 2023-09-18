@@ -42,9 +42,9 @@ export default {
       line,
       allergyList: [],
       allergy_list: [
-        { 
-          name: "Abalone", 
-          number: "19" 
+        {
+          name: "Abalone",
+          number: "19",
         },
         {
           name: "Almond",
@@ -148,7 +148,7 @@ export default {
         response.data.useralgs.sort();
         this.userName = response.data.uname;
         this.allergyList = response.data.useralgs;
-        this.allergy = response.data.userId;
+        this.allergy = response.data.algid;
       })
       .catch((error) => {});
   },
@@ -164,7 +164,7 @@ export default {
           console.log(res.data.success);
           if (res.data.success) {
             alert("수정 완료!");
-            this.$router.push({ path: "/" });
+            window.location.reload(true);
           } else {
             alert(res.data);
           }
