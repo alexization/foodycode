@@ -5,20 +5,13 @@ const db = require("../config/db");
 //class명은 파일이름과 동일한게 좋음
 class AlgStorage {
   static getUsersAlgName(uid) {
-    this.user_alg = {};
     return new Promise((resolve, reject) => {
       const query =
         "select allergies.algname FROM users right join userAlgs ON users.id = userAlgs.uid inner join allergies ON userAlgs.algid = allergies.id where users.uid = ?;";
-      const query_id =
-        "select algid FROM useralgs where uid = (SELECT id FROM users WHERE uid = ?);";
       db.query(query, [uid], (err, data) => {
         if (err) throw reject(`${err}`);
-        this.user_alg.algname = data;
-      });
-      db.query(query_id, [uid], (err, data_id) => {
-        if (err) throw reject(`${err}`);
-        this.user_alg.algid = data_id;
-        resolve(this.user_alg);
+
+        resolve(data);
       });
     });
   }
