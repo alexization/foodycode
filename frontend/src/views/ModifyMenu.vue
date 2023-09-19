@@ -179,7 +179,6 @@ export default {
       this.menuData.menuName = document.getElementById("menu_name").value;
       this.menuData.menuPrice = document.getElementById("menu_price").value;
       this.menuData.menuDetail = document.getElementById("menu_detail").value;
-      console.log(this.menuData);
       // menuData가 PUT 할 데이터
       //   axios
       //     .post('/api/menu', {
@@ -204,11 +203,9 @@ export default {
     axios.get(`/api/menuDetail/${menu_id}`).then((response) => {
       this.detail_list = response.data[0];
       this.img_url = this.detail_list.img_url;
-      console.log(response.data);
     });
 
     axios.get(`/api/menuedit/${menu_id}`).then((response) => {
-      console.log(response.data);
       this.allergy = response.data;
     });
   },

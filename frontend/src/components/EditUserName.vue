@@ -16,7 +16,12 @@
       </div>
       <hr class="line" />
       <div class="button-box">
-        <button id="btn" class="edit-btn" @click.self.prevent="edit_username" disabled="true">
+        <button
+          id="btn"
+          class="edit-btn"
+          @click.self.prevent="edit_username"
+          disabled="true"
+        >
           Edit
         </button>
       </div>
@@ -58,7 +63,10 @@ export default {
         return { success: false, case: 0, info: this.username_instruction[0] };
       } else if (res_data.username === this.userName) {
         return { success: false, case: 1, info: this.username_instruction[1] };
-      } else if (res_data.username.length <= 1 || res_data.username.length > 15) {
+      } else if (
+        res_data.username.length <= 1 ||
+        res_data.username.length > 15
+      ) {
         return { success: false, case: 2, info: this.username_instruction[2] };
       } else {
         return { success: true, case: 3, info: this.username_instruction[3] };
@@ -106,7 +114,6 @@ export default {
     async edit_username() {
       this.input_data.username = document.getElementById("name").value;
       if (this.isUsernameCorrect(this.input_data).success) {
-        console.log(this.input_data);
         this.$router.push({ path: "/" });
       } else {
         alert("error");

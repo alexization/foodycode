@@ -73,10 +73,8 @@ export default {
     // 여기는 고정인데 식당이름을 따로 가져오게 할지 고민좀 해보야할듯
     axios.get(`/api/restuser_menu`).then((response) => {
       this.list = response.data;
-      console.log(response.data);
     });
     axios.get("/api/restuser").then((response) => {
-      console.log(response.data);
       this.rest_title = response.data.rest_name;
     });
   },

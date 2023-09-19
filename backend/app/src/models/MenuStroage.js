@@ -36,7 +36,6 @@ class MenuStorage {
 
   //알러지정보 추가 필요
   static async save(menu_info, rest_id) {
-    console.log(menu_info, rest_id);
     return new Promise((resolve, reject) => {
       const menuquery = `INSERT INTO menu(rest_id,menu_name,menu_price,img_url,menu_ing)
     values((SELECT id FROM restaurant WHERE uid = ?),?,?,"menu_init",?);`;
@@ -65,13 +64,9 @@ class MenuStorage {
           )
           .join(", ");
 
-        console.log(`insert val : ${insertValues}`);
-
         const algquery = insertValues
           ? `INSERT INTO menuAlgs(alg_id,menu_id) VALUES ${insertValues};`
           : "";
-        console.log(`alg query : ${algquery}`);
-        console.log(typeof menu_info.name);
         db.query(algquery, menuidArr, (err) => {
           if (err) throw reject(`${err}`);
           resolve({ success: true });

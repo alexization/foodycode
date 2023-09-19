@@ -41,18 +41,15 @@ class UserStorage {
           userInfo.country,
         ],
         (err) => {
-          console.log(info_query);
           if (err) throw reject(`${err}`);
 
           //알러지 없으면 추가 할필요 없음
           if (userInfo.arr_algid.length === 0) {
-            console.log("no alg!!!!\n==================");
             return resolve({ success: true });
           }
         }
       );
 
-      console.log("yes alg!!!!\n==================");
       //inservalues에 빈문자열 할당, if문 후 쿼리 생성
       let insertValues = "";
 

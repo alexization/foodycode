@@ -102,7 +102,6 @@ export default {
     },
     onLogin: async function () {
       const uid = document.getElementById("uid");
-      console.log(uid.value);
       const password = document.getElementById("pw");
 
       let res = await axios({
@@ -113,8 +112,6 @@ export default {
           password: password.value,
         },
       }).then((res) => {
-        console.log(res.data);
-
         if (res.data.success) {
           location.href = "#/";
         } else {

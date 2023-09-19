@@ -59,7 +59,6 @@ export default {
     },
     open_close() {
       this.manage_status = !this.manage_status;
-      console.log(this.manage_status);
     },
     disable_order() {
       alert("가게를 오픈해야합니다.");

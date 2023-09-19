@@ -31,9 +31,9 @@ export default {
   data() {
     return {
       allergy_list: [
-        { 
-          name: "Abalone", 
-          number: "19" 
+        {
+          name: "Abalone",
+          number: "19",
         },
         {
           name: "Almond",
@@ -138,7 +138,6 @@ export default {
       location.href = "#/signup";
     },
     click_next() {
-      console.log(this.allergy_list);
       this.$emit("alg_data", this.allergy);
     },
   },
@@ -158,9 +157,8 @@ export default {
   top: 130px;
   overflow-y: auto;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);  
+  height: calc(var(--vh, 1vh) * 100 - 130px);
   background: #ffffff;
- 
 }
 
 .selecting-page::-webkit-scrollbar {

@@ -73,8 +73,6 @@ export default {
       .get("/api/useralg")
       .then((response) => {
         this.userName = response.data.uname;
-        console.log(this.userName);
-        console.log(this.userName.length);
         this.login_status = true;
       })
       .catch((error) => {

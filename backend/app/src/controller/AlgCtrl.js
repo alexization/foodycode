@@ -23,7 +23,6 @@ class AlgCtrl {
       data.algid = arr_id;
     }
 
-    console.log(data);
     res.send(data);
   }
 }

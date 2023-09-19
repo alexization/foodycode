@@ -65,20 +65,15 @@ class AlgStorage {
 
       let insertValues = "";
 
-      console.log(`in save query`);
-      console.log(arr_alg);
-
       insertValues = arr_alg
         .map((algid) => `(${algid}, (SELECT id FROM users WHERE uid = ?))`)
         .join(", ");
 
       // insertValues가 생성될때만 alg_Query를 생성  (혹시모를 오류)
-      console.log(`${typeof uid} : ${uid}`);
       const alg_query = insertValues
         ? `INSERT INTO userAlgs (algid, uid) VALUES    ${insertValues};`
         : "";
 
-      console.log(alg_query);
       db.query(alg_query, uidArray, (err) => {
         if (err) throw reject(`${err}`);
         resolve({ success: true });
@@ -100,7 +95,6 @@ class AlgStorage {
           WHERE uid = (SELECT id FROM users WHERE uid = ?)
           AND algid IN (${insertValues});`
         : "";
-      console.log(alg_query);
       db.query(alg_query, uidArray, (err) => {
         if (err) throw reject(`${err}`);
         resolve({ success: true });

@@ -91,7 +91,6 @@ export default {
   },
   async created() {
     axios.get("/api/restuser").then((response) => {
-      console.log(response.data);
       this.restaurantData = response.data;
       this.img_url = this.restaurantData.img_url;
     });
@@ -113,7 +112,6 @@ export default {
           }
         }
       }
-      console.log(this.modifyData);
 
       axios
         .put("/api/restuser", {

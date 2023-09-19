@@ -49,22 +49,17 @@ export default {
     isCurPwdCorrect() {
       this.current_password_data = document.getElementById("cur_pwd").value;
       if (this.current_password_data === "") {
-        console.log(this.cur_pwd_instruction[0]);
         return false;
       } else if (this.current_password_data !== this.res_data.password) {
-        console.log(this.cur_pwd_instruction[1]);
         return false;
       } else {
-        console.log(this.cur_pwd_instruction[2]);
         return true;
       }
     },
     isNewPwdCorrect(res_data) {
       if (this.change_password_data.cur_pwd === "") {
-        console.log(this.new_pwd_instruction[0]);
         return false;
       } else {
-        console.log("new_pwd가 입력되었습니다.");
         return true;
       }
     },
@@ -72,10 +67,8 @@ export default {
       this.change_password_data.cur_pwd =
         document.getElementById("new_pwd").value;
       if (this.isNewPwdCorrect(this.change_password_data.cur_pwd)) {
-        console.log(this.change_password_data);
         this.$router.push({ path: "/myfoody" });
       } else {
-        console.log("오류입니다.");
       }
     },
   },
