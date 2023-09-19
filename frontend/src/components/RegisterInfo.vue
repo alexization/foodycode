@@ -24,6 +24,10 @@
       </div>
       <div class="id-confirm-status" v-else-if="confirm_id_status === false">
         <img src="@/assets/icon/failed.png" />
+        <span class="not-available">Please check confirm</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="duplicate_status === true">
+        <img src="@/assets/icon/failed.png" />
         <span class="not-available">There is a duplicate email</span>
       </div>
 
@@ -323,6 +327,7 @@ export default {
       confirm_id_status: "",
       confirm_email: "",
       final_status: false,
+      duplicate_status: false,
       overlap: "",
     };
   },
@@ -340,18 +345,18 @@ export default {
           uid: uid,
         },
       }).then((res) => {
-        console.log(res.data.success);
         this.overlap = res.data.success;
       });
 
       if (this.overlap) {
-        console.log(this.CheckEmail(this.user_id));
         if (this.CheckEmail(this.user_id)) {
           this.confirm_id_status = true;
           this.confirm_email = true;
+          this.finalConfirm();
         } else {
           this.confirm_id_status = false;
           this.confirm_email = false;
+          this.duplicate_status = true;
         }
       } else {
         this.confirm_id_status = false;
@@ -380,6 +385,7 @@ export default {
     checkPW() {
       if (this.user_pw != this.user_pw_confirm) {
         this.current_status = false;
+        this.final_status = false;
       } else {
         this.current_status = true;
       }
@@ -387,6 +393,7 @@ export default {
     finalConfirm() {
       if (
         this.current_status &&
+        this.confirm_email &&
         this.confirm_id_status &&
         this.user_gender &&
         this.user_name &&
@@ -394,14 +401,27 @@ export default {
         this.user_country
       ) {
         this.final_status = true;
+      } else {
+        this.final_status = false;
       }
     },
   },
   watch: {
     user_id() {
+      var reg_email =
+        /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+      if (reg_email.test(this.user_id)) {
+        this.confirm_id_status = false;
+        this.confirm_email = true;
+      } else {
+        this.confirm_email = false;
+        this.confirm_id_status = false;
+        this.final_status = false;
+      }
       this.finalConfirm();
     },
     user_pw() {
+      this.checkPW();
       this.finalConfirm();
     },
     user_pw_confirm() {
