@@ -14,7 +14,7 @@
       type="text"
       name="uid"
       placeholder="User Name"
-      maxlength="16"
+      maxlength="32"
     />
 
     <input
@@ -87,10 +87,14 @@ export default {
   },
   methods: {
     find_id() {
-      alert("If you don't remember your ID, please sign up for a new membership.");
+      alert(
+        "If you don't remember your ID, please sign up for a new membership."
+      );
     },
     find_pw() {
-      alert("If you don't remember the password, please sign up for a new membership.");
+      alert(
+        "If you don't remember the password, please sign up for a new membership."
+      );
     },
 
     click_back() {

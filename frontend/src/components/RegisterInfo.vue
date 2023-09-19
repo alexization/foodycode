@@ -7,7 +7,7 @@
           type="text"
           id="uid"
           name="uid"
-          maxlength="16"
+          maxlength="32"
           placeholder="example@email.com"
           v-model="user_id"
         />

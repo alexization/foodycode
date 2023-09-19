@@ -7,14 +7,20 @@ class AlgCtrl {
     if (req.session.userid) {
       const arr_useralgs = await AlgStorage.getUsersAlgName(req.session.userid);
       const { name } = await UserStorage.getUsersName(req.session.userid);
+      const useralgs_id = await AlgStorage.getUsersAlgid(req.session.userid);
 
       const arr = [];
       for (let i = 0; i < arr_useralgs.length; i++) {
         arr.push(arr_useralgs[i].algname);
       }
 
+      const arr_id = [];
+      for (let i = 0; i < useralgs_id.length; i++) {
+        arr_id.push(useralgs_id[i].algid);
+      }
       data.uname = name;
       data.useralgs = arr;
+      data.algid = arr_id;
     }
 
     console.log(data);

@@ -19,10 +19,9 @@ class AlgStorage {
   static getUsersAlgid(uid) {
     return new Promise((resolve, reject) => {
       const query =
-        "select algid FROM useralgs where uid = (SELECT id FROM users WHERE uid = ?);";
+        "select algid FROM userAlgs where uid = (SELECT id FROM users WHERE uid = ?);";
       db.query(query, [uid], (err, data) => {
         if (err) throw reject(`${err}`);
-
         resolve(data);
       });
     });
@@ -76,7 +75,7 @@ class AlgStorage {
       // insertValues가 생성될때만 alg_Query를 생성  (혹시모를 오류)
       console.log(`${typeof uid} : ${uid}`);
       const alg_query = insertValues
-        ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
+        ? `INSERT INTO userAlgs (algid, uid) VALUES    ${insertValues};`
         : "";
 
       console.log(alg_query);
