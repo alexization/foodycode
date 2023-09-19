@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const db = require('../config/db');
-const bcrypt = require('bcrypt');
+const db = require("../config/db");
+const bcrypt = require("bcrypt");
 
 //class명은 파일이름과 동일한게 좋음
 class UserStorage {
   static getUsersInfo(id) {
     return new Promise((resolve, reject) => {
-      const query = 'SELECT * FROM users where uid = ?;';
+      const query = "SELECT * FROM users where uid = ?;";
       db.query(query, [id], (err, data) => {
         if (err) throw reject(`${err}`);
         resolve(data[0]);
@@ -17,7 +17,7 @@ class UserStorage {
 
   static getUsersName(id) {
     return new Promise((resolve, reject) => {
-      const query = 'SELECT name FROM users where uid = ?;';
+      const query = "SELECT name FROM users where uid = ?;";
       db.query(query, [id], (err, data) => {
         if (err) throw reject(`${err}`);
         resolve(data[0]);
@@ -46,15 +46,15 @@ class UserStorage {
 
           //알러지 없으면 추가 할필요 없음
           if (userInfo.arr_algid.length === 0) {
-            console.log('no alg!!!!\n==================');
+            console.log("no alg!!!!\n==================");
             return resolve({ success: true });
           }
-        },
+        }
       );
 
-      console.log('yes alg!!!!\n==================');
+      console.log("yes alg!!!!\n==================");
       //inservalues에 빈문자열 할당, if문 후 쿼리 생성
-      let insertValues = '';
+      let insertValues = "";
 
       // db query에 생기는 ?의 갯수만큼 uid배열을 준비해야함
       const uidArray = new Array(userInfo.arr_algid.length).fill(userInfo.uid);
@@ -63,12 +63,12 @@ class UserStorage {
       if (userInfo.arr_algid.length > 0) {
         insertValues = userInfo.arr_algid
           .map((algid) => `(${algid}, (SELECT id FROM users WHERE uid = ?))`)
-          .join(', ');
+          .join(", ");
 
         // insertValues가 생성될때만 alg_Query를 생성  (혹시모를 오류)
         const alg_query = insertValues
-          ? `INSERT INTO useralgs (algid, uid) VALUES    ${insertValues};`
-          : '';
+          ? `INSERT INTO userAlgs (algid, uid) VALUES    ${insertValues};`
+          : "";
 
         db.query(alg_query, uidArray, (err) => {
           if (err) throw reject(`${err}`);
