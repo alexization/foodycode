@@ -10,6 +10,7 @@ var session = require('express-session');
 // var indexRouter = require("./src/routes/index");
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
+var usernameRouter = require('./src/routes/username');
 
 var logoutRouter = require('./src/routes/logout');
 var loginRouter = require('./src/routes/login');
@@ -54,6 +55,7 @@ app.use(
 // app.use("/", indexRouter);
 // 이거 뭔가안쓰는것같은데?
 app.use('/api/users', usersRouter);
+app.use('/api/username', usernameRouter);
 
 //auth
 app.use('/api/logout', logoutRouter);

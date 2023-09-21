@@ -33,6 +33,14 @@ class UserCtrl {
       return res.json({ success: true, msg: "logout success" });
     } else return res.json({ success: false, msg: "Not logined" });
   }
+
+  static async processEdit(req, res) {
+    console.log(req.body);
+    const user = new User(req.body);
+    const response = await user.edit(req.session.userid);
+
+    return res.json(response);
+  }
 }
 
 module.exports = UserCtrl;

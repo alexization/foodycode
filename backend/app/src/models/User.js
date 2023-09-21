@@ -70,6 +70,17 @@ class User {
       return { success: true, msg: "사용가능한 ID입니다." };
     }
   }
+
+  // myfoody username 변경
+  async edit(userid) {
+    const client = this.body;
+    try {
+      const response = await UserStorage.update(userid, client);
+      return response;
+    } catch (err) {
+      return { success: false, msg: err };
+    }
+  }
 }
 
 module.exports = User;
