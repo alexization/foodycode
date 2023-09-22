@@ -114,7 +114,18 @@ export default {
     async edit_username() {
       this.input_data.username = document.getElementById("name").value;
       if (this.isUsernameCorrect(this.input_data).success) {
-        this.$router.push({ path: "/" });
+        axios
+        .put("/api/username", {
+          name: this.input_data.username,
+        })
+        .then((res) => {
+          if (res.data.success) {
+            alert("수정 완료!");
+            this.$router.push({ path: "/" });
+          } else {
+            alert("수정 실패");
+          }
+        });
       } else {
         alert("error");
       }

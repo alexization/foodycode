@@ -76,5 +76,18 @@ class UserStorage {
       }
     });
   }
+
+  // myfoody username 변경
+  static async update(id, client){
+    return new Promise((resolve, reject)=>{
+      const query = `UPDATE users 
+      SET name = ?
+      where uid = ?;`;
+      db.query(query, [client.name, id],(err)=>{
+        if(err) throw reject(`${err}`);
+        resolve({success: true});
+      })
+    })
+  }
 }
 module.exports = UserStorage;
