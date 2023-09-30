@@ -13,7 +13,7 @@
       id="uid"
       type="text"
       name="uid"
-      placeholder="User Name"
+      placeholder="Email"
       maxlength="32"
     />
 

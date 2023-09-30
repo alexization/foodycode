@@ -102,7 +102,7 @@ export default {
       location.href = this.prev_url;
     },
     add_cart() {
-      alert("Comming Soon..");
+      alert("Order function is preparing. Please show this menu screen to the restaurant staff to order.");
     },
   },
   created() {
