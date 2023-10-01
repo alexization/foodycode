@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 
+// 환경변수용
+const dotenv = require('dotenv');
+
 //for session
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -41,6 +44,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+//for env
+dotenv.config();
 
 //for session middleware
 app.use(cookieParser());
