@@ -3,6 +3,12 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 
+// 환경변수용
+const dotenv = require('dotenv');
+
+//for env
+dotenv.config();
+
 //for session
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
