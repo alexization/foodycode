@@ -120,10 +120,10 @@ export default {
         })
         .then((res) => {
           if (res.data.success) {
-            alert("수정 완료!");
+            alert("Modification completed!");
             this.$router.push({ path: "/" });
           } else {
-            alert("수정 실패");
+            alert("Failed to modify");
           }
         });
       } else {

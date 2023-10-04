@@ -1,7 +1,7 @@
 <template>
   <div class="sign-up-page-register">
     <div class="register-page">
-      <div class="uid">User ID</div>
+      <div class="uid">Email</div>
       <div class="uid-input">
         <input
           type="text"
