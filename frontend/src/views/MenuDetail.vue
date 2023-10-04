@@ -83,7 +83,7 @@ export default {
   methods: {
     click_remove() {
       if (this.menu_count < 2) {
-        alert("최소주문 개수입니다");
+        alert("The minimum number of orders is one.");
       } else {
         this.menu_count -= 1;
         this.detail_list.menu_price =
