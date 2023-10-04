@@ -160,7 +160,7 @@ export default {
         })
         .then((res) => {
           if (res.data.success) {
-            alert("수정 완료!");
+            alert("Modification completed!");
             window.location.reload(true);
           } else {
             alert(res.data);
