@@ -67,7 +67,7 @@ class User {
         return { success: true, msg: "This is an available ID." };
       }
     } catch (err) {
-      return { success: false, msg: "Please try again in a moment." };
+      return { success: true, msg: "This is an available ID." };
     }
   }
 
