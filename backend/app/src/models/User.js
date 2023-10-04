@@ -21,11 +21,11 @@ class User {
         if (psword_ismatch) {
           return { success: true };
         } else {
-          return { success: false, msg: "회원 정보가 일치하지 않습니다." };
+          return { success: false, msg: "Member information does not match." };
         }
       }
     } catch (err) {
-      return { success: false, msg: "잠시후 다시 시도해주세요." };
+      return { success: false, msg: "Please try again in a moment." };
     }
   }
 
@@ -62,12 +62,12 @@ class User {
       const { uid } = await UserStorage.getUsersInfo(client.uid);
 
       if (uid === client.uid) {
-        return { success: false, msg: "ID가 중복됩니다." };
+        return { success: false, msg: "ID is duplicated." };
       } else {
-        return { success: true, msg: "사용가능한 ID입니다." };
+        return { success: true, msg: "This is an available ID." };
       }
     } catch (err) {
-      return { success: true, msg: "사용가능한 ID입니다." };
+      return { success: false, msg: "Please try again in a moment." };
     }
   }
 

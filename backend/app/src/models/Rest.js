@@ -16,10 +16,10 @@ class Rest {
       if (rest_id === client.uid && rest_psword === client.psword) {
         return { success: true };
       } else {
-        return { success: false, msg: "회원 정보가 일치하지 않습니다." };
+        return { success: false, msg: "Member information does not match." };
       }
     } catch (err) {
-      return { success: false, msg: "잠시후 다시 시도해주세요." };
+      return { success: false, msg: "Please try again in a moment." };
     }
   }
 
