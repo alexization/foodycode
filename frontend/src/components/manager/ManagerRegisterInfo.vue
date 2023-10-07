@@ -65,21 +65,25 @@
       </div>
       <div class="rest-tel">식당 전화번호</div>
       <div class="tel-group">
-        <input type="number" id="first" name="first" v-model="rest_tel_first" />
-        <input
-          type="number"
-          id="second"
-          name="second"
-          v-model="rest_tel_second"
-        />
-        <input type="number" id="third" name="third" v-model="rest_tel_third" />
+        <input type="tel" id="first" name="first" v-model="rest_tel_first" />
+        <input type="tel" id="second" name="second" v-model="rest_tel_second" />
+        <input type="tel" id="third" name="third" v-model="rest_tel_third" />
       </div>
       <div class="rest-address">식당 주소</div>
       <div class="address-input">
         <input type="text" id="address" name="address" v-model="rest_address" />
       </div>
     </div>
-    <button class="Register" @click="click_register">다음으로</button>
+    <button
+      class="Register"
+      @click="click_register"
+      v-if="final_status == true"
+    >
+      다음으로
+    </button>
+    <button class="Register-else" @click="click_register" v-else disabled>
+      다음으로
+    </button>
   </div>
 </template>
 
@@ -109,14 +113,16 @@ export default {
       register_data: {},
       current_status: "",
       status_text: "Please Input Text",
+      confirm_id_status: "",
+      final_status: false,
+      duplicate_status: false,
+      overlap: "",
     };
   },
   methods: {
-    click_back() {
-      location.href = "#/signup";
-    },
     click_confirm() {
       alert("Click Confirm");
+      this.confirm_id_status = true;
     },
     async click_register() {
       this.register_data.id = document.getElementById("rest_id").value;
@@ -144,13 +150,52 @@ export default {
         this.current_status = true;
       }
     },
+    finalConfirm() {
+      if (
+        this.current_status &&
+        this.confirm_id_status &&
+        this.user_name &&
+        this.rest_name &&
+        this.rest_address &&
+        this.rest_tel_first &&
+        this.rest_tel_second &&
+        this.rest_tel_third
+      ) {
+        this.final_status = true;
+      } else {
+        this.final_status = false;
+      }
+    },
   },
   watch: {
+    user_id() {
+      this.finalConfirm();
+    },
     user_pw() {
       this.checkPW();
+      this.finalConfirm();
     },
     user_pw_confirm() {
       this.checkPW();
+      this.finalConfirm();
+    },
+    user_name() {
+      this.finalConfirm();
+    },
+    rest_name() {
+      this.finalConfirm();
+    },
+    rest_tel_first() {
+      this.finalConfirm();
+    },
+    rest_tel_second() {
+      this.finalConfirm();
+    },
+    rest_tel_third() {
+      this.finalConfirm();
+    },
+    rest_address() {
+      this.finalConfirm();
     },
   },
 };
@@ -220,7 +265,7 @@ input[type="password"] {
   height: 30.4px;
   outline: none;
 }
-input[type="number"] {
+input[type="tel"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -356,6 +401,19 @@ input[type="number"] {
 }
 .Register {
   background: #1c9181;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 0px;
+  color: #ffffff;
+  text-align: center;
+  font: 800 20px "Noto Sans", sans-serif;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+}
+.Register-else {
+  background: #a5dad3bd;
   width: 100%;
   height: 60px;
   position: absolute;
