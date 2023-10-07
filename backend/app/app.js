@@ -13,6 +13,20 @@ dotenv.config();
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
+// redis-connect
+const redis = require('redis');
+const RedisStore = require('connect-redis').default;
+
+const redisClient = redis.createClient({
+  url: process.env.REDIS_HOST,
+});
+
+redisClient.connect().catch(console.error);
+
+let redisStore = new RedisStore({
+  client: redisClient,
+});
+
 // var indexRouter = require("./src/routes/index");
 //안쓰는것같은데?
 var usersRouter = require('./src/routes/users');
@@ -49,12 +63,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //for session middleware
-app.use(cookieParser());
+aapp.use(cookieParser());
 app.use(
   session({
-    secret: 'sessionkey_mustchanged',
+    store: redisStore,
+    secret: 'sessionkeymustchanged',
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 60 * 60 * 1000, // 세션 유지시간 1시간
+    },
   }),
 );
 
