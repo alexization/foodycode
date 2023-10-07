@@ -1,58 +1,85 @@
 <template>
   <div class="sign-up-page-register">
     <div class="register-page">
-      <div class="rest_id">Manager ID</div>
+      <div class="rest_id">아이디</div>
       <div class="rest_id-input">
-        <input type="text" id="rest_id" name="rest_id" maxlength="16" />
+        <input
+          type="text"
+          id="rest_id"
+          name="rest_id"
+          maxlength="16"
+          v-model="user_id"
+        />
       </div>
 
-      <button class="confirm" @click="click_confirm">Confirm</button>
+      <button class="confirm" @click="click_confirm">중복검사</button>
 
-      <div class="password">Password</div>
+      <div class="password">비밀번호</div>
       <div class="password-input">
-        <input type="password" id="pw" name="password" maxlength="32" />
+        <input
+          type="password"
+          id="pw"
+          name="password"
+          maxlength="32"
+          v-model="user_pw"
+        />
       </div>
 
-      <div class="password-confrim">Password Confirm</div>
+      <div class="password-confrim">비밀번호 확인</div>
       <div class="confirm-input">
         <input
           type="password"
           id="pw_confirm"
           name="pw_confirm"
           maxlength="32"
-          v-model="user_pw"
+          v-model="user_pw_confirm"
         />
       </div>
       <div class="confirm_status" v-if="current_status === false">
         <img src="@/assets/icon/failed.png" />
-        <span class="not_match" id="status">Passwords do not match</span>
+        <span class="not_match" id="status">비밀번호가 일치하지 않습니다</span>
       </div>
       <div class="confirm_status" v-else-if="current_status === true">
         <img src="@/assets/icon/correct.png" />
-        <span class="match">Passwords match</span>
+        <span class="match">비밀번호가 일치합니다</span>
       </div>
 
-      <div class="manager-name">Manager Name</div>
+      <div class="manager-name">이름</div>
 
       <div class="name-input">
-        <input type="text" id="manager_name" name="manager_name" />
+        <input
+          type="text"
+          id="manager_name"
+          name="manager_name"
+          v-model="user_name"
+        />
       </div>
-      <div class="rest-name">Restaurant name</div>
+      <div class="rest-name">식당 이름</div>
       <div class="rest-name-input">
-        <input type="text" id="rest_name" name="rest_name" />
+        <input
+          type="text"
+          id="rest_name"
+          name="rest_name"
+          v-model="rest_name"
+        />
       </div>
-      <div class="rest-tel">Restaurant Tel.</div>
+      <div class="rest-tel">식당 전화번호</div>
       <div class="tel-group">
-        <input type="number" id="first" name="first" />
-        <input type="number" id="second" name="second" />
-        <input type="number" id="third" name="third" />
+        <input type="number" id="first" name="first" v-model="rest_tel_first" />
+        <input
+          type="number"
+          id="second"
+          name="second"
+          v-model="rest_tel_second"
+        />
+        <input type="number" id="third" name="third" v-model="rest_tel_third" />
       </div>
-      <div class="rest-address">Restaurant Address</div>
+      <div class="rest-address">식당 주소</div>
       <div class="address-input">
-        <input type="text" id="address" name="address" />
+        <input type="text" id="address" name="address" v-model="rest_address" />
       </div>
     </div>
-    <button class="Register" @click="click_register">Next</button>
+    <button class="Register" @click="click_register">다음으로</button>
   </div>
 </template>
 
@@ -64,7 +91,15 @@ import line from "@/assets/icon/Line.png";
 export default {
   setup() {
     return {
+      user_id: ref(),
       user_pw: ref(),
+      user_pw_confirm: ref(),
+      user_name: ref(),
+      rest_name: ref(),
+      rest_tel_first: ref(),
+      rest_tel_second: ref(),
+      rest_tel_third: ref(),
+      rest_address: ref(),
     };
   },
   data() {
@@ -112,6 +147,9 @@ export default {
   },
   watch: {
     user_pw() {
+      this.checkPW();
+    },
+    user_pw_confirm() {
       this.checkPW();
     },
   },
