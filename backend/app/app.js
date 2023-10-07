@@ -1,7 +1,7 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let logger = require('morgan');
 
 // 환경변수용
 const dotenv = require('dotenv');
@@ -10,34 +10,34 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //for session
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
+let cookieParser = require('cookie-parser');
+let session = require('express-session');
 
-// var indexRouter = require("./src/routes/index");
+// let indexRouter = require("./src/routes/index");
 //안쓰는것같은데?
-var usersRouter = require('./src/routes/users');
-var usernameRouter = require('./src/routes/username');
+let usersRouter = require('./src/routes/users');
+let usernameRouter = require('./src/routes/username');
 
-var logoutRouter = require('./src/routes/logout');
-var loginRouter = require('./src/routes/login');
-var registerRouter = require('./src/routes/register');
+let logoutRouter = require('./src/routes/logout');
+let loginRouter = require('./src/routes/login');
+let registerRouter = require('./src/routes/register');
 
-var restuserRouter = require('./src/routes/restuser');
-var restusermenuRouter = require('./src/routes/restuser_menu');
+let restuserRouter = require('./src/routes/restuser');
+let restusermenuRouter = require('./src/routes/restuser_menu');
 
-var restLoginRouter = require('./src/routes/restlogin');
-var restRegisterRouter = require('./src/routes/restregister');
+let restLoginRouter = require('./src/routes/restlogin');
+let restRegisterRouter = require('./src/routes/restregister');
 
-var mainRouter = require('./src/routes/main');
-var menuRouter = require('./src/routes/menu');
-var menuDetailRouter = require('./src/routes/menuDetail');
-var menuEditRouter = require('./src/routes/menuedit');
+let mainRouter = require('./src/routes/main');
+let menuRouter = require('./src/routes/menu');
+let menuDetailRouter = require('./src/routes/menuDetail');
+let menuEditRouter = require('./src/routes/menuedit');
 
-var useralgRouter = require('./src/routes/useralg');
+let useralgRouter = require('./src/routes/useralg');
 
-var confirmRouter = require('./src/routes/confirm');
+let confirmRouter = require('./src/routes/confirm');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
