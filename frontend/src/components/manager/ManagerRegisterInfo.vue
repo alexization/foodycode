@@ -245,16 +245,16 @@ export default {
 .sign-up-page-register {
   background: #ffffff;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);
+  height: 100%;
   top: 130px;
   position: absolute;
 }
 .register-page {
-  width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 190px);
   position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   overflow-x: clip;
-  overflow-y: scroll;
 }
 .rest_id {
   color: #000000;
