@@ -1,37 +1,39 @@
 <template>
-  <Header></Header>
-  <div class="manager-page">
-    <div class="line"></div>
-    <div class="manager-name">{{ this.manager_name }}님 어서오세요</div>
-    <div class="button-group">
-      <div class="run-toggle">
-        <span class="open-close-text" v-if="manage_status === false"
-          >가게 오픈하기</span
+  <div>
+    <Header></Header>
+    <div class="manager-page">
+      <div class="line"></div>
+      <div class="manager-name">{{ this.manager_name }}님 어서오세요</div>
+      <div class="button-group">
+        <div class="run-toggle">
+          <span class="open-close-text" v-if="manage_status === false"
+            >가게 오픈하기</span
+          >
+          <span class="open-close-text" v-else>가게 문 닫기</span>
+          <input type="checkbox" id="switch" @click="open_close" />
+          <label for="switch"></label>
+        </div>
+        <div class="manage-button-group">
+          <div class="manage-restaurant" @click="edit_restaurant">
+            <img src="@/assets/icon/shop.png" />
+            <span>가게 관리</span>
+          </div>
+          <div class="manage-menu" @click="edit_menu">
+            <img src="@/assets/icon/fork_knife.png" />
+            <span>메뉴 관리</span>
+          </div>
+        </div>
+        <div class="order-status" @click="order_status">
+          <img src="@/assets/icon/order_white.png" />
+          <span>주문 현황</span>
+        </div>
+        <div
+          class="black-box"
+          v-if="manage_status === false"
+          @click="disable_order"
         >
-        <span class="open-close-text" v-else>가게 문 닫기</span>
-        <input type="checkbox" id="switch" @click="open_close" />
-        <label for="switch"></label>
-      </div>
-      <div class="manage-button-group">
-        <div class="manage-restaurant" @click="edit_restaurant">
-          <img src="@/assets/icon/shop.png" />
-          <span>가게 관리</span>
+          <img src="@/assets/icon/lock.png" />
         </div>
-        <div class="manage-menu" @click="edit_menu">
-          <img src="@/assets/icon/fork_knife.png" />
-          <span>메뉴 관리</span>
-        </div>
-      </div>
-      <div class="order-status" @click="order_status">
-        <img src="@/assets/icon/order_white.png" />
-        <span>주문 현황</span>
-      </div>
-      <div
-        class="black-box"
-        v-if="manage_status === false"
-        @click="disable_order"
-      >
-        <img src="@/assets/icon/lock.png" />
       </div>
     </div>
   </div>
@@ -75,7 +77,6 @@ export default {
 };
 </script>
 <style scoped>
-.manager-page,
 .manager-page * {
   box-sizing: border-box;
 }
@@ -106,7 +107,7 @@ export default {
   position: absolute;
   display: flex;
   top: 70px;
-  height: 440px;
+  height: 385px;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -227,7 +228,7 @@ input[type="checkbox"] {
   width: 90%;
   height: 85px;
   position: absolute;
-  top: 355px;
+  top: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
