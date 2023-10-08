@@ -1,58 +1,103 @@
 <template>
   <div class="sign-up-page-register">
     <div class="register-page">
-      <div class="rest_id">Manager ID</div>
+      <div class="rest_id">아이디</div>
       <div class="rest_id-input">
-        <input type="text" id="rest_id" name="rest_id" maxlength="16" />
+        <input
+          type="text"
+          id="rest_id"
+          name="rest_id"
+          maxlength="16"
+          v-model="user_id"
+        />
       </div>
 
-      <button class="confirm" @click="click_confirm">Confirm</button>
+      <button class="confirm" @click="click_confirm">중복검사</button>
+      <div class="id-confirm-status" v-if="confirm_id_status === true">
+        <img src="@/assets/icon/correct.png" />
+        <span class="available">사용 가능한 아이디입니다</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="duplicate_status === true">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">중복된 아이디 입니다</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="confirm_id_status === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">중복검사 체크를 완료해주세요</span>
+      </div>
 
-      <div class="password">Password</div>
+      <div class="password">비밀번호</div>
       <div class="password-input">
-        <input type="password" id="pw" name="password" maxlength="32" />
+        <input
+          type="password"
+          id="pw"
+          name="password"
+          maxlength="32"
+          v-model="user_pw"
+        />
       </div>
 
-      <div class="password-confrim">Password Confirm</div>
+      <div class="password-confrim">비밀번호 확인</div>
       <div class="confirm-input">
         <input
           type="password"
           id="pw_confirm"
           name="pw_confirm"
           maxlength="32"
-          v-model="user_pw"
+          v-model="user_pw_confirm"
         />
       </div>
       <div class="confirm_status" v-if="current_status === false">
         <img src="@/assets/icon/failed.png" />
-        <span class="not_match" id="status">Passwords do not match</span>
+        <span class="not_match" id="status">비밀번호가 일치하지 않습니다</span>
       </div>
       <div class="confirm_status" v-else-if="current_status === true">
         <img src="@/assets/icon/correct.png" />
-        <span class="match">Passwords match</span>
+        <span class="match">비밀번호가 일치합니다</span>
       </div>
 
-      <div class="manager-name">Manager Name</div>
+      <div class="manager-name">이름</div>
 
       <div class="name-input">
-        <input type="text" id="manager_name" name="manager_name" />
+        <input
+          type="text"
+          id="manager_name"
+          name="manager_name"
+          v-model="user_name"
+        />
       </div>
-      <div class="rest-name">Restaurant name</div>
+      <div class="rest-name">식당 이름</div>
       <div class="rest-name-input">
-        <input type="text" id="rest_name" name="rest_name" />
+        <input
+          type="text"
+          id="rest_name"
+          name="rest_name"
+          v-model="rest_name"
+        />
       </div>
-      <div class="rest-tel">Restaurant Tel.</div>
+      <div class="rest-tel">식당 전화번호</div>
       <div class="tel-group">
-        <input type="number" id="first" name="first" />
-        <input type="number" id="second" name="second" />
-        <input type="number" id="third" name="third" />
+        <input type="tel" id="first" name="first" v-model="rest_tel_first" />
+        <input type="tel" id="second" name="second" v-model="rest_tel_second" />
+        <input type="tel" id="third" name="third" v-model="rest_tel_third" />
       </div>
-      <div class="rest-address">Restaurant Address</div>
+      <div class="rest-address">식당 주소</div>
       <div class="address-input">
-        <input type="text" id="address" name="address" />
+        <input type="text" id="address" name="address" v-model="rest_address" />
       </div>
     </div>
-    <button class="Register" @click="click_register">Next</button>
+    <div class="foot">
+      <button
+        class="Register"
+        @click="click_register"
+        v-if="final_status == true"
+      >
+        등록하기
+      </button>
+      <button class="Register-else" @click="click_register" v-else disabled>
+        등록하기
+      </button>
+    </div>
   </div>
 </template>
 
@@ -60,11 +105,20 @@
 import { ref } from "vue";
 import arrow_back from "@/assets/icon/arrow-back.png";
 import line from "@/assets/icon/Line.png";
+import axios from "axios";
 
 export default {
   setup() {
     return {
+      user_id: ref(),
       user_pw: ref(),
+      user_pw_confirm: ref(),
+      user_name: ref(),
+      rest_name: ref(),
+      rest_tel_first: ref(),
+      rest_tel_second: ref(),
+      rest_tel_third: ref(),
+      rest_address: ref(),
     };
   },
   data() {
@@ -74,14 +128,32 @@ export default {
       register_data: {},
       current_status: "",
       status_text: "Please Input Text",
+      confirm_id_status: "",
+      final_status: false,
+      duplicate_status: false,
+      overlap: "",
     };
   },
   methods: {
-    click_back() {
-      location.href = "#/signup";
-    },
-    click_confirm() {
-      alert("Click Confirm");
+    async click_confirm() {
+      const uid = this.user_id;
+      let res = await axios({
+        method: "POST",
+        url: "/api/restconfirm",
+        data: {
+          uid: uid,
+        },
+      }).then((res) => {
+        this.overlap = res.data.success;
+      });
+
+      if (this.overlap) {
+        this.confirm_id_status = true;
+        this.finalConfirm();
+      } else {
+        this.confirm_id_status = false;
+        this.duplicate_status = true;
+      }
     },
     async click_register() {
       this.register_data.id = document.getElementById("rest_id").value;
@@ -109,10 +181,54 @@ export default {
         this.current_status = true;
       }
     },
+    finalConfirm() {
+      if (
+        this.current_status &&
+        this.confirm_id_status &&
+        this.user_name &&
+        this.rest_name &&
+        this.rest_address &&
+        this.rest_tel_first &&
+        this.rest_tel_second &&
+        this.rest_tel_third
+      ) {
+        this.final_status = true;
+      } else {
+        this.final_status = false;
+      }
+    },
   },
   watch: {
+    user_id() {
+      this.confirm_id_status = false;
+      this.duplicate_status = false;
+      this.finalConfirm();
+    },
     user_pw() {
       this.checkPW();
+      this.finalConfirm();
+    },
+    user_pw_confirm() {
+      this.checkPW();
+      this.finalConfirm();
+    },
+    user_name() {
+      this.finalConfirm();
+    },
+    rest_name() {
+      this.finalConfirm();
+    },
+    rest_tel_first() {
+      this.finalConfirm();
+    },
+    rest_tel_second() {
+      this.finalConfirm();
+    },
+    rest_tel_third() {
+      this.finalConfirm();
+    },
+    rest_address() {
+      this.finalConfirm();
     },
   },
 };
@@ -129,16 +245,16 @@ export default {
 .sign-up-page-register {
   background: #ffffff;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 130px);
+  height: 100%;
   top: 130px;
   position: absolute;
 }
 .register-page {
-  width: 100%;
-  height: calc(var(--vh, 1vh) * 100 - 190px);
   position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   overflow-x: clip;
-  overflow-y: scroll;
 }
 .rest_id {
   color: #000000;
@@ -153,7 +269,7 @@ input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 65.9%;
+  width: 84.6%;
   height: 30.4px;
   outline: none;
 }
@@ -182,7 +298,7 @@ input[type="password"] {
   height: 30.4px;
   outline: none;
 }
-input[type="number"] {
+input[type="tel"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
@@ -316,17 +432,50 @@ input[type="number"] {
   top: 600px;
   width: 100%;
 }
+.foot {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  max-width: 500px;
+}
 .Register {
   background: #1c9181;
   width: 100%;
   height: 60px;
-  position: absolute;
-  bottom: 0px;
   color: #ffffff;
   text-align: center;
   font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
+}
+.Register-else {
+  background: #a5dad3bd;
+  width: 100%;
+  height: 60px;
+  color: #ffffff;
+  text-align: center;
+  font: 800 20px "Noto Sans", sans-serif;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+}
+.id-confirm-status {
+  position: absolute;
+  top: 95px;
+  left: 7.7%;
+}
+.id-confirm-status img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.available {
+  font: 600 14px "Roboto", sans-serif;
+  color: #1c9181;
+}
+.not-available {
+  font: 600 14px "Roboto", sans-serif;
+  color: red;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="Head">
-    <div class="terms-of-service">Terms of Service</div>
+    <div class="terms-of-service">서비스 이용약관</div>
     <svg
       @click="download_button"
       class="download-img"
@@ -343,8 +343,8 @@
   </div>
   <div class="Footer">
     <div class="line-bottom"></div>
-    <button class="decline" @click="click_decline">Decline</button>
-    <button class="accept" @click="click_accpet">Accept</button>
+    <button class="decline" @click="click_decline">거 절</button>
+    <button class="accept" @click="click_accpet">동 의</button>
   </div>
 
   <SignUpHeader></SignUpHeader>
