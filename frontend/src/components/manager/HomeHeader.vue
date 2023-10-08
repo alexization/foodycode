@@ -1,7 +1,7 @@
 <template>
   <div class="row-group">
     <div class="nav-bar">
-      <button class="nav-button">
+      <button class="nav-button" @click="this.$emit('toggleMenu')">
         <img src="@/assets/icon/navigation_button.png" />
       </button>
     </div>
