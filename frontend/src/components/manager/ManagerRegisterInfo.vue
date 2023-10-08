@@ -92,10 +92,10 @@
         @click="click_register"
         v-if="final_status == true"
       >
-        다음으로
+        등록하기
       </button>
       <button class="Register-else" @click="click_register" v-else disabled>
-        다음으로
+        등록하기
       </button>
     </div>
   </div>
