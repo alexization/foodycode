@@ -86,18 +86,18 @@ export default {
     callback() {
       this.showMenu = false;
     },
-    // 이 method를 실행하면 사용자 로그아웃까지 같이 됨. 백엔드 작업 필요. 세션 작업 필요.
+    // 백엔드 작업 필요. 세션 작업 필요.
     session(name) {
-      if (name === "Logout") {
-        axios.get("/api/logout").then((response) => {
-          if (response.data.success) {
-            window.location.reload(true);
-          } else {
-            alert("error!");
-            window.location.reload(true);
-          }
-        });
-      }
+      // if (name === "Logout") {
+      //   axios.get("/api/logout").then((response) => {
+      //     if (response.data.success) {
+      //       window.location.reload(true);
+      //     } else {
+      //       alert("error!");
+      //       window.location.reload(true);
+      //     }
+      //   });
+      // }
     },
     edit_restaurant() {
       location.href = "#/restedit";

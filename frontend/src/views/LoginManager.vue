@@ -1,8 +1,8 @@
 <template>
   <div class="login-view">
-    <button class="button-back" @click="click_back">
+    <!-- <button class="button-back" @click="click_back">
       <img src="@/assets/icon/arrow-back.png" width="25" />
-    </button>
+    </button> -->
     <div class="logo">
       <img class="logo-img" :src="LogoImg" />
     </div>
