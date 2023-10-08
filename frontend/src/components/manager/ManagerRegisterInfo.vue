@@ -13,6 +13,18 @@
       </div>
 
       <button class="confirm" @click="click_confirm">중복검사</button>
+      <div class="id-confirm-status" v-if="confirm_id_status === true">
+        <img src="@/assets/icon/correct.png" />
+        <span class="available">사용 가능한 아이디입니다</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="duplicate_status === true">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">중복된 아이디 입니다</span>
+      </div>
+      <div class="id-confirm-status" v-else-if="confirm_id_status === false">
+        <img src="@/assets/icon/failed.png" />
+        <span class="not-available">중복검사 체크를 완료해주세요</span>
+      </div>
 
       <div class="password">비밀번호</div>
       <div class="password-input">
@@ -74,16 +86,18 @@
         <input type="text" id="address" name="address" v-model="rest_address" />
       </div>
     </div>
-    <button
-      class="Register"
-      @click="click_register"
-      v-if="final_status == true"
-    >
-      다음으로
-    </button>
-    <button class="Register-else" @click="click_register" v-else disabled>
-      다음으로
-    </button>
+    <div class="foot">
+      <button
+        class="Register"
+        @click="click_register"
+        v-if="final_status == true"
+      >
+        다음으로
+      </button>
+      <button class="Register-else" @click="click_register" v-else disabled>
+        다음으로
+      </button>
+    </div>
   </div>
 </template>
 
@@ -91,6 +105,7 @@
 import { ref } from "vue";
 import arrow_back from "@/assets/icon/arrow-back.png";
 import line from "@/assets/icon/Line.png";
+import axios from "axios";
 
 export default {
   setup() {
@@ -120,9 +135,25 @@ export default {
     };
   },
   methods: {
-    click_confirm() {
-      alert("Click Confirm");
-      this.confirm_id_status = true;
+    async click_confirm() {
+      const uid = this.user_id;
+      let res = await axios({
+        method: "POST",
+        url: "/api/restconfirm",
+        data: {
+          uid: uid,
+        },
+      }).then((res) => {
+        this.overlap = res.data.success;
+      });
+
+      if (this.overlap) {
+        this.confirm_id_status = true;
+        this.finalConfirm();
+      } else {
+        this.confirm_id_status = false;
+        this.duplicate_status = true;
+      }
     },
     async click_register() {
       this.register_data.id = document.getElementById("rest_id").value;
@@ -169,6 +200,8 @@ export default {
   },
   watch: {
     user_id() {
+      this.confirm_id_status = false;
+      this.duplicate_status = false;
       this.finalConfirm();
     },
     user_pw() {
@@ -236,7 +269,7 @@ input[type="text"] {
   border-style: solid;
   border-color: #1c9181;
   border-width: 1px;
-  width: 65.9%;
+  width: 84.6%;
   height: 30.4px;
   outline: none;
 }
@@ -399,12 +432,16 @@ input[type="tel"] {
   top: 600px;
   width: 100%;
 }
+.foot {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  max-width: 500px;
+}
 .Register {
   background: #1c9181;
   width: 100%;
   height: 60px;
-  position: absolute;
-  bottom: 0px;
   color: #ffffff;
   text-align: center;
   font: 800 20px "Noto Sans", sans-serif;
@@ -416,13 +453,29 @@ input[type="tel"] {
   background: #a5dad3bd;
   width: 100%;
   height: 60px;
-  position: absolute;
-  bottom: 0px;
   color: #ffffff;
   text-align: center;
   font: 800 20px "Noto Sans", sans-serif;
   letter-spacing: 1.2px;
   border: none;
   cursor: pointer;
+}
+.id-confirm-status {
+  position: absolute;
+  top: 95px;
+  left: 7.7%;
+}
+.id-confirm-status img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.available {
+  font: 600 14px "Roboto", sans-serif;
+  color: #1c9181;
+}
+.not-available {
+  font: 600 14px "Roboto", sans-serif;
+  color: red;
 }
 </style>

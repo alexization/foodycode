@@ -42,6 +42,12 @@ class RestCtrl {
 
     return res.json(response);
   }
+
+  static async confirmID(req, res) {
+    const user = new Rest(req.body);
+    const response = await user.confirm();
+    return res.json(response);
+  }
 }
 
 module.exports = RestCtrl;

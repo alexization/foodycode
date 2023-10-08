@@ -44,6 +44,20 @@ class Rest {
       return b;
     }
   }
+
+  async confirm() {
+    const client = this.body;
+    try {
+      const { uid } = await RestStorage.getUserInfo(client.uid);
+      if (uid === client.uid) {
+        return { success: false, msg: "ID is duplicated." };
+      } else {
+        return { success: true, msg: "This is an available ID." };
+      }
+    } catch (err) {
+      return { success: true, msg: "This is an available ID" };
+    }
+  }
 }
 
 module.exports = Rest;
