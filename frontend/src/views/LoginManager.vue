@@ -6,14 +6,14 @@
     <div class="logo">
       <img class="logo-img" :src="LogoImg" />
     </div>
-    <div class="login-text">MANAGER LOGIN</div>
+    <div class="login-text">사장님 로그인</div>
 
     <input
       class="input-id"
       id="uid"
       type="text"
       name="uid"
-      placeholder="Manager Name"
+      placeholder="아이디"
       maxlength="16"
     />
 
@@ -22,15 +22,15 @@
       type="password"
       id="pw"
       name="password"
-      placeholder="Password"
+      placeholder="비밀번호"
       maxlength="32"
     />
-    <button type="button" class="login-button" @click="onLogin">LOGIN</button>
+    <button type="button" class="login-button" @click="onLogin">로그인</button>
 
     <div class="login-row-group">
-      <div class="find-my-id" @click="find_id">Find my ID</div>
-      <div class="find-my-pw" @click="find_pw">Find my PW</div>
-      <RouterLink class="sign-up" to="/manager-signup">Sign Up</RouterLink>
+      <div class="find-my-id" @click="find_id">아이디 찾기</div>
+      <div class="find-my-pw" @click="find_pw">비밀번호 찾기</div>
+      <RouterLink class="sign-up" to="/manager-signup">회원가입</RouterLink>
     </div>
 
     <svg
@@ -82,10 +82,10 @@ export default {
   },
   methods: {
     find_id() {
-      alert("Comming Soon..");
+      alert("아이디가 기억나지 않으시면 회원가입을 다시 해주세요.");
     },
     find_pw() {
-      alert("Comming Soon..");
+      alert("비밀번호가 기억나지 않으시면 회원가입을 다시 해주세요.");
     },
     click_back() {
       location.href = "#/";
