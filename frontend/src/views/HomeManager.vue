@@ -1,56 +1,104 @@
 <template>
-  <Header></Header>
-  <div class="manager-page">
-    <div class="line"></div>
-    <div class="manager-name">{{ this.manager_name }}님 어서오세요</div>
-    <div class="button-group">
-      <div class="run-toggle">
-        <span class="open-close-text" v-if="manage_status === false"
-          >가게 오픈하기</span
+  <div>
+    <Header @toggleMenu="toggleMenu"></Header>
+    <div class="manager-page">
+      <div class="line"></div>
+      <div class="manager-name">{{ this.manager_name }}님 어서오세요</div>
+      <div class="button-group">
+        <div class="run-toggle">
+          <span class="open-close-text" v-if="manage_status === false"
+            >가게 오픈하기</span
+          >
+          <span class="open-close-text" v-else>가게 문 닫기</span>
+          <input type="checkbox" id="switch" @click="open_close" />
+          <label for="switch"></label>
+        </div>
+        <div class="manage-button-group">
+          <div class="manage-restaurant" @click="edit_restaurant">
+            <img src="@/assets/icon/shop.png" />
+            <span>가게 관리</span>
+          </div>
+          <div class="manage-menu" @click="edit_menu">
+            <img src="@/assets/icon/fork_knife.png" />
+            <span>메뉴 관리</span>
+          </div>
+        </div>
+        <div class="order-status" @click="order_status">
+          <img src="@/assets/icon/order_white.png" />
+          <span>주문 현황</span>
+        </div>
+        <div
+          class="black-box"
+          v-if="manage_status === false"
+          @click="disable_order"
         >
-        <span class="open-close-text" v-else>가게 문 닫기</span>
-        <input type="checkbox" id="switch" @click="open_close" />
-        <label for="switch"></label>
-      </div>
-      <div class="manage-button-group">
-        <div class="manage-restaurant" @click="edit_restaurant">
-          <img src="@/assets/icon/shop.png" />
-          <span>가게 관리</span>
+          <img src="@/assets/icon/lock.png" />
         </div>
-        <div class="manage-menu" @click="edit_menu">
-          <img src="@/assets/icon/fork_knife.png" />
-          <span>메뉴 관리</span>
-        </div>
-      </div>
-      <div class="order-status" @click="order_status">
-        <img src="@/assets/icon/order_white.png" />
-        <span>주문 현황</span>
-      </div>
-      <div
-        class="black-box"
-        v-if="manage_status === false"
-        @click="disable_order"
-      >
-        <img src="@/assets/icon/lock.png" />
       </div>
     </div>
+
+    <Transition name="fade">
+      <div class="dimmer" v-if="showMenu" @click="toggleMenu"></div>
+    </Transition>
+
+    <Transition name="slide">
+      <nav class="nav-bar" v-show="showMenu">
+        <div>
+          <button class="close" @click="toggleMenu">
+            <img :src="CloseIcon" width="20" />
+          </button>
+        </div>
+        <div v-for="{ name, url } in navList" :key="name">
+          <router-link
+            :to="url"
+            @click="callback(), session(name, $event)"
+            class="link"
+            >{{ name }}</router-link
+          >
+        </div>
+      </nav>
+    </Transition>
   </div>
 </template>
 <script>
+import CloseIcon from "@/assets/icon/close.png";
+
 import Header from "@/components/manager/HomeHeader.vue";
 import axios from "axios";
 
 export default {
-  name: "LandingPage",
+  name: "HomeManager",
   components: { Header },
   props: {},
   data() {
     return {
+      CloseIcon,
       manage_status: false,
       manager_name: "",
+      showMenu: false,
+      navList: [{ name: "Logout", url: "/mlogin" }],
     };
   },
   methods: {
+    async toggleMenu() {
+      this.showMenu = !this.showMenu;
+    },
+    callback() {
+      this.showMenu = false;
+    },
+    // 백엔드 작업 필요. 세션 작업 필요.
+    session(name) {
+      // if (name === "Logout") {
+      //   axios.get("/api/logout").then((response) => {
+      //     if (response.data.success) {
+      //       window.location.reload(true);
+      //     } else {
+      //       alert("error!");
+      //       window.location.reload(true);
+      //     }
+      //   });
+      // }
+    },
     edit_restaurant() {
       location.href = "#/restedit";
     },
@@ -75,7 +123,6 @@ export default {
 };
 </script>
 <style scoped>
-.manager-page,
 .manager-page * {
   box-sizing: border-box;
 }
@@ -106,7 +153,7 @@ export default {
   position: absolute;
   display: flex;
   top: 70px;
-  height: 440px;
+  height: 385px;
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -227,7 +274,7 @@ input[type="checkbox"] {
   width: 90%;
   height: 85px;
   position: absolute;
-  top: 355px;
+  top: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,5 +319,76 @@ input:checked + label:after {
 
 label:active:after {
   width: 30px;
+}
+
+/* 사이드 메뉴 열었을때 배경 흐리게 */
+.dimmer {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000077;
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+.nav-bar {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  width: 60%;
+  height: 100%;
+  top: 0px;
+  padding: 15px 8px;
+  background-color: white;
+}
+
+.nav-bar > div {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  padding: 12px 0px;
+  padding-left: 27px;
+}
+
+.link {
+  font: 600 16px "Noto Sans", sans-serif;
+  color: black;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Transition navigation bar fade */
+.fade-enter-active {
+  transition: opacity 0.25s ease;
+}
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
