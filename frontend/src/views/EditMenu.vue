@@ -7,12 +7,14 @@
     <div class="MenuList">
       <div class="menu" v-if="this.edit_status === false">
         <div v-for="item in list" :key="item">
-          <MenuCard
+          <router-link :to="`${this.url_href}/${item.id}`">
+            <MenuCard
             :menuName="item.menu_name"
             :menuImg="item.img_url"
             :menuIng="item.menu_ing"
             :menuPrice="item.menu_price"
           />
+          </router-link>
         </div>
       </div>
       <div class="menu" v-else>

@@ -123,7 +123,7 @@ const routes = [
   },
   {
     path: '/menuedit/:rest_name_url_param/:menu_id_url_param',
-    name: 'menu-detail',
+    name: 'menu-detail-edit',
     component: () => import('../views/EditMenuDetail.vue'),
     meta: {
       title: 'Edit Menu Detail FOODY',
