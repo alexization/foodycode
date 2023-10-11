@@ -102,7 +102,7 @@ const routes = [
     name: 'restaurant-edit',
     component: () => import('../views/EditRestaurant.vue'),
     meta: {
-      title: 'Home FOODY',
+      title: 'Edit Restaurant FOODY',
     },
   },
   {
@@ -110,7 +110,7 @@ const routes = [
     name: 'menu-edit',
     component: () => import('../views/EditMenu.vue'),
     meta: {
-      title: 'Home FOODY',
+      title: 'Edit Menu FOODY',
     },
   },
   {
@@ -118,7 +118,15 @@ const routes = [
     name: 'menu-modify',
     component: () => import('../views/ModifyMenu.vue'),
     meta: {
-      title: 'Home FOODY',
+      title: 'Modify Menu FOODY',
+    },
+  },
+  {
+    path: '/menuedit/:rest_name_url_param/:menu_id_url_param',
+    name: 'menu-detail-edit',
+    component: () => import('../views/EditMenuDetail.vue'),
+    meta: {
+      title: 'Edit Menu Detail FOODY',
     },
   },
   {
@@ -126,7 +134,7 @@ const routes = [
     name: 'add-menu',
     component: () => import('../views/AddMenu.vue'),
     meta: {
-      title: 'Home FOODY',
+      title: 'Add Menu FOODY',
     },
   },
 ];

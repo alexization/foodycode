@@ -22,6 +22,11 @@
         </button>
       </div>
     </div>
+    <div class="add-menu">
+        <button @click="add_menu">
+          <img src="@/assets/icon/add_menu.png" />
+        </button>
+      </div>
   </div>
 </template>
 
@@ -51,6 +56,9 @@ export default {
       this.edit_status = !this.edit_status;
       this.$emit("edit_status");
     },
+    add_menu() {
+      location.href = "#/addmenu";
+    },
   },
 };
 </script>
@@ -58,7 +66,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
 
-.RestaurantName,
 .RestaurantName * {
   box-sizing: border-box;
 }
@@ -113,6 +120,26 @@ export default {
   background: none;
 }
 .edit_button img {
+  width: 32px;
+  height: 32px;
+}
+.add-menu {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 70px;
+  right: 0px;
+  width: 20%;
+  height: 50px;  
+}
+.add-menu button {
+  border: none;
+  background: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.add-menu img {
   width: 32px;
   height: 32px;
 }

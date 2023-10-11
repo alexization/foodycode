@@ -7,12 +7,14 @@
     <div class="MenuList">
       <div class="menu" v-if="this.edit_status === false">
         <div v-for="item in list" :key="item">
-          <MenuCard
+          <router-link :to="`${this.url_href}/${item.id}`">
+            <MenuCard
             :menuName="item.menu_name"
             :menuImg="item.img_url"
             :menuIng="item.menu_ing"
             :menuPrice="item.menu_price"
           />
+          </router-link>
         </div>
       </div>
       <div class="menu" v-else>
@@ -29,11 +31,6 @@
             </div>
           </router-link>
         </div>
-      </div>
-      <div class="add-menu">
-        <button @click="add_menu">
-          <img src="@/assets/icon/add_circle.png" />
-        </button>
       </div>
     </div>
   </div>
@@ -82,9 +79,6 @@ export default {
     change_status() {
       this.edit_status = !this.edit_status;
     },
-    add_menu() {
-      location.href = "#/addmenu";
-    },
   },
 };
 </script>
@@ -124,20 +118,5 @@ export default {
 .modify-button img {
   width: 60px;
   height: 60px;
-}
-.add-menu {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.add-menu button {
-  border: none;
-  background: none;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-.add-menu img {
-  width: 50px;
-  height: 50px;
 }
 </style>
