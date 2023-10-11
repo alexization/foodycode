@@ -71,6 +71,7 @@ export default {
     axios.get("/api/main").then((response) => {
       const restaurant_list = response.data;
       this.list = restaurant_list;
+      this.list.sort(() => Math.random() - 0.5);
     });
     axios.get("/api/users").then((response) => {
       this.login_status = response.data.is_logined;
