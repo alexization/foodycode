@@ -13,7 +13,17 @@
     </div>
     <div class="restaurant-list">
       <div v-for="item in list" :key="item">
-        <router-link :to="`/allmenu/${item.rest_name}`">
+        <router-link
+          :to="`/allmenu/${item.rest_name}`"
+          v-if="this.login_status === true"
+        >
+          <RestaurantCard
+            :restaurantName="item.img_url"
+            :title="item.rest_name"
+            :telNum="item.tel"
+          />
+        </router-link>
+        <router-link :to="`/login`" v-else>
           <RestaurantCard
             :restaurantName="item.img_url"
             :title="item.rest_name"
