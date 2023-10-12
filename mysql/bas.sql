@@ -124,7 +124,8 @@ CREATE TABLE restaurant(
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  values
- /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","gomone"),
+--  추후 회의 후 변경 필요 (우선은 반영 x)
+/*  /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","gomone"),
  /* restaurant 2  */    ("donk","123","Donkobokko","None","kim","033-0000-0000","donkobokko"),
  /* restaurant 3  */    ("wary","123","Waryonggwan","10-24, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1414-4571","waryonggwan"),
  /* restaurant 4  */    ("gwon","123","Gwonsikdang","33, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-762-0320","gwonsikdang"),
@@ -132,7 +133,7 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1411-9212","baptongsultong"),
  /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-1174","Samgyeopsalmania"),
  /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-7111","Hesed"),
- /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"),
+ /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"), */
 
 
     -- ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","myeongga"),
@@ -202,7 +203,8 @@ CREATE TABLE menu(
 -- img_url은 "가게명 + menu + 번호"
 INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
  values
- /* 9 Ddoreek menu 1  */   ("9","Special Fruit Set","Seupesyeol gwail seteu", "6800", "ddoreek-menu1","Greek Yogurt 81g + 4 Kinds of Fruit + Granola 30g (Choose 1 from 3 options) + Honey Stick (Fruit selection varies depending on the season and availability) Strawberries, bananas, oranges, watermelon, kiwi, oriental melon, cantaloupe, Shine Muscat, Black Sapphire, grapefruit, etc."),
+ --  추후 회의 후 변경 필요 (우선은 반영 x)
+/*  /* 9 Ddoreek menu 1  */   ("9","Special Fruit Set","Seupesyeol gwail seteu", "6800", "ddoreek-menu1","Greek Yogurt 81g + 4 Kinds of Fruit + Granola 30g (Choose 1 from 3 options) + Honey Stick (Fruit selection varies depending on the season and availability) Strawberries, bananas, oranges, watermelon, kiwi, oriental melon, cantaloupe, Shine Muscat, Black Sapphire, grapefruit, etc."),
  /* 9 Ddoreek menu 2  */   ("9","Strawberry with Condensed Milk Set","Saengttalgi yeonyu seteu", "6800","ddoreek-menu2","Greek Yogurt 81g + Fresh Strawberries + Original Granola 30g + Cheese Cubes + Condensed Milk"),
  /* 9 Ddoreek menu 3  */   ("9","Melon Cheese Cube Set","Mellon chijeu kyubeu seteu", "6500","ddoreek-menu3","Greek Yogurt 81g + Melon Chunks + Original Granola 30g + Coconut Chunks + Cheese Cubes + Condensed Milk"),
  /* 9 Ddoreek menu 4  */   ("9","Grapefruit with Condensed Milk Set","Yeonyu jamong seteu", "6200","ddoreek-menu4","Greek Yogurt 81g + Grapefruit Chunks + Original Granola 30g + Chocolate Chips + Condensed Milk (Honey Stick is available instead of condensed milk)"),
@@ -218,7 +220,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
  /* 9 Ddoreek menu 14 */   ("9","Boneless Spicy Braised Chicken","", "5800","ddoreek-menu14","Greek Yogurt 90g + Dried Mango Chunks + Original Granola 30g + Coconut Chunks"),
  /* 9 Ddoreek menu 15 */   ("9","Boneless Spicy Braised Chicken","", "3800","ddoreek-menu15","Greek Yogurt 81g + Real Chocolate Granola 30g + Honey Stick"),
  /* 9 Ddoreek menu 16 */   ("9","Boneless Spicy Braised Chicken","", "3800","ddoreek-menu16","Greek Yogurt 81g + Strawberry Chocolate Granola 30g + Strawberry Jam"),
- /* 9 Ddoreek menu 17 */   ("9","Boneless Spicy Braised Chicken","", "4100","ddoreek-menu17","Greek Yogurt 81g + Original Granola 30g + Coconut Chunks + Cacao Nibs + Honey Stick"),
+ /* 9 Ddoreek menu 17 */   ("9","Boneless Spicy Braised Chicken","", "4100","ddoreek-menu17","Greek Yogurt 81g + Original Granola 30g + Coconut Chunks + Cacao Nibs + Honey Stick"), */
 
 
 
@@ -281,7 +283,8 @@ CREATE TABLE menuAlgs(
 
 INSERT INTO menuAlgs(menu_id,alg_id) 
 values
-    -- 9. Ddoreek menu (17개) 74 ~ 90번
+--  추후 회의 후 변경 필요 (우선은 반영 x)
+/*     -- 9. Ddoreek menu (17개) 74 ~ 90번
     (74, 8),
     (74, 24),
     (75, 8),
@@ -293,7 +296,7 @@ values
     (78, 8),
     (79, 8),
     (80, 8),
-    (80, 24),
+    (80, 24), */
     
 
     -- (1, 4),
