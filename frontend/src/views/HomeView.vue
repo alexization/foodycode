@@ -2,10 +2,9 @@
   <div>
     <div class="black-bg" v-if="isOpenModal == true">
       <div class="white-bg">
-        <h4>상세페이지</h4>
-        <img src="@/assets/menu/dakttongjip.png" />
-        <p>상세페이지 내용</p>
-        <button @click="isOpenModal = false">닫기</button>
+        <div class="help-title">How to use FOODY</div>
+        <p>도움말 내용</p>
+        <button class="close_button" @click="isOpenModal = false">OK</button>
       </div>
     </div>
     <Header @toggleMenu="toggleMenu"></Header>
@@ -50,16 +49,16 @@
 </template>
 
 <script>
-import CloseIcon from "@/assets/icon/close.png";
+import CloseIcon from '@/assets/icon/close.png';
 
-import Header from "../components/Header.vue";
-import HomeUserInfo from "../components/HomeUserInfo.vue";
-import RestaurantCard from "../components/RestaurantCard.vue";
+import Header from '../components/Header.vue';
+import HomeUserInfo from '../components/HomeUserInfo.vue';
+import RestaurantCard from '../components/RestaurantCard.vue';
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     Header,
     HomeUserInfo,
@@ -70,26 +69,26 @@ export default {
     return {
       CloseIcon,
       showMenu: false,
-      list: "",
-      navList: [{ name: "Login", url: "/login" }],
+      list: '',
+      navList: [{ name: 'Login', url: '/login' }],
       login_status: false,
       isOpenModal: true,
     };
   },
   async created() {
-    axios.get("/api/main").then((response) => {
+    axios.get('/api/main').then((response) => {
       const restaurant_list = response.data;
       this.list = restaurant_list;
       this.list.sort(() => Math.random() - 0.5);
     });
-    axios.get("/api/users").then((response) => {
+    axios.get('/api/users').then((response) => {
       this.login_status = response.data.is_logined;
       if (this.login_status === false) {
-        this.navList = [{ name: "Login", url: "/login" }];
+        this.navList = [{ name: 'Login', url: '/login' }];
       } else {
         this.navList = [
-          { name: "myFoody", url: "/myfoody" },
-          { name: "Logout", url: "" },
+          { name: 'myFoody', url: '/myfoody' },
+          { name: 'Logout', url: '' },
         ];
       }
     });
@@ -102,12 +101,12 @@ export default {
       this.showMenu = false;
     },
     session(name) {
-      if (name === "Logout") {
-        axios.get("/api/logout").then((response) => {
+      if (name === 'Logout') {
+        axios.get('/api/logout').then((response) => {
           if (response.data.success) {
             window.location.reload(true);
           } else {
-            alert("error!");
+            alert('error!');
             window.location.reload(true);
           }
         });
@@ -118,7 +117,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 .user-info-box {
   position: absolute;
@@ -181,7 +181,7 @@ export default {
 }
 
 .link {
-  font: 600 16px "Noto Sans", sans-serif;
+  font: 600 16px 'Noto Sans', sans-serif;
   color: black;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -193,6 +193,50 @@ export default {
   border: none;
   background: none;
   cursor: pointer;
+}
+.black-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 10;
+  max-width: 500px;
+}
+
+.white-bg {
+  width: 70%;
+  height: 500px;
+  max-width: 500px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.help-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  color: #1c9181;
+  text-align: center;
+}
+.close_button {
+  border: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background: #1c9181;
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-radius: 20px;
 }
 
 @media screen and (min-width: 500px) {
@@ -221,24 +265,5 @@ export default {
 }
 .fade-leave-to {
   opacity: 0;
-}
-.black-bg {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  padding: 20px;
-  z-index: 100;
-  max-width: 500px;
-}
-
-.white-bg {
-  width: 100%;
-  height: 400px;
-  max-width: 400px;
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  overflow-y: auto;
 }
 </style>
