@@ -1,5 +1,13 @@
 <template>
   <div>
+    <div class="black-bg" v-if="isOpenModal == true">
+      <div class="white-bg">
+        <h4>상세페이지</h4>
+        <img src="@/assets/menu/dakttongjip.png" />
+        <p>상세페이지 내용</p>
+        <button @click="isOpenModal = false">닫기</button>
+      </div>
+    </div>
     <Header @toggleMenu="toggleMenu"></Header>
     <div class="user-info-box">
       <HomeUserInfo></HomeUserInfo>
@@ -65,6 +73,7 @@ export default {
       list: "",
       navList: [{ name: "Login", url: "/login" }],
       login_status: false,
+      isOpenModal: true,
     };
   },
   async created() {
@@ -212,5 +221,24 @@ export default {
 }
 .fade-leave-to {
   opacity: 0;
+}
+.black-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  padding: 20px;
+  z-index: 100;
+  max-width: 500px;
+}
+
+.white-bg {
+  width: 100%;
+  height: 400px;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
 }
 </style>
