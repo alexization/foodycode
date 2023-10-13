@@ -55,20 +55,23 @@
         </div>
       </nav>
     </Transition>
+    <div class="help">
+      <button @click="click_help">?</button>
+    </div>
   </div>
 </template>
 
 <script>
-import CloseIcon from '@/assets/icon/close.png';
+import CloseIcon from "@/assets/icon/close.png";
 
-import Header from '../components/Header.vue';
-import HomeUserInfo from '../components/HomeUserInfo.vue';
-import RestaurantCard from '../components/RestaurantCard.vue';
+import Header from "../components/Header.vue";
+import HomeUserInfo from "../components/HomeUserInfo.vue";
+import RestaurantCard from "../components/RestaurantCard.vue";
 
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     HomeUserInfo,
@@ -79,26 +82,26 @@ export default {
     return {
       CloseIcon,
       showMenu: false,
-      list: '',
-      navList: [{ name: 'Login', url: '/login' }],
+      list: "",
+      navList: [{ name: "Login", url: "/login" }],
       login_status: false,
-      isOpenModal: true,
+      isOpenModal: false,
     };
   },
   async created() {
-    axios.get('/api/main').then((response) => {
+    axios.get("/api/main").then((response) => {
       const restaurant_list = response.data;
       this.list = restaurant_list;
       this.list.sort(() => Math.random() - 0.5);
     });
-    axios.get('/api/users').then((response) => {
+    axios.get("/api/users").then((response) => {
       this.login_status = response.data.is_logined;
       if (this.login_status === false) {
-        this.navList = [{ name: 'Login', url: '/login' }];
+        this.navList = [{ name: "Login", url: "/login" }];
       } else {
         this.navList = [
-          { name: 'myFoody', url: '/myfoody' },
-          { name: 'Logout', url: '' },
+          { name: "myFoody", url: "/myfoody" },
+          { name: "Logout", url: "" },
         ];
       }
     });
@@ -111,24 +114,27 @@ export default {
       this.showMenu = false;
     },
     session(name) {
-      if (name === 'Logout') {
-        axios.get('/api/logout').then((response) => {
+      if (name === "Logout") {
+        axios.get("/api/logout").then((response) => {
           if (response.data.success) {
             window.location.reload(true);
           } else {
-            alert('error!');
+            alert("error!");
             window.location.reload(true);
           }
         });
       }
+    },
+    click_help() {
+      this.isOpenModal = true;
     },
   },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 .user-info-box {
   position: absolute;
@@ -191,7 +197,7 @@ export default {
 }
 
 .link {
-  font: 600 16px 'Noto Sans', sans-serif;
+  font: 600 16px "Noto Sans", sans-serif;
   color: black;
   text-decoration: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -222,7 +228,7 @@ export default {
   padding: 20px;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 150px;
+  margin-top: 100px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -230,7 +236,7 @@ export default {
   justify-content: space-between;
 }
 .help-title {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
@@ -239,7 +245,7 @@ export default {
 }
 .close_button {
   border: none;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   background: #1c9181;
@@ -248,7 +254,24 @@ export default {
   color: white;
   border-radius: 20px;
 }
-
+.help {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 60px;
+  height: 60px;
+  background: #1c9181ad;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.help button {
+  background: none;
+  color: white;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 28px;
+}
 @media screen and (min-width: 500px) {
 }
 
