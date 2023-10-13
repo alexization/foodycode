@@ -15,18 +15,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="prev-login"
-        v-if="this.login_status === false"
-        @click="go_login"
-      >
-        <div class="column-position">
-          <span>Please Login First</span>
-          <img src="@/assets/icon/login.png" />
-        </div>
-      </div>
-
-      <div class="onlogin-user" v-else-if="this.login_status === true">
+      <div class="onlogin-user">
         <div class="column-position">
           <span>Filtered Menu For </span>
           <span class="user-name" v-text="this.userName"></span>
@@ -73,11 +62,8 @@ export default {
       .get("/api/useralg")
       .then((response) => {
         this.userName = response.data.uname;
-        this.login_status = true;
       })
-      .catch((error) => {
-        this.login_status = false;
-      });
+      .catch((error) => {});
   },
 };
 </script>
