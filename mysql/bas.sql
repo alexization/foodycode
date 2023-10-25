@@ -203,6 +203,24 @@ CREATE TABLE menu(
 -- img_url은 "가게명 + menu + 번호"
 INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
  values
+    /* 1. Gomone */ 
+    ("1","Stir-fried Squid with Rice","ojingeo deopbap", "7000", "gomone-menu1","Spicy stir-fried Squid with rice."),
+    ("1","Spicy Stir-fried Pork with Rice","jeyuk deopbap", "7000", "gomone-menu2","Spicy stir-fried pork(red pepper paste - gochujang) with rice."),
+    ("1","Spicy Noodle Soup", "jangkalguksu","7000", "gomone-menu3","Noodles in anchovy broth mixed with miso and red chili paste (gochujang)."),
+    ("1","Rice Cake and Mandu Soup","tteong manduguk", "7000", "gomone-menu4","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top."),
+    ("1","Noodle Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+
+    /* 2. Donkobokko */ 
+    ("2","Grilled Pork Set","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Galbi Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Ginseng Half Chicken Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Soft Bean Curd Hot Pot","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Spicy Beef Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Sundae and Rice Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Offal Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Ox Bone Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Mandu Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+
  --  추후 회의 후 변경 필요 (우선은 반영 x)
 /*  /* 9 Ddoreek menu 1  */   ("9","Special Fruit Set","Seupesyeol gwail seteu", "6800", "ddoreek-menu1","Greek Yogurt 81g + 4 Kinds of Fruit + Granola 30g (Choose 1 from 3 options) + Honey Stick (Fruit selection varies depending on the season and availability) Strawberries, bananas, oranges, watermelon, kiwi, oriental melon, cantaloupe, Shine Muscat, Black Sapphire, grapefruit, etc."),
  /* 9 Ddoreek menu 2  */   ("9","Strawberry with Condensed Milk Set","Saengttalgi yeonyu seteu", "6800","ddoreek-menu2","Greek Yogurt 81g + Fresh Strawberries + Original Granola 30g + Cheese Cubes + Condensed Milk"),
