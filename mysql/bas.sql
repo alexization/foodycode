@@ -115,7 +115,7 @@ CREATE TABLE restaurant(
     address varchar(100) NOT NULL,
     ceo_name varchar(30) NOT NULL,
     tel varchar(30) NOT NULL,
-    img_url varchar(50),
+    img_url varchar(200),
 
     
     PRIMARY KEY (id)
@@ -133,9 +133,12 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1411-9212","baptongsultong"),
  /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-1174","Samgyeopsalmania"),
  /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-7111","Hesed"),
- /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"), */
+ /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"),
+ /* restaurant 10  */   ("ddor","123","????","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","????"),                          /* 가게명 회의 필요 */ 
+ /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-3400","kkokkomeokko"), */
 
 
+/* 더미 데이터 */ 
     -- ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","myeongga"),
     -- ("lab","123","Grilled Chicken LAB","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","chicken-lab"),
     -- ("rid","123","Yeon Tan Bulgogi","1, Maenamdong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-742-5878","Yeon-Tan-Bulgogi"),
@@ -194,57 +197,145 @@ CREATE TABLE menu(
     roman_name varchar(100) NOT NULL,
     menu_price varchar(50) NOT NULL,
     img_url varchar(50) NOT NULL,
-    menu_ing varchar(200) NOT NULL,
+    menu_ing varchar(500) NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(rest_id) REFERENCES restaurant(id)
     
 );
 
+/* 식당: 11개, 메뉴: 103개 */
+/* ????는 추후에 넣어야할 데이터 */
 -- img_url은 "가게명 + menu + 번호"
 INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
  values
-    /* 1. Gomone */ 
-    ("1","Stir-fried Squid with Rice","ojingeo deopbap", "7000", "gomone-menu1","Spicy stir-fried Squid with rice."),
-    ("1","Spicy Stir-fried Pork with Rice","jeyuk deopbap", "7000", "gomone-menu2","Spicy stir-fried pork(red pepper paste - gochujang) with rice."),
-    ("1","Spicy Noodle Soup", "jangkalguksu","7000", "gomone-menu3","Noodles in anchovy broth mixed with miso and red chili paste (gochujang)."),
-    ("1","Rice Cake and Mandu Soup","tteong manduguk", "7000", "gomone-menu4","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top."),
-    ("1","Noodle Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("1","Stir-fried Squid with Rice","ojingeo deopbap", "7000", "gomone-menu1","Spicy stir-fried Squid with rice"),
+    ("1","Spicy Stir-fried Pork with Rice","jeyuk deopbap", "7000", "gomone-menu2","Spicy stir-fried pork(red pepper paste - gochujang) with rice"),
+    ("1","Spicy Noodle Soup", "jangkalguksu","7000", "gomone-menu3","Noodles in anchovy broth mixed with miso and red chili paste (gochujang)"),
+    ("1","Rice Cake and Mandu Soup","tteong manduguk", "7000", "gomone-menu4","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top"),
+    ("1","Noodle Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth"),
 
-    /* 2. Donkobokko */ 
-    ("2","Grilled Pork Set","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Galbi Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Ginseng Half Chicken Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Soft Bean Curd Hot Pot","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Spicy Beef Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Sundae and Rice Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Offal Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Ox Bone Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
-    ("2","Mandu Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth."),
+    ("2","Grilled Pork Set","dwaejigogi gui seteu", "????", "donkobokko-menu1","????"), /* Description, 가격 정보 필요 */ 
+    ("2","Galbi Soup","galbitang", "9000", "donkobokko-menu2","A clear soup made from beef rib cuts"),
+    ("2","Ginseng Half Chicken Soup","bangyetang", "8000", "donkobokko-menu3","A chicken(half) soup with vegetables and sticky rice"),
+    ("2","Soft Bean Curd Hot Pot","sundubuttukbaegi", "8000", "donkobokko-menu4","A spicy(red chili powder) soft tofu soup on top with shrimp"),
+    ("2","Spicy Beef Soup","yukgaejang", "8000", "donkobokko-menu5","A spicy beef soup with green onion on top"),
+    ("2","Sundae and Rice Soup","sundaegukbap", "8000", "donkobokko-menu6","A bone broth with korean pork blood sausage (sundae)"),
+    ("2","Offal Soup","naejangtang", "8000", "donkobokko-menu7","A bone broth with boiled pork offal"),
+    ("2","Ox Bone Soup","seolleongtang", "8000", "donkobokko-menu8","A beef and beef bone soup with egg drops on top"),
+    ("2","Mandu Soup","manduguk", "7000", "donkobokko-menu9","A dumpling soup with egg drops on top"),
 
- --  추후 회의 후 변경 필요 (우선은 반영 x)
-/*  /* 9 Ddoreek menu 1  */   ("9","Special Fruit Set","Seupesyeol gwail seteu", "6800", "ddoreek-menu1","Greek Yogurt 81g + 4 Kinds of Fruit + Granola 30g (Choose 1 from 3 options) + Honey Stick (Fruit selection varies depending on the season and availability) Strawberries, bananas, oranges, watermelon, kiwi, oriental melon, cantaloupe, Shine Muscat, Black Sapphire, grapefruit, etc."),
- /* 9 Ddoreek menu 2  */   ("9","Strawberry with Condensed Milk Set","Saengttalgi yeonyu seteu", "6800","ddoreek-menu2","Greek Yogurt 81g + Fresh Strawberries + Original Granola 30g + Cheese Cubes + Condensed Milk"),
- /* 9 Ddoreek menu 3  */   ("9","Melon Cheese Cube Set","Mellon chijeu kyubeu seteu", "6500","ddoreek-menu3","Greek Yogurt 81g + Melon Chunks + Original Granola 30g + Coconut Chunks + Cheese Cubes + Condensed Milk"),
- /* 9 Ddoreek menu 4  */   ("9","Grapefruit with Condensed Milk Set","Yeonyu jamong seteu", "6200","ddoreek-menu4","Greek Yogurt 81g + Grapefruit Chunks + Original Granola 30g + Chocolate Chips + Condensed Milk (Honey Stick is available instead of condensed milk)"),
- /* 9 Ddoreek menu 5  */   ("9","Yellow Cheese","Hwangchijeu", "4700","ddoreek-menu5","Cream Cheese Flavored Yogurt 90g + Cheese Crackers on Top"),
- /* 9 Ddoreek menu 6  */   ("9","Green Tea Chocolate ( aka. Supppacho )","Nokchachoko ( aka. Supppacho )", "4900","ddoreek-menu6","Matcha Flavored Greek Yogurt + Chocolate Balls + Coconut Chunks + Unsweetened Cocoa Powder + Chocolate Syrup"),
- /* 9 Ddoreek menu 7  */   ("9","Red Bean and Bean Powder coated Rice Cake","Patjeolmi", "4000","ddoreek-menu7","Greek Yogurt 81g + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (7 pieces) + Condensed Milk + Red Bean Paste + Almond Slices"),
- /* 9 Ddoreek menu 8  */   ("9","Boneless Spicy Braised Chicken","", "5200","ddoreek-menu8","Greek Yogurt 81g + Soybean Powder + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (20 pieces) + Condensed Milk + Allulose sweetener + Almond Slices"),
- /* 9 Ddoreek menu 9  */   ("9","Boneless Spicy Braised Chicken","", "4700","ddoreek-menu9","Greek Yogurt 81g + Sweet Crispy Rice Topping + Condensed Milk + Red Bean Paste + Sticky Rice Cake + Mini Yakgwa (Korean honey cookies)"),
- /* 9 Ddoreek menu 10 */   ("9","Boneless Spicy Braised Chicken","", "5900","ddoreek-menu10","Greek Yogurt 81g + 2 Kinds of Fruit (Chunky Diet Ball Composition) + Condensed Milk + Red Bean Paste + Sticky Rice Cake"),
- /* 9 Ddoreek menu 11 */   ("9","Boneless Spicy Braised Chicken","", "4700","ddoreek-menu11","Greek Yogurt 81g + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (7 pieces) + Sweet Potato Mousse + Almond Slices"),
- /* 9 Ddoreek menu 12 */   ("9","Boneless Spicy Braised Chicken","", "5900","ddoreek-menu12","Greek Yogurt 81g + 2 Kinds of Fruit + Original Granola 30g + Coconut Chunks + Cacao Nibs + Allulose sweetener (The fruit may vary depending on availability and could include options like orange, strawberry, Shine Muscat, Black Sapphire, grapefruit, etc.)"),
- /* 9 Ddoreek menu 13 */   ("9","Boneless Spicy Braised Chicken","", "5200","ddoreek-menu13","Greek Yogurt 81g + Banana Chunks + Nutella Scoop + Condensed Milk + Chocolate Pretzels + Sliced Almond + Chocolate Syrup (Add when ordering)"),
- /* 9 Ddoreek menu 14 */   ("9","Boneless Spicy Braised Chicken","", "5800","ddoreek-menu14","Greek Yogurt 90g + Dried Mango Chunks + Original Granola 30g + Coconut Chunks"),
- /* 9 Ddoreek menu 15 */   ("9","Boneless Spicy Braised Chicken","", "3800","ddoreek-menu15","Greek Yogurt 81g + Real Chocolate Granola 30g + Honey Stick"),
- /* 9 Ddoreek menu 16 */   ("9","Boneless Spicy Braised Chicken","", "3800","ddoreek-menu16","Greek Yogurt 81g + Strawberry Chocolate Granola 30g + Strawberry Jam"),
- /* 9 Ddoreek menu 17 */   ("9","Boneless Spicy Braised Chicken","", "4100","ddoreek-menu17","Greek Yogurt 81g + Original Granola 30g + Coconut Chunks + Cacao Nibs + Honey Stick"), */
+    /* 가격 정보 필요 */ 
+    ("3","Spicy Seafood Noodle Soup","jjamppong", "????", "wryonggwan-menu1","A noodle with a spicy stir-fried seafood and vegetables (in soup)"),
+    ("3","Black Bean Sauce Noodles","jjajangmyeon", "????", "wryonggwan-menu2","Noodles with black bean sauce, onions, and cabbage"),
+    ("3","Shrimp Fried Rice","saeubokkeumbap", "????", "wryonggwan-menu3","Stir-fried rice with shrimp, assorted vegetables, and an egg on top."),
+    ("3","Deep-fried Pork with Sweet and Sour Sauce","tangsuyuk", "????", "wryonggwan-menu4","A dish where pork is deep-fried with starch, and then a sweet sauce made with carrots and fruit cocktail is poured or dipped according to one's preference."),
+
+    /* 가격 정보 필요 */ 
+    ("4","Fishcake Soup","odengtang", "????", "gwonsikdang-menu1","Fish cake soup with various vegetables."),
+    ("4","Corn Cheese","corncheese", "????", "gwonsikdang-menu2","A baked corn with cheese and mayonnaise"),
+    ("4","Nagasaki Seafood Noodle Soup","nagasaki jjamppong", "????", "gwonsikdang-menu3","A noodle with a stir-fried seafood and vegetable soup"),
+    ("4","Rolled Omelette","gyeranmari", "????", "gwonsikdang-menu4","An egg roll with cheese on top"),
+    ("4","Spicy Stir-fried Pork","jeyukbokkeum", "????", "gwonsikdang-menu5","Stir-fried pork with red pepper paste (gochujang) on top of rice"),
+    ("4","Seasoned Sea Snail Salad","golbaengi muchim", "????", "gwonsikdang-menu6","A dish made by mixing snails with spicy red pepper paste and various vegetables."),
+
+    /* 가격 정보 필요 */ 
+    ("5","Spicy Braised Chicken","dakbokkeumtang", "????", "imone-menu1","A chicken stew with vegetables, and special sauce (made with spicy red pepper paste (gochujang) and chili powder)"),
+    ("5","Stir-fried Tteokbokki and Ramyeon with Spicy Stir-fried Pork","jeyuk rabokki", "????", "imone-menu2","A dish where pork, vegetables, and a seasoning base of soybean paste and red pepper paste are mixed and cooked with ramyeon(instant noodles). "),
+    ("5","Chicken Feet","dakbal", "????", "imone-menu3","????"),    /* Description 정보 필요 */ 
+    ("5","Rolled Omelet","gyeranmari", "????", "imone-menu4","An egg roll with cheese on top"),
+
+    /* 가격 정보 필요 */ 
+    ("6","Soft Bean Curd with Pork Belly","samgyeopsal sundubu", "????", "baptongsultong-menu1","Spicy soft tofu stew (red pepper paste and chili powder) and grilled pork belly on top"),
+    ("6","Spicy Smoked Duck","hunjeorijeyuk", "????", "baptongsultong-menu2","A rice bowl steamed duck with red pepper pase"),
+    ("6","Pork Stew","jjageuri", "????", "baptongsultong-menu3","A spicy pork stew (red chili paste and chili powder) with vegetables"),
+    ("6","Rolled Omelette with Cheese","cheesegyeranmari", "????", "baptongsultong-menu4","An egg roll with added cheese topping."),
+
+    /* 가격 정보 필요 */ 
+    ("7","Pork Belly, Pork Shoulder, Grilled Pork Neck, Grilled Blade-end Fatback","samgyeopsal, moksal, hangjeongsal, gabeurisal gui", "????", "samgyeopsalmania-menu1","A dish where various delicious parts of pork are grilled and eaten."),
+    ("7","Steamed Eggs","gyeranjjim", "????", "samgyeopsalmania-menu2","A dish where eggs are cooked in a pot."),
+    ("7","Cold Buckwheat Noodles, Spicy Buckwheat Noodles","mullaengmyeon, bibimnaengmyeon", "????", "samgyeopsalmania-menu3","Buckwheat noodles, served with a cold and refreshing broth, topped with egg, radish, cucumber, and more. Bibim Noodles are the same noodles, but with a spicy red chili (gochujang)-based sauce and the same toppings, and can be customized with vinegar and mustard."),
+    ("7","Noodles","somyeon", "????", "samgyeopsalmania-menu4","A warm noodle soup"),
+    ("7","Bibimbap in Large Brass Bowl","yangpun bibimbap", "????", "samgyeopsalmania-menu5","A dish where vegetables like red pepper paste, seaweed, bean sprouts, and rice are mixed and eaten together."),
+    ("7","Instant Noodles","ramyeon", "????", "samgyeopsalmania-menu6","Ramyeon (instant noodles) with eggs"),
+
+    /* 28번 메뉴 오곡라떼 Description 문자열 길이 고려 필요 */ 
+    ("8","Plain Waffle","plain waffle", "3500", "hesed-menu1","A classic waffle"),
+    ("8","Maple Cinnamon Waffle","maplecinnamon waffle", "3700", "hesed-menu2","A waffle topped with maple syrup and cinnamon powder"),
+    ("8","Nutella Chocolate Waffle","nutellachoco waffle", "4000", "hesed-menu3","Waffle with Nutella and chocolate syrup"),
+    ("8","Caramel Chocolate Waffle","caramelchoco waffle", "4000", "hesed-menu4","Waffle with caramel, chocolate syrup, and almonds"),
+    ("8","Cream Cheese Waffle","creamcheese waffle", "4500", "hesed-menu5","Waffle with cream cheese topping"),
+    ("8","Ice Cream Waffle","icecream waffle", "5000", "hesed-menu6","Waffle with ice cream topping"),
+    ("8","Fresh Cream Waffle","saengcream waffle", "5000", "hesed-menu7","Waffle with whipped cream topping"),
+    ("8","Strawberry Smoothie","ttalgi smoothie", "5000", "hesed-menu8","Refreshing strawberry smoothie"),
+    ("8","Mango Smoothie","mango smoothie", "5000", "hesed-menu9","Tropical mango smoothie"),
+    ("8","Blueberry Smoothie","blueberry smoothie", "5000", "hesed-menu10","Berry-filled blueberry smoothie"),
+
+    ("8","Plain Smoothie","plain smoothie", "5000", "hesed-menu11","A plain and simple smoothie"),
+    ("8","Rooibos Tea","rooibos", "4200", "hesed-menu12","Herbal tea made from rooibos leaves"),
+    ("8","Peppermint Tea","peppermint", "4200", "hesed-menu13","Refreshing peppermint tea"),
+    ("8","Chamomile Tea","chamomile", "4200", "hesed-menu14","A soothing chamomile tea"),
+    ("8","Lemon Iced Tea","lemon icetea", "4300", "hesed-menu15","Lemon Iced Tea"),
+    ("8","Peach Iced Tea","boksunga icetea", "4300", "hesed-menu16","Peach Iced Tea"),
+    ("8","Lemon Citrus Tea","lemon yujacha", "4500", "hesed-menu17","Lemon citron tea"),
+    ("8","Hibiscus Lemon Tea","hibiscus lemoncha", "5000", "hesed-menu18","Hibiscus lemon tea"),
+    ("8","Espresso","espresso", "3500", "hesed-menu19","Espresso"),
+    ("8","Americano","americano", "4000", "hesed-menu20","Americano"),
+
+    ("8","Café Latte","cafelatte", "4500", "hesed-menu21","Latte"),
+    ("8","Cappuccino","cappuccino", "5000", "hesed-menu22","Cappuccino"),
+    ("8","Caffè Mocha","cafe mocha", "5000", "hesed-menu23","Mocha Coffee"),
+    ("8","Caramel Macchiato","caramelmacchiato", "5000", "hesed-menu24","Caramel Macchiato"),
+    ("8","Vanilla Café Latte","vanillacafelatte", "5000", "hesed-menu25","Vanilla Latte"),
+    ("8","Mint Café Latte","mintcafelatte", "5000", "hesed-menu26","Mint Latte"),
+    ("8","Green Tea Latte","greentea latte", "4800", "hesed-menu27","A Green Tea Cafe Latte, also known as Matcha Latte"),
+    ("8","Five-grain Latte","ogoklatte", "4800", "hesed-menu28","오곡라떼: 5-grain latte.\nThe name ""오곡"" (ogok) refers to a mixture of five different grains, which typically include rice, barley, soybeans, millet, and various other grains. These grains are ground into a fine powder, which is then blended with milk to create a creamy and nutritious latte-like drink."),  /* Description 정보가 너무 길어 menu_ing 500자로 늘림. */
+    ("8","Dark Chocolate Latte","darkchocolatte", "4800", "hesed-menu29","Dark chocolate latte"),
+    ("8","White Chocolate Latte","whitechocolatte", "4800", "hesed-menu30","White chocolate latte"),
+
+    ("8","Mint Chocolate Latte","mintchocolatte", "4800", "hesed-menu31","Mint Choco Latte"),
+    ("8","Sweet Potato Latte","gogumalatte", "4800", "hesed-menu32","Sweet potato latte"),
+    ("8","Milk Tea Latte","milktealatte", "4800", "hesed-menu33","Milk tea latte"),
+    ("8","Ade","ade", "5000", "hesed-menu34","Refreshing Ade, a delightful beverage"),
+    ("8","Fruit Juice","saenggwailjuice", "5000", "hesed-menu35","A freshly squeezed fruit juice"),
+    ("8","Banana Shake","bananashake", "5000", "hesed-menu36","Alll-natural banana milkshake, just like homemade"),
+    ("8","Oreo Shake","oreoshake", "5500", "hesed-menu37","The classic Oreo milkshake, a timeless treat"),
+
+    ("9","Greek Yogurt with Special Fruit Set","seupesyeol gwail seteu", "6800", "ddoreek-menu1","Greek Yogurt 81g + 4 Kinds of Fruit + Granola 30g (Choose 1 from 3 options) + Honey Stick\n(Fruit selection varies depending on the season and availability)\nStrawberries, bananas, oranges, watermelon, kiwi, oriental melon, cantaloupe, Shine Muscat, Black Sapphire, grapefruit, etc."),
+    ("9","Greek Yogurt with Strawberry and Condensed Milk Set","saengttalgi yeonyu seteu", "6800", "ddoreek-menu2","Greek Yogurt 81g + Fresh Strawberries + Original Granola 30g + Cheese Cubes + Condensed Milk"),
+    ("9","Greek Yogurt with Melon Cheese Cube Set","mellonchijeukyubeu seteu", "6500", "ddoreek-menu3","Greek Yogurt 81g + Melon Chunks + Original Granola 30g + Coconut Chunks + Cheese Cubes + Condensed Milk"),
+    ("9","Greek Yogurt with Grapefruit and Condensed Milk Set","yeonyujamong seteu", "6200", "ddoreek-menu4","Greek Yogurt 81g + Grapefruit Chunks + Original Granola 30g + Chocolate Chips + Condensed Milk (Honey Stick is available instead of condensed milk)"),
+    ("9","Yellow Cheese-flavored Yogurt","hwangchijeu", "4700", "ddoreek-menu5","Cream Cheese Flavored Yogurt 90g + Cheese Crackers on Top"),
+    ("9","Green Tea Chocolate-flavored Yogurt ( aka Supppacho )","nokchachoko ( aka. supppacho )", "4900", "ddoreek-menu6","Matcha Flavored Greek Yogurt + Chocolate Balls + Coconut Chunks + Unsweetened Cocoa Powder + Chocolate Syrup"),
+    ("9","Greek Yogurt with Red Bean and Bean Powder Coated Rice Cake","patjeolmi", "4000", "ddoreek-menu7","Greek Yogurt 81g + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (7 pieces) + Condensed Milk + Red Bean Paste + Almond Slices"),
+    ("9","Greek Yogurt with Bean Powder and Bean Powder Coated Rice Cake","kongjeolmi", "5200", "ddoreek-menu8","Greek Yogurt 81g + Soybean Powder + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (20 pieces) + Condensed Milk + Allulose sweetener + Almond Slices"),
+    ("9","Greek Yogurt with Red Bean Filling Sweet Rice Cake","jjondeukchapssaltteok", "4700", "ddoreek-menu9","Greek Yogurt 81g + Sweet Crispy Rice Topping + Condensed Milk + Red Bean Paste + Sticky Rice Cake + Mini Yakgwa (Korean honey cookies)"),
+    ("9","Greek Yogurt with Fruit and Red Bean Filling Sweet Rice Cake","gwailchapssaltteok", "5900", "ddoreek-menu10","Greek Yogurt 81g + 2 Kinds of Fruit (Chunky Diet Ball Composition) + Condensed Milk + Red Bean Paste + Sticky Rice Cake"),
+
+    ("9","Greek Yogurt with Sweet Potato Mousse","dalguma", "4700", "ddoreek-menu11","Greek Yogurt 81g + Sweet Crispy Rice Topping + Injeolmi Rice Cakes (7 pieces) + Sweet Potato Mousse + Almond Slices"),
+    ("9","Greek Yogurt with Chunky Diet Bowl ( aka Cheongdabol )","cheongkidaieoteubol ( aka. cheongdabol )", "5900", "ddoreek-menu12","Greek Yogurt 81g + 2 Kinds of Fruit + Original Granola 30g + Coconut Chunks + Cacao Nibs + Allulose sweetener (The fruit may vary depending on availability and could include options like orange, strawberry, Shine Muscat, Black Sapphire, grapefruit, etc.)"),
+    ("9","Greek Yogurt with Banana and Nutella","banana nutella", "5200", "ddoreek-menu13","Greek Yogurt 81g + Banana Chunks + Nutella Scoop + Condensed Milk + Chocolate Pretzels + Sliced Almond + Chocolate Syrup (Add when ordering)"),
+    ("9","Greek Yogurt with Dried Mango","yogeon?!manggo?!", "5800", "ddoreek-menu14","Greek Yogurt 90g + Dried Mango Chunks + Original Granola 30g + Coconut Chunks"),
+    ("9","Greek Yogurt with Chocolate Granola","jjinchoko seteu", "3800", "ddoreek-menu15","Greek Yogurt 81g + Real Chocolate Granola 30g + Honey Stick"),
+    ("9","Greek Yogurt with Strawberry Chocolate Granola","ttalgichoko seteu", "3800", "ddoreek-menu16","Greek Yogurt 81g + Strawberry Chocolate Granola 30g + Strawberry Jam"),
+    ("9","Greek Yogurt with Original Granola, Coconut Chunk and Cacao Nips ","ododok seteu", "4100", "ddoreek-menu17","Greek Yogurt 81g + Original Granola 30g + Coconut Chunks + Cacao Nibs + Honey Stick"),
+
+    /* 가격 정보 필요 */ 
+    ("10","Grilled Salted Chicken","sogeum yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)"),
+    ("10","Soy Sauce Grilled Chicken","ganjang yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
+    ("10","Grilled Salted Chicken with Tortilla","tortilla yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
+    ("10","Kimchi Jjigae with Pork","yeonguso jjigae", "????", "????-menu1","A special signature ""Chicken Lab"" Kimchi Stew with a lot of pork. It's a kimchi stew with a generous amount of pork."),
+    ("10","Sausage Jjigae","sausage jjigae", "????", "????-menu1","A special signature ""Chicken Lab"" Sausage stew is a dish made with plenty of ham. It's a great side dish for drinks, and it includes plenty of ham so that you can eat more."),
+    ("10","Chocolate","mintchocolatte", "????", "????-menu1","A fish cake soup with lots of extra fish cakes, ensuring you can have more after finishing the first serving"),
+
+    /* 가격 정보 필요 */ 
+    ("11","Spicy Stir-fried Chicken with Cheese","cheese dakgalbi", "????", "kkokkomeokko-menu1","Spicy Stir-fried Chicken with added cheese. Chicken Galbi is a dish made by stir frying chicken marinated in red pepper sauce with cabbage, onions, green onions, and sweet potatoes."),
+    ("11","Grilled Cow Lung and Heart","so heopa yeomtong gui", "????", "kkokkomeokko-menu2","Grilled beef lungs and intestines. Usually dipped in salt and eaten."),
+    ("11","Deep-fried Chicken Gizzards","ttongjip twigim", "????", "kkokkomeokko-menu3","Chicken's nest, where chicken is coated in flour and deep-fried, often with added spicy peppers or scallions."),
+    ("11","Pork Stew","dwaejigogi jjageuri", "????", "kkokkomeokko-menu4","A spicy, slightly salty version of pork and kimchi stew. 'Jjigae' refers to a dish where seasoned pork is cooked with vegetables."),
+    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "kkokkomeokko-menu5","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled."),
 
 
-
-
-
-
+/* 더미 데이터 */ 
 -- ("1","Boneless Spicy Braised Chicken","ppyeoeomneun dakbokkeumtang", "20000","gomo-dakbokkeumtang","Chicken, potato, onion, green onion, garlic, red pepper paste, soy sauce, sugar, red pepper powder"),
 -- ("1","Sausage Hot Pot","budaejeongol", "20000","usapgyeopbudaejjigae","Sausage, pork, chicken, beef, tteokguk rice cake, cheese rice cake, glass noodles, kimchi, cheese, meat dumplings, bean sprouts, onion, cabbage, green onion"),
 -- ("1","Beef Bulgogi with Rice","sobulgogideopbap", "8000","gomo-sobulgogideopbap","Beef, onion, cabbage, green onion, soy sauce, starch syrup, sesame oil, garlic, sugar, pepper"),
@@ -301,22 +392,125 @@ CREATE TABLE menuAlgs(
 
 INSERT INTO menuAlgs(menu_id,alg_id) 
 values
---  추후 회의 후 변경 필요 (우선은 반영 x)
-/*     -- 9. Ddoreek menu (17개) 74 ~ 90번
-    (74, 8),
-    (74, 24),
-    (75, 8),
-    (75, 24),
-    (76, 8),
-    (76, 24),
-    (77, 8),
-    (77, 24),
-    (78, 8),
-    (79, 8),
-    (80, 8),
-    (80, 24), */
-    
+    (1, 15), (1, 18), (1, 19),
+    (2, 14), (2, 15),
+    (3, 15), (3, 23),
+    (4, 6), (4, 14), (4, 23),
+    (5, 15), (5, 23),
 
+    (6, 14),
+    (7, 2), (7, 6), (7, 15),
+    (8, 4), (8, 15),
+    (9, 2), (9, 6), (9, 15), (9, 17),
+    (10, 2), (10, 6), (10, 15),
+    (11, 14), (11, 15),
+    (12, 14), (12, 15),
+    (13, 2), (13, 6), (13, 15),
+    (14, 2), (14, 14), (14, 15), (14, 23),  /* 첫번째 알러지 소고기 들어가는지 확인 필요 */ 
+
+    (15, 9), (15, 17), (15, 18), (15, 19), (15, 23),
+    (16, 6), (16, 14), (16, 15), (16, 19), (16, 23),
+    (17, 6), (17, 15), (17, 17), 
+    (18, 14), (18, 18), 
+
+    (19, 18),
+    /* 20번 메뉴 알러지 유발 성분 없음 */ 
+    (21, 9), (21, 16), (21, 19),
+    (22, 6),
+    (23, 14), (23, 18),
+    /* 24번 메뉴 알러지 유발 성분 없음 */
+
+    (25, 4), (25, 15), (25, 18),
+    (26, 14), (26, 15), (26, 23),
+    (27, 4), (27, 18),
+    (28, 6),
+
+    (29, 14),
+    (30, 15), (30, 18),
+    (31, 14), (31, 15),
+    (32, 6), (32, 15),
+
+    (33, 14),
+    (34, 6),
+    (35, 6), (35, 20),
+    (36, 23),
+    /* 37번 메뉴 알러지 유발 성분 없음, 6번 달걀 알러지 확인 필요 */
+    (38, 6), (38, 23),
+
+    (39, 6), (39, 8), (39, 23),
+    (40, 6), (40, 8), (40, 23),
+    (41, 6), (41, 8), (41, 23),
+    (42, 6), (42, 8), (42, 23), (42, 24),
+    (43, 6), (43, 8), (43, 23),
+    (44, 6), (44, 8), (44, 23),
+    (45, 6), (45, 8), (45, 23),
+    (46, 8),
+    (47, 8),
+    (48, 8),
+
+    (49, 8),
+    /* 50번 메뉴 알러지 유발 성분 없음 */
+    /* 51번 메뉴 알러지 유발 성분 없음 */
+    /* 52번 메뉴 알러지 유발 성분 없음 */
+    /* 53번 메뉴 알러지 유발 성분 없음 */
+    (54, 11),
+    /* 55번 메뉴 알러지 유발 성분 없음 */
+    /* 56번 메뉴 알러지 유발 성분 없음 */
+    /* 57번 메뉴 알러지 유발 성분 없음 */
+    /* 58번 메뉴 알러지 유발 성분 없음 */
+
+    (59, 8),
+    (60, 8),
+    (61, 8),
+    (62, 8),
+    (63, 8),
+    (64, 8),
+    (65, 8),
+    (66, 8),
+    (67, 8),
+    (68, 8),
+
+    (69, 8),
+    (70, 8),
+    (71, 8),
+    /* 72번 메뉴 알러지 유발 성분 없음 */
+    /* 73번 메뉴 알러지 유발 성분 없음 */
+    (74, 8),
+    (75, 8),
+
+    (76, 8), (76, 24),
+    (77, 8), (77, 24),
+    (78, 8), (78, 24),
+    (79, 8), (79, 24),
+    (80, 8),
+    (81, 8),
+    (82, 8), (82, 24),
+    (83, 8), (83, 24),
+    (84, 8),
+    (85, 8),
+
+    (86, 8), (86, 24),
+    (87, 8), (87, 24),
+    (88, 8), (88, 24),
+    (89, 8), (89, 24),
+    (90, 8), (90, 24),
+    (91, 8), (91, 24),
+    (92, 8), (92, 24),
+
+    (93, 4),
+    (94, 4), (94, 18),
+    (95, 4), (95, 23),
+    (96, 14),
+    (97, 14),
+    (98, 18),
+
+    (99, 4),
+    (100, 2),
+    (101, 4), (101, 24),
+    (102, 14),
+    (103, 14), (103, 18), (103, 19),
+
+/* 더미 데이터 */ 
     -- (1, 4),
     -- (1, 23),
     -- (1, 18),
