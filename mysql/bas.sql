@@ -124,18 +124,17 @@ CREATE TABLE restaurant(
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  values
---  추후 회의 후 변경 필요 (우선은 반영 x)
-/*  /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","gomone"),
+ /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","gomone"),
  /* restaurant 2  */    ("donk","123","Donkobokko","None","kim","033-0000-0000","donkobokko"),
  /* restaurant 3  */    ("wary","123","Waryonggwan","10-24, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1414-4571","waryonggwan"),
  /* restaurant 4  */    ("gwon","123","Gwonsikdang","33, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-762-0320","gwonsikdang"),
  /* restaurant 5  */    ("Imon","123","Imone","10-10, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1419-6522","imone"),
  /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1411-9212","baptongsultong"),
- /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-1174","Samgyeopsalmania"),
+ /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-1174","samgyeopsalmania"),
  /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-7111","Hesed"),
  /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"),
- /* restaurant 10  */   ("ddor","123","????","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","????"),                          /* 가게명 회의 필요 */ 
- /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-3400","kkokkomeokko"), */
+ /* restaurant 10  */   ("chic","123","Chicken Lab","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","chickenlab"),                    
+ /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-3400","kkokkomeokko");
 
 
 /* 더미 데이터 */ 
@@ -258,7 +257,6 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("7","Bibimbap in Large Brass Bowl","yangpun bibimbap", "????", "samgyeopsalmania-menu5","A dish where vegetables like red pepper paste, seaweed, bean sprouts, and rice are mixed and eaten together."),
     ("7","Instant Noodles","ramyeon", "????", "samgyeopsalmania-menu6","Ramyeon (instant noodles) with eggs"),
 
-    /* 28번 메뉴 오곡라떼 Description 문자열 길이 고려 필요 */ 
     ("8","Plain Waffle","plain waffle", "3500", "hesed-menu1","A classic waffle"),
     ("8","Maple Cinnamon Waffle","maplecinnamon waffle", "3700", "hesed-menu2","A waffle topped with maple syrup and cinnamon powder"),
     ("8","Nutella Chocolate Waffle","nutellachoco waffle", "4000", "hesed-menu3","Waffle with Nutella and chocolate syrup"),
@@ -288,7 +286,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("8","Vanilla Café Latte","vanillacafelatte", "5000", "hesed-menu25","Vanilla Latte"),
     ("8","Mint Café Latte","mintcafelatte", "5000", "hesed-menu26","Mint Latte"),
     ("8","Green Tea Latte","greentea latte", "4800", "hesed-menu27","A Green Tea Cafe Latte, also known as Matcha Latte"),
-    ("8","Five-grain Latte","ogoklatte", "4800", "hesed-menu28","오곡라떼: 5-grain latte.\nThe name ""오곡"" (ogok) refers to a mixture of five different grains, which typically include rice, barley, soybeans, millet, and various other grains. These grains are ground into a fine powder, which is then blended with milk to create a creamy and nutritious latte-like drink."),  /* Description 정보가 너무 길어 menu_ing 500자로 늘림. */
+    ("8","Five-grain Latte","ogoklatte", "4800", "hesed-menu28","오곡라떼: 5-grain latte.\nThe name ""오곡"" (ogok) refers to a mixture of five different grains as rice, barley, soybeans, millet, and etc. "),
     ("8","Dark Chocolate Latte","darkchocolatte", "4800", "hesed-menu29","Dark chocolate latte"),
     ("8","White Chocolate Latte","whitechocolatte", "4800", "hesed-menu30","White chocolate latte"),
 
@@ -320,19 +318,19 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("9","Greek Yogurt with Original Granola, Coconut Chunk and Cacao Nips ","ododok seteu", "4100", "ddoreek-menu17","Greek Yogurt 81g + Original Granola 30g + Coconut Chunks + Cacao Nibs + Honey Stick"),
 
     /* 가격 정보 필요 */ 
-    ("10","Grilled Salted Chicken","sogeum yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)"),
-    ("10","Soy Sauce Grilled Chicken","ganjang yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
-    ("10","Grilled Salted Chicken with Tortilla","tortilla yeonguso chicken", "????", "????-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
-    ("10","Kimchi Jjigae with Pork","yeonguso jjigae", "????", "????-menu1","A special signature ""Chicken Lab"" Kimchi Stew with a lot of pork. It's a kimchi stew with a generous amount of pork."),
-    ("10","Sausage Jjigae","sausage jjigae", "????", "????-menu1","A special signature ""Chicken Lab"" Sausage stew is a dish made with plenty of ham. It's a great side dish for drinks, and it includes plenty of ham so that you can eat more."),
-    ("10","Chocolate","mintchocolatte", "????", "????-menu1","A fish cake soup with lots of extra fish cakes, ensuring you can have more after finishing the first serving"),
+    ("10","Grilled Salted Chicken","sogeum yeonguso chicken", "????", "chickenlab-menu1","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)"),
+    ("10","Soy Sauce Grilled Chicken","ganjang yeonguso chicken", "????", "chickenlab-menu2","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
+    ("10","Grilled Salted Chicken with Tortilla","tortilla yeonguso chicken", "????", "chickenlab-menu3","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
+    ("10","Kimchi Jjigae with Pork","yeonguso jjigae", "????", "chickenlab-menu4","A special signature ""Chicken Lab"" Kimchi Stew with a lot of pork. It's a kimchi stew with a generous amount of pork."),
+    ("10","Sausage Jjigae","sausage jjigae", "????", "chickenlab-menu5","A special signature ""Chicken Lab"" Sausage stew is a dish made with plenty of ham. It's a great side dish for drinks, and it includes plenty of ham so that you can eat more."),
+    ("10","Chocolate","mintchocolatte", "????", "chickenlab-menu6","A fish cake soup with lots of extra fish cakes, ensuring you can have more after finishing the first serving"),
 
     /* 가격 정보 필요 */ 
     ("11","Spicy Stir-fried Chicken with Cheese","cheese dakgalbi", "????", "kkokkomeokko-menu1","Spicy Stir-fried Chicken with added cheese. Chicken Galbi is a dish made by stir frying chicken marinated in red pepper sauce with cabbage, onions, green onions, and sweet potatoes."),
     ("11","Grilled Cow Lung and Heart","so heopa yeomtong gui", "????", "kkokkomeokko-menu2","Grilled beef lungs and intestines. Usually dipped in salt and eaten."),
     ("11","Deep-fried Chicken Gizzards","ttongjip twigim", "????", "kkokkomeokko-menu3","Chicken's nest, where chicken is coated in flour and deep-fried, often with added spicy peppers or scallions."),
     ("11","Pork Stew","dwaejigogi jjageuri", "????", "kkokkomeokko-menu4","A spicy, slightly salty version of pork and kimchi stew. 'Jjigae' refers to a dish where seasoned pork is cooked with vegetables."),
-    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "kkokkomeokko-menu5","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled."),
+    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "kkokkomeokko-menu5","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled.");
 
 
 /* 더미 데이터 */ 
@@ -508,7 +506,7 @@ values
     (100, 2),
     (101, 4), (101, 24),
     (102, 14),
-    (103, 14), (103, 18), (103, 19),
+    (103, 14), (103, 18), (103, 19);
 
 /* 더미 데이터 */ 
     -- (1, 4),
