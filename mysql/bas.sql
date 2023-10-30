@@ -124,17 +124,17 @@ CREATE TABLE restaurant(
 
 INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  values
- /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-766-5045","gomone"),
- /* restaurant 2  */    ("donk","123","Donkobokko","None","kim","033-0000-0000","donkobokko"),
- /* restaurant 3  */    ("wary","123","Waryonggwan","10-24, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1414-4571","waryonggwan"),
- /* restaurant 4  */    ("gwon","123","Gwonsikdang","33, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-762-0320","gwonsikdang"),
- /* restaurant 5  */    ("Imon","123","Imone","10-10, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1419-6522","imone"),
- /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","0507-1411-9212","baptongsultong"),
- /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-1174","samgyeopsalmania"),
- /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-7111","Hesed"),
- /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","010-2651-1926","ddoreek"),
- /* restaurant 10  */   ("chic","123","Chicken Lab","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","070-4623-0530","chickenlab"),                    
- /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","kim","033-763-3400","kkokkomeokko");
+ /* restaurant 1  */    ("gomo","123","Gomone","10-3, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-766-5045","gomone"),
+ /* restaurant 2  */    ("donk","123","Donkobokko","None","????","033-0000-0000","donkobokko"),
+ /* restaurant 3  */    ("wary","123","Waryonggwan","10-24, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","0507-1414-4571","waryonggwan"),
+ /* restaurant 4  */    ("gwon","123","Gwonsikdang","33, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-762-0320","gwonsikdang"),
+ /* restaurant 5  */    ("Imon","123","Imone","10-10, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","0507-1419-6522","imone"),
+ /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","0507-1411-9212","baptongsultong"),
+ /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-1174","samgyeopsalmania"),
+ /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-7111","Hesed"),
+ /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","010-2651-1926","ddoreek"),
+ /* restaurant 10  */   ("chic","123","Chicken Lab","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","070-4623-0530","chickenlab"),                    
+ /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-3400","kkokkomeokko");
 
 
 /* 더미 데이터 */ 
@@ -166,8 +166,6 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
 --     values("pepper");
 
 
-
-
 -- CREATE TABLE ingdAlgs(
 --     id int NOT NULL AUTO_INCREMENT,
 --     igd_id int NOT NULL,
@@ -186,7 +184,6 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
 
 
 drop table menu;
-
 
 
 CREATE TABLE menu(
@@ -213,7 +210,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("1","Rice Cake and Mandu Soup","tteong manduguk", "7000", "gomone-menu4","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top"),
     ("1","Noodle Soup","kalguksu", "7000", "gomone-menu5","Basic noodle soup prepared with anchovy-based broth"),
 
-    ("2","Grilled Pork Set","dwaejigogi gui seteu", "????", "donkobokko-menu1","????"), /* Description, 가격 정보 필요 */ 
+    ("2","Grilled Pork Set","dwaejigogi gui seteu", "????", "donkobokko-menu1","????"),     /* Description, 가격 정보 필요 */ 
     ("2","Galbi Soup","galbitang", "9000", "donkobokko-menu2","A clear soup made from beef rib cuts"),
     ("2","Ginseng Half Chicken Soup","bangyetang", "8000", "donkobokko-menu3","A chicken(half) soup with vegetables and sticky rice"),
     ("2","Soft Bean Curd Hot Pot","sundubuttukbaegi", "8000", "donkobokko-menu4","A spicy(red chili powder) soft tofu soup on top with shrimp"),
