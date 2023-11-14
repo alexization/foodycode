@@ -226,13 +226,12 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("3","Shrimp Fried Rice","saeubokkeumbap", "????", "wryonggwan-menu3","Stir-fried rice with shrimp, assorted vegetables, and an egg on top."),
     ("3","Deep-fried Pork with Sweet and Sour Sauce","tangsuyuk", "????", "wryonggwan-menu4","A dish where pork is deep-fried with starch, and then a sweet sauce made with carrots and fruit cocktail is poured or dipped according to one's preference."),
 
-    /* 가격 정보 필요 */ 
-    ("4","Fishcake Soup","odengtang", "????", "gwonsikdang-menu1","Fish cake soup with various vegetables."),
-    ("4","Corn Cheese","corncheese", "????", "gwonsikdang-menu2","A baked corn with cheese and mayonnaise"),
-    ("4","Nagasaki Seafood Noodle Soup","nagasaki jjamppong", "????", "gwonsikdang-menu3","A noodle with a stir-fried seafood and vegetable soup"),
-    ("4","Rolled Omelette","gyeranmari", "????", "gwonsikdang-menu4","An egg roll with cheese on top"),
-    ("4","Spicy Stir-fried Pork","jeyukbokkeum", "????", "gwonsikdang-menu5","Stir-fried pork with red pepper paste (gochujang) on top of rice"),
-    ("4","Seasoned Sea Snail Salad","golbaengi muchim", "????", "gwonsikdang-menu6","A dish made by mixing snails with spicy red pepper paste and various vegetables."),
+    ("4","Fishcake Soup","odengtang", "10000", "gwonsikdang-menu1","Fish cake soup with various vegetables."),
+    ("4","Corn Cheese","corncheese", "13000", "gwonsikdang-menu2","A baked corn with cheese and mayonnaise"),
+    ("4","Nagasaki Seafood Noodle Soup","nagasaki jjamppong", "15000", "gwonsikdang-menu3","A noodle with a stir-fried seafood and vegetable soup"),
+    ("4","Rolled Omelette","gyeranmari", "10000", "gwonsikdang-menu4","An egg roll with cheese on top"),
+    ("4","Spicy Stir-fried Pork","jeyukbokkeum", "14000", "gwonsikdang-menu5","Stir-fried pork with red pepper paste (gochujang) on top of rice"),
+    ("4","Seasoned Sea Snail Salad","golbaengi muchim", "13000", "gwonsikdang-menu6","A dish made by mixing snails with spicy red pepper paste and various vegetables."),
 
     /* 가격 정보 필요 */ 
     ("5","Spicy Braised Chicken","dakbokkeumtang", "????", "imone-menu1","A chicken stew with vegetables, and special sauce (made with spicy red pepper paste (gochujang) and chili powder)"),
@@ -327,8 +326,20 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("11","Grilled Cow Lung and Heart","so heopa yeomtong gui", "????", "kkokkomeokko-menu2","Grilled beef lungs and intestines. Usually dipped in salt and eaten."),
     ("11","Deep-fried Chicken Gizzards","ttongjip twigim", "????", "kkokkomeokko-menu3","Chicken's nest, where chicken is coated in flour and deep-fried, often with added spicy peppers or scallions."),
     ("11","Pork Stew","dwaejigogi jjageuri", "????", "kkokkomeokko-menu4","A spicy, slightly salty version of pork and kimchi stew. 'Jjigae' refers to a dish where seasoned pork is cooked with vegetables."),
-    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "kkokkomeokko-menu5","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled.");
+    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "kkokkomeokko-menu5","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled."),
 
+    ("4","Offal Soup","naejangtang", "8000", "gwonsikdang-menu7","A bone broth with boiled beef offal"),
+    ("4","Galbi Soup","galbitang", "8000", "gwonsikdang-menu8","A clear soup made from beef rib cuts"),
+    ("4","Kimchi Jjigae ","kimchi jjigae", "7000", "gwonsikdang-menu9","Kimchi Stew with pork. Traditional korean stew with kimchi. "),
+    ("4","Fried Chicken with Rice","chicken deopbap", "8000", "gwonsikdang-menu10","Stir-fried chicken in special spicy sauce (little spicy) with rice"),
+    ("4","Fried Chicken with Cheese over Rice","cheese chicken deopbap", "8000", "gwonsikdang-menu11","Stir-fried chicken with cheese in special spicy sauce (little spicy) with rice"),
+    ("4","Cheese and Kimchi Fried Rice","cheese kimchibokkeumbap", "8000", "gwonsikdang-menu12","Stir-fried rice with kimchi and cheese"),
+    ("4","Beef Tartare Bibimbap","yukhoebibimbap", "8000", "gwonsikdang-menu13","Beef tartar with a dish where vegetables like red pepper paste, seaweed, bean sprouts, and rice are mixed and eaten together"),
+    ("4","Soft Bean Curd Jjigae","sundubujjigae", "7000", "gwonsikdang-menu14","Spicy soft tofu stew (red pepper paste and chili powder) with seafood"),
+    ("4","Pork Cutlet ","dongaseu", "8000", "gwonsikdang-menu15","Breaded and deep-fried pork cutlet, often served with a tangy sauce and shredded cabbage. Served with rice"),
+    ("4","Glazed Chicken and Rice","yangnyeomchideopbap", "8000", "gwonsikdang-menu16","Glazed stir-fried chicken with rice"),
+    ("4","Rose Sauce Braised Chicken","rosejjimdak", "24000", "gwonsikdang-menu17","Breased chicken in a creamy rose pasta sauce with glass noodles, flat dumplings, sweet potato, onion and rice cakes. Served usually for 2 and more people."),
+    ("4","Spicy Braised Chicken with Grilled Pork","daksambokkeum", "8000", "gwonsikdang-menu18","Stir-fried chicken and three-layered pork belly with a savory and slightly sweet sauce.");
 
 /* 더미 데이터 */ 
 -- ("1","Boneless Spicy Braised Chicken","ppyeoeomneun dakbokkeumtang", "20000","gomo-dakbokkeumtang","Chicken, potato, onion, green onion, garlic, red pepper paste, soy sauce, sugar, red pepper powder"),
@@ -503,7 +514,22 @@ values
     (100, 2),
     (101, 4), (101, 24),
     (102, 14),
-    (103, 14), (103, 18), (103, 19);
+    (103, 14), (103, 18), (103, 19),
+
+    (104, 2),
+    (105, 2),
+    (106, 14),
+    (107, 4), (107, 15),
+    (108, 4), (108, 15),
+    (109, 14), (109, 15),
+    (110, 2), (110, 6),
+    /* 111번 메뉴 알러지 유발 성분 없음 */
+    (112, 14),
+    (113, 4), (113, 15),
+    (114, 4), (114, 8), (114, 14),
+    (115, 4), (115, 14);
+
+
 
 /* 더미 데이터 */ 
     -- (1, 4),
