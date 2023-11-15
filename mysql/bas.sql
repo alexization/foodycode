@@ -222,10 +222,10 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("2","Mandu Soup","manduguk", "7000", "menu_init","A dumpling soup with egg drops on top"),
 
     /* 가격 정보 필요 */ 
-    ("3","Spicy Seafood Noodle Soup","jjamppong", "????", "menu_init","A noodle with a spicy stir-fried seafood and vegetables (in soup)"),
-    ("3","Black Bean Sauce Noodles","jjajangmyeon", "????", "menu_init","Noodles with black bean sauce, onions, and cabbage"),
-    ("3","Shrimp Fried Rice","saeubokkeumbap", "????", "menu_init","Stir-fried rice with shrimp, assorted vegetables, and an egg on top."),
-    ("3","Deep-fried Pork with Sweet and Sour Sauce","tangsuyuk", "????", "menu_init","A dish where pork is deep-fried with starch, and then a sweet sauce made with carrots and fruit cocktail is poured or dipped according to one's preference."),
+    ("3","Spicy Seafood Noodle Soup","jjamppong", "????", "wryonggwan-menu1","A noodle with a spicy stir-fried seafood and vegetables (in soup)"),
+    ("3","Black Bean Sauce Noodles","jjajangmyeon", "????", "wryonggwan-menu2","Noodles with black bean sauce, onions, and cabbage"),
+    ("3","Shrimp Fried Rice","saeubokkeumbap", "????", "wryonggwan-menu3","Stir-fried rice with shrimp, assorted vegetables, and an egg on top."),
+    ("3","Deep-fried Pork with Sweet and Sour Sauce","tangsuyuk", "????", "wryonggwan-menu4","A dish where pork is deep-fried with starch, and then a sweet sauce made with carrots and fruit cocktail is poured or dipped according to one's preference."),
 
     ("4","Fishcake Soup","odengtang", "10000", "menu_init","Fish cake soup with various vegetables."),
     ("4","Corn Cheese","corncheese", "13000", "menu_init","A baked corn with cheese and mayonnaise"),
