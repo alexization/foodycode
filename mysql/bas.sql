@@ -131,7 +131,7 @@ INSERT INTO restaurant(uid,psword,rest_name,address,ceo_name,tel,img_url)
  /* restaurant 5  */    ("Imon","123","Imone","10-10, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","0507-1419-6522","imone"),
  /* restaurant 6  */    ("bapt","123","Baptongsultong","53, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","0507-1411-9212","baptongsultong"),
  /* restaurant 7  */    ("samg","123","Samgyeopsalmania","10-31, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-1174","samgyeopsalmania"),
- /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-7111","Hesed"),
+ /* restaurant 8  */    ("hese","123","HESED","10-1, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-7111","hesed"),
  /* restaurant 9  */    ("ddor","123","Ddoreek","22, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","010-2651-1926","ddoreek"),
  /* restaurant 10  */   ("chic","123","Chicken Lab","39, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","070-4623-0530","chickenlab"),                    
  /* restaurant 11  */   ("kkok","123","Kkokkomeokko","10-7, Sedong-gil, Heungeop-myeon, Wonju-si, Gangwon-do","????","033-763-3400","kkokkomeokko");
