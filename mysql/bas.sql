@@ -262,7 +262,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("8","Ice Cream Waffle","icecream waffle", "5000", "menu_init","Waffle with ice cream topping"),
     ("8","Fresh Cream Waffle","saengcream waffle", "5000", "menu_init","Waffle with whipped cream topping"),
     ("8","Strawberry Smoothie","ttalgi smoothie", "5000", "menu_init","Refreshing strawberry smoothie"),
-    ("8","Mango Smoothie","mango smoothie", "5000", "hmenu_init","Tropical mango smoothie"),
+    ("8","Mango Smoothie","mango smoothie", "5000", "menu_init","Tropical mango smoothie"),
     ("8","Blueberry Smoothie","blueberry smoothie", "5000", "menu_init","Berry-filled blueberry smoothie"),
 
     ("8","Plain Smoothie","plain smoothie", "5000", "menu_init","A plain and simple smoothie"),
