@@ -217,7 +217,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("2","Ginseng Half Chicken Soup","bangyetang", "8000", "menu_init","A chicken(half) soup with vegetables and sticky rice"),
     ("2","Soft Bean Curd Hot Pot","sundubuttukbaegi", "8000", "menu_init","A spicy(red chili powder) soft tofu soup on top with shrimp"),
     ("2","Spicy Beef Soup","yukgaejang", "8000", "menu_init","A spicy beef soup with green onion on top"),
-    ("2","Sundae and Rice Soup","sundaegukbap", "8000", "menu_init","A bone broth with korean pork blood sausage (sundae)"),
+    ("2","Sundae (Pork Blood Sausage) and Rice Soup","sundaegukbap", "8000", "menu_init","A bone broth with korean pork blood sausage (sundae)"),
     ("2","Offal Soup","naejangtang", "8000", "menu_init","A bone broth with boiled pork offal"),
     ("2","Ox Bone Soup","seolleongtang", "8000", "menu_init","A beef and beef bone soup with egg drops on top"),
     ("2","Mandu Soup","manduguk", "7000", "menu_init","A dumpling soup with egg drops on top"),
@@ -555,7 +555,7 @@ values
     (14, 2), (14, 14), (14, 15), (14, 23),  /* 첫번째 알러지 소고기 들어가는지 확인 필요 */ 
 
     (15, 9), (15, 17), (15, 18), (15, 19), (15, 23),
-    (16, 6), (16, 14), (16, 15), (16, 19), (16, 23),
+    (16, 6), (16, 14), (16, 15), (16, 18), (16, 23),
     (17, 6), (17, 15), (17, 17), 
     (18, 14), (18, 18), 
 
