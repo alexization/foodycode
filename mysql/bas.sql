@@ -43,30 +43,31 @@ CREATE TABLE allergies(
 
 INSERT INTO allergies(algname)
 VALUES 
-    ("egg"),
-    ("milk"),
-    ("buckwheat"),
-    ("peanut"),
-    ("soybean"),
-    ("wheat"),
-    ("mackerel"),
-    ("crab"),
-    ("shrimp"),
-    ("pork"),
-    ("peach"),
-    ("tomato"),
-    ("sulfites"),
-    ("walnut"),
-    ("chicken"),
-    ("beef"),
-    ("shellfish"),
-    ("mussel"),
     ("abalone"),
+    ("beef"),
+    ("buckwheat"),
+    ("chicken"),
+    ("crab"),
+    ("egg"),
+    ("mackerel"),
+    ("milk"),
+    ("mussel"),
     ("oyster"),
+    ("peach"),
     ("pinenut"),
-    ("squid"),
+    ("pinenut"),
+    ("pork"),
     ("sesame"),
+    ("shellfish"),
+    ("shrimp"),
+    ("soy"),
+    ("squid"),
+    ("sulfites"),
+    ("tomato"),
+    ("walnut"),
+    ("wheat"),
     ("almond");
+
 
 drop table userAlgs;
 
@@ -208,7 +209,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("1","Stir-fried Squid with Rice","ojingeo deopbap", "7000", "menu_init","Spicy stir-fried Squid with rice"),
     ("1","Spicy Stir-fried Pork with Rice","jeyuk deopbap", "7000", "menu_init","Spicy stir-fried pork(red pepper paste - gochujang) with rice"),
     ("1","Spicy Noodle Soup", "jangkalguksu","7000", "menu_init","Noodles in anchovy broth mixed with miso and red chili paste (gochujang)"),
-    ("1","Rice Cake and Mandu Soup","tteong manduguk", "7000", "menu_init","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top"),
+    ("1","Rice Cake Dumpling Soup","tteong manduguk", "7000", "menu_init","Rice cake and dumpling soup cooked in anchovy broth with seaweed on top"),
     ("1","Noodle Soup","kalguksu", "7000", "menu_init","Basic noodle soup prepared with anchovy-based broth"),
 
     ("2","Grilled Pork Set","dwaejigogi gui seteu", "????", "menu_init","????"),     /* Description, 가격 정보 필요 */ 
@@ -216,7 +217,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("2","Ginseng Half Chicken Soup","bangyetang", "8000", "menu_init","A chicken(half) soup with vegetables and sticky rice"),
     ("2","Soft Bean Curd Hot Pot","sundubuttukbaegi", "8000", "menu_init","A spicy(red chili powder) soft tofu soup on top with shrimp"),
     ("2","Spicy Beef Soup","yukgaejang", "8000", "menu_init","A spicy beef soup with green onion on top"),
-    ("2","Sundae and Rice Soup","sundaegukbap", "8000", "menu_init","A bone broth with korean pork blood sausage (sundae)"),
+    ("2","Sundae (Pork Blood Sausage) and Rice Soup","sundaegukbap", "8000", "menu_init","A bone broth with korean pork blood sausage (sundae)"),
     ("2","Offal Soup","naejangtang", "8000", "menu_init","A bone broth with boiled pork offal"),
     ("2","Ox Bone Soup","seolleongtang", "8000", "menu_init","A beef and beef bone soup with egg drops on top"),
     ("2","Mandu Soup","manduguk", "7000", "menu_init","A dumpling soup with egg drops on top"),
@@ -262,7 +263,7 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("8","Ice Cream Waffle","icecream waffle", "5000", "menu_init","Waffle with ice cream topping"),
     ("8","Fresh Cream Waffle","saengcream waffle", "5000", "menu_init","Waffle with whipped cream topping"),
     ("8","Strawberry Smoothie","ttalgi smoothie", "5000", "menu_init","Refreshing strawberry smoothie"),
-    ("8","Mango Smoothie","mango smoothie", "5000", "hmenu_init","Tropical mango smoothie"),
+    ("8","Mango Smoothie","mango smoothie", "5000", "menu_init","Tropical mango smoothie"),
     ("8","Blueberry Smoothie","blueberry smoothie", "5000", "menu_init","Berry-filled blueberry smoothie"),
 
     ("8","Plain Smoothie","plain smoothie", "5000", "menu_init","A plain and simple smoothie"),
@@ -320,14 +321,14 @@ INSERT INTO menu(rest_id, menu_name, roman_name, menu_price, img_url, menu_ing)
     ("10","Grilled Salted Chicken with Tortilla","tortilla yeonguso chicken", "????", "menu_init","Grilled chicken seasoned with salt and pepper. You can choose 2 types of sauces from options including red pepper paste, soy sauce, spicy, wasabi mayo, garlic cheese, sweet chili, and mustard. (Option to transform into Ttottia chicken available for an additional 1000 won)."),
     ("10","Kimchi Jjigae with Pork","yeonguso jjigae", "????", "menu_init","A special signature ""Chicken Lab"" Kimchi Stew with a lot of pork. It's a kimchi stew with a generous amount of pork."),
     ("10","Sausage Jjigae","sausage jjigae", "????", "menu_init","A special signature ""Chicken Lab"" Sausage stew is a dish made with plenty of ham. It's a great side dish for drinks, and it includes plenty of ham so that you can eat more."),
-    ("10","Chocolate","mintchocolatte", "????", "menu_init","A fish cake soup with lots of extra fish cakes, ensuring you can have more after finishing the first serving"),
+    ("10","Too-Much Fishcake Soup","too much eomuktang", "????", "menu_init","A fish cake soup with lots of extra fish cakes, ensuring you can have more after finishing the first serving"),
 
     /* 가격 정보 필요 */ 
     ("11","Spicy Stir-fried Chicken with Cheese","cheese dakgalbi", "????", "menu_init","Spicy Stir-fried Chicken with added cheese. Chicken Galbi is a dish made by stir frying chicken marinated in red pepper sauce with cabbage, onions, green onions, and sweet potatoes."),
     ("11","Grilled Cow Lung and Heart","so heopa yeomtong gui", "????", "menu_init","Grilled beef lungs and intestines. Usually dipped in salt and eaten."),
     ("11","Deep-fried Chicken Gizzards","ttongjip twigim", "????", "menu_init","Chicken's nest, where chicken is coated in flour and deep-fried, often with added spicy peppers or scallions."),
     ("11","Pork Stew","dwaejigogi jjageuri", "????", "menu_init","A spicy, slightly salty version of pork and kimchi stew. 'Jjigae' refers to a dish where seasoned pork is cooked with vegetables."),
-    ("11","Too-Much Fishcake Soup","too much eomuktang", "????", "menu_init","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled."),
+    ("11","Squid Bulgogi Lunch Box","osambulgogi", "????", "menu_init","Stir-fried squid and pork in a red pepper paste-based sauce. 'Bulgogi' refers to thinly sliced meat marinated in sauce and then grilled."),
 
     ("4","Offal Soup","naejangtang", "8000", "menu_init","A bone broth with boiled beef offal"),
     ("4","Galbi Soup","galbitang", "8000", "menu_init","A clear soup made from beef rib cuts"),
@@ -554,7 +555,7 @@ values
     (14, 2), (14, 14), (14, 15), (14, 23),  /* 첫번째 알러지 소고기 들어가는지 확인 필요 */ 
 
     (15, 9), (15, 17), (15, 18), (15, 19), (15, 23),
-    (16, 6), (16, 14), (16, 15), (16, 19), (16, 23),
+    (16, 6), (16, 14), (16, 15), (16, 18), (16, 23),
     (17, 6), (17, 15), (17, 17), 
     (18, 14), (18, 18), 
 
